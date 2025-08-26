@@ -24,7 +24,7 @@ function Subscription() {
       plan_name: 'Site Vitrine',
       plan_descp:
         'Parfait pour présenter votre activité et attirer de nouveaux clients',
-      plan_price: '150 000 FCFA',
+      plan_price: '120 000 FCFA',
       plan_bg_color: 'bg-white dark:bg-gray-800',
       text_color: 'text-gray-900 dark:text-white',
       descp_color: 'gray-600 dark:text-gray-300',
@@ -36,7 +36,7 @@ function Subscription() {
         'Intégration réseaux sociaux',
         'Formulaire de contact',
         'Optimisation SEO de base',
-        'Support 30 jours après livraison',
+        'Support 45 jours après livraison',
       ],
     },
     {
@@ -51,12 +51,12 @@ function Subscription() {
       border_color: 'border-white/20',
       popular: true,
       plan_feature: [
-        "Boutique en ligne (jusqu'à 50 produits)",
+        'Boutique en ligne (jusqu’à 100 produits)',
         'Paiement Mobile Money, PayPal, Stripe',
         'Gestion des commandes & clients',
         'Tableau de bord administrateur',
-        'Intégration livraison',
-        'Support 60 jours après livraison',
+        'Intégration livraison locale & internationale',
+        'Support 90 jours après livraison',
       ],
     },
     {
@@ -115,7 +115,7 @@ function Subscription() {
               </div>
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="text-gray-800 dark:text-white">
-                  Des solutions pour tous les {' '}
+                  Des solutions pour tous les{' '}
                 </span>
                 <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">
                   budgets

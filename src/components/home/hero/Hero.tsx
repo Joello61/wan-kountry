@@ -22,8 +22,8 @@ function HeroSection() {
       
       if (isTyping) {
         // Écriture du mot
-        if (displayText.length < word.length) {
-          setDisplayText(word.slice(0, displayText.length + 1));
+        if (displayText.length < word!.length) {
+          setDisplayText(word!.slice(0, displayText.length + 1));
         } else {
           // Pause avant d'effacer
           setTimeout(() => setIsTyping(false), 1500);
@@ -76,13 +76,13 @@ function HeroSection() {
             {/* Sous-titre simplifié */}
             <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
               Développeur fullstack spécialisé dans les solutions web pour le marché local. 
-              <span className="font-semibold text-gray-900 dark:text-white"> Résultats garantis en 2 semaines.</span>
+              <span className="font-semibold text-gray-900 dark:text-white"> Résultats garantis en 15 jours.</span>
             </p>
 
             {/* Statistiques rapides */}
             <div className="flex justify-center lg:justify-start gap-8 mb-10">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">2 sem</div>
+                <div className="text-3xl font-bold text-blue-600">15j</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Livraison</div>
               </div>
               <div className="text-center">
@@ -90,7 +90,7 @@ function HeroSection() {
                 <div className="text-sm text-gray-600 dark:text-gray-400">Support</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">100%</div>
+                <div className="text-3xl font-bold text-green-600">+95%</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Satisfait</div>
               </div>
             </div>
@@ -174,12 +174,12 @@ function HeroSection() {
 
               {/* Indicateurs de performance */}
               <div className="absolute top-1/4 -left-12 lg:-left-16 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg">
-                <div className="text-3xl font-bold text-green-600">98%</div>
+                <div className="text-3xl font-bold text-green-600">+97%</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Performance</div>
               </div>
 
               <div className="absolute bottom-1/4 -right-12 lg:-right-16 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg">
-                <div className="text-3xl font-bold text-blue-600">&lt;2s</div>
+                <div className="text-3xl font-bold text-blue-600">&lt;2.5s</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">Chargement</div>
               </div>
             </div>
