@@ -1,5 +1,5 @@
 # Étape 1 : build
-FROM node:22 AS build
+FROM node:22-alpine AS build
 WORKDIR /app
 
 # Arguments de build pour les variables d'environnement Next.js
@@ -15,7 +15,7 @@ ENV NODE_ENV=production
 COPY package*.json ./
 
 # Installation de TOUTES les dépendances (dev incluses) pour le build
-RUN npm install --legacy-peer-deps
+RUN npm ci
 
 # Copie du code source
 COPY . .
@@ -24,7 +24,7 @@ COPY . .
 RUN npm run build
 
 # Étape 2 : serveur léger pour servir l'application Next.js
-FROM node:22 AS runner
+FROM node:22-alpine AS runner
 WORKDIR /app
 
 # Créer un utilisateur non-root
