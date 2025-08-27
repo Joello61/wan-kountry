@@ -3,10 +3,13 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import SingleAchievement from './SingleAchievement';
 import { FiAward } from 'react-icons/fi';
+import { usePathname } from 'next/navigation';
 
-function Achievements() {
+function AchievementsClient() {
   const ref = useRef(null);
   const inView = useInView(ref);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   //Données statiques (plus besoin de fetch ni de state)
   const achievementsList = [
@@ -61,6 +64,22 @@ function Achievements() {
     transition: { duration: 0.4, delay: 0.4 + index * 0.2 },
   });
 
+  const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
+    if (isHomePage) {
+      return {
+        initial: initialProps,
+        whileInView: animateProps,
+        transition: { duration: 0.8 },
+        viewport: { once: true }
+      };
+    } else {
+      return {
+        initial: animateProps, // Affichage direct sans animation
+        animate: animateProps
+      };
+    }
+  };
+
   return (
     <section id="awards" className="bg-gray-50 dark:bg-gray-900/50">
       <div ref={ref} className="2xl:py-20 py-11">
@@ -68,10 +87,7 @@ function Achievements() {
           <div className="flex flex-col gap-10 md:gap-20">
             {/* Titre personnalisé */}
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
               className="text-center"
             >
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
@@ -119,4 +135,4 @@ function Achievements() {
   );
 }
 
-export default Achievements;
+export default AchievementsClient;

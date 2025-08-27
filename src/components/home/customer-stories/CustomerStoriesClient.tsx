@@ -11,8 +11,27 @@ import {
   FiSend,
 } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
-function CustomerStories() {
+function CustomerStoriesClient() {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
+  const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
+    if (isHomePage) {
+      return {
+        initial: initialProps,
+        whileInView: animateProps,
+        transition: { duration: 0.8 },
+        viewport: { once: true }
+      };
+    } else {
+      return {
+        initial: animateProps, // Affichage direct sans animation
+        animate: animateProps
+      };
+    }
+  };
   return (
     <section>
       <div className="2xl:py-20 py-11">
@@ -20,10 +39,7 @@ function CustomerStories() {
           <div className="flex flex-col justify-center gap-10 md:gap-20">
             {/* En-tête adapté */}
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
               className="text-center"
             >
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
@@ -231,4 +247,4 @@ function CustomerStories() {
   );
 }
 
-export default CustomerStories;
+export default CustomerStoriesClient;

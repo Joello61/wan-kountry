@@ -15,6 +15,8 @@ import {
   FiGlobe,
 } from 'react-icons/fi';
 import { IconType } from 'react-icons';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 // Types ajoutés
 interface Story {
@@ -29,35 +31,40 @@ interface Skill {
   color: string;
 }
 
-function AboutSection() {
+const MotionLink = motion(Link);
+
+function AboutSectionClient() {
   const [currentStory, setCurrentStory] = useState<number>(0);
   const [isAutoScrolling, setIsAutoScrolling] = useState<boolean>(true);
 
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   const stories: Story[] = [
     {
-      title: "Une passion née tôt",
+      title: 'Une passion née tôt',
       content:
-        "Depuis toujours, je suis fasciné par la technologie. Enfant, je passais des heures à explorer et comprendre comment fonctionnaient les outils numériques autour de moi.",
-      icon: FiCpu
+        'Depuis toujours, je suis fasciné par la technologie. Enfant, je passais des heures à explorer et comprendre comment fonctionnaient les outils numériques autour de moi.',
+      icon: FiCpu,
     },
     {
-      title: "Les bases du développement",
+      title: 'Les bases du développement',
       content:
         "Au Cameroun, j'ai suivi une formation en informatique à l'IUT de Bandjoun. C'est là que j'ai découvert le développement logiciel et réalisé mes premiers projets concrets.",
-      icon: FiBook
+      icon: FiBook,
     },
     {
       title: "L'ouverture internationale",
       content:
         "En poursuivant mes études en Master Informatique à Toulouse, j'ai approfondi mes compétences avec des projets avancés : API sécurisées, applications web, intégrations CI/CD.",
-      icon: FiGlobe
+      icon: FiGlobe,
     },
     {
       title: "L'indépendance",
       content:
         "Aujourd'hui, je mets mes compétences au service d'entrepreneurs, associations et particuliers en tant que développeur freelance, en créant des solutions web modernes et adaptées.",
-      icon: FiCode
-    }
+      icon: FiCode,
+    },
   ];
 
   const skills: Skill[] = [
@@ -81,10 +88,10 @@ function AboutSection() {
       level: 80,
       color: 'from-yellow-500 to-orange-500',
     },
-    { 
-      name: 'Design UX/UI', 
-      level: 70, 
-      color: 'from-pink-500 to-rose-500' 
+    {
+      name: 'Design UX/UI',
+      level: 70,
+      color: 'from-pink-500 to-rose-500',
     },
     {
       name: 'CI/CD & DevOps (GitHub Actions, Docker)',
@@ -96,7 +103,7 @@ function AboutSection() {
   // Auto-scroll effect pour les petits écrans
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
-    
+
     const checkScreenSize = (): boolean => {
       return window.innerWidth < 768; // md breakpoint
     };
@@ -138,6 +145,22 @@ function AboutSection() {
     }, 8000); // Reprend après 8 secondes
   };
 
+  const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
+    if (isHomePage) {
+      return {
+        initial: initialProps,
+        whileInView: animateProps,
+        transition: { duration: 0.8 },
+        viewport: { once: true }
+      };
+    } else {
+      return {
+        initial: animateProps, // Affichage direct sans animation
+        animate: animateProps
+      };
+    }
+  };
+
   return (
     <section id="about-us" className="relative overflow-hidden">
       {/* Background avec pattern */}
@@ -148,10 +171,7 @@ function AboutSection() {
         <div className="container mx-auto px-4">
           {/* Header avec accroche personnelle */}
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
             className="text-center mb-20"
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 px-4 py-2 rounded-full border border-blue-200/50 dark:border-purple-500/30 mb-6">
@@ -179,10 +199,7 @@ function AboutSection() {
           <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start mb-20">
             {/* Photo authentique avec éléments interactifs */}
             <motion.div
-              initial={{ x: -80, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
+              {...getScrollAnimationProps({ x: -80, opacity: 0 }, { x: 0, opacity: 1 })}
               className="lg:col-span-2 flex flex-col items-center"
             >
               <div className="relative group">
@@ -248,10 +265,7 @@ function AboutSection() {
 
             {/* Contenu restructuré */}
             <motion.div
-              initial={{ x: 80, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              viewport={{ once: true }}
+              {...getScrollAnimationProps({ x: 80, opacity: 0 }, { x: 0, opacity: 1 })}
               className="lg:col-span-3 space-y-8"
             >
               {/* Histoire personnelle interactive avec auto-scroll */}
@@ -259,7 +273,7 @@ function AboutSection() {
                 <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
                   Mon histoire en 4 étapes
                 </h3>
-                
+
                 {/* Indicateurs avec animation pour l'auto-scroll */}
                 <div className="flex gap-2 mb-4 justify-center md:justify-start">
                   {stories.map((_, index) => (
@@ -273,15 +287,17 @@ function AboutSection() {
                       }`}
                     >
                       {/* Barre de progression pour l'auto-scroll sur mobile */}
-                      {currentStory === index && typeof window !== 'undefined' && window.innerWidth < 768 && (
-                        <motion.div
-                          className="absolute top-0 left-0 h-full bg-blue-600 rounded-full"
-                          initial={{ width: '0%' }}
-                          animate={{ width: '100%' }}
-                          transition={{ duration: 4, ease: 'linear' }}
-                          key={`progress-${index}`}
-                        />
-                      )}
+                      {currentStory === index &&
+                        typeof window !== 'undefined' &&
+                        window.innerWidth < 768 && (
+                          <motion.div
+                            className="absolute top-0 left-0 h-full bg-blue-600 rounded-full"
+                            initial={{ width: '0%' }}
+                            animate={{ width: '100%' }}
+                            transition={{ duration: 4, ease: 'linear' }}
+                            key={`progress-${index}`}
+                          />
+                        )}
                     </button>
                   ))}
                 </div>
@@ -310,7 +326,7 @@ function AboutSection() {
                       </p>
                     </div>
                   </motion.div>
-                  
+
                   {/* Indicateur discret d'auto-scroll sur mobile */}
                   <div className="md:hidden absolute bottom-2 right-2">
                     <div className="flex items-center gap-1 text-xs text-gray-400">
@@ -351,7 +367,7 @@ function AboutSection() {
 
               {/* CTA plus engageant */}
               <div className="mt-6 flex flex-wrap gap-4">
-                <motion.a
+                <MotionLink
                   href="#realisations"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -359,26 +375,24 @@ function AboutSection() {
                 >
                   <FiPlay size={18} />
                   Voir mes créations
-                </motion.a>
-                <motion.a
-                  href="contact"
+                </MotionLink>
+
+                <MotionLink
+                  href="/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300"
                 >
                   <FiCoffee size={18} />
                   Prenons un café
-                </motion.a>
+                </MotionLink>
               </div>
             </motion.div>
           </div>
 
           {/* Valeurs personnelles */}
           <motion.div
-            initial={{ y: 80, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...getScrollAnimationProps({ y: 80, opacity: 0 }, { y: 0, opacity: 1 })}
             className="mt-20 text-center"
           >
             <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-12">
@@ -429,4 +443,4 @@ function AboutSection() {
   );
 }
 
-export default AboutSection;
+export default AboutSectionClient;

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useRef, useEffect, useState } from 'react';
 import { FiSmartphone, FiCreditCard, FiZap, FiArrowRight, FiPlay, FiStar } from 'react-icons/fi';
 
-function HeroSection() {
+function HeroSectionClient() {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
@@ -190,4 +190,4 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default HeroSectionClient;

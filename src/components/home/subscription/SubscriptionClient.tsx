@@ -16,8 +16,29 @@ import {
   FiUsers,
 } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
-function Subscription() {
+function SubscriptionClient() {
+
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
+  const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
+    if (isHomePage) {
+      return {
+        initial: initialProps,
+        whileInView: animateProps,
+        transition: { duration: 0.8 },
+        viewport: { once: true }
+      };
+    } else {
+      return {
+        initial: animateProps, // Affichage direct sans animation
+        animate: animateProps
+      };
+    }
+  };
+
   const pricingPlans = [
     {
       id: 1,
@@ -101,10 +122,7 @@ function Subscription() {
           <div className="flex flex-col gap-10 md:gap-20">
             {/* En-tête de section */}
             <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
               className="text-center"
             >
               <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
@@ -357,4 +375,4 @@ function Subscription() {
   );
 }
 
-export default Subscription;
+export default SubscriptionClient;

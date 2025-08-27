@@ -25,10 +25,32 @@ import {
   FiRefreshCw,
 } from 'react-icons/fi';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-function ServicesSection() {
+const MotionLink = motion(Link);
+
+function ServicesSectionClient() {
   const [activeService, setActiveService] = useState(0);
   const [, setHoveredService] = useState<number | null>(null);
+
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
+  const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
+    if (isHomePage) {
+      return {
+        initial: initialProps,
+        whileInView: animateProps,
+        transition: { duration: 0.8 },
+        viewport: { once: true }
+      };
+    } else {
+      return {
+        initial: animateProps, // Affichage direct sans animation
+        animate: animateProps
+      };
+    }
+  };
 
   const servicesData = [
     {
@@ -225,10 +247,7 @@ function ServicesSection() {
         <div className="container mx-auto px-4">
           {/* Header impactant */}
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
             className="text-center mb-20"
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
@@ -258,10 +277,7 @@ function ServicesSection() {
           <div className="grid lg:grid-cols-12 gap-8 mb-20">
             {/* Liste des services */}
             <motion.div
-              initial={{ x: -100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              {...getScrollAnimationProps({ x: -100, opacity: 0 }, { x: 0, opacity: 1 })}
               className="lg:col-span-5 space-y-4"
             >
               {servicesData.map((service, index) => {
@@ -330,10 +346,7 @@ function ServicesSection() {
 
             {/* Détails du service actif */}
             <motion.div
-              initial={{ x: 100, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              {...getScrollAnimationProps({ x: 100, opacity: 0 }, { x: 0, opacity: 1 })}
               className="lg:col-span-7"
             >
               <AnimatePresence mode="wait">
@@ -464,10 +477,7 @@ function ServicesSection() {
 
           {/* Processus de travail */}
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...getScrollAnimationProps({ y: 100, opacity: 0 }, { y: 0, opacity: 1 })}
             className="mb-20"
           >
             <h3 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-12">
@@ -505,10 +515,7 @@ function ServicesSection() {
 
           {/* CTA final engageant */}
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...getScrollAnimationProps({ y: 100, opacity: 0 }, { y: 0, opacity: 1 })}
             className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 rounded-3xl p-12 text-center text-white relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-black/20" />
@@ -521,30 +528,28 @@ function ServicesSection() {
                 définir la stratégie parfaite.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/contact">
-                  <motion.a
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
-                  >
-                    <FiZap />
-                    Consultation gratuite
-                  </motion.a>
-                </Link>
+                <MotionLink
+                  href="/contact"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
+                >
+                  <FiZap />
+                  Consultation gratuite
+                </MotionLink>
 
-                <Link href="#testimony">
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
-                  >
-                    <FiUsers />
-                    Voir les témoignages
-                  </motion.a>
-                </Link>
+                <MotionLink
+                  href="#testimony"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
+                >
+                  <FiUsers />
+                  Voir les témoignages
+                </MotionLink>
               </div>
             </div>
           </motion.div>
@@ -580,4 +585,4 @@ function ServicesSection() {
   );
 }
 
-export default ServicesSection;
+export default ServicesSectionClient;

@@ -19,10 +19,15 @@ import {
   FiArrowRight,
 } from 'react-icons/fi';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-function AtoutsSection() {
+const MotionLink = motion(Link);
+
+function AtoutsSectionClient() {
   const ref = useRef(null);
   const [, setHoveredCard] = useState<number | null>(null);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   // Données des atouts avec design cohérent
   const atoutsData = [
@@ -121,6 +126,22 @@ function AtoutsSection() {
     },
   ];
 
+  const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
+    if (isHomePage) {
+      return {
+        initial: initialProps,
+        whileInView: animateProps,
+        transition: { duration: 0.8 },
+        viewport: { once: true },
+      };
+    } else {
+      return {
+        initial: animateProps, // Affichage direct sans animation
+        animate: animateProps,
+      };
+    }
+  };
+
   return (
     <section id="atouts" className="relative overflow-hidden">
       {/* Background cohérent avec la section services */}
@@ -135,10 +156,10 @@ function AtoutsSection() {
         <div className="container mx-auto px-4">
           {/* Header dans le même style */}
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...getScrollAnimationProps(
+              { y: 50, opacity: 0 },
+              { y: 0, opacity: 1 }
+            )}
             className="text-center mb-20"
           >
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
@@ -165,10 +186,10 @@ function AtoutsSection() {
 
           {/* Grille des atouts - même style que les services */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, staggerChildren: 0.1 }}
-            viewport={{ once: true }}
+            {...getScrollAnimationProps(
+              { opacity: 0 },
+              { opacity: 1 }
+            )}
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20"
           >
             {atoutsData.map((atout, index) => {
@@ -238,10 +259,10 @@ function AtoutsSection() {
 
           {/* Section stats dans le même style */}
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...getScrollAnimationProps(
+              { y: 100, opacity: 0 },
+              { y: 0, opacity: 1 }
+            )}
             className="mb-20"
           >
             <div className="bg-gradient-to-r from-purple-50 via-blue-50 to-teal-50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-teal-900/20 rounded-3xl p-12 border border-purple-200/30 dark:border-purple-700/30">
@@ -289,10 +310,10 @@ function AtoutsSection() {
 
           {/* CTA final dans le même style */}
           <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...getScrollAnimationProps(
+              { y: 100, opacity: 0 },
+              { y: 0, opacity: 1 }
+            )}
             className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 rounded-3xl p-12 text-center text-white relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-black/20" />
@@ -306,30 +327,28 @@ function AtoutsSection() {
                 définir la stratégie parfaite.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/contact">
-                  <motion.a
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
-                  >
-                    <FiSend />
-                    Démarrons ensemble
-                  </motion.a>
-                </Link>
+                <MotionLink
+                  href="/contact"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
+                >
+                  <FiSend />
+                  Démarrons ensemble
+                </MotionLink>
 
-                <Link href="#realisations">
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
-                  >
-                    <FiUsers />
-                    Voir mes réalisations
-                  </motion.a>
-                </Link>
+                <MotionLink
+                  href="#realisations"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
+                >
+                  <FiUsers />
+                  Voir mes réalisations
+                </MotionLink>
               </div>
             </div>
           </motion.div>
@@ -365,4 +384,4 @@ function AtoutsSection() {
   );
 }
 
-export default AtoutsSection;
+export default AtoutsSectionClient;

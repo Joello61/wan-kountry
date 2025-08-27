@@ -1,64 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import { motion, useInView } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRef } from 'react';
-import { FiMessageCircle, FiUser, FiMail, FiHeart } from 'react-icons/fi';
+import { FiMail, FiHeart } from 'react-icons/fi';
+import SingleTestimonial from './SingleTestimonial';
+import { usePathname } from 'next/navigation';
 
-// Composant pour un témoignage individuel
-function SingleTestimonial({ testimonial }: { testimonial: any }) {
-  return (
-    <div className="group bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-      {/* Icône de citation */}
-      <div className="flex justify-start mb-4">
-        <FiMessageCircle size={32} className="text-purple_blue opacity-60" />
-      </div>
-
-      {/* Texte du témoignage */}
-      <blockquote className="text-gray-700 dark:text-gray-300 mb-6 text-sm leading-relaxed italic">
-        &quot;{testimonial.text}&quot;
-      </blockquote>
-
-      {/* Informations client */}
-      <div className="flex items-center gap-3">
-        {testimonial.avatar ? (
-          <Image
-            src={testimonial.avatar}
-            alt={testimonial.name}
-            width={48}
-            height={48}
-            className="rounded-full object-cover"
-          />
-        ) : (
-          <div className="w-12 h-12 bg-purple_blue/20 rounded-full flex items-center justify-center">
-            <FiUser size={24} className="text-purple_blue" />
-          </div>
-        )}
-
-        <div>
-          <p className="font-semibold text-gray-900 dark:text-white text-sm">
-            {testimonial.name}
-          </p>
-          <p className="text-gray-500 dark:text-gray-400 text-xs">
-            {testimonial.position}
-          </p>
-        </div>
-      </div>
-
-      {/* Badge projet (optionnel) */}
-      {testimonial.project && (
-        <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-          <span className="text-xs bg-purple_blue/10 text-purple_blue px-3 py-1 rounded-full">
-            Projet: {testimonial.project}
-          </span>
-        </div>
-      )}
-    </div>
-  );
-}
-
-function TestimonySection() {
+function TestimonySectionClient() {
   const ref = useRef(null);
   const inView = useInView(ref);
   const testimonialsList = [
@@ -102,6 +51,25 @@ function TestimonySection() {
     transition: { duration: 0.4, delay: 0.4 + index * 0.3 },
   });
 
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
+  const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
+    if (isHomePage) {
+      return {
+        initial: initialProps,
+        whileInView: animateProps,
+        transition: { duration: 0.8 },
+        viewport: { once: true }
+      };
+    } else {
+      return {
+        initial: animateProps, // Affichage direct sans animation
+        animate: animateProps
+      };
+    }
+  };
+
   return (
     <section id="testimony">
       <div ref={ref} className="2xl:py-20 py-11 bg-gray-50 dark:bg-gray-900">
@@ -110,10 +78,7 @@ function TestimonySection() {
             {/* En-tête de section */}
             <div className="max-w-3xl text-center">
               <motion.div
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+                {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
                 className="text-center"
               >
                 <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
@@ -217,4 +182,4 @@ function TestimonySection() {
   );
 }
 
-export default TestimonySection;
+export default TestimonySectionClient;

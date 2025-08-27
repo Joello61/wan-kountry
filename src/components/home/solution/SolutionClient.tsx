@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { FiMessageCircle, FiArrowUpRight, FiArrowRight, FiCheck, FiHeadphones, FiSmartphone } from 'react-icons/fi'
 
-function Solutions() {
+function SolutionsClient() {
   const ref = useRef(null)
   const inView = useInView(ref)
 
@@ -91,4 +91,4 @@ function Solutions() {
   )
 }
 
-export default Solutions
+export default SolutionsClient

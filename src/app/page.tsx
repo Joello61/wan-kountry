@@ -1,15 +1,15 @@
+import AboutSectionClient from '@/components/home/about-us/AboutUsClient';
+import AchievementsClient from '@/components/home/achievements/AchievementsClient';
+import AtoutsSectionClient from '@/components/home/atouts/AtoutsClient';
+import CustomerStoriesClient from '@/components/home/customer-stories/CustomerStoriesClient';
+import FaqClient from '@/components/home/faq/FaqClient';
+import HeroSectionClient from '@/components/home/hero/HeroClient';
+import RealisationSectionClient from '@/components/home/realisations/RealisationClient';
+import ServicesSectionClient from '@/components/home/services/ServicesClient';
+import SolutionsClient from '@/components/home/solution/SolutionClient';
+import SubscriptionClient from '@/components/home/subscription/SubscriptionClient';
+import TestimonySectionClient from '@/components/home/testimony/TestimonyClient';
 import { Metadata } from 'next';
-import Achievements from '@/components/home/achievements/Achievements';
-import CustomerStories from '@/components/home/customer-stories/CustomerStories';
-import Faq from '@/components/home/faq/Faq';
-import HeroSection from '@/components/home/hero/Hero';
-import Solutions from '@/components/home/solution/Solution';
-import Subscription from '@/components/home/subscription/Subscription';
-import AboutSection from '@/components/home/about-us/AboutUs';
-import ServicesSection from '@/components/home/services/Services';
-import AtoutsSection from '@/components/home/atouts/Atouts';
-import TestimonySection from '@/components/home/testimony/Testimony';
-import RealisationSection from '@/components/home/realisation/Realisation';
 
 export const metadata: Metadata = {
   title: 'Home | JoelTech',
@@ -19,47 +19,47 @@ export default function Home() {
   return (
     <main>
       {/* ---------------------Hero section Starts-----------------  */}
-      <HeroSection />
+      <HeroSectionClient />
       {/* ---------------------Hero section Ends-----------------  */}
 
       {/* ---------------------Web result section Starts-----------------  */}
-      <AboutSection />
+      <AboutSectionClient />
       {/* ---------------------Web result section Ends-----------------  */}
 
       {/* ---------------------Innovation section Starts-----------------  */}
-      <ServicesSection />
+      <ServicesSectionClient />
       {/* ---------------------Innovation section Ends-----------------  */}
 
       {/* ---------------------Atouts section Starts-----------------  */}
-      <AtoutsSection />
+      <AtoutsSectionClient />
       {/* ---------------------Atouts section Ends-----------------  */}
 
       {/* ---------------------Online presence section Starts-----------------  */}
-      <RealisationSection />
+      <RealisationSectionClient />
       {/* ---------------------Online presence section Ends-----------------  */}
 
       {/* ---------------------Creative mind section Starts-----------------  */}
-      <TestimonySection />
+      <TestimonySectionClient />
       {/* ---------------------Creative mind section Ends-----------------  */}
 
       {/* ---------------------Customer Stories section Starts-----------------  */}
-      <CustomerStories />
+      <CustomerStoriesClient />
       {/* ---------------------Customer Stories section Ends-----------------  */}
 
       {/* ---------------------Subscription section Starts-----------------  */}
-      <Subscription />
+      <SubscriptionClient />
       {/* ---------------------Subscription section Ends-----------------  */}
 
       {/* ---------------------Faq section Starts-----------------  */}
-      <Faq />
+      <FaqClient />
       {/* ---------------------Faq section Ends-----------------  */}
 
       {/* ---------------------Achievements section Starts-----------------  */}
-      <Achievements />
+      <AchievementsClient />
       {/* ---------------------Achievements section Ends-----------------  */}
 
       {/* ---------------------Solutions section Starts-----------------  */}
-      <Solutions />
+      <SolutionsClient />
       {/* ---------------------Solutions section Ends-----------------  */}
     </main>
   );

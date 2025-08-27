@@ -9,7 +9,7 @@ import {
 import { FiHelpCircle, FiSun } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
-function Faq() {
+function FaqClient() {
   const faqList = [
     {
       faq_que: 'Combien coûte un site web ?',
@@ -122,4 +122,4 @@ function Faq() {
   );
 }
 
-export default Faq;
+export default FaqClient;
