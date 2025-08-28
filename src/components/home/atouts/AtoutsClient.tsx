@@ -21,7 +21,7 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 function AtoutsSectionClient() {
   const ref = useRef(null);

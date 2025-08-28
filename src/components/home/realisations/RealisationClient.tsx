@@ -21,7 +21,7 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 function RealisationSectionClient() {
   const ref = useRef(null);
@@ -188,7 +188,7 @@ function RealisationSectionClient() {
     },
     {
       id: 9,
-      image: "/images/realisations/paad.png",
+      image: "/images/realisations/paad.jpg",
       title: "PAAD – App mobile d'aide à l'autonomie",
       description:
         "Application mobile pour assister les personnes en perte d'autonomie (notifications, suivi, partage sécurisé).",

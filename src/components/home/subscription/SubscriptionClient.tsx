@@ -235,7 +235,7 @@ function SubscriptionClient() {
                         </div>
                         {plan.plan_price.includes('FCFA') && (
                           <p className={`text-xs text-${plan.descp_color}`}>
-                            À partir de • Paiement unique
+                            À partir de • Paiement en tranche possible
                           </p>
                         )}
                       </div>

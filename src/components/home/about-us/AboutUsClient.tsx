@@ -31,7 +31,7 @@ interface Skill {
   color: string;
 }
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 function AboutSectionClient() {
   const [currentStory, setCurrentStory] = useState<number>(0);

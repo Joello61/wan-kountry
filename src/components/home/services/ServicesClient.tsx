@@ -27,7 +27,7 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 function ServicesSectionClient() {
   const [activeService, setActiveService] = useState(0);
@@ -80,7 +80,7 @@ function ServicesSectionClient() {
         rating: 5,
       },
       preview:
-        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop',
+        '/images/services/site-vitrine.jpg',
     },
     {
       id: 1,
@@ -109,7 +109,7 @@ function ServicesSectionClient() {
         rating: 5,
       },
       preview:
-        'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop',
+        '/images/services/e-commerce.jpg',
     },
     {
       id: 2,
@@ -138,7 +138,7 @@ function ServicesSectionClient() {
         rating: 5,
       },
       preview:
-        'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop',
+        '/images/services/app.jpg',
     },
     {
       id: 3,
@@ -166,7 +166,7 @@ function ServicesSectionClient() {
         rating: 5,
       },
       preview:
-        'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop',
+        '/images/services/site-associatif.jpg',
     },
     {
       id: 4,
@@ -194,7 +194,7 @@ function ServicesSectionClient() {
         rating: 5,
       },
       preview:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
+        '/images/services/refonte.jpg',
     },
   ];
 
@@ -365,7 +365,7 @@ function ServicesSectionClient() {
                       alt={servicesData[activeService]!.title}
                       width={400}
                       height={300}
-                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-77 object-cover transition-transform duration-500 group-hover:scale-105"
                       priority={activeService === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -497,7 +497,7 @@ function ServicesSectionClient() {
                       <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
                         <StepIcon className="w-8 h-8 text-white" />
                       </div>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-white dark:bg-gray-800 border-2 border-purple-400 rounded-full flex items-center justify-center text-sm font-bold text-purple-600 dark:text-purple-400">
+                      <div className="absolute -top-2 -right-0 w-8 h-8 bg-white dark:bg-gray-800 border-2 border-purple-400 rounded-full flex items-center justify-center text-sm font-bold text-purple-600 dark:text-purple-400">
                         {index + 1}
                       </div>
                     </div>
