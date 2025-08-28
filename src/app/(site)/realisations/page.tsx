@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/realisations/portfolio-preview.png',
+        url: '/images/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Portfolio JoelTech - Réalisations Web',
@@ -46,14 +46,10 @@ export const metadata: Metadata = {
     description:
       'TaskFlow, EventHive, WeFund, Bocobi... Découvrez mes réalisations web avec résultats mesurables.',
     creator: '@JoelTech',
-    images: ['/images/realisations/portfolio-preview.png'],
+    images: ['/images/screenshots/desktop-home.png'],
   },
   alternates: {
     canonical: 'https://j3t-agency.joeltech.dev//realisations',
-    languages: {
-      'fr-FR': 'https://j3t-agency.joeltech.dev//fr/realisations',
-      'en-US': 'https://j3t-agency.joeltech.dev//en/projects',
-    },
   },
   robots: {
     index: true,

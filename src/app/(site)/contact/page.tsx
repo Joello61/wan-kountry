@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/contact-preview.png',
+        url: '/images/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Contactez JoelTech pour votre projet web',
@@ -44,14 +44,10 @@ export const metadata: Metadata = {
     description:
       'Formulaire contact, WhatsApp, email - Parlons de votre site web ou application. Réponse sous 24h.',
     creator: '@JoelTech',
-    images: ['/images/contact-preview.png'],
+    images: ['/images/screenshots/desktop-home.png'],
   },
   alternates: {
     canonical: 'https://j3t-agency.joeltech.dev//contact',
-    languages: {
-      'fr-FR': 'https://j3t-agency.joeltech.dev//fr/contact',
-      'en-US': 'https://j3t-agency.joeltech.dev//en/contact',
-    },
   },
   robots: {
     index: true,

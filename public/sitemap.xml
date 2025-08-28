@@ -14,9 +14,8 @@
     <priority>1.0</priority>
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://j3t-agency.joeltech.dev//en/"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev//images/hero-joeltech.webp</image:loc>
+      <image:loc>https://j3t-agency.joeltech.dev//images/screenshots/desktop-home.png</image:loc>
       <image:title>JoelTech - Développement Web et Mobile</image:title>
       <image:caption>Agence de développement web et mobile professionnelle au Cameroun</image:caption>
     </image:image>
@@ -30,9 +29,8 @@
     <priority>0.95</priority>
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//services"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://j3t-agency.joeltech.dev//en/services"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev//images/services-web-mobile.webp</image:loc>
+      <image:loc>https://j3t-agency.joeltech.dev//images/screenshots/desktop-home.png</image:loc>
       <image:title>Services de développement web et mobile</image:title>
     </image:image>
   </url>
@@ -45,9 +43,8 @@
     <priority>0.95</priority>
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//realisations"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://j3t-agency.joeltech.dev//en/portfolio"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev//images/portfolio-preview.webp</image:loc>
+      <image:loc>https://j3t-agency.joeltech.dev//images/screenshots/desktop-home.png</image:loc>
       <image:title>Portfolio JoelTech - Nos réalisations</image:title>
     </image:image>
   </url>
@@ -60,7 +57,6 @@
     <priority>0.9</priority>
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//contact"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://j3t-agency.joeltech.dev//en/contact"/>
   </url>
 
   <!-- À Propos -->
@@ -71,9 +67,8 @@
     <priority>0.85</priority>
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//about-us"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://j3t-agency.joeltech.dev//en/about-us"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev//images/equipe-joeltech.webp</image:loc>
+      <image:loc>https://j3t-agency.joeltech.dev//images/screenshots/desktop-home.png</image:loc>
       <image:title>Équipe JoelTech - Développeurs experts</image:title>
     </image:image>
   </url>
@@ -86,7 +81,6 @@
     <priority>0.85</priority>
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//subscription"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://j3t-agency.joeltech.dev//en/pricing"/>
   </url>
 
   <!-- Atouts -->
@@ -97,8 +91,6 @@
     <priority>0.75</priority>
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//atouts"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://j3t-agency.joeltech.dev//en/advantages"/>
-  </url>
 
   <!-- Témoignages -->
   <url>
@@ -108,7 +100,6 @@
     <priority>0.8</priority>
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//testimony"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://j3t-agency.joeltech.dev//en/testimonials"/>
   </url>
 
 </urlset>

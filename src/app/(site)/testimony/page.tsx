@@ -23,13 +23,13 @@ export const testimonialsMetadata: Metadata = {
     title: 'Témoignages Clients – Ils Me Font Confiance | JoelTech',
     description:
       'Retours authentiques de clients satisfaits : entrepreneurs, associations, PME. 7+ projets réalisés, 100% de satisfaction, délais respectés.',
-    url: 'https://j3t-agency.joeltech.dev//temoignages',
+    url: 'https://j3t-agency.joeltech.dev//testimony',
     siteName: 'JoelTech',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: '/images/testimonials/testimonials-preview.png',
+        url: '/images/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Témoignages clients JoelTech',
@@ -42,14 +42,10 @@ export const testimonialsMetadata: Metadata = {
     description:
       'Avis authentiques : 7+ projets, 100% satisfaction, délais respectés. Entrepreneurs et associations me font confiance.',
     creator: '@JoelTech',
-    images: ['/images/testimonials/testimonials-preview.png'],
+    images: ['/images/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//temoignages',
-    languages: {
-      'fr-FR': 'https://j3t-agency.joeltech.dev//fr/temoignages',
-      'en-US': 'https://j3t-agency.joeltech.dev//en/testimonials',
-    },
+    canonical: 'https://j3t-agency.joeltech.dev//testimony',
   },
   robots: {
     index: true,

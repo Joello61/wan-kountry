@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/services/services-preview.png',
+        url: '/images/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Services web JoelTech - Sites, E-commerce et Apps',
@@ -45,14 +45,10 @@ export const metadata: Metadata = {
     description:
       'Sites vitrines, e-commerce Mobile Money, apps sur-mesure. Solutions web adaptées au marché africain.',
     creator: '@JoelTech',
-    images: ['/images/services/services-preview.png'],
+    images: ['/images/screenshots/desktop-home.png'],
   },
   alternates: {
     canonical: 'https://j3t-agency.joeltech.dev//services',
-    languages: {
-      'fr-FR': 'https://j3t-agency.joeltech.dev//fr/services',
-      'en-US': 'https://j3t-agency.joeltech.dev//en/services',
-    },
   },
   robots: {
     index: true,

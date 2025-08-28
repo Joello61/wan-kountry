@@ -24,13 +24,13 @@ export const solutionsMetadata: Metadata = {
     title: 'Solutions Web Modernes pour Booster Votre Activité | JoelTech',
     description:
       'Développement fullstack indépendant : sites, e-commerces, apps web. Accompagnement entrepreneurs et associations dans leur transformation digitale.',
-    url: 'https://j3t-agency.joeltech.dev//solutions',
+    url: 'https://j3t-agency.joeltech.dev//solution',
     siteName: 'JoelTech',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: '/images/solutions/solutions-preview.png',
+        url: '/images/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Solutions web modernes JoelTech',
@@ -43,14 +43,10 @@ export const solutionsMetadata: Metadata = {
     description:
       'Transformation digitale : sites, e-commerce, apps. Mobile Money, mobile-first, accompagnement complet.',
     creator: '@JoelTech',
-    images: ['/images/solutions/solutions-preview.png'],
+    images: ['/images/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//solutions',
-    languages: {
-      'fr-FR': 'https://j3t-agency.joeltech.dev//fr/solutions',
-      'en-US': 'https://j3t-agency.joeltech.dev//en/solutions',
-    },
+    canonical: 'https://j3t-agency.joeltech.dev//solution',
   },
   robots: {
     index: true,

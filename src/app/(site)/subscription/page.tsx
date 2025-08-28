@@ -24,13 +24,13 @@ export const pricingMetadata: Metadata = {
     title: 'Tarifs Web Transparents – Sites dès 120k FCFA | JoelTech',
     description:
       'Formules simples pour tous budgets : sites vitrines, e-commerce, apps sur-mesure. Paiement échelonné, devis gratuit sous 24h.',
-    url: 'https://j3t-agency.joeltech.dev//tarifs',
+    url: 'https://j3t-agency.joeltech.dev//subscription',
     siteName: 'JoelTech',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: '/images/pricing/pricing-preview.png',
+        url: '/images/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Tarifs développement web JoelTech',
@@ -46,11 +46,7 @@ export const pricingMetadata: Metadata = {
     images: ['/images/pricing/pricing-preview.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//tarifs',
-    languages: {
-      'fr-FR': 'https://j3t-agency.joeltech.dev//fr/tarifs',
-      'en-US': 'https://j3t-agency.joeltech.dev//en/pricing',
-    },
+    canonical: 'https://j3t-agency.joeltech.dev//subscription',
   },
   robots: {
     index: true,

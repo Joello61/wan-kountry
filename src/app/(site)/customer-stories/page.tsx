@@ -23,13 +23,13 @@ export const customerStoriesMetadata: Metadata = {
     title: 'Success Stories Clients – Transformations Digitales | JoelTech',
     description:
       "Comment j'ai transformé les idées de mes clients en succès digitaux. Témoignages détaillés de Marie K., Paul N., Sarah M. et plus encore.",
-    url: 'https://j3t-agency.joeltech.dev//histoires-clients',
+    url: 'https://j3t-agency.joeltech.dev//customer-stories',
     siteName: 'JoelTech',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: '/images/stories/customer-stories-preview.png',
+        url: '/images/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Success stories clients JoelTech',
@@ -45,11 +45,7 @@ export const customerStoriesMetadata: Metadata = {
     images: ['/images/stories/customer-stories-preview.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//histoires-clients',
-    languages: {
-      'fr-FR': 'https://j3t-agency.joeltech.dev//fr/histoires-clients',
-      'en-US': 'https://j3t-agency.joeltech.dev//en/customer-stories',
-    },
+    canonical: 'https://j3t-agency.joeltech.dev//customer-stories',
   },
   robots: {
     index: true,
