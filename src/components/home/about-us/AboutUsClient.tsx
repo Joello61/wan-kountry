@@ -36,6 +36,10 @@ const MotionLink = motion.create(Link);
 function AboutSectionClient() {
   const [currentStory, setCurrentStory] = useState<number>(0);
   const [isAutoScrolling, setIsAutoScrolling] = useState<boolean>(true);
+  
+  // États pour éviter l'erreur d'hydratation
+  const [hasMounted, setHasMounted] = useState<boolean>(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   const pathname = usePathname();
   const isHomePage = pathname === '/';
@@ -100,40 +104,42 @@ function AboutSectionClient() {
     },
   ];
 
-  // Auto-scroll effect pour les petits écrans
+  // Effect pour détecter le montage du composant côté client
   useEffect(() => {
+    setHasMounted(true);
+    
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  // Auto-scroll effect - CORRIGÉ pour éviter l'erreur d'hydratation
+  useEffect(() => {
+    if (!hasMounted) return; // Attend que le composant soit monté côté client
+
     let interval: NodeJS.Timeout | null = null;
 
-    const checkScreenSize = (): boolean => {
-      return window.innerWidth < 768; // md breakpoint
-    };
-
     const startAutoScroll = (): void => {
-      if (checkScreenSize() && isAutoScrolling) {
+      if (isMobile && isAutoScrolling) {
         interval = setInterval(() => {
           setCurrentStory((prev) => (prev + 1) % stories.length);
         }, 4000); // Change toutes les 4 secondes
       }
     };
 
-    const handleResize = (): void => {
-      if (interval) {
-        clearInterval(interval);
-        interval = null;
-      }
-      startAutoScroll();
-    };
-
     startAutoScroll();
-    window.addEventListener('resize', handleResize);
 
     return () => {
       if (interval) {
         clearInterval(interval);
       }
-      window.removeEventListener('resize', handleResize);
     };
-  }, [isAutoScrolling, stories.length]);
+  }, [hasMounted, isMobile, isAutoScrolling, stories.length]);
 
   // Fonction pour gérer le clic manuel
   const handleStoryClick = (index: number): void => {
@@ -286,18 +292,16 @@ function AboutSectionClient() {
                           : 'bg-gray-300 dark:bg-gray-600 w-3'
                       }`}
                     >
-                      {/* Barre de progression pour l'auto-scroll sur mobile */}
-                      {currentStory === index &&
-                        typeof window !== 'undefined' &&
-                        window.innerWidth < 768 && (
-                          <motion.div
-                            className="absolute top-0 left-0 h-full bg-blue-600 rounded-full"
-                            initial={{ width: '0%' }}
-                            animate={{ width: '100%' }}
-                            transition={{ duration: 4, ease: 'linear' }}
-                            key={`progress-${index}`}
-                          />
-                        )}
+                      {/* Barre de progression pour l'auto-scroll sur mobile - CORRIGÉ */}
+                      {hasMounted && currentStory === index && isMobile && (
+                        <motion.div
+                          className="absolute top-0 left-0 h-full bg-blue-600 rounded-full"
+                          initial={{ width: '0%' }}
+                          animate={{ width: '100%' }}
+                          transition={{ duration: 4, ease: 'linear' }}
+                          key={`progress-${index}`}
+                        />
+                      )}
                     </button>
                   ))}
                 </div>
@@ -327,13 +331,15 @@ function AboutSectionClient() {
                     </div>
                   </motion.div>
 
-                  {/* Indicateur discret d'auto-scroll sur mobile */}
-                  <div className="md:hidden absolute bottom-2 right-2">
-                    <div className="flex items-center gap-1 text-xs text-gray-400">
-                      <div className="w-1 h-1 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span>Auto</span>
+                  {/* Indicateur discret d'auto-scroll sur mobile - CORRIGÉ */}
+                  {hasMounted && isMobile && (
+                    <div className="absolute bottom-2 right-2">
+                      <div className="flex items-center gap-1 text-xs text-gray-400">
+                        <div className="w-1 h-1 bg-blue-400 rounded-full animate-pulse"></div>
+                        <span>Auto</span>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
 
