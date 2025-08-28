@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'À propos de Joël Tchinda - JoelTech',
     description:
       'Développeur web passionné avec expertise Cameroun-France. Spécialisé en React, Next.js, Symfony. Code propre et solutions modernes.',
-    url: 'https://j3t-agency.joeltech.dev//about',
+    url: 'https://j3t-agency.joeltech.dev//about-us',
     siteName: 'JoelTech',
     locale: 'fr_FR',
     type: 'profile',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//about',
+    canonical: 'https://j3t-agency.joeltech.dev//about-us',
   },
   robots: {
     index: true,
