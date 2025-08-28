@@ -141,7 +141,7 @@ ${formData.message}
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl">
                 Un site à créer, une application à développer ou un projet à
-                discuter ? Je suis disponible pour en parler !
+                discuter ? Nous sommes disponible pour en parler !
               </p>
             </div>
 
@@ -158,7 +158,7 @@ ${formData.message}
                       Formulaire de contact
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 text-sm">
-                      Décrivez-moi votre projet et je vous répondrai rapidement
+                      Décrivez-nous votre projet et nous vous répondrons rapidement
                     </p>
                   </div>
 
@@ -269,7 +269,7 @@ ${formData.message}
                         id="message"
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Parlez-moi de vos besoins, objectifs, délais souhaités..."
+                        placeholder="Parlez-nous de vos besoins, objectifs, délais souhaités..."
                         rows={4}
                         required
                       />
@@ -326,7 +326,7 @@ ${formData.message}
                           WhatsApp
                         </p>
                         <p className="text-sm text-gray-600 dark:text-gray-300">
-                          +237 07 52 89 20 73
+                          +33 07 52 89 20 73
                         </p>
                       </div>
                       <button
@@ -355,28 +355,6 @@ ${formData.message}
                         className="text-blue-600 hover:text-blue-700 transition-colors"
                       >
                         <FiArrowRight className="w-5 h-5" />
-                      </a>
-                    </div>
-
-                    {/* Portfolio */}
-                    <div className="mb-4 flex items-center gap-4 p-4 bg-white dark:bg-gray-700 rounded-xl">
-                      <div className="bg-purple-100 dark:bg-purple-900 p-3 rounded-full">
-                        <FiGlobe className="w-6 h-6 text-purple-600" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-medium text-gray-900 dark:text-white">
-                          Portfolio
-                        </p>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">
-                          joeltech.dev
-                        </p>
-                      </div>
-                      <a
-                        href="https://j3t-agency.joeltech.dev/"
-                        target="_blank"
-                        className="text-purple-600 hover:text-purple-700 transition-colors"
-                      >
-                        <FiExternalLink className="w-5 h-5" />
                       </a>
                     </div>
 
@@ -424,8 +402,8 @@ ${formData.message}
                       Délai de réponse
                     </h4>
                     <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Je réponds généralement sous 24h. Pour les urgences,
-                      contactez-moi directement sur WhatsApp.
+                      Nous répondons généralement sous 24h. Pour les urgences,
+                      contactez-mnousoi directement sur WhatsApp.
                     </p>
                   </div>
                 </div>
@@ -460,7 +438,7 @@ ${formData.message}
             {/* Contenu du modal */}
             <div className="space-y-4">
               <p className="text-gray-600 dark:text-gray-300">
-                Merci pour votre message ! Je vous répondrai dans les plus brefs
+                Merci pour votre message ! Nous vous répondrons dans les plus brefs
                 délais, généralement sous 24h.
               </p>
 

@@ -50,15 +50,15 @@ function CustomerStoriesClient() {
               </div>
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="text-gray-800 dark:text-white">
-                  Ce que mes clients satisfaits {' '}
+                  Ce que nos clients satisfaits {' '}
                 </span>
                 <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">
-                  disent de moi
+                  disent de nous
                 </span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Découvrez comment j&apos;ai pu{' '}
-                <strong>transformer les idées</strong> de mes clients en succès
+                Découvrez comment nous avons pu{' '}
+                <strong>transformer les idées</strong> de nos clients en succès
                 digitaux concrets.
                 Leurs témoignages parlent d&apos;<strong>eux-mêmes</strong>.
               </p>
@@ -80,9 +80,9 @@ function CustomerStoriesClient() {
 
                   <div className="flex flex-col gap-6 relative z-10">
                     <h4 className="text-white leading-relaxed">
-                      &quot;Joël a su transformer ma vision en un site web
-                      professionnel qui dépasse toutes mes attentes. Son
-                      expertise technique et sa créativité m&apos;ont permis
+                      &quot;J3T-AGENCY a su transformer ma vision en un site web
+                      professionnel qui dépasse toutes mes attentes. Leur
+                      expertise technique et leur créativité m&apos;ont permis
                       d&apos;atteindre mes objectifs business !&quot;
                     </h4>
                     <div className="flex flex-col gap-1">
@@ -106,7 +106,7 @@ function CustomerStoriesClient() {
                       100%
                     </h2>
                     <h4 className="dark:text-dark_black text-dark_black">
-                      de mes clients recommandent mes services de développement
+                      de nos clients recommandent nos services de développement
                       web.
                     </h4>
                   </div>
@@ -122,7 +122,7 @@ function CustomerStoriesClient() {
                       Retour d&apos;expérience
                     </span>
                     <h4 className="text-white leading-relaxed">
-                      &quot;Sa rigueur technique et son attention aux détails
+                      &quot;Leur rigueur technique et Leur attention aux détails
                       ont complètement transformé notre présence digitale
                       !&quot;
                     </h4>
@@ -156,8 +156,8 @@ function CustomerStoriesClient() {
                       Témoignage détaillé
                     </span>
                     <h2 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl leading-relaxed text-dark_black dark:text-white">
-                      &quot;Joël combine parfaitement expertise technique et
-                      compréhension business. Il a livré un projet qui dépasse
+                      &quot;J3T-AGENCY combine parfaitement expertise technique et
+                      compréhension business. Ils ont livré un projet qui dépasse
                       nos attentes, dans les délais et avec un suivi
                       impeccable.&quot;
                     </h2>
@@ -180,7 +180,7 @@ function CustomerStoriesClient() {
                     Ils m&apos;ont fait confiance
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm">
-                    Entreprises, associations et particuliers qui ont choisi mes
+                    Entreprises, associations et particuliers qui ont choisi nos
                     services
                   </p>
                 </div>

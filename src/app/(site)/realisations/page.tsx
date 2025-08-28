@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Portfolio - JoelTech | Mes Réalisations Web et Applications',
   description:
-    'Découvrez mes projets : TaskFlow, EventHive, WeFund, Bocobi. Applications web, ERP, fintech, e-santé. Résultats concrets et technologies modernes.',
+    'Découvrez nos projets : TaskFlow, EventHive, WeFund, Bocobi. Applications web, ERP, fintech, e-santé. Résultats concrets et technologies modernes.',
   keywords: [
     'portfolio JoelTech',
     'projets développeur web',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Portfolio JoelTech - Projets Web Concrets',
     description:
-      'TaskFlow, EventHive, WeFund, Bocobi... Découvrez mes réalisations web avec résultats mesurables.',
+      'TaskFlow, EventHive, WeFund, Bocobi... Découvrez nos réalisations web avec résultats mesurables.',
     creator: '@JoelTech',
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },

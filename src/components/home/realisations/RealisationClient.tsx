@@ -265,12 +265,12 @@ function RealisationSectionClient() {
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
               <FiStar className="text-purple-500" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Mes derniers projets
+                Nos derniers projets
               </span>
             </div>
 
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="text-gray-800 dark:text-white">Mes </span>
+              <span className="text-gray-800 dark:text-white">Nos </span>
               <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">
                 réalisations
               </span>
@@ -278,13 +278,13 @@ function RealisationSectionClient() {
 
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Des projets <strong>concrets</strong> qui ont transformé le
-              business de mes clients.
+              business de nos clients.
               <br />
               Chaque création raconte une <strong>histoire de succès</strong>.
             </p>
           </motion.div>
 
-          {/* Grille de projets - 2 colonnes sur desktop, responsive */}
+          {/* Grille de projets -  2 colonnes sur desktop, responsive */}
           <motion.div
             {...getScrollAnimationProps(
               { opacity: 0 },
@@ -543,7 +543,7 @@ function RealisationSectionClient() {
                   className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
                 >
                   <FiPlay />
-                  Voir toutes mes réalisations
+                  Voir toutes nos réalisations
                 </MotionLink>
               </div>
             </div>

@@ -13,7 +13,7 @@ function TestimonySectionClient() {
   const testimonialsList = [
     {
       id: 1,
-      text: 'Joël a créé un site vitrine moderne et efficace pour mon entreprise. Il a su comprendre mes besoins et livrer rapidement. Je le recommande !',
+      text: 'J3T-Agency a créé un site vitrine moderne et efficace pour mon entreprise. Ils ont su comprendre mes besoins et livrer rapidement. Je le recommande !',
       name: 'Marie K.',
       position: 'Entrepreneuse',
       project: 'Site vitrine boutique',
@@ -21,7 +21,7 @@ function TestimonySectionClient() {
     },
     {
       id: 2,
-      text: "Très professionnel et à l'écoute. Il m'a accompagné du début à la fin du projet et a même assuré la formation à l'utilisation du site.",
+      text: "Très professionnel et à l'écoute. Ils nous ont accompagné du début à la fin du projet et ont même assuré la formation à l'utilisation du site.",
       name: 'Paul N.',
       position: 'Consultant',
       project: 'Site web corporate',
@@ -29,7 +29,7 @@ function TestimonySectionClient() {
     },
     {
       id: 3,
-      text: "Joël m'a développé une application adaptée à mes besoins spécifiques. Sérieux et disponible, il reste un partenaire de confiance.",
+      text: "J3T-Agency m'a développé une application adaptée à mes besoins spécifiques. Sérieux et disponible, ce sont des partenaire de confiance.",
       name: 'Association Locale',
       position: 'Responsable digital',
       project: 'App de gestion',
@@ -89,7 +89,7 @@ function TestimonySectionClient() {
                 </div>
                 <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
                   <span className="text-gray-800 dark:text-white">
-                    Ils me font {' '}
+                    Ils nous ont fait {' '}
                   </span>
                   <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">
                     confiance
@@ -97,7 +97,7 @@ function TestimonySectionClient() {
                 </h2>
                 <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
                   Voici quelques <strong>retours authentiques</strong> de
-                  clients et collaborateurs avec qui j&apos;ai eu le plaisir de
+                  clients et collaborateurs avec qui nous avons eu le plaisir de
                   travailler.
                   Leurs <strong>succès</strong> sont ma plus belle récompense.
                 </p>
@@ -163,7 +163,7 @@ function TestimonySectionClient() {
                   Vous voulez être le prochain à témoigner ?
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
-                  Rejoignez mes clients satisfaits et donnons vie ensemble à
+                  Rejoignez nos clients satisfaits et donnons vie ensemble à
                   votre projet digital.
                 </p>
                 <Link
@@ -171,7 +171,7 @@ function TestimonySectionClient() {
                   className="inline-flex items-center gap-2 bg-purple_blue text-white px-6 py-3 rounded-xl hover:bg-purple_blue/80 transition-colors duration-200 font-medium"
                 >
                   <FiMail size={18} />
-                  Contactez-moi maintenant
+                  Contactez-nous maintenant
                 </Link>
               </div>
             </motion.div>

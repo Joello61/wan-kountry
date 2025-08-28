@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 export const testimonialsMetadata: Metadata = {
   title: 'Témoignages Clients – Avis Développeur Web JoelTech',
   description:
-    'Découvrez les avis authentiques de mes clients : entrepreneurs, associations, consultants. 100% de satisfaction, projets livrés en temps et en heure.',
+    'Découvrez les avis authentiques de nos clients : entrepreneurs, associations, consultants. 100% de satisfaction, projets livrés en temps et en heure.',
   keywords: [
     'témoignages développeur web',
     'avis clients JoelTech',

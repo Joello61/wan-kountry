@@ -17,7 +17,7 @@ import {
 const Footer = () => {
   const footerData = {
     brand: {
-      tagline: "Développeur web indépendant – Créons ensemble votre site moderne et adapté.",
+      tagline: "Meilleure solution web – Créons ensemble votre site moderne et adapté.",
       socialLinks: [
         { 
           link: "https://linkedin.com/in/joel-tchinda", 
@@ -44,10 +44,10 @@ const Footer = () => {
     sitemap: {
       name: "Navigation",
       links: [
-        { name: "Accueil", url: "#home" },
-        { name: "À propos", url: "#about" },
-        { name: "Services", url: "#services" },
-        { name: "Réalisations", url: "#realisations" },
+        { name: "Accueil", url: "/" },
+        { name: "À propos", url: "about-us" },
+        { name: "Services", url: "services" },
+        { name: "Réalisations", url: "realisations" },
         { name: "Contact", url: "contact" }
       ]
     },
@@ -56,11 +56,11 @@ const Footer = () => {
       links: [
         { name: "FAQ", url: "#faq" },
         { name: "Accomplissements", url: "#awards" },
-        { name: "Témoignages", url: "#testimonials" }
+        { name: "Témoignages", url: "testimony" }
       ]
     },
     contactDetails: {
-      name: "Me contacter",
+      name: "Nous contacter",
       address: "Toulouse, France / Yaoundé, Cameroun (Remote disponible)",
       email: "tchindajoel61@gmail.com",
       phone: "+33 07 52 89 20 73"
@@ -122,7 +122,7 @@ const Footer = () => {
                 Fait avec passion depuis Toulouse & Yaoundé
               </p>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
-                5+ ans d&apos;expérience • 50+ projets réussis • 100% satisfaction client
+                3+ ans d&apos;expérience • 07+ projets réussis • 100% satisfaction client
               </p>
             </div>
             

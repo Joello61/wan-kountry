@@ -32,9 +32,9 @@ function SolutionsClient() {
                   </span>
                 </h2>
                 <p className='dark:text-dark_black text-lg md:text-xl leading-relaxed max-w-3xl'>
-                  Sites vitrines, e-commerces, applications web : je conçois des solutions rapides, 
+                  Sites vitrines, e-commerces, applications web : nous conçevons des solutions rapides, 
                   sécurisées et adaptées au marché local (Mobile Money, mobile-first). 
-                  En tant que développeur fullstack indépendant, j&apos;accompagne entrepreneurs, 
+                  ous accompagnons entrepreneurs, 
                   associations et particuliers dans leur transformation digitale.
                 </p>
               </div>
@@ -57,7 +57,7 @@ function SolutionsClient() {
                 <Link
                   href='#realisations'
                   className='text-dark_black/70 hover:text-dark_black font-medium underline underline-offset-4 hover:underline-offset-8 transition-all duration-200 flex items-center gap-2'>
-                  <span>Voir mes réalisations</span>
+                  <span>Voir nos réalisations</span>
                   <FiArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>

@@ -29,17 +29,17 @@ function FaqClient() {
     {
       faq_que: 'Mon site sera-t-il visible sur smartphone ?',
       faq_ans:
-        'Oui, tous mes sites sont mobile-first et optimisés pour smartphone, tablette et PC.',
+        'Oui, tous nos sites sont mobile-first et optimisés pour smartphone, tablette et PC.',
     },
     {
       faq_que: 'Proposez-vous un suivi après la livraison ?',
       faq_ans:
-        'Oui, je propose des forfaits de maintenance pour assurer la sécurité et les mises à jour.',
+        'Oui, nous proposons des forfaits de maintenance pour assurer la sécurité et les mises à jour.',
     },
     {
       faq_que: 'Est-ce que je peux mettre à jour mon site moi-même ?',
       faq_ans:
-        'Oui, je fournis une interface simple et une formation pour que vous puissiez modifier vos contenus sans difficulté.',
+        'Oui, nous fournissons une interface simple et une formation pour que vous puissiez modifier vos contenus sans difficulté.',
     },
   ];
 
@@ -71,7 +71,7 @@ function FaqClient() {
               </h2>
               <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Toutes les <strong>réponses claires</strong> aux questions les
-                plus courantes sur mes services.
+                plus courantes sur nos services.
                 <br />
                 <strong>Pas trouvé</strong> ce que vous cherchiez ?
                 Contactez-moi !

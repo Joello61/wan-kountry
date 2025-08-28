@@ -96,7 +96,7 @@ function HeroSectionClient() {
 
             {/* Sous-titre simplifié */}
             <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Développeur fullstack spécialisé dans les solutions web pour le
+             Nous sommes spécialisés dans les solutions web pour le
               marché local.
               <span className="font-semibold text-gray-900 dark:text-white">
                 {' '}
@@ -146,7 +146,7 @@ function HeroSectionClient() {
                 className="group inline-flex items-center justify-center px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold rounded-full border-2 border-gray-200 dark:border-gray-600 transition-all duration-300 hover:border-blue-600 hover:shadow-lg"
               >
                 <FiPlay className="mr-2 group-hover:scale-110 transition-transform" />
-                Voir mes réalisations
+                Voir nos réalisations
               </Link>
             </div>
 

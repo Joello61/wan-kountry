@@ -310,7 +310,7 @@ function SubscriptionClient() {
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <FiUsers size={20} className="text-purple_blue" />
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    Pourquoi choisir mes services ?
+                    Pourquoi choisir nos services ?
                   </h3>
                 </div>
               </div>
@@ -364,7 +364,7 @@ function SubscriptionClient() {
                   className="inline-flex items-center gap-2 text-purple_blue hover:text-purple_blue/80 font-medium"
                 >
                   <FiMessageCircle size={18} />
-                  Contactez-moi pour discuter de votre projet
+                  Contactez-nous pour discuter de votre projet
                 </Link>
               </div>
             </div>

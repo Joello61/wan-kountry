@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 export const customerStoriesMetadata: Metadata = {
   title: 'Histoires Clients – Success Stories & Témoignages | JoelTech',
   description:
-    'Découvrez les success stories de mes clients : Marie K. (Mode & Style), Paul N. (Consultant), Sarah M. (TechStart). Projets transformés en succès digitaux.',
+    'Découvrez les success stories de nos clients : Marie K. (Mode & Style), Paul N. (Consultant), Sarah M. (TechStart). Projets transformés en succès digitaux.',
   keywords: [
     'success stories clients',
     'histoires clients JoelTech',
@@ -22,7 +22,7 @@ export const customerStoriesMetadata: Metadata = {
   openGraph: {
     title: 'Success Stories Clients – Transformations Digitales | JoelTech',
     description:
-      "Comment j'ai transformé les idées de mes clients en succès digitaux. Témoignages détaillés de Marie K., Paul N., Sarah M. et plus encore.",
+      "Comment j'ai transformé les idées de nos clients en succès digitaux. Témoignages détaillés de Marie K., Paul N., Sarah M. et plus encore.",
     url: 'https://j3t-agency.joeltech.dev//customer-stories',
     siteName: 'JoelTech',
     locale: 'fr_FR',

@@ -165,12 +165,12 @@ function AtoutsSectionClient() {
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
               <FiHeart className="text-purple-500" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Pourquoi me choisir
+                Pourquoi nous choisir
               </span>
             </div>
 
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="text-gray-800 dark:text-white">Mes </span>
+              <span className="text-gray-800 dark:text-white">Nos </span>
               <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">
                 atouts clés
               </span>
@@ -179,8 +179,7 @@ function AtoutsSectionClient() {
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Des <strong>compétences techniques</strong> et une approche
               humaine qui font toute la différence.
-              <br />
-              Votre succès, c&apos;est ma priorité <strong>absolue</strong>.
+              Votre succès, c&apos;est notre priorité <strong>absolue</strong>.
             </p>
           </motion.div>
 
@@ -272,7 +271,7 @@ function AtoutsSectionClient() {
                   Quelques chiffres
                 </h3>
                 <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Des résultats concrets qui témoignent de mon engagement
+                  Des résultats concrets qui témoignent de notre engagement
                 </p>
               </div>
 
@@ -320,7 +319,7 @@ function AtoutsSectionClient() {
 
             <div className="relative z-10">
               <h3 className="text-4xl font-bold mb-4">
-                Convaincu par mes atouts ?
+                Convaincu par nos atouts ?
               </h3>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 Discutons de votre projet ! Consultation gratuite de 30 min pour
@@ -347,7 +346,7 @@ function AtoutsSectionClient() {
                   className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
                 >
                   <FiUsers />
-                  Voir mes réalisations
+                  Voir nos réalisations
                 </MotionLink>
               </div>
             </div>

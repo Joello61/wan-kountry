@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title:
     'Services Web – Sites Vitrines, E-commerce & Apps Sur-Mesure | JoelTech',
   description:
-    'Découvrez mes services : sites vitrines pro, boutiques e-commerce avec Mobile Money, applications sur-mesure et refonte express. Solutions adaptées au marché africain.',
+    'Découvrez nos services : sites vitrines pro, boutiques e-commerce avec Mobile Money, applications sur-mesure et refonte express. Solutions adaptées au marché africain.',
   keywords: [
     'services développement web',
     'site vitrine professionnel',

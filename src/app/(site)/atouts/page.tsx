@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Mes Atouts - JoelTech | Pourquoi me choisir comme développeur',
   description:
-    "Découvrez mes atouts : mobile-first, paiements intégrés, performance extrême, tech modernes, vision internationale. 3+ ans d'expérience, 100% projets réussis.",
+    "Découvrez nos atouts : mobile-first, paiements intégrés, performance extrême, tech modernes, vision internationale. 3+ ans d'expérience, 100% projets réussis.",
   keywords: [
     'atouts JoelTech',
     'pourquoi choisir JoelTech',
