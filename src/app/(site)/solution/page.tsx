@@ -30,7 +30,7 @@ export const solutionsMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/screenshots/desktop-home.png',
+        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Solutions web modernes JoelTech',
@@ -43,7 +43,7 @@ export const solutionsMetadata: Metadata = {
     description:
       'Transformation digitale : sites, e-commerce, apps. Mobile Money, mobile-first, accompagnement complet.',
     creator: '@JoelTech',
-    images: ['/images/screenshots/desktop-home.png'],
+    images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
     canonical: 'https://j3t-agency.joeltech.dev//solution',

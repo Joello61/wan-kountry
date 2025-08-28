@@ -15,7 +15,7 @@
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev//images/screenshots/desktop-home.png</image:loc>
+      <image:loc>https://j3t-agency.joeltech.dev/https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
       <image:title>JoelTech - Développement Web et Mobile</image:title>
       <image:caption>Agence de développement web et mobile professionnelle au Cameroun</image:caption>
     </image:image>
@@ -30,7 +30,7 @@
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//services"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev//images/screenshots/desktop-home.png</image:loc>
+      <image:loc>https://j3t-agency.joeltech.dev/https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
       <image:title>Services de développement web et mobile</image:title>
     </image:image>
   </url>
@@ -44,7 +44,7 @@
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//realisations"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev//images/screenshots/desktop-home.png</image:loc>
+      <image:loc>https://j3t-agency.joeltech.dev/https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
       <image:title>Portfolio JoelTech - Nos réalisations</image:title>
     </image:image>
   </url>
@@ -68,7 +68,7 @@
     <mobile:mobile/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//about-us"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev//images/screenshots/desktop-home.png</image:loc>
+      <image:loc>https://j3t-agency.joeltech.dev/https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
       <image:title>Équipe JoelTech - Développeurs experts</image:title>
     </image:image>
   </url>

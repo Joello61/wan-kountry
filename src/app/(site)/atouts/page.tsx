@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/screenshots/desktop-home.png',
+        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Atouts JoelTech - Développeur Web Expert',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     description:
       "Mobile-first, performance, tech modernes, vision internationale. 3+ ans d'expérience, 100% projets réussis.",
     creator: '@JoelTech',
-    images: ['/images/screenshots/desktop-home.png'],
+    images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
     canonical: 'https://j3t-agency.joeltech.dev//atouts',

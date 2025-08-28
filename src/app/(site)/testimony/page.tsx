@@ -29,7 +29,7 @@ export const testimonialsMetadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/screenshots/desktop-home.png',
+        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Témoignages clients JoelTech',
@@ -42,7 +42,7 @@ export const testimonialsMetadata: Metadata = {
     description:
       'Avis authentiques : 7+ projets, 100% satisfaction, délais respectés. Entrepreneurs et associations me font confiance.',
     creator: '@JoelTech',
-    images: ['/images/screenshots/desktop-home.png'],
+    images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
     canonical: 'https://j3t-agency.joeltech.dev//testimony',
