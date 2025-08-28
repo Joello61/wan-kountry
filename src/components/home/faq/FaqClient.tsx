@@ -74,7 +74,7 @@ function FaqClient() {
                 plus courantes sur nos services.
                 <br />
                 <strong>Pas trouvé</strong> ce que vous cherchiez ?
-                Contactez-moi !
+                Contactez-nous !
               </p>
             </motion.div>
             <div className="flex flex-col">

@@ -130,7 +130,7 @@ const Footer = () => {
             <div className='flex flex-col gap-4'>
               <p className='text-gray-800 dark:text-gray-200 font-medium flex items-center gap-2'>
                 <FiHeart className="w-4 h-4 text-red-500 dark:text-red-400" />
-                Suivez-moi
+                Suivez-nous sur les réseaux sociaux
               </p>
               <div className='flex gap-3'>
                 {footerData?.brand?.socialLinks?.map((item: any, index: any) => {
