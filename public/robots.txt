@@ -40,9 +40,6 @@ Disallow: /*?filter=*
 # Googlebot spécifique
 User-agent: Googlebot
 Allow: /
-Allow: /css/
-Allow: /js/
-Crawl-delay: 1
 
 # Bingbot spécifique  
 User-agent: bingbot
@@ -84,7 +81,7 @@ User-agent: DotBot
 Disallow: /
 
 # Configuration des sitemaps
-Sitemap: https://j3t-agency.joeltech.dev//sitemap.xml
+Sitemap: https://j3t-agency.joeltech.dev/sitemap.xml
 
 # Informations additionnelles
 # Temps de crawl recommandé: 10-20 pages par minute

@@ -1,105 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml"
-        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  
-  <!-- Page d'accueil - Priorité maximale -->
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Page d'accueil -->
   <url>
-    <loc>https://j3t-agency.joeltech.dev//</loc>
+    <loc>https://j3t-agency.joeltech.dev/</loc>
     <lastmod>2025-08-28T10:00:00+01:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <mobile:mobile/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev/https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
-      <image:title>JoelTech - Développement Web et Mobile</image:title>
-      <image:caption>Agence de développement web et mobile professionnelle au Cameroun</image:caption>
+      <image:loc>https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
     </image:image>
   </url>
 
-  <!-- Services - Page stratégique -->
+  <!-- Services -->
   <url>
-    <loc>https://j3t-agency.joeltech.dev//services</loc>
+    <loc>https://j3t-agency.joeltech.dev/services</loc>
     <lastmod>2025-08-28T09:30:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <mobile:mobile/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//services"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev/https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
-      <image:title>Services de développement web et mobile</image:title>
+      <image:loc>https://j3t-agency.joeltech.dev/screenshots/desktop-services.png</image:loc>
     </image:image>
   </url>
 
-  <!-- Réalisations/Portfolio - Contenu frais important -->
+  <!-- Réalisations -->
   <url>
-    <loc>https://j3t-agency.joeltech.dev//realisations</loc>
+    <loc>https://j3t-agency.joeltech.dev/realisations</loc>
     <lastmod>2025-08-28T08:45:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <mobile:mobile/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//realisations"/>
     <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev/https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
-      <image:title>Portfolio JoelTech - Nos réalisations</image:title>
+      <image:loc>https://j3t-agency.joeltech.dev/images/realisations/bocobi.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://j3t-agency.joeltech.dev/images/realisations/monprojet.png</image:loc>
     </image:image>
   </url>
 
-  <!-- Contact - Page de conversion -->
+  <!-- Contact -->
   <url>
-    <loc>https://j3t-agency.joeltech.dev//contact</loc>
+    <loc>https://j3t-agency.joeltech.dev/contact</loc>
     <lastmod>2025-08-28T09:15:00+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <mobile:mobile/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//contact"/>
   </url>
 
-  <!-- À Propos -->
+  <!-- À propos -->
   <url>
-    <loc>https://j3t-agency.joeltech.dev//about-us</loc>
+    <loc>https://j3t-agency.joeltech.dev/about-us</loc>
     <lastmod>2025-08-28T08:00:00+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <mobile:mobile/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//about-us"/>
-    <image:image>
-      <image:loc>https://j3t-agency.joeltech.dev/https://j3t-agency.joeltech.dev/screenshots/desktop-home.png</image:loc>
-      <image:title>Équipe JoelTech - Développeurs experts</image:title>
-    </image:image>
   </url>
 
-  <!-- Formules de Prix -->
+  <!-- Subscription -->
   <url>
-    <loc>https://j3t-agency.joeltech.dev//subscription</loc>
+    <loc>https://j3t-agency.joeltech.dev/subscription</loc>
     <lastmod>2025-08-28T07:30:00+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <mobile:mobile/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//subscription"/>
   </url>
 
   <!-- Atouts -->
   <url>
-    <loc>https://j3t-agency.joeltech.dev//atouts</loc>
+    <loc>https://j3t-agency.joeltech.dev/atouts</loc>
     <lastmod>2025-08-28T07:00:00+01:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <mobile:mobile/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//atouts"/>
+  </url>
 
   <!-- Témoignages -->
   <url>
-    <loc>https://j3t-agency.joeltech.dev//testimony</loc>
+    <loc>https://j3t-agency.joeltech.dev/testimony</loc>
     <lastmod>2025-08-28T06:30:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <mobile:mobile/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://j3t-agency.joeltech.dev//testimony"/>
   </url>
 
 </urlset>
