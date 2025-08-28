@@ -45,7 +45,7 @@ function SubscriptionClient() {
       plan_name: 'Site Vitrine',
       plan_descp:
         'Parfait pour présenter votre activité et attirer de nouveaux clients',
-      plan_price: '120 000 FCFA',
+      plan_price: '100 000 FCFA',
       plan_bg_color: 'bg-white dark:bg-gray-800',
       text_color: 'text-gray-900 dark:text-white',
       descp_color: 'gray-600 dark:text-gray-300',
@@ -65,7 +65,7 @@ function SubscriptionClient() {
       plan_name: 'E-commerce',
       plan_descp:
         'Idéal pour vendre vos produits en ligne avec tous les outils nécessaires',
-      plan_price: '300 000 FCFA',
+      plan_price: '350 000 FCFA',
       plan_bg_color: 'bg-gradient-to-br from-purple_blue to-indigo-600',
       text_color: 'text-white',
       descp_color: 'white/80',

@@ -65,7 +65,7 @@ function ServicesSectionClient() {
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient:
         'from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30',
-      price: 'À partir de 250 000 FCFA',
+      price: 'À partir de 100 000 FCFA',
       duration: '5-7 jours',
       features: [
         'Design sur-mesure',
@@ -94,7 +94,7 @@ function ServicesSectionClient() {
       gradient: 'from-green-500 to-emerald-500',
       bgGradient:
         'from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30',
-      price: 'À partir de 500 000 FCFA',
+      price: 'À partir de 350 000 FCFA',
       duration: '10-14 jours',
       features: [
         'Paiement Mobile Money',
@@ -123,7 +123,7 @@ function ServicesSectionClient() {
       gradient: 'from-purple-500 to-pink-500',
       bgGradient:
         'from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30',
-      price: 'Devis personnalisé (800 000 – 2 500 000 FCFA)',
+      price: 'Devis personnalisé (750 000 – 2 500 000 FCFA)',
       duration: '3-8 semaines',
       features: [
         'Développement sur-mesure',
@@ -151,7 +151,7 @@ function ServicesSectionClient() {
       gradient: 'from-orange-500 to-red-500',
       bgGradient:
         'from-orange-50 to-red-50 dark:from-orange-900/30 dark:to-red-900/30',
-      price: 'À partir de 180 000 FCFA',
+      price: 'À partir de 70 000 FCFA',
       duration: '4-6 jours',
       features: [
         'Espace membres',
@@ -179,7 +179,7 @@ function ServicesSectionClient() {
       gradient: 'from-teal-500 to-blue-500',
       bgGradient:
         'from-teal-50 to-blue-50 dark:from-teal-900/30 dark:to-blue-900/30',
-      price: 'À partir de 120 000 FCFA',
+      price: 'À partir de 150 000 FCFA',
       duration: '2-4 jours',
       features: [
         'Audit complet gratuit',
