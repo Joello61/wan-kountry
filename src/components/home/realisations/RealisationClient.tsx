@@ -446,7 +446,6 @@ function RealisationSectionClient() {
                                 ))}
                               </div>
                             )}
-                            <FiArrowRight className="w-5 h-5 text-purple-500 transform group-hover:translate-x-1 transition-transform duration-300" />
                           </div>
                         </div>
                       </div>
