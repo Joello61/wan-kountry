@@ -204,7 +204,7 @@ function AtoutsSectionClient() {
                   whileHover={{ y: -10, scale: 1.02 }}
                   onHoverStart={() => setHoveredCard(index)}
                   onHoverEnd={() => setHoveredCard(null)}
-                  className={`group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden`}
+                  className={`group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300 overflow-hidden`}
                 >
                   {/* Effet de brillance au hover */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -247,7 +247,6 @@ function AtoutsSectionClient() {
                           <FiCheck className="w-4 h-4" />
                           Maîtrise confirmée
                         </div>
-                        <FiArrowRight className="w-5 h-5 text-purple-500 transform group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </div>

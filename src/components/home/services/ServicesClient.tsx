@@ -207,12 +207,12 @@ function ServicesSectionClient() {
     {
       icon: FiSettings,
       title: 'Design',
-      desc: 'Je créé les maquettes et on ajuste ensemble',
+      desc: 'Nous créons les maquettes et on ajuste ensemble',
     },
     {
       icon: FiZap,
       title: 'Développement',
-      desc: 'Je code pendant que vous vous occupez de votre business',
+      desc: 'Nous codons pendant que vous vous occupez de votre business',
     },
     {
       icon: FiTrendingUp,
@@ -253,7 +253,7 @@ function ServicesSectionClient() {
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
               <FiHeart className="text-purple-500" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Ce que je fais de mieux
+                Ce que nous faisons de mieux
               </span>
             </div>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
@@ -369,14 +369,6 @@ function ServicesSectionClient() {
                       priority={activeService === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    >
-                      <div className="bg-white/20 backdrop-blur-sm p-4 rounded-full">
-                        <FiPlay className="w-8 h-8 text-white" />
-                      </div>
-                    </motion.div>
                   </div>
 
                   {/* Contenu détaillé */}
@@ -446,28 +438,6 @@ function ServicesSectionClient() {
                           </div>
                         </div>
                       </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="flex flex-wrap gap-4">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className={`bg-gradient-to-r ${
-                          servicesData[activeService]!.gradient
-                        } text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2`}
-                      >
-                        Démarrer ce projet
-                        <FiArrowRight />
-                      </motion.button>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl border border-gray-200 dark:border-gray-700 transition-all duration-300 flex items-center gap-2"
-                      >
-                        Voir un exemple
-                        <FiPlay />
-                      </motion.button>
                     </div>
                   </div>
                 </motion.div>

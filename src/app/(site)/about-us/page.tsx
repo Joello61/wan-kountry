@@ -5,9 +5,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'À Propos - JoelTech | Développeur Web Cameroun-France',
   description:
-    'Joël Tchinda, développeur web passionné. Formation Cameroun + France. Expert React, Symfony, Next.js. Code propre et solutions modernes.',
+    'J3T-AGENCY, développeur web passionné. Formation Cameroun + France. Expert React, Symfony, Next.js. Code propre et solutions modernes.',
   keywords: [
-    'Joël Tchinda développeur',
+    'J3T-AGENCY développeur',
     'développeur web Cameroun France',
     'parcours développeur web',
     'expert React Symfony',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
   openGraph: {
-    title: 'À propos de Joël Tchinda - JoelTech',
+    title: 'À propos de J3T-AGENCY - JoelTech',
     description:
       'Développeur web passionné avec expertise Cameroun-France. Spécialisé en React, Next.js, Symfony. Code propre et solutions modernes.',
     url: 'https://j3t-agency.joeltech.dev//about-us',
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
         url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Joël Tchinda - Développeur Web JoelTech',
+        alt: 'J3T-AGENCY - Développeur Web JoelTech',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'À propos de Joël Tchinda - Développeur Web',
+    title: 'À propos de J3T-AGENCY - Développeur Web',
     description:
       "Parcours, compétences et valeurs d'un développeur web passionné (Cameroun + France).",
     creator: '@JoelTech',

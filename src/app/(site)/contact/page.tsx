@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'développeur freelance contact',
     'WhatsApp développeur',
     'formulaire contact web',
-    'Joël Tchinda contact',
+    'J3T-AGENCY contact',
   ],
   authors: [{ name: 'JoelTech', url: 'https://j3t-agency.joeltech.dev/' }],
   creator: 'JoelTech',
