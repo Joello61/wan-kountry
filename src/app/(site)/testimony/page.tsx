@@ -2,29 +2,29 @@ import TestimonySectionClient from '@/components/home/testimony/TestimonyClient'
 import { Metadata } from 'next';
 
 export const testimonialsMetadata: Metadata = {
-  title: 'Témoignages Clients – Avis Développeur Web JoelTech',
+  title: 'Témoignages Clients – Avis Développeur Web J3T-AGENCY',
   description:
     'Découvrez les avis authentiques de nos clients : entrepreneurs, associations, consultants. 100% de satisfaction, projets livrés en temps et en heure.',
   keywords: [
     'témoignages développeur web',
-    'avis clients JoelTech',
+    'avis clients J3T-AGENCY',
     'références projets web',
     'satisfaction client développement',
     'retours clients Cameroun',
     'success stories web',
     'portfolio témoignages',
   ],
-  authors: [{ name: 'JoelTech', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'JoelTech',
-  publisher: 'JoelTech',
+  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
+  creator: 'J3T-AGENCY',
+  publisher: 'J3T-AGENCY',
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
   openGraph: {
-    title: 'Témoignages Clients – Ils Me Font Confiance | JoelTech',
+    title: 'Témoignages Clients – Ils Me Font Confiance | J3T-AGENCY',
     description:
       'Retours authentiques de clients satisfaits : entrepreneurs, associations, PME. 7+ projets réalisés, 100% de satisfaction, délais respectés.',
     url: 'https://j3t-agency.joeltech.dev//testimony',
-    siteName: 'JoelTech',
+    siteName: 'J3T-AGENCY',
     locale: 'fr_FR',
     type: 'website',
     images: [
@@ -32,16 +32,16 @@ export const testimonialsMetadata: Metadata = {
         url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Témoignages clients JoelTech',
+        alt: 'Témoignages clients J3T-AGENCY',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Témoignages Clients Développeur Web | JoelTech',
+    title: 'Témoignages Clients Développeur Web | J3T-AGENCY',
     description:
       'Avis authentiques : 7+ projets, 100% satisfaction, délais respectés. Entrepreneurs et associations me font confiance.',
-    creator: '@JoelTech',
+    creator: '@J3T-AGENCY',
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {

@@ -3,11 +3,11 @@ import RealisationSectionClient from '@/components/home/realisations/Realisation
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Portfolio - JoelTech | Mes Réalisations Web et Applications',
+  title: 'Portfolio - J3T-AGENCY | Mes Réalisations Web et Applications',
   description:
     'Découvrez nos projets : TaskFlow, EventHive, WeFund, Bocobi. Applications web, ERP, fintech, e-santé. Résultats concrets et technologies modernes.',
   keywords: [
-    'portfolio JoelTech',
+    'portfolio J3T-AGENCY',
     'projets développeur web',
     'réalisations sites web',
     'applications web portfolio',
@@ -18,17 +18,17 @@ export const metadata: Metadata = {
     'ERP web application',
     'projets React Angular',
   ],
-  authors: [{ name: 'JoelTech', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'JoelTech',
-  publisher: 'JoelTech',
+  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
+  creator: 'J3T-AGENCY',
+  publisher: 'J3T-AGENCY',
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
   openGraph: {
-    title: 'Portfolio JoelTech - Mes Réalisations Web',
+    title: 'Portfolio J3T-AGENCY - Mes Réalisations Web',
     description:
       '9 projets concrets : gestion de tâches, événementiel, crowdfunding, e-santé, ERP. Chaque création raconte une histoire de succès.',
     url: 'https://j3t-agency.joeltech.dev//realisations',
-    siteName: 'JoelTech',
+    siteName: 'J3T-AGENCY',
     locale: 'fr_FR',
     type: 'website',
     images: [
@@ -36,16 +36,16 @@ export const metadata: Metadata = {
         url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Portfolio JoelTech - Réalisations Web',
+        alt: 'Portfolio J3T-AGENCY - Réalisations Web',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portfolio JoelTech - Projets Web Concrets',
+    title: 'Portfolio J3T-AGENCY - Projets Web Concrets',
     description:
       'TaskFlow, EventHive, WeFund, Bocobi... Découvrez nos réalisations web avec résultats mesurables.',
-    creator: '@JoelTech',
+    creator: '@J3T-AGENCY',
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {

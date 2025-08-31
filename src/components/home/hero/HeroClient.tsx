@@ -100,7 +100,7 @@ function HeroSectionClient() {
               marché local.
               <span className="font-semibold text-gray-900 dark:text-white">
                 {' '}
-                Résultats garantis en 15 jours.
+                Un premier résultats garantis en 15 jours.
               </span>
             </p>
 

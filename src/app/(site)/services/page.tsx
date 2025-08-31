@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'Services Web – Sites Vitrines, E-commerce & Apps Sur-Mesure | JoelTech',
+    'Services Web – Sites Vitrines, E-commerce & Apps Sur-Mesure | J3T-AGENCY',
   description:
     'Découvrez nos services : sites vitrines pro, boutiques e-commerce avec Mobile Money, applications sur-mesure et refonte express. Solutions adaptées au marché africain.',
   keywords: [
@@ -14,20 +14,21 @@ export const metadata: Metadata = {
     'refonte site web',
     'site associatif',
     'développeur fullstack Cameroun',
-    'JoelTech services',
+    'J3T-AGENCY services',
     'création site web Afrique',
   ],
-  authors: [{ name: 'JoelTech', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'JoelTech',
-  publisher: 'JoelTech',
+  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
+  creator: 'J3T-AGENCY',
+  publisher: 'J3T-AGENCY',
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
   openGraph: {
-    title: 'Services Web Professionnels – Sites, E-commerce & Apps | JoelTech',
+    title:
+      'Services Web Professionnels – Sites, E-commerce & Apps | J3T-AGENCY',
     description:
       'Sites vitrines qui convertissent, e-commerce avec Mobile Money intégré, applications sur-mesure. Solutions web modernes pour booster votre business en Afrique.',
     url: 'https://j3t-agency.joeltech.dev//services',
-    siteName: 'JoelTech',
+    siteName: 'J3T-AGENCY',
     locale: 'fr_FR',
     type: 'website',
     images: [
@@ -35,16 +36,16 @@ export const metadata: Metadata = {
         url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Services web JoelTech - Sites, E-commerce et Apps',
+        alt: 'Services web J3T-AGENCY - Sites, E-commerce et Apps',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Services Web Pro – Sites, E-commerce & Apps | JoelTech',
+    title: 'Services Web Pro – Sites, E-commerce & Apps | J3T-AGENCY',
     description:
       'Sites vitrines, e-commerce Mobile Money, apps sur-mesure. Solutions web adaptées au marché africain.',
-    creator: '@JoelTech',
+    creator: '@J3T-AGENCY',
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {

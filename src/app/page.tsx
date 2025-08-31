@@ -12,9 +12,9 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'JoelTech - Développeur Web Freelance | Sites Modernes Cameroun-France',
+    'J3T-AGENCY - Développeur Web Freelance | Sites Modernes Cameroun-France',
   description:
-    'Développeur web expert créant sites vitrines, e-commerce et apps modernes. Mobile-first, Mobile Money, livraison 15 jours. Basé France, expertise Cameroun.',
+    'Développeur web expert créant sites vitrines, e-commerce et apps modernes. Mobile-first, Mobile Money, une première livraison en 15 jours. Basé France, expertise Cameroun.',
   keywords: [
     'développeur web freelance',
     'site web moderne Cameroun',
@@ -22,21 +22,21 @@ export const metadata: Metadata = {
     'Mobile Money intégration',
     'site web rapide',
     'développeur React Symfony',
-    'JoelTech développeur',
+    'J3T-AGENCY développeur',
     'site web 15 jours',
     'développeur fullstack France',
   ],
-  authors: [{ name: 'JoelTech', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'JoelTech',
-  publisher: 'JoelTech',
+  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
+  creator: 'J3T-AGENCY',
+  publisher: 'J3T-AGENCY',
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
   openGraph: {
-    title: 'JoelTech - Votre site web moderne en 15 jours',
+    title: 'J3T-AGENCY - Votre site web moderne avec un premier résultat en 15 jours',
     description:
       'Sites vitrines, e-commerce et applications web performants. Mobile-first, Mobile Money, support 24/7. Résultats garantis.',
     url: 'https://j3t-agency.joeltech.dev/',
-    siteName: 'JoelTech',
+    siteName: 'J3T-AGENCY',
     locale: 'fr_FR',
     type: 'website',
     images: [
@@ -44,16 +44,16 @@ export const metadata: Metadata = {
         url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'JoelTech - Développeur Web Moderne',
+        alt: 'J3T-AGENCY - Développeur Web Moderne',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JoelTech - Sites web modernes en 15 jours',
+    title: 'J3T-AGENCY - Sites web modernes avec un premier résultat en 15 jours',
     description:
       'Mobile-first, Mobile Money, ultra-rapide. Développeur web expert pour votre business.',
-    creator: '@JoelTech',
+    creator: '@J3T-AGENCY',
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {

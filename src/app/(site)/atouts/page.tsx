@@ -3,12 +3,12 @@ import AtoutsSectionClient from '@/components/home/atouts/AtoutsClient';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mes Atouts - JoelTech | Pourquoi me choisir comme développeur',
+  title: 'Mes Atouts - J3T-AGENCY | Pourquoi me choisir comme développeur',
   description:
     "Découvrez nos atouts : mobile-first, paiements intégrés, performance extrême, tech modernes, vision internationale. 3+ ans d'expérience, 100% projets réussis.",
   keywords: [
-    'atouts JoelTech',
-    'pourquoi choisir JoelTech',
+    'atouts J3T-AGENCY',
+    'pourquoi choisir J3T-AGENCY',
     'avantages développeur web',
     'mobile first expert',
     'paiements intégrés mobile money',
@@ -17,17 +17,17 @@ export const metadata: Metadata = {
     'développeur international',
     'accompagnement projet web',
   ],
-  authors: [{ name: 'JoelTech', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'JoelTech',
-  publisher: 'JoelTech',
+  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
+  creator: 'J3T-AGENCY',
+  publisher: 'J3T-AGENCY',
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
   openGraph: {
-    title: 'Mes atouts clés - JoelTech Développeur Web',
+    title: 'Mes atouts clés - J3T-AGENCY Développeur Web',
     description:
       'Mobile-first, paiements intégrés, performance extrême, technologies modernes. Découvrez pourquoi me choisir pour votre projet web.',
     url: 'https://j3t-agency.joeltech.dev//atouts',
-    siteName: 'JoelTech',
+    siteName: 'J3T-AGENCY',
     locale: 'fr_FR',
     type: 'website',
     images: [
@@ -35,16 +35,16 @@ export const metadata: Metadata = {
         url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Atouts JoelTech - Développeur Web Expert',
+        alt: 'Atouts J3T-AGENCY - Développeur Web Expert',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mes atouts de développeur web - JoelTech',
+    title: 'Mes atouts de développeur web - J3T-AGENCY',
     description:
       "Mobile-first, performance, tech modernes, vision internationale. 3+ ans d'expérience, 100% projets réussis.",
-    creator: '@JoelTech',
+    creator: '@J3T-AGENCY',
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {

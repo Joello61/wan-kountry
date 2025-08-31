@@ -3,11 +3,11 @@ import FaqClient from '@/components/home/faq/FaqClient';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact - JoelTech | Parlons de votre projet web',
+  title: 'Contact - J3T-AGENCY | Parlons de votre projet web',
   description:
-    'Contactez JoelTech pour votre projet web. Formulaire de contact, WhatsApp, email. Consultation gratuite 30min. Réponse sous 24h garantie.',
+    'Contactez J3T-AGENCY pour votre projet web. Formulaire de contact, WhatsApp, email. Consultation gratuite 30min. Réponse sous 24h garantie.',
   keywords: [
-    'contact JoelTech',
+    'contact J3T-AGENCY',
     'devis site web gratuit',
     'consultation développeur web',
     'projet web Cameroun',
@@ -16,17 +16,17 @@ export const metadata: Metadata = {
     'formulaire contact web',
     'J3T-AGENCY contact',
   ],
-  authors: [{ name: 'JoelTech', url: 'https://j3t-agency.joeltech.dev/' }],
+  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
   creator: 'JoelTech',
-  publisher: 'JoelTech',
+  publisher: 'J3T-AGENCY',
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
   openGraph: {
-    title: 'Contactez JoelTech - Développeur Web Expert',
+    title: 'Contactez J3T-AGENCY - Développeur Web Expert',
     description:
       'Parlons de votre projet ! Site vitrine, e-commerce, application web - consultation gratuite et réponse rapide garantie.',
     url: 'https://j3t-agency.joeltech.dev//contact',
-    siteName: 'JoelTech',
+    siteName: 'J3T-AGENCY',
     locale: 'fr_FR',
     type: 'website',
     images: [
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
         url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Contactez JoelTech pour votre projet web',
+        alt: 'Contactez J3T-AGENCY pour votre projet web',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Contact JoelTech - Votre projet web m'intéresse !",
+    title: "Contact J3T-AGENCY - Votre projet web m'intéresse !",
     description:
       'Formulaire contact, WhatsApp, email - Parlons de votre site web ou application. Réponse sous 24h.',
-    creator: '@JoelTech',
+    creator: '@J3T-AGENCY',
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {

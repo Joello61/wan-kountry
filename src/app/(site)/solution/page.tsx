@@ -2,7 +2,7 @@ import SolutionsClient from '@/components/home/solution/SolutionClient';
 import { Metadata } from 'next';
 
 export const solutionsMetadata: Metadata = {
-  title: 'Solutions Web Modernes pour Entreprises – JoelTech Développeur',
+  title: 'Solutions Web Modernes pour Entreprises – J3T-AGENCY Développeur',
   description:
     'Solutions web rapides, sécurisées et adaptées au marché local. Sites vitrines, e-commerce, applications personnalisées avec Mobile Money intégré.',
   keywords: [
@@ -12,20 +12,20 @@ export const solutionsMetadata: Metadata = {
     'Mobile Money intégration',
     'développeur fullstack',
     'solutions sur-mesure',
-    'JoelTech solutions',
+    'J3T-AGENCY solutions',
     'business digital Cameroun',
   ],
-  authors: [{ name: 'JoelTech', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'JoelTech',
-  publisher: 'JoelTech',
+  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
+  creator: 'J3T-AGENCY',
+  publisher: 'J3T-AGENCY',
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
   openGraph: {
-    title: 'Solutions Web Modernes pour Booster Votre Activité | JoelTech',
+    title: 'Solutions Web Modernes pour Booster Votre Activité | J3T-AGENCY',
     description:
       'Développement fullstack indépendant : sites, e-commerces, apps web. Accompagnement entrepreneurs et associations dans leur transformation digitale.',
     url: 'https://j3t-agency.joeltech.dev//solution',
-    siteName: 'JoelTech',
+    siteName: 'J3T-AGENCY',
     locale: 'fr_FR',
     type: 'website',
     images: [
@@ -33,16 +33,16 @@ export const solutionsMetadata: Metadata = {
         url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Solutions web modernes JoelTech',
+        alt: 'Solutions web modernes J3T-AGENCY',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Solutions Web Modernes pour Entreprises | JoelTech',
+    title: 'Solutions Web Modernes pour Entreprises | J3T-AGENCY',
     description:
       'Transformation digitale : sites, e-commerce, apps. Mobile Money, mobile-first, accompagnement complet.',
-    creator: '@JoelTech',
+    creator: '@J3T-AGENCY',
     images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {

@@ -1,6 +1,6 @@
 {
-  "name": "JoelTech - Développement Web & Mobile Professionnel | Sites Vitrines & E-commerce",
-  "short_name": "JoelTech",
+  "name": "J3T-AGENCY - Développement Web & Mobile Professionnel | Sites Vitrines & E-commerce",
+  "short_name": "J3T-AGENCY",
   "description": "Agence de développement web et mobile spécialisée dans la création de sites vitrines, plateformes e-commerce et applications sur-mesure. Expertise technique Cameroun et Europe. Devis gratuit.",
   "lang": "fr-FR",
   "start_url": "/?utm_source=pwa&utm_medium=homescreen",
@@ -53,17 +53,17 @@
   ],
   "icons": [
     {
-  "src": "/favicon-16x16.png",
-  "sizes": "16x16",
-  "type": "image/png",
-  "purpose": "any"
-},
-{
-  "src": "/favicon-32x32.png", 
-  "sizes": "32x32",
-  "type": "image/png",
-  "purpose": "any"
-},
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
     {
       "src": "/favicon-96x96.png",
       "sizes": "96x96",
@@ -95,27 +95,27 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Page d'accueil JoelTech - Services de développement web"
+      "label": "Page d'accueil J3T-AGENCY - Services de développement web"
     },
     {
       "src": "/screenshots/mobile-home.png",
       "sizes": "360x640",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "JoelTech Mobile - Développement web et mobile"
+      "label": "J3T-AGENCY Mobile - Développement web et mobile"
     },
     {
-  "src": "/android-chrome-192x192.png",
-  "sizes": "192x192", 
-  "type": "image/png",
-  "purpose": "any maskable"
-},
-{
-  "src": "/android-chrome-512x512.png",
-  "sizes": "512x512",
-  "type": "image/png", 
-  "purpose": "any maskable"
-}
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ],
   "related_applications": [],
   "prefer_related_applications": false
