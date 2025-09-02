@@ -1,9 +1,9 @@
 // J3T-AGENCY Service Worker - Optimisé SEO 2025
 // Version: 2.0.0 - Compatible avec les dernières mises à jour Google
 
-const CACHE_NAME = 'joeltech-cache-v2.0.0';
-const CACHE_STATIC_NAME = 'joeltech-static-v2.0.0';
-const CACHE_DYNAMIC_NAME = 'joeltech-dynamic-v2.0.0';
+const CACHE_NAME = 'j3t-agency-cache-v2.0.0';
+const CACHE_STATIC_NAME = 'j3t-agency-static-v2.0.0';
+const CACHE_DYNAMIC_NAME = 'j3t-agency-dynamic-v2.0.0';
 
 // Ressources critiques à mettre en cache (optimisées pour Core Web Vitals)
 const STATIC_ASSETS = [
@@ -64,7 +64,7 @@ self.addEventListener('activate', (event) => {
               (cacheName) =>
                 cacheName !== CACHE_STATIC_NAME &&
                 cacheName !== CACHE_DYNAMIC_NAME &&
-                cacheName.startsWith('joeltech-')
+                cacheName.startsWith('j3t-agency-')
             )
             .map((cacheName) => {
               console.log('[SW] Suppression ancien cache:', cacheName);

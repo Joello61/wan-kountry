@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'J3T-AGENCY contact',
   ],
   authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'JoelTech',
+  creator: 'J3T-AGENCY',
   publisher: 'J3T-AGENCY',
   category: 'Technology',
   metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
