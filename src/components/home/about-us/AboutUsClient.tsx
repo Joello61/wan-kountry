@@ -488,14 +488,14 @@ function AboutSectionClient() {
               <div 
                 className="w-20 h-20 flex items-center justify-center mx-auto"
                 style={{
-                  backgroundColor: 'var(--color-success)',
-                  opacity: 0.1,
+                  backgroundColor: 'var(--primary-dark)',
+                  opacity: 0.8,
                   borderRadius: 'var(--radius-xl)'
                 }}
               >
                 <FiTarget 
                   size={32} 
-                  style={{ color: 'var(--color-success)' }}
+                  className='text-white'
                 />
               </div>
               <h4 style={{ color: 'var(--text-strong)' }}>
@@ -510,14 +510,14 @@ function AboutSectionClient() {
               <div 
                 className="w-20 h-20 flex items-center justify-center mx-auto"
                 style={{
-                  backgroundColor: 'var(--primary)',
-                  opacity: 0.1,
+                  backgroundColor: 'var(--primary-dark)',
+                  opacity: 0.8,
                   borderRadius: 'var(--radius-xl)'
                 }}
               >
                 <FiZap 
                   size={32} 
-                  style={{ color: 'var(--primary)' }}
+                  className='text-white'
                 />
               </div>
               <h4 style={{ color: 'var(--text-strong)' }}>
@@ -533,13 +533,13 @@ function AboutSectionClient() {
                 className="w-20 h-20 flex items-center justify-center mx-auto"
                 style={{
                   backgroundColor: 'var(--primary-dark)',
-                  opacity: 0.1,
+                  opacity: 0.8,
                   borderRadius: 'var(--radius-xl)'
                 }}
               >
                 <FiCheck 
                   size={32} 
-                  style={{ color: 'var(--primary-dark)' }}
+                  className='text-white'
                 />
               </div>
               <h4 style={{ color: 'var(--text-strong)' }}>

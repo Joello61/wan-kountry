@@ -449,8 +449,8 @@ function ServicesSectionClient() {
                   <div 
                     className="p-8"
                     style={{
-                      background: `linear-gradient(135deg, var(--color-success) 0%, var(--primary) 100%)`,
-                      opacity: 0.1,
+                      background: `var(--surface)`,
+                      opacity: 0.8,
                       borderRadius: 'var(--radius-xl)',
                       border: `1px solid var(--border)`
                     }}
@@ -460,11 +460,11 @@ function ServicesSectionClient() {
                         <div className="flex items-center gap-3 mb-3">
                           <FiTrendingUp 
                             className="w-6 h-6"
-                            style={{ color: 'var(--color-success)' }}
+                            style={{ color: 'var(--text)' }}
                           />
                           <span 
                             className="font-bold text-lg"
-                            style={{ color: 'var(--color-success)' }}
+                            style={{ color: 'var(--text)' }}
                           >
                             {servicesData[activeService]!.results}
                           </span>

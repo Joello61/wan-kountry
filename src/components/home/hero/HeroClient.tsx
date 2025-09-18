@@ -194,13 +194,13 @@ function HeroSectionClient() {
                 <div 
                   className="w-12 h-12 rounded-full flex items-center justify-center"
                   style={{
-                    backgroundColor: 'var(--primary)',
-                    opacity: 0.1
+                    backgroundColor: 'var(--primary-dark)',
+                    opacity: 0.8
                   }}
                 >
                   <FiSmartphone
                     size={20}
-                    style={{ color: 'var(--primary)' }}
+                    className='text-white'
                   />
                 </div>
                 <span 
@@ -216,12 +216,12 @@ function HeroSectionClient() {
                   className="w-12 h-12 rounded-full flex items-center justify-center"
                   style={{
                     backgroundColor: 'var(--primary-dark)',
-                    opacity: 0.1
+                    opacity: 0.8
                   }}
                 >
                   <FiCreditCard
                     size={20}
-                    style={{ color: 'var(--primary-dark)' }}
+                    className='text-white'
                   />
                 </div>
                 <span 
@@ -236,13 +236,13 @@ function HeroSectionClient() {
                 <div 
                   className="w-12 h-12 rounded-full flex items-center justify-center"
                   style={{
-                    backgroundColor: 'var(--color-success)',
-                    opacity: 0.1
+                    backgroundColor: 'var(--primary-dark)',
+                    opacity: 0.8
                   }}
                 >
                   <FiZap 
                     size={20} 
-                    style={{ color: 'var(--color-success)' }}
+                    className='text-white'
                   />
                 </div>
                 <span 
