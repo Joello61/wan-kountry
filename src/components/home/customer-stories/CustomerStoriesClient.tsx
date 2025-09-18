@@ -80,7 +80,7 @@ function CustomerStoriesClient() {
 
                   <div className="flex flex-col gap-6 relative z-10">
                     <h4 className="text-white leading-relaxed">
-                      &quot;J3T-AGENCY a su transformer ma vision en un site web
+                      &quot;Wan-Kountry a su transformer ma vision en un site web
                       professionnel qui dépasse toutes mes attentes. Leur
                       expertise technique et leur créativité m&apos;ont permis
                       d&apos;atteindre mes objectifs business !&quot;
@@ -156,7 +156,7 @@ function CustomerStoriesClient() {
                       Témoignage détaillé
                     </span>
                     <h2 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl leading-relaxed text-dark_black dark:text-white">
-                      &quot;J3T-AGENCY combine parfaitement expertise technique et
+                      &quot;Wan-Kountry combine parfaitement expertise technique et
                       compréhension business. Ils ont livré un projet qui dépasse
                       nos attentes, dans les délais et avec un suivi
                       impeccable.&quot;

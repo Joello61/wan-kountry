@@ -3,12 +3,12 @@ import AtoutsSectionClient from '@/components/home/atouts/AtoutsClient';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mes Atouts - J3T-AGENCY | Pourquoi me choisir comme développeur',
+  title: 'Mes Atouts - Wan-Kountry | Pourquoi me choisir comme développeur',
   description:
     "Découvrez nos atouts : mobile-first, paiements intégrés, performance extrême, tech modernes, vision internationale. 3+ ans d'expérience, 100% projets réussis.",
   keywords: [
-    'atouts J3T-AGENCY',
-    'pourquoi choisir J3T-AGENCY',
+    'atouts Wan-Kountry',
+    'pourquoi choisir Wan-Kountry',
     'avantages développeur web',
     'mobile first expert',
     'paiements intégrés mobile money',
@@ -17,38 +17,38 @@ export const metadata: Metadata = {
     'développeur international',
     'accompagnement projet web',
   ],
-  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'J3T-AGENCY',
-  publisher: 'J3T-AGENCY',
+  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  creator: 'Wan-Kountry',
+  publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
+  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
   openGraph: {
-    title: 'Mes atouts clés - J3T-AGENCY Développeur Web',
+    title: 'Mes atouts clés - Wan-Kountry Développeur Web',
     description:
       'Mobile-first, paiements intégrés, performance extrême, technologies modernes. Découvrez pourquoi me choisir pour votre projet web.',
-    url: 'https://j3t-agency.joeltech.dev//atouts',
-    siteName: 'J3T-AGENCY',
+    url: 'https://wan-kountry.joeltech.dev//atouts',
+    siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Atouts J3T-AGENCY - Développeur Web Expert',
+        alt: 'Atouts Wan-Kountry - Développeur Web Expert',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mes atouts de développeur web - J3T-AGENCY',
+    title: 'Mes atouts de développeur web - Wan-Kountry',
     description:
       "Mobile-first, performance, tech modernes, vision internationale. 3+ ans d'expérience, 100% projets réussis.",
-    creator: '@J3T-AGENCY',
-    images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
+    creator: '@Wan-Kountry',
+    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//atouts',
+    canonical: 'https://wan-kountry.joeltech.dev//atouts',
   },
   robots: {
     index: true,

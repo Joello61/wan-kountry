@@ -1,9 +1,9 @@
 {
-  "name": "J3T-AGENCY-agency",
+  "name": "Wan-Kountry",
   "version": "0.1.0",
   "private": true,
   "description": "Modern tech agency website built with Next.js 15.5",
-  "author": "Joel Tchinda",
+  "author": "Wan-Kountry",
   "license": "MIT",
   "type": "module",
   "scripts": {

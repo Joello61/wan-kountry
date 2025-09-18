@@ -196,10 +196,10 @@ function AboutSectionClient() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Création d'expériences digitales qui{' '}
-              <strong>transforment vraiment votre activité</strong>. 
-              Une approche technique rigoureuse au service de vos objectifs.
+              Nous créons des expériences digitales qui{' '}
+              <strong>font évoluer votre activité</strong>. Une expertise technique au service de vos ambitions.
             </p>
+
           </motion.div>
 
           {/* Section principale */}

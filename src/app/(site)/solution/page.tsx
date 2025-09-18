@@ -2,7 +2,7 @@ import SolutionsClient from '@/components/home/solution/SolutionClient';
 import { Metadata } from 'next';
 
 export const solutionsMetadata: Metadata = {
-  title: 'Solutions Web Modernes pour Entreprises – J3T-AGENCY Développeur',
+  title: 'Solutions Web Modernes pour Entreprises – Wan-Kountry Développeur',
   description:
     'Solutions web rapides, sécurisées et adaptées au marché local. Sites vitrines, e-commerce, applications personnalisées avec Mobile Money intégré.',
   keywords: [
@@ -12,41 +12,41 @@ export const solutionsMetadata: Metadata = {
     'Mobile Money intégration',
     'développeur fullstack',
     'solutions sur-mesure',
-    'J3T-AGENCY solutions',
+    'Wan-Kountry solutions',
     'business digital Cameroun',
   ],
-  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'J3T-AGENCY',
-  publisher: 'J3T-AGENCY',
+  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  creator: 'Wan-Kountry',
+  publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
+  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
   openGraph: {
-    title: 'Solutions Web Modernes pour Booster Votre Activité | J3T-AGENCY',
+    title: 'Solutions Web Modernes pour Booster Votre Activité | Wan-Kountry',
     description:
       'Développement fullstack indépendant : sites, e-commerces, apps web. Accompagnement entrepreneurs et associations dans leur transformation digitale.',
-    url: 'https://j3t-agency.joeltech.dev//solution',
-    siteName: 'J3T-AGENCY',
+    url: 'https://wan-kountry.joeltech.dev//solution',
+    siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Solutions web modernes J3T-AGENCY',
+        alt: 'Solutions web modernes Wan-Kountry',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Solutions Web Modernes pour Entreprises | J3T-AGENCY',
+    title: 'Solutions Web Modernes pour Entreprises | Wan-Kountry',
     description:
       'Transformation digitale : sites, e-commerce, apps. Mobile Money, mobile-first, accompagnement complet.',
-    creator: '@J3T-AGENCY',
-    images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
+    creator: '@Wan-Kountry',
+    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//solution',
+    canonical: 'https://wan-kountry.joeltech.dev//solution',
   },
   robots: {
     index: true,

@@ -1,40 +1,46 @@
-<svg width="145" height="40" viewBox="0 0 145 40" xmlns="http://www.w3.org/2000/svg">
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Gradient moderne pour dark theme -->
+    <!-- Gradient pour dark theme -->
     <linearGradient id="darkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0b82e4"/>
       <stop offset="100%" style="stop-color:#1e90ff"/>
     </linearGradient>
+    
+    <!-- Ombre portée pour l'hexagone -->
+    <filter id="hexShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
   </defs>
   
-  <!-- Hexagone plus large -->
-  <polygon points="12,6 29,6 37,20 29,34 12,34 4,20" 
+  <!-- Hexagone amélioré -->
+  <polygon points="15,10 32,10 40,25 32,40 15,40 7,25" 
            fill="url(#darkGradient)" 
-           stroke="none"/>
+           stroke="none"
+           filter="url(#hexShadow)"/>
   
-  <!-- J3T gras et italique -->
-  <text x="20.5" y="25" 
+  <!-- WK centré -->
+  <text x="23.5" y="29" 
         font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
-        font-size="14" 
+        font-size="13" 
         font-weight="900" 
         font-style="italic"
         text-anchor="middle" 
         fill="white" 
-        letter-spacing="0.2px">J3T</text>
+        letter-spacing="0.5px">WK</text>
   
-  <!-- J3T-AGENCY plus gras pour dark -->
-  <g>
-    <text x="45" y="25" 
-          font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif" 
-          font-size="18" 
-          font-weight="700" 
-          fill="#ffffff" 
-          letter-spacing="-0.2px">J3T</text>
-    <text x="75" y="25" 
-          font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif" 
-          font-size="18" 
-          font-weight="800"
-          fill="#1e90ff" 
-          letter-spacing="-0.2px">Agency</text>
-  </g>
+  <!-- Wan -->
+  <text x="55" y="29" 
+        font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif" 
+        font-size="20" 
+        font-weight="700" 
+        fill="#ffffff" 
+        letter-spacing="-0.3px">Wan</text>
+  
+  <!-- Kountry -->
+  <text x="100" y="29" 
+        font-family="'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif" 
+        font-size="20" 
+        font-weight="800"
+        fill="#1e90ff" 
+        letter-spacing="-0.3px">Kountry</text>
 </svg>

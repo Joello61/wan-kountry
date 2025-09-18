@@ -13,7 +13,7 @@ function TestimonySectionClient() {
   const testimonialsList = [
     {
       id: 1,
-      text: 'J3T-Agency a créé un site vitrine moderne et efficace pour mon entreprise. Ils ont su comprendre mes besoins et livrer rapidement. Je le recommande !',
+      text: 'Wan-Kountry a créé un site vitrine moderne et efficace pour mon entreprise. Ils ont su comprendre mes besoins et livrer rapidement. Je le recommande !',
       name: 'Marie K.',
       position: 'Entrepreneuse',
       project: 'Site vitrine boutique',
@@ -29,7 +29,7 @@ function TestimonySectionClient() {
     },
     {
       id: 3,
-      text: "J3T-Agency m'a développé une application adaptée à mes besoins spécifiques. Sérieux et disponible, ce sont des partenaire de confiance.",
+      text: "Wan-Kountry m'a développé une application adaptée à mes besoins spécifiques. Sérieux et disponible, ce sont des partenaire de confiance.",
       name: 'Association Locale',
       position: 'Responsable digital',
       project: 'App de gestion',

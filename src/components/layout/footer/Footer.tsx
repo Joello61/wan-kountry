@@ -66,7 +66,7 @@ const Footer = () => {
       email: 'tchindajoel61@gmail.com',
       phone: '+33 07 52 89 20 73',
     },
-    copyright: '© 2025 J3T-AGENCY – Tous droits réservés.',
+    copyright: '© 2025 Wan-Kountry – Tous droits réservés.',
   };
 
   const renderIcon = (iconType: string, className: string = 'w-5 h-5') => {

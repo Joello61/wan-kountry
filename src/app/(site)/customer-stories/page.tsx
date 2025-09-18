@@ -2,50 +2,50 @@ import CustomerStoriesClient from '@/components/home/customer-stories/CustomerSt
 import { Metadata } from 'next';
 
 export const customerStoriesMetadata: Metadata = {
-  title: 'Histoires Clients – Success Stories & Témoignages | J3T-AGENCY',
+  title: 'Histoires Clients – Success Stories & Témoignages | Wan-Kountry',
   description:
     'Découvrez les success stories de nos clients : Marie K. (Mode & Style), Paul N. (Consultant), Sarah M. (TechStart). Projets transformés en succès digitaux.',
   keywords: [
     'success stories clients',
-    'histoires clients J3T-AGENCY',
+    'histoires clients Wan-Kountry',
     "cas d'étude web",
     'témoignages détaillés',
     'transformations digitales',
     "retours d'expérience clients",
     'projets réussis développement',
   ],
-  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'J3T-AGENCY',
-  publisher: 'J3T-AGENCY',
+  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  creator: 'Wan-Kountry',
+  publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
+  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
   openGraph: {
-    title: 'Success Stories Clients – Transformations Digitales | J3T-AGENCY',
+    title: 'Success Stories Clients – Transformations Digitales | Wan-Kountry',
     description:
       "Comment j'ai transformé les idées de nos clients en succès digitaux. Témoignages détaillés de Marie K., Paul N., Sarah M. et plus encore.",
-    url: 'https://j3t-agency.joeltech.dev//customer-stories',
-    siteName: 'J3T-AGENCY',
+    url: 'https://wan-kountry.joeltech.dev//customer-stories',
+    siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Success stories clients J3T-AGENCY',
+        alt: 'Success stories clients Wan-Kountry',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Success Stories Clients | J3T-AGENCY',
+    title: 'Success Stories Clients | Wan-Kountry',
     description:
       'Transformations digitales réussies : boutiques en ligne, consultants, associations. 100% satisfaction client.',
-    creator: '@J3T-AGENCY',
+    creator: '@Wan-Kountry',
     images: ['/images/stories/customer-stories-preview.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//customer-stories',
+    canonical: 'https://wan-kountry.joeltech.dev//customer-stories',
   },
   robots: {
     index: true,

@@ -2,7 +2,7 @@ import SubscriptionClient from '@/components/home/subscription/SubscriptionClien
 import { Metadata } from 'next';
 
 export const pricingMetadata: Metadata = {
-  title: 'Tarifs Transparents – Sites Web & Apps dès 120 000 FCFA | J3T-AGENCY',
+  title: 'Tarifs Transparents – Sites Web & Apps dès 120 000 FCFA | Wan-Kountry',
   description:
     'Découvrez nos tarifs : Site vitrine 120k FCFA, E-commerce 300k FCFA, Apps sur-mesure. Formules claires, paiement échelonné possible.',
   keywords: [
@@ -12,41 +12,41 @@ export const pricingMetadata: Metadata = {
     'devis application web',
     'tarif développeur Afrique',
     'prix transparent web',
-    'J3T-AGENCY tarifs',
+    'Wan-Kountry tarifs',
     'budget site internet',
   ],
-  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'J3T-AGENCY',
-  publisher: 'J3T-AGENCY',
+  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  creator: 'Wan-Kountry',
+  publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
+  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
   openGraph: {
-    title: 'Tarifs Web Transparents – Sites dès 120k FCFA | J3T-AGENCY',
+    title: 'Tarifs Web Transparents – Sites dès 120k FCFA | Wan-Kountry',
     description:
       'Formules simples pour tous budgets : sites vitrines, e-commerce, apps sur-mesure. Paiement échelonné, devis gratuit sous 24h.',
-    url: 'https://j3t-agency.joeltech.dev//subscription',
-    siteName: 'J3T-AGENCY',
+    url: 'https://wan-kountry.joeltech.dev//subscription',
+    siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Tarifs développement web J3T-AGENCY',
+        alt: 'Tarifs développement web Wan-Kountry',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tarifs Transparents Web – Sites dès 120k FCFA | J3T-AGENCY',
+    title: 'Tarifs Transparents Web – Sites dès 120k FCFA | Wan-Kountry',
     description:
       'Prix clairs : Site vitrine 120k, E-commerce 300k, Apps sur-mesure. Paiement échelonné disponible.',
-    creator: '@J3T-AGENCY',
+    creator: '@Wan-Kountry',
     images: ['/images/pricing/pricing-preview.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//subscription',
+    canonical: 'https://wan-kountry.joeltech.dev//subscription',
   },
   robots: {
     index: true,

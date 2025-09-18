@@ -3,51 +3,51 @@ import FaqClient from '@/components/home/faq/FaqClient';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact - J3T-AGENCY | Parlons de votre projet web',
+  title: 'Contact - Wan-Kountry | Parlons de votre projet web',
   description:
-    'Contactez J3T-AGENCY pour votre projet web. Formulaire de contact, WhatsApp, email. Consultation gratuite 30min. Réponse sous 24h garantie.',
+    'Contactez Wan-Kountry pour votre projet web. Formulaire de contact, WhatsApp, email. Consultation gratuite 30min. Réponse sous 24h garantie.',
   keywords: [
-    'contact J3T-AGENCY',
+    'contact Wan-Kountry',
     'devis site web gratuit',
     'consultation développeur web',
     'projet web Cameroun',
     'développeur freelance contact',
     'WhatsApp développeur',
     'formulaire contact web',
-    'J3T-AGENCY contact',
+    'Wan-Kountry contact',
   ],
-  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'J3T-AGENCY',
-  publisher: 'J3T-AGENCY',
+  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  creator: 'Wan-Kountry',
+  publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
+  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
   openGraph: {
-    title: 'Contactez J3T-AGENCY - Développeur Web Expert',
+    title: 'Contactez Wan-Kountry - Développeur Web Expert',
     description:
       'Parlons de votre projet ! Site vitrine, e-commerce, application web - consultation gratuite et réponse rapide garantie.',
-    url: 'https://j3t-agency.joeltech.dev//contact',
-    siteName: 'J3T-AGENCY',
+    url: 'https://wan-kountry.joeltech.dev//contact',
+    siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Contactez J3T-AGENCY pour votre projet web',
+        alt: 'Contactez Wan-Kountry pour votre projet web',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Contact J3T-AGENCY - Votre projet web m'intéresse !",
+    title: "Contact Wan-Kountry - Votre projet web m'intéresse !",
     description:
       'Formulaire contact, WhatsApp, email - Parlons de votre site web ou application. Réponse sous 24h.',
-    creator: '@J3T-AGENCY',
-    images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
+    creator: '@Wan-Kountry',
+    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev//contact',
+    canonical: 'https://wan-kountry.joeltech.dev//contact',
   },
   robots: {
     index: true,

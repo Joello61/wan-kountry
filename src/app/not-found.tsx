@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import NotFound from '@/components/not-found';
 
 export const metadata: Metadata = {
-  title: '404 Page | J3T-AGENCY',
+  title: '404 Page | Wan-Kountry',
 };
 
 const ErrorPage = () => {

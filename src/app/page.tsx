@@ -12,7 +12,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title:
-    'J3T-AGENCY - Développeur Web Freelance | Sites Modernes Cameroun-France',
+    'Wan-Kountry - Développeur Web Freelance | Sites Modernes Cameroun-France',
   description:
     'Développeur web expert créant sites vitrines, e-commerce et apps modernes. Mobile-first, Mobile Money, une première livraison en 15 jours. Basé France, expertise Cameroun.',
   keywords: [
@@ -22,42 +22,42 @@ export const metadata: Metadata = {
     'Mobile Money intégration',
     'site web rapide',
     'développeur React Symfony',
-    'J3T-AGENCY développeur',
+    'Wan-Kountry développeur',
     'site web 15 jours',
     'développeur fullstack France',
   ],
-  authors: [{ name: 'J3T-AGENCY', url: 'https://j3t-agency.joeltech.dev/' }],
-  creator: 'J3T-AGENCY',
-  publisher: 'J3T-AGENCY',
+  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  creator: 'Wan-Kountry',
+  publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://j3t-agency.joeltech.dev/'),
+  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
   openGraph: {
-    title: 'J3T-AGENCY - Votre site web moderne avec un premier résultat en 15 jours',
+    title: 'Wan-Kountry - Votre site web moderne avec un premier résultat en 15 jours',
     description:
       'Sites vitrines, e-commerce et applications web performants. Mobile-first, Mobile Money, support 24/7. Résultats garantis.',
-    url: 'https://j3t-agency.joeltech.dev/',
-    siteName: 'J3T-AGENCY',
+    url: 'https://wan-kountry.joeltech.dev/',
+    siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://j3t-agency.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'J3T-AGENCY - Développeur Web Moderne',
+        alt: 'Wan-Kountry - Développeur Web Moderne',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'J3T-AGENCY - Sites web modernes avec un premier résultat en 15 jours',
+    title: 'Wan-Kountry - Sites web modernes avec un premier résultat en 15 jours',
     description:
       'Mobile-first, Mobile Money, ultra-rapide. Développeur web expert pour votre business.',
-    creator: '@J3T-AGENCY',
-    images: ['https://j3t-agency.joeltech.dev/screenshots/desktop-home.png'],
+    creator: '@Wan-Kountry',
+    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://j3t-agency.joeltech.dev/',
+    canonical: 'https://wan-kountry.joeltech.dev/',
   },
   robots: {
     index: true,

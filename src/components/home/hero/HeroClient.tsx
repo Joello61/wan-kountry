@@ -97,17 +97,17 @@ function HeroSectionClient() {
             {/* Sous-titre simplifié */}
             <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0">
              Nous sommes spécialisés dans les solutions web pour le
-              marché local.
+              marché local et internationnal,
               <span className="font-semibold text-gray-900 dark:text-white">
                 {' '}
-                Un premier résultats garantis en 15 jours.
+                garantissant un premier résultats après 20 jours.
               </span>
             </p>
 
             {/* Statistiques rapides */}
             <div className="flex justify-center lg:justify-start gap-8 mb-10">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">15j</div>
+                <div className="text-3xl font-bold text-blue-600">25j</div>
                 <div className="text-sm text-gray-600 dark:text-gray-400">
                   Livraison
                 </div>

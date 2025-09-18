@@ -115,7 +115,7 @@ ${formData.message}
   // Fonction pour ouvrir WhatsApp
   const openWhatsApp = () => {
     const message = encodeURIComponent(
-      'Bonjour J3T-Agency, je suis intéressé par vos services de développement web. Pouvons-nous discuter de mon projet ?'
+      'Bonjour Wan-Kountry, je suis intéressé par vos services de développement web. Pouvons-nous discuter de mon projet ?'
     );
     const phoneNumber = '330752892073'; // Remplacez par votre numéro WhatsApp
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');

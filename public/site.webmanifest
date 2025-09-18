@@ -1,6 +1,6 @@
 {
-  "name": "J3T-AGENCY - Développement Web & Mobile Professionnel | Sites Vitrines & E-commerce",
-  "short_name": "J3T-AGENCY",
+  "name": "Wan-Kountry - Développement Web & Mobile Professionnel | Sites Vitrines & E-commerce",
+  "short_name": "Wan-Kountry",
   "description": "Agence de développement web et mobile spécialisée dans la création de sites vitrines, plateformes e-commerce et applications sur-mesure. Expertise technique Cameroun et Europe. Devis gratuit.",
   "lang": "fr-FR",
   "start_url": "/?utm_source=pwa&utm_medium=homescreen",
@@ -95,14 +95,14 @@
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Page d'accueil J3T-AGENCY - Services de développement web"
+      "label": "Page d'accueil Wan-Kountry - Services de développement web"
     },
     {
       "src": "/screenshots/mobile-home.png",
       "sizes": "360x640",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "J3T-AGENCY Mobile - Développement web et mobile"
+      "label": "Wan-Kountry Mobile - Développement web et mobile"
     },
     {
       "src": "/android-chrome-192x192.png",

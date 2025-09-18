@@ -1,4 +1,4 @@
-# J3T-AGENCY - Robots.txt optimisé pour SEO 2025
+# Wan-Kountry - Robots.txt optimisé pour SEO 2025
 # Mise à jour: 28 août 2025
 
 # Règles générales pour tous les bots
@@ -81,7 +81,7 @@ User-agent: DotBot
 Disallow: /
 
 # Configuration des sitemaps
-Sitemap: https://j3t-agency.joeltech.dev/sitemap.xml
+Sitemap: https://wan-kountry.joeltech.dev/sitemap.xml
 
 # Informations additionnelles
 # Temps de crawl recommandé: 10-20 pages par minute
