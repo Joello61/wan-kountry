@@ -46,10 +46,10 @@ const Footer = () => {
       name: 'Navigation',
       links: [
         { name: 'Accueil', url: '/' },
-        { name: 'À propos', url: 'about-us' },
-        { name: 'Services', url: 'services' },
-        { name: 'Réalisations', url: 'realisations' },
-        { name: 'Contact', url: 'contact' },
+        { name: 'À propos', url: '/about-us' },
+        { name: 'Services', url: '/services' },
+        { name: 'Réalisations', url: '/realisations' },
+        { name: 'Contact', url: '/contact' },
       ],
     },
     otherPages: {
@@ -57,7 +57,7 @@ const Footer = () => {
       links: [
         { name: 'FAQ', url: '#faq' },
         { name: 'Accomplissements', url: '#awards' },
-        { name: 'Témoignages', url: 'testimony' },
+        { name: 'Témoignages', url: '/testimony' },
       ],
     },
     contactDetails: {
@@ -95,7 +95,8 @@ const Footer = () => {
         return <FiMail className={className} />;
       default:
         return (
-          <span className="w-5 h-5 bg-gray-400 rounded-full flex items-center justify-center text-xs">
+          <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs"
+                style={{ backgroundColor: 'var(--text-light)' }}>
             ?
           </span>
         );
@@ -103,20 +104,26 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
+    <footer className="relative overflow-hidden" style={{ backgroundColor: 'var(--surface)' }}>
       {/* Background décoratif */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-200/30 dark:bg-purple-500/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse" />
+        <div 
+          className="absolute top-20 left-10 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl animate-pulse" 
+          style={{ backgroundColor: 'var(--primary)/10' }}
+        />
         <div
-          className="absolute bottom-20 right-10 w-72 h-72 bg-blue-200/30 dark:bg-blue-500/10 rounded-full mix-blend-multiply filter blur-xl animate-pulse"
-          style={{ animationDelay: '2s' }}
+          className="absolute bottom-20 right-10 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl animate-pulse"
+          style={{ 
+            backgroundColor: 'var(--color-warning)/10',
+            animationDelay: '2s'
+          }}
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container relative z-10">
         {/* Contenu principal du footer */}
         <div className="flex flex-col xl:flex-row py-16 gap-10 justify-between">
-          {/* Section Logo et Tagline avec style moderne */}
+          {/* Section Logo et Tagline */}
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -126,33 +133,41 @@ const Footer = () => {
           >
             <div className="flex items-center gap-3">
               <Logo />
-              <div className="flex items-center gap-1 bg-green-100 dark:bg-green-500/20 px-3 py-1 rounded-full border border-green-300 dark:border-green-400/30">
-                <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-700 dark:text-green-300 text-xs font-medium">
+              <div className="flex items-center gap-1 px-3 py-1 rounded-full border"
+                   style={{ 
+                     backgroundColor: 'var(--color-success)/10',
+                     borderColor: 'var(--color-success)/30'
+                   }}>
+                <div className="w-2 h-2 rounded-full animate-pulse"
+                     style={{ backgroundColor: 'var(--color-success)' }}></div>
+                <span className="text-xs font-medium" 
+                      style={{ color: 'var(--color-success)' }}>
                   Disponible
                 </span>
               </div>
             </div>
 
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="leading-relaxed" style={{ color: 'var(--text)' }}>
               {footerData?.brand?.tagline}
             </p>
 
-            <div className="bg-white/80 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700/50 shadow-sm">
-              <p className="text-purple-700 dark:text-purple-300 font-medium mb-2 flex items-center gap-2">
+            <div className="card p-4">
+              <p className="font-medium mb-2 flex items-center gap-2"
+                 style={{ color: 'var(--primary)' }}>
                 <FiCoffee className="w-4 h-4" />
                 Fait avec passion depuis Toulouse & Yaoundé
               </p>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <p className="text-sm" style={{ color: 'var(--text-light)' }}>
                 3+ ans d&apos;expérience • 07+ projets réussis • 100%
                 satisfaction client
               </p>
             </div>
 
-            {/* Réseaux sociaux modernisés */}
+            {/* Réseaux sociaux */}
             <div className="flex flex-col gap-4">
-              <p className="text-gray-800 dark:text-gray-200 font-medium flex items-center gap-2">
-                <FiHeart className="w-4 h-4 text-red-500 dark:text-red-400" />
+              <p className="font-medium flex items-center gap-2"
+                 style={{ color: 'var(--text-strong)' }}>
+                <FiHeart className="w-4 h-4" style={{ color: 'var(--color-error)' }} />
                 Suivez-nous sur les réseaux sociaux
               </p>
               <div className="flex gap-3">
@@ -168,11 +183,11 @@ const Footer = () => {
                           href={item.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="bg-white/80 hover:bg-purple-100 dark:bg-gray-800/50 dark:hover:bg-purple-600/20 border border-gray-200 hover:border-purple-300 dark:border-gray-700/50 dark:hover:border-purple-500/50 p-3 rounded-xl transition-all duration-300 flex items-center justify-center group shadow-sm hover:shadow-md"
+                          className="card p-3 hover-lift transition-all duration-300 flex items-center justify-center group"
                         >
                           {renderIcon(
                             item.icon,
-                            'w-5 h-5 text-gray-600 group-hover:text-purple-600 dark:text-gray-300 dark:group-hover:text-purple-300'
+                            'w-5 h-5 transition-colors duration-300'
                           )}
                         </Link>
                       </motion.div>
@@ -183,7 +198,7 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Grille de navigation modernisée */}
+          {/* Grille de navigation */}
           <div className="grid sm:grid-cols-3 gap-8 xl:gap-12">
             {/* Navigation principale */}
             <motion.div
@@ -193,18 +208,19 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex flex-col gap-4"
             >
-              <p className="font-bold text-gray-800 dark:text-gray-200 text-lg mb-2">
+              <h4 className="mb-2" style={{ color: 'var(--text-strong)' }}>
                 {footerData?.sitemap?.name}
-              </p>
+              </h4>
               <ul className="flex flex-col gap-3">
                 {footerData?.sitemap?.links?.map((item: any, index: any) => {
                   return (
                     <li key={index}>
                       <Link
                         href={item.url}
-                        className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-300 transition-all duration-200 hover:translate-x-1 flex items-center gap-2 group"
+                        className="link-primary transition-all duration-200 hover:translate-x-1 flex items-center gap-2 group"
                       >
-                        <span className="w-1 h-1 bg-purple-500 dark:bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                        <span className="w-1 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                              style={{ backgroundColor: 'var(--primary)' }}></span>
                         {item.name}
                       </Link>
                     </li>
@@ -221,18 +237,19 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex flex-col gap-4"
             >
-              <p className="font-bold text-gray-800 dark:text-gray-200 text-lg mb-2">
+              <h4 className="mb-2" style={{ color: 'var(--text-strong)' }}>
                 {footerData?.otherPages?.name}
-              </p>
+              </h4>
               <ul className="flex flex-col gap-3">
                 {footerData?.otherPages?.links?.map((item: any, index: any) => {
                   return (
                     <li key={index}>
                       <Link
                         href={item.url}
-                        className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-300 transition-all duration-200 hover:translate-x-1 flex items-center gap-2 group"
+                        className="link-primary transition-all duration-200 hover:translate-x-1 flex items-center gap-2 group"
                       >
-                        <span className="w-1 h-1 bg-purple-500 dark:bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"></span>
+                        <span className="w-1 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                              style={{ backgroundColor: 'var(--primary)' }}></span>
                         {item.name}
                       </Link>
                     </li>
@@ -241,7 +258,7 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            {/* Détails de contact modernisés */}
+            {/* Détails de contact */}
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -249,33 +266,37 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex flex-col gap-4"
             >
-              <p className="font-bold text-gray-800 dark:text-gray-200 text-lg mb-2">
+              <h4 className="mb-2" style={{ color: 'var(--text-strong)' }}>
                 {footerData?.contactDetails?.name}
-              </p>
+              </h4>
               <div className="flex flex-col gap-4">
-                <div className="bg-white/80 dark:bg-gray-800/50 p-3 rounded-lg border border-gray-200 dark:border-gray-700/50 shadow-sm">
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed flex items-center gap-2">
-                    <FiMapPin className="w-4 h-4 flex-shrink-0 mt-0.5 text-purple-600 dark:text-purple-400" />
+                <div className="card p-3">
+                  <p className="text-sm leading-relaxed flex items-center gap-2"
+                     style={{ color: 'var(--text)' }}>
+                    <FiMapPin className="w-4 h-4 flex-shrink-0 mt-0.5" 
+                              style={{ color: 'var(--primary)' }} />
                     {footerData?.contactDetails?.address}
                   </p>
                 </div>
 
                 <Link
                   href={`mailto:${footerData?.contactDetails?.email}`}
-                  className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-300 transition-all duration-200 flex items-center gap-2 bg-white/60 hover:bg-purple-50 dark:bg-gray-800/30 dark:hover:bg-purple-600/20 p-3 rounded-lg border border-gray-200 hover:border-purple-300 dark:border-gray-700/50 dark:hover:border-purple-500/50 shadow-sm hover:shadow-md"
+                  className="card p-3 hover-lift transition-all duration-200 flex items-center gap-2"
                 >
-                  <FiMail className="w-4 h-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
-                  <span className="text-sm">
+                  <FiMail className="w-4 h-4 flex-shrink-0" 
+                          style={{ color: 'var(--primary)' }} />
+                  <span className="text-sm" style={{ color: 'var(--text)' }}>
                     {footerData?.contactDetails?.email}
                   </span>
                 </Link>
 
                 <Link
                   href={`tel:${footerData?.contactDetails?.phone}`}
-                  className="text-gray-600 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-300 transition-all duration-200 flex items-center gap-2 bg-white/60 hover:bg-purple-50 dark:bg-gray-800/30 dark:hover:bg-purple-600/20 p-3 rounded-lg border border-gray-200 hover:border-purple-300 dark:border-gray-700/50 dark:hover:border-purple-500/50 shadow-sm hover:shadow-md"
+                  className="card p-3 hover-lift transition-all duration-200 flex items-center gap-2"
                 >
-                  <FiPhone className="w-4 h-4 flex-shrink-0 text-purple-600 dark:text-purple-400" />
-                  <span className="text-sm">
+                  <FiPhone className="w-4 h-4 flex-shrink-0" 
+                           style={{ color: 'var(--primary)' }} />
+                  <span className="text-sm" style={{ color: 'var(--text)' }}>
                     {footerData?.contactDetails?.phone}
                   </span>
                 </Link>
@@ -284,30 +305,38 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright modernisé avec statistiques */}
+        {/* Copyright avec statistiques */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="flex flex-col lg:flex-row justify-between items-center py-8 border-t border-gray-200 dark:border-gray-700/50 gap-4"
+          className="flex flex-col lg:flex-row justify-between items-center py-8 border-t gap-4"
+          style={{ borderColor: 'var(--border)' }}
         >
-          <p className="text-gray-500 dark:text-gray-400 text-sm flex items-center gap-2">
-            <FiHeart className="w-4 h-4 text-red-500 dark:text-red-400" />
+          <p className="text-sm flex items-center gap-2" 
+             style={{ color: 'var(--text-light)' }}>
+            <FiHeart className="w-4 h-4" style={{ color: 'var(--color-error)' }} />
             {footerData?.copyright}
           </p>
 
-          <div className="flex flex-wrap items-center gap-6 text-gray-500 dark:text-gray-400 text-sm">
-            <span className="flex items-center gap-2 bg-green-100 dark:bg-green-500/10 px-3 py-1 rounded-full border border-green-200 dark:border-green-500/20">
-              <div className="w-2 h-2 bg-green-500 dark:bg-green-400 rounded-full animate-pulse"></div>
+          <div className="flex flex-wrap items-center gap-6 text-sm">
+            <span className="flex items-center gap-2 px-3 py-1 rounded-full border"
+                  style={{ 
+                    backgroundColor: 'var(--color-success)/10',
+                    borderColor: 'var(--color-success)/20',
+                    color: 'var(--color-success)'
+                  }}>
+              <div className="w-2 h-2 rounded-full animate-pulse"
+                   style={{ backgroundColor: 'var(--color-success)' }}></div>
               Disponible pour nouveaux projets
             </span>
-            <span className="flex items-center gap-2">
-              <FiZap className="w-4 h-4 text-yellow-500 dark:text-yellow-400" />
+            <span className="flex items-center gap-2" style={{ color: 'var(--text-light)' }}>
+              <FiZap className="w-4 h-4" style={{ color: 'var(--color-warning)' }} />
               Réponse sous 24h
             </span>
-            <span className="flex items-center gap-2">
-              <FiTrendingUp className="w-4 h-4 text-blue-500 dark:text-blue-400" />
+            <span className="flex items-center gap-2" style={{ color: 'var(--text-light)' }}>
+              <FiTrendingUp className="w-4 h-4" style={{ color: 'var(--primary)' }} />
               100% satisfaction
             </span>
           </div>

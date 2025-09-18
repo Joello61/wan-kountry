@@ -29,7 +29,7 @@ function AtoutsSectionClient() {
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
-  // Données des atouts avec design cohérent
+  // Données des atouts simplifiées avec le système de couleurs unifié
   const atoutsData = [
     {
       icon: FiSmartphone,
@@ -37,9 +37,6 @@ function AtoutsSectionClient() {
       subtitle: 'Priorité absolue aux mobiles',
       description:
         'Sites ultra-optimisés pour smartphones avec UX parfaite sur tous les écrans',
-      gradient: 'from-blue-500 to-cyan-500',
-      bgGradient:
-        'from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30',
       stats: '+95% mobile ready',
     },
     {
@@ -48,9 +45,6 @@ function AtoutsSectionClient() {
       subtitle: 'Solutions de paiement complètes',
       description:
         "Mobile Money, PayPal, Stripe - tout l'écosystème de paiement local et international",
-      gradient: 'from-green-500 to-emerald-500',
-      bgGradient:
-        'from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30',
       stats: '100% sécurisé',
     },
     {
@@ -59,9 +53,6 @@ function AtoutsSectionClient() {
       subtitle: 'Rapidité et sécurité garanties',
       description:
         'Sites ultra-rapides, sécurité renforcée et référencement SEO optimisé',
-      gradient: 'from-yellow-500 to-orange-500',
-      bgGradient:
-        'from-yellow-50 to-orange-50 dark:from-yellow-900/30 dark:to-orange-900/30',
       stats: '<2s de chargement',
     },
     {
@@ -70,9 +61,6 @@ function AtoutsSectionClient() {
       subtitle: 'Stack technique avancé',
       description:
         'React, Next.js, Node.js, Docker - les technologies les plus récentes pour votre succès',
-      gradient: 'from-purple-500 to-indigo-500',
-      bgGradient:
-        'from-purple-50 to-indigo-50 dark:from-purple-900/30 dark:to-indigo-900/30',
       stats: 'Dernière génération',
     },
     {
@@ -81,9 +69,6 @@ function AtoutsSectionClient() {
       subtitle: 'Expertise multiculturelle',
       description:
         'Expérience Cameroun + formation France = solutions adaptées aux deux marchés',
-      gradient: 'from-teal-500 to-cyan-500',
-      bgGradient:
-        'from-teal-50 to-cyan-50 dark:from-teal-900/30 dark:to-cyan-900/30',
       stats: '2 continents',
     },
     {
@@ -92,9 +77,6 @@ function AtoutsSectionClient() {
       subtitle: 'Support personnalisé',
       description:
         'Du besoin initial à la mise en ligne + formation et support continu après livraison',
-      gradient: 'from-pink-500 to-rose-500',
-      bgGradient:
-        'from-pink-50 to-rose-50 dark:from-pink-900/30 dark:to-rose-900/30',
       stats: 'Suivi permanent',
     },
   ];
@@ -104,25 +86,21 @@ function AtoutsSectionClient() {
       icon: FiClock,
       value: '3+',
       label: "Années d'expérience",
-      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: FiUsers,
       value: '07+',
       label: 'Clients satisfaits',
-      gradient: 'from-green-500 to-emerald-500',
     },
     {
       icon: FiAward,
       value: '100%',
       label: 'Projets réussis',
-      gradient: 'from-purple-500 to-indigo-500',
     },
     {
       icon: FiShield,
       value: '24/7',
       label: 'Support disponible',
-      gradient: 'from-orange-500 to-red-500',
     },
   ];
 
@@ -136,7 +114,7 @@ function AtoutsSectionClient() {
       };
     } else {
       return {
-        initial: animateProps, // Affichage direct sans animation
+        initial: animateProps,
         animate: animateProps,
       };
     }
@@ -144,240 +122,297 @@ function AtoutsSectionClient() {
 
   return (
     <section id="atouts" className="relative overflow-hidden">
-      {/* Background cohérent avec la section services */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900/20" />
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-32 left-20 w-72 h-72 bg-pink-400/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
-      </div>
+      {/* Background avec les variables CSS */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: `linear-gradient(135deg, var(--bg) 0%, var(--surface) 50%, var(--primary) 100%)`,
+          opacity: 0.05
+        }}
+      />
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: `radial-gradient(circle at 30% 20%, var(--primary) 0%, transparent 50%)`,
+          opacity: 0.08
+        }}
+      />
 
-      <div ref={ref} className="relative 2xl:py-24 py-16">
-        <div className="container mx-auto px-4">
-          {/* Header dans le même style */}
-          <motion.div
-            {...getScrollAnimationProps(
-              { y: 50, opacity: 0 },
-              { y: 0, opacity: 1 }
-            )}
-            className="text-center mb-20"
+      <div ref={ref} className="relative container py-25">
+        {/* Header avec le système de design */}
+        <motion.div
+          {...getScrollAnimationProps(
+            { y: 50, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
+          className="text-center mb-25"
+        >
+          <div 
+            className="inline-flex items-center gap-3 glass-effect px-6 py-3 rounded-full mb-8"
+            style={{ border: `1px solid var(--border)` }}
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
-              <FiHeart className="text-purple-500" />
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Pourquoi nous choisir
-              </span>
-            </div>
+            <FiHeart style={{ color: 'var(--primary)' }} />
+            <span 
+              className="font-medium"
+              style={{ color: 'var(--text-light)' }}
+            >
+              Pourquoi nous choisir
+            </span>
+          </div>
 
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="text-gray-800 dark:text-white">Nos </span>
-              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">
-                atouts clés
-              </span>
-            </h2>
+          <h2 className="mb-8">
+            <span style={{ color: 'var(--text-strong)' }}>Nos </span>
+            <span className="text-gradient">
+              atouts clés
+            </span>
+          </h2>
 
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Des <strong>compétences techniques</strong> et une approche
-              humaine qui font toute la différence.
-              Votre succès, c&apos;est notre priorité <strong>absolue</strong>.
-            </p>
-          </motion.div>
-
-          {/* Grille des atouts - même style que les services */}
-          <motion.div
-            {...getScrollAnimationProps(
-              { opacity: 0 },
-              { opacity: 1 }
-            )}
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-20"
+          <p 
+            className="text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed"
+            style={{ color: 'var(--text-light)' }}
           >
-            {atoutsData.map((atout, index) => {
-              const IconComponent = atout.icon;
+            Des{' '}
+            <strong style={{ color: 'var(--text-strong)' }}>
+              compétences techniques
+            </strong>{' '}
+            et une approche humaine qui font toute la différence.
+            <br />
+            Votre succès, c'est notre priorité{' '}
+            <strong style={{ color: 'var(--text-strong)' }}>
+              absolue
+            </strong>.
+          </p>
+        </motion.div>
 
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  onHoverStart={() => setHoveredCard(index)}
-                  onHoverEnd={() => setHoveredCard(null)}
-                  className={`group relative bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300 overflow-hidden`}
-                >
-                  {/* Effet de brillance au hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-                  </div>
+        {/* Grille des atouts avec le design system */}
+        <motion.div
+          {...getScrollAnimationProps(
+            { opacity: 0 },
+            { opacity: 1 }
+          )}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-25"
+        >
+          {atoutsData.map((atout, index) => {
+            const IconComponent = atout.icon;
 
-                  {/* Contenu */}
-                  <div className="relative z-10 space-y-6">
-                    {/* Header avec icône */}
-                    <div className="flex items-center justify-between mb-4">
-                      <div
-                        className={`p-4 rounded-2xl bg-gradient-to-r ${atout.gradient} shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}
-                      >
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
-                      <div className="text-xs bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full font-medium">
-                        {atout.stats}
-                      </div>
-                    </div>
+            return (
+              <motion.div
+                key={index}
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                onHoverStart={() => setHoveredCard(index)}
+                onHoverEnd={() => setHoveredCard(null)}
+                className="card group p-10 hover-lift focus-ring relative overflow-hidden"
+              >
+                {/* Effet de brillance au hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div 
+                    className="absolute inset-0 transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"
+                    style={{
+                      background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)'
+                    }}
+                  />
+                </div>
 
-                    {/* Titre et description */}
-                    <div className="space-y-3">
-                      <div>
-                        <p className="text-sm text-purple-600 dark:text-purple-400 font-medium mb-1">
-                          {atout.subtitle}
-                        </p>
-                        <h3 className="mt-3 text-2xl font-bold text-gray-800 dark:text-white leading-tight">
-                          {atout.title}
-                        </h3>
-                      </div>
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {atout.description}
-                      </p>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-sm font-medium text-green-600 dark:text-green-400">
-                          <FiCheck className="w-4 h-4" />
-                          Maîtrise confirmée
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-
-          {/* Section stats dans le même style */}
-          <motion.div
-            {...getScrollAnimationProps(
-              { y: 100, opacity: 0 },
-              { y: 0, opacity: 1 }
-            )}
-            className="mb-20"
-          >
-            <div className="bg-gradient-to-r from-purple-50 via-blue-50 to-teal-50 dark:from-purple-900/20 dark:via-blue-900/20 dark:to-teal-900/20 rounded-3xl p-12 border border-purple-200/30 dark:border-purple-700/30">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-4 flex items-center justify-center gap-3">
-                  <FiTrendingUp className="text-purple-600" />
-                  Quelques chiffres
-                </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-300">
-                  Des résultats concrets qui témoignent de notre engagement
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {statsData.map((stat, index) => {
-                  const StatIcon = stat.icon;
-                  return (
-                    <motion.div
-                      key={index}
-                      initial={{ scale: 0, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      whileHover={{ y: -5 }}
-                      className="text-center group cursor-pointer"
+                {/* Contenu */}
+                <div className="relative z-10 space-y-8">
+                  {/* Header avec icône */}
+                  <div className="flex items-center justify-between">
+                    <div 
+                      className="p-5 shadow-medium group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
+                      style={{
+                        background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
+                        borderRadius: 'var(--radius-xl)'
+                      }}
                     >
-                      <div
-                        className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${stat.gradient} rounded-2xl mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg`}
+                      <IconComponent className="w-10 h-10 text-white" />
+                    </div>
+                    <div 
+                      className="text-xs px-4 py-2 font-medium"
+                      style={{
+                        background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
+                        color: 'white',
+                        borderRadius: 'var(--radius-full)',
+                        opacity: 0.9
+                      }}
+                    >
+                      {atout.stats}
+                    </div>
+                  </div>
+
+                  {/* Titre et description */}
+                  <div className="space-y-4">
+                    <div>
+                      <p 
+                        className="font-semibold mb-2"
+                        style={{ color: 'var(--primary)' }}
                       >
-                        <StatIcon className="w-8 h-8 text-white" />
-                      </div>
-
-                      <div className="text-4xl font-bold text-gray-800 dark:text-white mb-2 group-hover:scale-110 transition-transform duration-300">
-                        {stat.value}
-                      </div>
-                      <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
-                        {stat.label}
+                        {atout.subtitle}
                       </p>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-          </motion.div>
+                      <h3 
+                        className="text-3xl font-bold leading-tight"
+                        style={{ color: 'var(--text-strong)' }}
+                      >
+                        {atout.title}
+                      </h3>
+                    </div>
+                    <p 
+                      className="leading-relaxed text-lg"
+                      style={{ color: 'var(--text)' }}
+                    >
+                      {atout.description}
+                    </p>
+                  </div>
 
-          {/* CTA final dans le même style */}
-          <motion.div
-            {...getScrollAnimationProps(
-              { y: 100, opacity: 0 },
-              { y: 0, opacity: 1 }
-            )}
-            className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 rounded-3xl p-12 text-center text-white relative overflow-hidden"
+                  {/* Footer */}
+                  <div 
+                    className="pt-6 border-t"
+                    style={{ borderColor: 'var(--border)' }}
+                  >
+                    <div className="flex items-center gap-3">
+                      <FiCheck 
+                        className="w-5 h-5"
+                        style={{ color: 'var(--color-success)' }}
+                      />
+                      <span 
+                        className="font-semibold"
+                        style={{ color: 'var(--color-success)' }}
+                      >
+                        Maîtrise confirmée
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Section stats avec le design system */}
+        <motion.div
+          {...getScrollAnimationProps(
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
+          className="mb-25"
+        >
+          <div 
+            className="card p-16"
+            style={{
+              background: `linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%)`,
+              border: `1px solid var(--border)`
+            }}
           >
-            <div className="absolute inset-0 bg-black/20" />
-
-            <div className="relative z-10">
-              <h3 className="text-4xl font-bold mb-4">
-                Convaincu par nos atouts ?
+            <div className="text-center mb-16">
+              <h3 
+                className="text-4xl lg:text-5xl font-bold mb-6 flex items-center justify-center gap-4"
+                style={{ color: 'var(--text-strong)' }}
+              >
+                <FiTrendingUp 
+                  className="text-4xl"
+                  style={{ color: 'var(--primary)' }}
+                />
+                Quelques chiffres
               </h3>
-              <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-                Discutons de votre projet ! Consultation gratuite de 30 min pour
-                définir la stratégie parfaite.
+              <p 
+                className="text-xl"
+                style={{ color: 'var(--text-light)' }}
+              >
+                Des résultats concrets qui témoignent de notre engagement
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <MotionLink
-                  href="/contact"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
-                >
-                  <FiSend />
-                  Démarrons ensemble
-                </MotionLink>
-
-                <MotionLink
-                  href="#realisations"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
-                >
-                  <FiUsers />
-                  Voir nos réalisations
-                </MotionLink>
-              </div>
             </div>
-          </motion.div>
-        </div>
-      </div>
 
-      <style jsx>{`
-        @keyframes blob {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+              {statsData.map((stat, index) => {
+                const StatIcon = stat.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
+                    className="text-center group cursor-pointer"
+                  >
+                    <div 
+                      className="inline-flex items-center justify-center w-20 h-20 mb-6 group-hover:scale-110 transition-all duration-300 shadow-medium"
+                      style={{
+                        background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
+                        borderRadius: 'var(--radius-xl)'
+                      }}
+                    >
+                      <StatIcon className="w-10 h-10 text-white" />
+                    </div>
+
+                    <div 
+                      className="text-5xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300"
+                      style={{ color: 'var(--text-strong)' }}
+                    >
+                      {stat.value}
+                    </div>
+                    <p 
+                      className="font-semibold text-lg"
+                      style={{ color: 'var(--text-light)' }}
+                    >
+                      {stat.label}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA final avec le système de design */}
+        <motion.div
+          {...getScrollAnimationProps(
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
+          className="text-center text-white relative overflow-hidden p-16"
+          style={{
+            background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
+            borderRadius: 'var(--radius-xl)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/20" />
+
+          <div className="relative z-10">
+            <h3 className="text-4xl font-bold mb-6">
+              Convaincu par nos atouts ?
+            </h3>
+            <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+              Discutons de votre projet ! Consultation gratuite de 30 min pour
+              définir la stratégie parfaite.
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <MotionLink
+                href="/contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-secondary bg-white text-gray-900 hover:bg-gray-100 shadow-strong"
+              >
+                <FiSend className="mr-3" />
+                Démarrons ensemble
+              </MotionLink>
+
+              <MotionLink
+                href="#realisations"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-ghost border-white text-white hover:bg-white/10"
+              >
+                <FiUsers className="mr-3" />
+                Voir nos réalisations
+              </MotionLink>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

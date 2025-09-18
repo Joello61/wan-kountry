@@ -1,61 +1,98 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { FiArrowUpRight } from 'react-icons/fi'
 
 const NotFound = () => {
   return (
-    <section>
-      <div className='relative w-full pt-44 2xl:pb-20 pb-10 before:absolute before:w-full before:h-full before:bg-linear-to-r before:from-blue_gradient before:via-white before:to-yellow_gradient before:rounded-full before:top-24 before:blur-3xl before:-z-10 dark:before:from-dark_blue_gradient dark:before:via-black dark:before:to-dark_yellow_gradient dark:before:rounded-full dark:before:blur-3xl dark:before:-z-10'>
-        <div className='container'>
-          <div className='flex flex-col items-center gap-8'>
-            <div>
-              <Image
-                src={'/images/Notfound/notfound.png'}
-                alt='Not Found Image'
-                height={380}
-                width={670}
-                unoptimized={true}
-              />
-            </div>
-            <div className='max-w-xl text-center'>
-              <h2>
-                Oops! The page you are looking for{' '}
-                <span className='instrument-font italic font-normal dark:text-white/70'>
-                  doesn&apos;t exist
-                </span>
-              </h2>
-            </div>
-            <div>
-              <Link
-                href='/'
-                className='group w-fit text-white font-medium bg-dark_black dark:bg-white/20 dark:hover:bg-white rounded-full flex items-center gap-4 py-2 pl-5 pr-2 hover:bg-transparent border border-dark_black'>
-                <span className='group-hover:translate-x-9 group-hover:text-dark_black transform transition-transform duration-200 ease-in-out'>
-                  Back to home
-                </span>
-                <svg
-                  width='32'
-                  height='32'
-                  viewBox='0 0 32 32'
-                  fill='none'
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='group-hover:-translate-x-[125px] transition-all duration-200 ease-in-out group-hover:rotate-45'>
-                  <rect
-                    width='32'
-                    height='32'
-                    rx='16'
-                    fill='white'
-                    className='fill-white transition-colors duration-200 ease-in-out group-hover:fill-black'
-                  />
-                  <path
-                    d='M11.832 11.3334H20.1654M20.1654 11.3334V19.6668M20.1654 11.3334L11.832 19.6668'
-                    stroke='#1B1D1E'
-                    strokeWidth='1.42857'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    className='stroke-[#1B1D1E] transition-colors duration-200 ease-in-out group-hover:stroke-white'
-                  />
-                </svg>
-              </Link>
+    <section className="py-20 min-h-screen flex items-center" style={{ backgroundColor: 'var(--bg)' }}>
+      {/* Background décoratif */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div 
+          className="absolute top-20 left-20 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-30"
+          style={{ backgroundColor: 'var(--primary)' }}
+        />
+        <div
+          className="absolute bottom-20 right-20 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-30"
+          style={{ 
+            backgroundColor: 'var(--color-warning)',
+            animationDelay: '2s'
+          }}
+        />
+      </div>
+
+      <div className='container relative z-10'>
+        <div className='flex flex-col items-center gap-8 text-center'>
+          <div className="hover-lift">
+            <Image
+              src={'/images/Notfound/notfound.png'}
+              alt='Page non trouvée'
+              height={380}
+              width={670}
+              unoptimized={true}
+              className="max-w-full h-auto"
+            />
+          </div>
+          
+          <div className='max-w-xl'>
+            <h1 className="text-balance mb-4">
+              Oops! La page que vous recherchez{' '}
+              <span className='text-gradient font-normal italic'>
+                n&apos;existe pas
+              </span>
+            </h1>
+            <p className="text-lg leading-relaxed" style={{ color: 'var(--text)' }}>
+              La page demandée est introuvable. Elle a peut-être été déplacée, 
+              supprimée ou l'URL est incorrecte.
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 items-center">
+            {/* Bouton principal */}
+            <Link
+              href='/'
+              className='btn-primary group rounded-full flex items-center gap-4 py-3 pl-6 pr-3 hover:scale-105 transition-all duration-300'
+            >
+              <span className='group-hover:translate-x-2 transform transition-transform duration-200 ease-in-out'>
+                Retour à l&apos;accueil
+              </span>
+              <div className='w-8 h-8 rounded-full flex items-center justify-center group-hover:translate-x-1 transition-all duration-200 ease-in-out group-hover:rotate-12'
+                   style={{ backgroundColor: 'var(--color-white)' }}>
+                <FiArrowUpRight className="w-4 h-4" style={{ color: 'var(--primary-dark)' }} />
+              </div>
+            </Link>
+
+            {/* Bouton secondaire */}
+            <Link
+              href='/contact'
+              className='btn-ghost group rounded-full flex items-center gap-2'
+            >
+              <span>Nous contacter</span>
+              <FiArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+          </div>
+
+          {/* Liens utiles */}
+          <div className="card p-6 max-w-md w-full">
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--text-strong)' }}>
+              Liens utiles
+            </h3>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { href: '/', label: 'Accueil' },
+                { href: '/services', label: 'Services' },
+                { href: '/realisations', label: 'Réalisations' },
+                { href: '/contact', label: 'Contact' }
+              ].map((link, index) => (
+                <Link 
+                  key={index}
+                  href={link.href}
+                  className="link-primary text-sm py-2 px-3 rounded-lg transition-all duration-200 hover-lift"
+                  style={{ backgroundColor: 'var(--surface)' }}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

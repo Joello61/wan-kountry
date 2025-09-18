@@ -59,12 +59,23 @@ const HeaderLinkContent: React.FC<{ item: HeaderItem }> = ({ item }) => {
     <li>
       <Link
         href={item.href}
-        className={`px-4 py-2 font-medium hover:text-black dark:hover:text-black hover:bg-white hover:rounded-3xl hover:shadow-header_shadow 
-                    ${
-                      activeLink === item.href
-                        ? 'bg-white text-black rounded-[90rem] shadow-header_shadow'
-                        : 'text-dark_black/60 dark:text-white'
-                    }`}>
+        className={`px-4 py-2 font-medium transition-all duration-300 rounded-3xl hover-lift ${
+          activeLink === item.href
+            ? 'shadow-lg'
+            : ''
+        }`}
+        style={{
+          color: activeLink === item.href 
+            ? 'var(--text-strong)' 
+            : 'var(--text-light)',
+          backgroundColor: activeLink === item.href 
+            ? 'var(--color-white)' 
+            : 'transparent',
+          boxShadow: activeLink === item.href 
+            ? 'var(--shadow-soft)' 
+            : 'none'
+        }}
+      >
         {item.label}
       </Link>
     </li>

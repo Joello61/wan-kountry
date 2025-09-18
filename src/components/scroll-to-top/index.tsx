@@ -1,11 +1,11 @@
 'use client'
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiArrowUp } from "react-icons/fi";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Top: 0 takes us all the way back to the top of the page
-  // Behavior: smooth keeps it smooth!
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -14,7 +14,6 @@ export default function ScrollToTop() {
   };
 
   useEffect(() => {
-    // Button is displayed after scrolling for 500 pixels
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
@@ -24,23 +23,56 @@ export default function ScrollToTop() {
     };
 
     window.addEventListener("scroll", toggleVisibility);
-
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   return (
-    <div className="fixed bottom-8 right-8 z-999">
-      <div className="flex items-center gap-2.5">
+    <div className="fixed bottom-8 right-8 z-50">
+      <AnimatePresence>
         {isVisible && (
-          <div
+          <motion.button
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileHover={{ 
+              scale: 1.1,
+              y: -2
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ 
+              type: "spring",
+              stiffness: 300,
+              damping: 25
+            }}
             onClick={scrollToTop}
-            aria-label="scroll to top"
-            className="back-to-top flex h-10 w-10 cursor-pointer items-center justify-center rounded-md bg-purple_blue text-white shadow-md transition duration-300 ease-in-out hover:bg-dark"
+            aria-label="Retour en haut de la page"
+            className="group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-300 focus-ring shadow-lg hover:shadow-xl"
+            style={{
+              backgroundColor: 'var(--primary-dark)',
+              color: 'var(--color-white)'
+            }}
           >
-            <span className="mt-[6px] h-3 w-3 rotate-45 border-l border-t border-white"></span>
-          </div>
+            <motion.div
+              animate={{ y: [0, -2, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="flex items-center justify-center"
+            >
+              <FiArrowUp size={20} />
+            </motion.div>
+            
+            {/* Effet de survol avec animation */}
+            <motion.div
+              className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+              style={{ backgroundColor: 'var(--color-white)' }}
+              whileHover={{ scale: 1.2 }}
+            />
+          </motion.button>
         )}
-      </div>
+      </AnimatePresence>
     </div>
   );
 }

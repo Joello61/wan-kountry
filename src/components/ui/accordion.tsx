@@ -5,7 +5,6 @@ import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { Plus } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-
 const Accordion = AccordionPrimitive.Root
 
 const AccordionItem = React.forwardRef<
@@ -15,9 +14,14 @@ const AccordionItem = React.forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      'rounded-2xl data-[state=open]:bg-[#1B1D1E0D] dark:data-[state=open]:bg-white/5',
+      'rounded-2xl transition-all duration-300',
+      'data-[state=open]:shadow-lg',
       className
     )}
+    style={{
+      backgroundColor: 'var(--color-white)',
+      borderColor: 'var(--border)'
+    }}
     {...props}
   />
 ))
@@ -27,16 +31,26 @@ const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className='flex '>
+  <AccordionPrimitive.Header className='flex'>
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        'flex flex-1 items-center justify-between transition-all text-left [&[data-state=open]>svg]:rotate-45',
+        'flex flex-1 items-center justify-between transition-all text-left focus-ring rounded-xl',
+        '[&[data-state=open]>svg]:rotate-45',
+        'hover-lift duration-200',
         className
       )}
-      {...props}>
+      style={{ color: 'var(--text-strong)' }}
+      {...props}
+    >
       {children}
-      <Plus className='h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200' />
+      <div className="p-1 rounded-full transition-all duration-200"
+           style={{ backgroundColor: 'var(--primary)/10' }}>
+        <Plus 
+          className='h-4 w-4 shrink-0 transition-transform duration-200' 
+          style={{ color: 'var(--primary)' }}
+        />
+      </div>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))
@@ -48,9 +62,13 @@ const AccordionContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className='overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down'
-    {...props}>
-    <div className={cn('pt-3', className)}>{children}</div>
+    className='overflow-hidden transition-all duration-300 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down'
+    {...props}
+  >
+    <div className={cn('pt-4 pb-1', className)} 
+         style={{ color: 'var(--text)' }}>
+      {children}
+    </div>
   </AccordionPrimitive.Content>
 ))
 AccordionContent.displayName = AccordionPrimitive.Content.displayName

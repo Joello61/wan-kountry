@@ -1,6 +1,5 @@
 import AboutSectionClient from '@/components/home/about-us/AboutUsClient';
 import AtoutsSectionClient from '@/components/home/atouts/AtoutsClient';
-import CustomerStoriesClient from '@/components/home/customer-stories/CustomerStoriesClient';
 import FaqClient from '@/components/home/faq/FaqClient';
 import HeroSectionClient from '@/components/home/hero/HeroClient';
 import RealisationSectionClient from '@/components/home/realisations/RealisationClient';
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
   title:
     'Wan-Kountry - Développeur Web Freelance | Sites Modernes Cameroun-France',
   description:
-    'Développeur web expert créant sites vitrines, e-commerce et apps modernes. Mobile-first, Mobile Money, une première livraison en 15 jours. Basé France, expertise Cameroun.',
+    'Développeur web expert créant sites vitrines, e-commerce et apps modernes. Mobile-first, Mobile Money, première livraison en 15 jours. Basé France, expertise Cameroun.',
   keywords: [
     'développeur web freelance',
     'site web moderne Cameroun',
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
   category: 'Technology',
   metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
   openGraph: {
-    title: 'Wan-Kountry - Votre site web moderne avec un premier résultat en 15 jours',
+    title: 'Wan-Kountry - Votre site web moderne avec première livraison en 15 jours',
     description:
       'Sites vitrines, e-commerce et applications web performants. Mobile-first, Mobile Money, support 24/7. Résultats garantis.',
     url: 'https://wan-kountry.joeltech.dev/',
@@ -50,10 +49,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wan-Kountry - Sites web modernes avec un premier résultat en 15 jours',
+    title: 'Wan-Kountry - Sites web modernes avec première livraison en 15 jours',
     description:
       'Mobile-first, Mobile Money, ultra-rapide. Développeur web expert pour votre business.',
-    creator: '@Wan-Kountry',
+    creator: '@WanKountry',
     images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
   },
   alternates: {
@@ -76,50 +75,40 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
+  verification: {
+    google: 'your-google-verification-code', // À ajouter si vous avez Search Console
+  },
 };
 
 export default function Home() {
   return (
-    <main>
-      {/* ---------------------Hero section Starts-----------------  */}
+    <main role="main">
+      {/* Hero Section */}
       <HeroSectionClient />
-      {/* ---------------------Hero section Ends-----------------  */}
-
-      {/* ---------------------Web result section Starts-----------------  */}
+      
+      {/* À Propos */}
       <AboutSectionClient />
-      {/* ---------------------Web result section Ends-----------------  */}
-
-      {/* ---------------------Innovation section Starts-----------------  */}
+      
+      {/* Services */}
       <ServicesSectionClient />
-      {/* ---------------------Innovation section Ends-----------------  */}
-
-      {/* ---------------------Atouts section Starts-----------------  */}
+      
+      {/* Atouts */}
       <AtoutsSectionClient />
-      {/* ---------------------Atouts section Ends-----------------  */}
-
-      {/* ---------------------Online presence section Starts-----------------  */}
+      
+      {/* Réalisations */}
       <RealisationSectionClient />
-      {/* ---------------------Online presence section Ends-----------------  */}
-
-      {/* ---------------------Creative mind section Starts-----------------  */}
+      
+      {/* Témoignages */}
       <TestimonySectionClient />
-      {/* ---------------------Creative mind section Ends-----------------  */}
-
-      {/* ---------------------Customer Stories section Starts-----------------  */}
-      <CustomerStoriesClient />
-      {/* ---------------------Customer Stories section Ends-----------------  */}
-
-      {/* ---------------------Subscription section Starts-----------------  */}
+      
+      {/* Tarifs */}
       <SubscriptionClient />
-      {/* ---------------------Subscription section Ends-----------------  */}
-
-      {/* ---------------------Faq section Starts-----------------  */}
+      
+      {/* FAQ */}
       <FaqClient />
-      {/* ---------------------Faq section Ends-----------------  */}
-
-      {/* ---------------------Solutions section Starts-----------------  */}
+      
+      {/* Call to Action Final */}
       <SolutionsClient />
-      {/* ---------------------Solutions section Ends-----------------  */}
     </main>
   );
 }

@@ -44,8 +44,6 @@ function RealisationSectionClient() {
       codeLinks: [
         { frontend: "https://github.com/Joello61/exploratory-website.git" }
       ],
-      gradient: "from-blue-500 to-cyan-500",
-      bgGradient: "from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30",
       featured: true,
       results: "+80% de visibilité professionnelle"
     },
@@ -61,8 +59,6 @@ function RealisationSectionClient() {
       codeLinks: [
         { frontend: "https://github.com/Joello61/brulage-dashboard.git", backend: "", other: "" }
       ],
-      gradient: "from-green-500 to-emerald-500",
-      bgGradient: "from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30",
       featured: false,
       results: "Décisions opérationnelles plus rapides (+30%)"
     },
@@ -81,8 +77,6 @@ function RealisationSectionClient() {
           backend: "https://github.com/Joello61/candi-tracker-api.git"
         }
       ],
-      gradient: "from-purple-500 to-pink-500",
-      bgGradient: "from-purple-50 to-pink-50 dark:from-purple-900/30 dark:to-pink-900/30",
       featured: true,
       results: "-50% de temps passé à suivre les candidatures"
     },
@@ -101,8 +95,6 @@ function RealisationSectionClient() {
           backend: "https://github.com/Joello61/backend_task_flow2"
         }
       ],
-      gradient: "from-orange-500 to-red-500",
-      bgGradient: "from-orange-50 to-red-50 dark:from-orange-900/30 dark:to-red-900/30",
       featured: false,
       results: "+40% de productivité sur la gestion quotidienne"
     },
@@ -121,8 +113,6 @@ function RealisationSectionClient() {
           backend: "https://github.com/Joello61/eventHiveFront"
         }
       ],
-      gradient: "from-pink-500 to-rose-500",
-      bgGradient: "from-pink-50 to-rose-50 dark:from-pink-900/30 dark:to-rose-900/30",
       featured: true,
       results: "+150% de participants sur les événements"
     },
@@ -141,8 +131,6 @@ function RealisationSectionClient() {
           backend: "https://github.com/Joello61/wefundBackend"
         }
       ],
-      gradient: "from-yellow-500 to-orange-500",
-      bgGradient: "from-yellow-50 to-orange-50 dark:from-yellow-900/30 dark:to-orange-900/30",
       featured: false,
       results: "+300% de levées de fonds réussies"
     },
@@ -161,8 +149,6 @@ function RealisationSectionClient() {
           backend: "https://github.com/Joello61/PGI-Backend"
         }
       ],
-      gradient: "from-indigo-500 to-blue-600",
-      bgGradient: "from-indigo-50 to-blue-50 dark:from-indigo-900/30 dark:to-blue-900/30",
       featured: false,
       results: "Jusqu'à 30h/mois économisées côté administratif"
     },
@@ -181,8 +167,6 @@ function RealisationSectionClient() {
           backend: "https://github.com/Joello61/bocobiBackend"
         }
       ],
-      gradient: "from-teal-500 to-cyan-500",
-      bgGradient: "from-teal-50 to-cyan-50 dark:from-teal-900/30 dark:to-cyan-900/30",
       featured: true,
       results: "+200% d'accès facilité aux soins"
     },
@@ -198,8 +182,6 @@ function RealisationSectionClient() {
       codeLinks: [
         { frontend: "https://github.com/Joello61/paadMobile" }
       ],
-      gradient: "from-red-500 to-pink-500",
-      bgGradient: "from-red-50 to-pink-50 dark:from-red-900/30 dark:to-pink-900/30",
       featured: false,
       results: "+25% d'adhérence au suivi pour les bénéficiaires"
     }
@@ -247,334 +229,395 @@ function RealisationSectionClient() {
 
   return (
     <section id="realisations" className="relative overflow-hidden">
-      {/* Background cohérent */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900/20" />
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-400/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-32 left-20 w-72 h-72 bg-pink-400/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
-      </div>
+      {/* Background avec les variables CSS */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: `linear-gradient(135deg, var(--bg) 0%, var(--surface) 50%, var(--primary) 100%)`,
+          opacity: 0.05
+        }}
+      />
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: `radial-gradient(circle at 30% 20%, var(--primary) 0%, transparent 50%)`,
+          opacity: 0.08
+        }}
+      />
 
-      <div ref={ref} className="relative 2xl:py-24 py-16">
-        <div className="container mx-auto px-4">
-          {/* Header moderne */}
-          <motion.div
-            {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
-            className="text-center mb-20"
+      <div ref={ref} className="relative container py-25">
+        {/* Header avec le système de design */}
+        <motion.div
+          {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
+          className="text-center mb-25"
+        >
+          <div 
+            className="inline-flex items-center gap-3 glass-effect px-6 py-3 rounded-full mb-8"
+            style={{ border: `1px solid var(--border)` }}
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-pink-500/10 px-4 py-2 rounded-full border border-purple-200/50 dark:border-purple-500/30 mb-6">
-              <FiStar className="text-purple-500" />
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                Nos derniers projets
-              </span>
-            </div>
+            <FiStar style={{ color: 'var(--primary)' }} />
+            <span 
+              className="font-medium"
+              style={{ color: 'var(--text-light)' }}
+            >
+              Nos derniers projets
+            </span>
+          </div>
 
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="text-gray-800 dark:text-white">Nos </span>
-              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">
-                réalisations
-              </span>
-            </h2>
+          <h2 className="mb-8">
+            <span style={{ color: 'var(--text-strong)' }}>Nos </span>
+            <span className="text-gradient">
+              réalisations
+            </span>
+          </h2>
 
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Des projets <strong>concrets</strong> qui ont transformé le
-              business de nos clients.
-              <br />
-              Chaque création raconte une <strong>histoire de succès</strong>.
-            </p>
-          </motion.div>
-
-          {/* Grille de projets -  2 colonnes sur desktop, responsive */}
-          <motion.div
-            {...getScrollAnimationProps(
-              { opacity: 0 },
-              { opacity: 1 }
-            )}
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8"
+          <p 
+            className="text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed"
+            style={{ color: 'var(--text-light)' }}
           >
-            {projectsToShow?.map((project, index) => {
-              const isFeatured = project.featured;
-              const isHovered = hoveredProject === index;
-              const codeLinks = getCodeLinks(project);
+            Des projets{' '}
+            <strong style={{ color: 'var(--text-strong)' }}>
+              concrets
+            </strong>{' '}
+            qui ont transformé le business de nos clients.
+            <br />
+            Chaque création raconte une{' '}
+            <strong style={{ color: 'var(--text-strong)' }}>
+              histoire de succès
+            </strong>.
+          </p>
+        </motion.div>
 
-              return (
-                <motion.div
-                  key={project.id}
-                  // Animation d'entrée
-                  {...getScrollAnimationProps(
-                    { y: 50, opacity: 0 },
-                    { y: 0, opacity: 1, transition: { duration: 0.6, delay: index * 0.1 } }
-                  )}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  onHoverStart={() => handleProjectHover(index)}
-                  onHoverEnd={handleProjectLeave}
-                  className="group relative overflow-hidden rounded-3xl transition-all duration-300 cursor-pointer"
+        {/* Grille de projets avec le design system */}
+        <motion.div
+          {...getScrollAnimationProps(
+            { opacity: 0 },
+            { opacity: 1 }
+          )}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8"
+        >
+          {projectsToShow?.map((project, index) => {
+            const isFeatured = project.featured;
+            const isHovered = hoveredProject === index;
+            const codeLinks = getCodeLinks(project);
+
+            return (
+              <motion.div
+                key={project.id}
+                {...getScrollAnimationProps(
+                  { y: 50, opacity: 0 },
+                  { y: 0, opacity: 1, transition: { duration: 0.6, delay: index * 0.1 } }
+                )}
+                whileHover={{ y: -10, scale: 1.02 }}
+                onHoverStart={() => handleProjectHover(index)}
+                onHoverEnd={handleProjectLeave}
+                className="group relative overflow-hidden transition-all duration-300 cursor-pointer"
+              >
+                <div
+                  className={`card relative h-full hover-lift focus-ring overflow-hidden ${
+                    isHovered ? 'scale-105' : ''
+                  }`}
                 >
-                  <div
-                    className={`relative h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-2xl transition-all duration-300 rounded-3xl overflow-hidden ${
-                      isHovered ? 'scale-105' : ''
-                    }`}
-                  >
-                    {/* Badge featured */}
-                    {isFeatured && (
-                      <div className="absolute top-4 right-4 z-20">
-                        <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
-                          <FiZap className="w-3 h-3" />
-                          PROJET PHARE
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Image avec overlay */}
-                    <div className="relative overflow-hidden">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={400}
-                        height={250}
-                        className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                        unoptimized={true}
-                      />
-
-                      {/* Gradient overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60" />
-
-                      {/* Category badge */}
-                      <div className="absolute top-4 left-4">
-                        <span
-                          className={`bg-gradient-to-r ${project.gradient} text-white px-3 py-1 rounded-full text-xs font-medium`}
-                        >
-                          {project.category}
-                        </span>
-                      </div>
-
-                      {/* Overlay avec boutons d'action */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                        {project.demoLink && (
-                          <motion.a
-                            href={project.demoLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-200 flex items-center gap-2"
-                          >
-                            <FiEye size={16} />
-                            Demo
-                          </motion.a>
-                        )}
-                        {codeLinks.length > 0 && (
-                          <motion.a
-                            href={codeLinks[0]!.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            className="bg-white text-gray-900 px-4 py-2 rounded-full hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 font-medium"
-                          >
-                            <FiGithub size={16} />
-                            Code
-                          </motion.a>
-                        )}
+                  {/* Badge featured */}
+                  {isFeatured && (
+                    <div className="absolute top-6 right-6 z-20">
+                      <div 
+                        className="text-white px-4 py-2 font-bold flex items-center gap-2"
+                        style={{
+                          background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '12px'
+                        }}
+                      >
+                        <FiZap className="w-3 h-3" />
+                        PROJET PHARE
                       </div>
                     </div>
+                  )}
 
-                    {/* Contenu de la carte */}
-                    <div className="p-6 space-y-4">
-                      {/* Titre et résultat */}
-                      <div className="space-y-3">
-                        <h3 className="text-lg lg:text-xl font-bold leading-tight transition-colors duration-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 text-gray-800 dark:text-white">
-                          {project.title}
-                        </h3>
+                  {/* Image avec overlay */}
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={400}
+                      height={250}
+                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                      unoptimized={true}
+                    />
 
-                        <div
-                          className={`inline-flex items-center gap-2 text-sm font-medium bg-gradient-to-r ${project.bgGradient} px-3 py-1 rounded-full border border-green-200/50 dark:border-green-700/50 my-3`}
-                        >
-                          <FiTrendingUp className="w-4 h-4 text-green-600 dark:text-green-400" />
-                          <span className="text-green-700 dark:text-green-300">
-                            {project.results}
-                          </span>
-                        </div>
-                      </div>
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-60" />
 
-                      {/* Description */}
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm">
-                        {project.description}
-                      </p>
-
-                      {/* Technologies */}
-                      <div className="flex flex-wrap gap-2 my-3">
-                        {project.tags?.slice(0, 3).map((tag, tagIndex) => (
-                          <span
-                            key={tagIndex}
-                            className="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full border border-gray-200 dark:border-gray-600 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors duration-200"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                        {project.tags?.length > 3 && (
-                          <span className="text-xs text-purple-500 px-3 py-1 font-medium">
-                            +{project.tags.length - 3} autres
-                          </span>
-                        )}
-                      </div>
-
-                      {/* Footer avec liens */}
-                      <div className="pt-4 border-t border-gray-200/50 dark:border-gray-700/50">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-sm font-medium text-green-600 dark:text-green-400">
-                            <FiCheckCircle className="w-4 h-4" />
-                            Mission accomplie
-                          </div>
-                          
-                          {/* Liens supplémentaires pour les projets avec backend/frontend séparés */}
-                          <div className="flex items-center gap-2">
-                            {codeLinks.length > 1 && (
-                              <div className="flex gap-1">
-                                {codeLinks.slice(0, 2).map((link, linkIndex) => (
-                                  <motion.a
-                                    key={linkIndex}
-                                    href={link.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    whileHover={{ scale: 1.1 }}
-                                    className="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 px-2 py-1 rounded-full hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors duration-200 flex items-center gap-1"
-                                  >
-                                    <FiCode className="w-3 h-3" />
-                                    {link.type}
-                                  </motion.a>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
+                    {/* Category badge */}
+                    <div className="absolute top-6 left-6">
+                      <span
+                        className="text-white px-4 py-2 font-semibold"
+                        style={{
+                          background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '12px'
+                        }}
+                      >
+                        {project.category}
+                      </span>
                     </div>
 
-                    {/* Effet de brillance */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                    {/* Overlay avec boutons d'action */}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                      {project.demoLink && (
+                        <motion.a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="glass-effect border text-white px-6 py-3 hover:bg-white/30 transition-all duration-200 flex items-center gap-2 font-medium"
+                          style={{
+                            borderColor: 'rgba(255,255,255,0.3)',
+                            borderRadius: 'var(--radius-full)'
+                          }}
+                        >
+                          <FiEye size={16} />
+                          Demo
+                        </motion.a>
+                      )}
+                      {codeLinks.length > 0 && (
+                        <motion.a
+                          href={codeLinks[0]!.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="bg-white text-gray-900 px-6 py-3 hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 font-semibold"
+                          style={{ borderRadius: 'var(--radius-full)' }}
+                        >
+                          <FiGithub size={16} />
+                          Code
+                        </motion.a>
+                      )}
                     </div>
                   </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
 
-          {/* Bouton Voir plus/moins */}
-          {hasMoreProjects && (
-            <motion.div 
-              className="flex justify-center mt-16"
-              {...getScrollAnimationProps({ y: 30, opacity: 0 }, { y: 0, opacity: 1 })}
+                  {/* Contenu de la carte */}
+                  <div className="p-8 space-y-6">
+                    {/* Titre et résultat */}
+                    <div className="space-y-4">
+                      <h3 
+                        className="text-xl lg:text-2xl font-bold leading-tight transition-colors duration-200 group-hover:text-primary"
+                        style={{ 
+                          color: 'var(--text-strong)',
+                          '--text-primary': 'var(--primary)'
+                        }}
+                      >
+                        {project.title}
+                      </h3>
+
+                      <div
+                        className="inline-flex items-center gap-3 font-semibold px-4 py-2"
+                        style={{
+                          background: `linear-gradient(135deg, var(--color-success) 0%, var(--color-success) 100%)`,
+                          opacity: 0.1,
+                          borderRadius: 'var(--radius-full)',
+                          border: `1px solid var(--color-success)`,
+                          color: 'var(--color-success)'
+                        }}
+                      >
+                        <FiTrendingUp className="w-4 h-4" />
+                        <span>
+                          {project.results}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p 
+                      className="leading-relaxed"
+                      style={{ color: 'var(--text)' }}
+                    >
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-3">
+                      {project.tags?.slice(0, 3).map((tag, tagIndex) => (
+                        <span
+                          key={tagIndex}
+                          className="text-xs px-4 py-2 border transition-colors duration-200"
+                          style={{
+                            backgroundColor: 'var(--surface)',
+                            color: 'var(--text)',
+                            borderColor: 'var(--border)',
+                            borderRadius: 'var(--radius-full)'
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {project.tags?.length > 3 && (
+                        <span 
+                          className="text-xs px-4 py-2 font-semibold"
+                          style={{ color: 'var(--primary)' }}
+                        >
+                          +{project.tags.length - 3} autres
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Footer avec liens */}
+                    <div 
+                      className="pt-6 border-t"
+                      style={{ borderColor: 'var(--border)' }}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div 
+                          className="flex items-center gap-3 font-semibold"
+                          style={{ color: 'var(--color-success)' }}
+                        >
+                          <FiCheckCircle className="w-5 h-5" />
+                          Mission accomplie
+                        </div>
+                        
+                        {/* Liens supplémentaires */}
+                        <div className="flex items-center gap-2">
+                          {codeLinks.length > 1 && (
+                            <div className="flex gap-2">
+                              {codeLinks.slice(0, 2).map((link, linkIndex) => (
+                                <motion.a
+                                  key={linkIndex}
+                                  href={link.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  whileHover={{ scale: 1.1 }}
+                                  className="text-xs px-3 py-1 transition-colors duration-200 flex items-center gap-1 font-medium"
+                                  style={{
+                                    backgroundColor: 'var(--primary)',
+                                    color: 'white',
+                                    borderRadius: 'var(--radius-full)',
+                                    opacity: 0.9
+                                  }}
+                                >
+                                  <FiCode className="w-3 h-3" />
+                                  {link.type}
+                                </motion.a>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Effet de brillance */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    <div 
+                      className="absolute inset-0 transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"
+                      style={{
+                        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)'
+                      }}
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Bouton Voir plus/moins */}
+        {hasMoreProjects && (
+          <motion.div 
+            className="flex justify-center mt-20"
+            {...getScrollAnimationProps({ y: 30, opacity: 0 }, { y: 0, opacity: 1 })}
+          >
+            <motion.button
+              onClick={() => setShowAllProjects(!showAllProjects)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn-primary group shadow-strong flex items-center gap-4"
+              style={{ fontSize: '18px', padding: '16px 32px' }}
             >
-              <motion.button
-                onClick={() => setShowAllProjects(!showAllProjects)}
+              <span>
+                {showAllProjects 
+                  ? "Voir moins de projets" 
+                  : `Voir ${realisationsList.length - 4} projets supplémentaires`
+                }
+              </span>
+              <motion.div
+                animate={{ rotate: showAllProjects ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <FiChevronDown className="w-5 h-5" />
+              </motion.div>
+            </motion.button>
+          </motion.div>
+        )}
+
+        {/* CTA final avec le système de design */}
+        <motion.div
+          {...getScrollAnimationProps(
+            { y: 100, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
+          className="text-center text-white relative overflow-hidden p-16 mt-25"
+          style={{
+            background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
+            borderRadius: 'var(--radius-xl)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/20" />
+          <div 
+            className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-2xl animate-pulse"
+            style={{ background: 'rgba(255,255,255,0.1)' }}
+          />
+          <div
+            className="absolute -bottom-20 -left-20 w-40 h-40 rounded-full blur-2xl animate-pulse"
+            style={{ 
+              background: 'rgba(255,255,255,0.1)',
+              animationDelay: '1s' 
+            }}
+          />
+
+          <div className="relative z-10">
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="inline-block mb-8"
+            >
+              <FiHeart className="text-pink-200" size={40} />
+            </motion.div>
+
+            <h3 className="text-4xl lg:text-5xl font-bold mb-8">
+              Votre projet sera le prochain ?
+            </h3>
+            <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto leading-relaxed">
+              Chaque réalisation commence par une <strong>discussion</strong>.
+              Parlons de votre vision et créons ensemble quelque chose d'
+              <strong>extraordinaire</strong> !
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <MotionLink
+                href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3"
+                className="btn-secondary bg-white text-gray-900 hover:bg-gray-100 shadow-strong"
               >
-                <span>
-                  {showAllProjects 
-                    ? "Voir moins de projets" 
-                    : `Voir ${realisationsList.length - 4} projets supplémentaires`
-                  }
-                </span>
-                <motion.div
-                  animate={{ rotate: showAllProjects ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <FiChevronDown className="w-5 h-5" />
-                </motion.div>
-              </motion.button>
-            </motion.div>
-          )}
+                <FiMessageCircle className="mr-3" />
+                Démarrons votre projet
+              </MotionLink>
 
-          {/* CTA final moderne */}
-          <motion.div
-            {...getScrollAnimationProps(
-              { y: 100, opacity: 0 },
-              { y: 0, opacity: 1 }
-            )}
-            className="bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 rounded-3xl p-12 text-center text-white relative overflow-hidden mt-20"
-          >
-            <div className="absolute inset-0 bg-black/20" />
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-pulse" />
-            <div
-              className="absolute -bottom-20 -left-20 w-40 h-40 bg-white/10 rounded-full blur-2xl animate-pulse"
-              style={{ animationDelay: '1s' }}
-            />
-
-            <div className="relative z-10">
-              <motion.div
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="inline-block mb-6"
+              <MotionLink
+                href="#realisations"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-ghost border-white text-white hover:bg-white/10"
               >
-                <FiHeart className="text-pink-200" size={40} />
-              </motion.div>
-
-              <h3 className="text-4xl lg:text-5xl font-bold mb-6">
-                Votre projet sera le prochain ?
-              </h3>
-              <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
-                Chaque réalisation commence par une <strong>discussion</strong>.
-                Parlons de votre vision et créons ensemble quelque chose d&apos;
-                <strong>extraordinaire</strong> !
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <MotionLink
-                  href="/contact"
-                  whileHover={{
-                    scale: 1.05,
-                    boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2"
-                >
-                  <FiMessageCircle />
-                  Démarrons votre projet
-                </MotionLink>
-
-                <MotionLink
-                  href="#realisations"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
-                >
-                  <FiPlay />
-                  Voir toutes nos réalisations
-                </MotionLink>
-              </div>
+                <FiPlay className="mr-3" />
+                Voir toutes nos réalisations
+              </MotionLink>
             </div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
-
-      <style jsx>{`
-        @keyframes blob {
-          0% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
     </section>
   );
 }

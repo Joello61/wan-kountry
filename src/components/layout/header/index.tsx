@@ -61,13 +61,16 @@ const Header = () => {
           <nav
             className={`flex items-center py-3 px-4 justify-between transition-all duration-300 ${
               sticky
-                ? 'rounded-full shadow-lg bg-white/80 dark:bg-dark_black/80 backdrop-blur-md border border-gray-200/20 dark:border-gray-700/20'
+                ? 'rounded-full shadow-lg glass-effect border'
                 : 'bg-transparent'
-            }`}>
+            }`}
+            style={sticky ? { borderColor: 'var(--border)' } : undefined}
+          >
             <div className='flex items-center'>
               <Logo />
             </div>
-            <div className='hidden lg:flex bg-dark_black/5 dark:bg-white/5 rounded-3xl py-3 px-1'>
+            <div className='hidden lg:flex rounded-3xl py-3 px-1'
+                 style={{ backgroundColor: 'var(--surface)/50' }}>
               <ul className='flex gap-0 2xl:gap-1.5'>
                 {headerData.map((item, index) => (
                   <HeaderLink key={index} item={item} />
@@ -80,7 +83,11 @@ const Header = () => {
               <div className='hidden max-lg:flex'>
                 <motion.button 
                   onClick={() => setSidebarOpen(!sidebarOpen)}
-                  className="relative p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+                  className="relative p-2 rounded-lg transition-colors duration-200"
+                  style={{
+                    backgroundColor: 'var(--surface)',
+                    color: 'var(--text)'
+                  }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -93,7 +100,7 @@ const Header = () => {
                         exit={{ rotate: 90, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <FiX size={24} className="text-current" />
+                        <FiX size={24} />
                       </motion.div>
                     ) : (
                       <motion.div
@@ -103,7 +110,7 @@ const Header = () => {
                         exit={{ rotate: -90, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <FiMenu size={24} className="text-current" />
+                        <FiMenu size={24} />
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -113,13 +120,14 @@ const Header = () => {
           </nav>
         </div>
 
-        {/* ------------------------- Mobile sidebar starts ------------------------- */}
+        {/* Mobile sidebar */}
         <AnimatePresence>
           {sidebarOpen && (
             <>
-              {/* Overlay avec animation */}
+              {/* Overlay */}
               <motion.div
-                className='fixed top-0 left-0 w-full h-full bg-black/60 backdrop-blur-sm z-40'
+                className='fixed top-0 left-0 w-full h-full z-40'
+                style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(4px)' }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -127,9 +135,13 @@ const Header = () => {
                 onClick={closeSidebar}
               />
               
-              {/* Sidebar avec animation améliorée */}
+              {/* Sidebar */}
               <motion.div
-                className="lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-dark_black shadow-2xl max-w-sm z-50 border-l border-gray-200 dark:border-gray-700"
+                className="lg:hidden fixed top-0 right-0 h-full w-full max-w-sm z-50 border-l"
+                style={{ 
+                  backgroundColor: 'var(--color-white)',
+                  borderColor: 'var(--border)'
+                }}
                 initial={{ x: '100%' }}
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
@@ -141,23 +153,35 @@ const Header = () => {
               >
                 {/* Header de la sidebar */}
                 <motion.div 
-                  className='flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50'
+                  className='flex items-center justify-between p-6 border-b'
+                  style={{ 
+                    backgroundColor: 'var(--surface)',
+                    borderColor: 'var(--border)'
+                  }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
                   <div>
-                    <h2 className='text-xl font-bold text-gray-900 dark:text-white'>Navigation</h2>
-                    <p className='text-sm text-gray-500 dark:text-gray-400 mt-1'>Explorez le site</p>
+                    <h2 className='text-xl font-bold' style={{ color: 'var(--text-strong)' }}>
+                      Navigation
+                    </h2>
+                    <p className='text-sm mt-1' style={{ color: 'var(--text-light)' }}>
+                      Explorez le site
+                    </p>
                   </div>
                   <motion.button
                     onClick={closeSidebar}
-                    className="p-2 rounded-lg bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200 shadow-sm"
+                    className="p-2 rounded-lg transition-colors duration-200 shadow-sm"
+                    style={{ 
+                      backgroundColor: 'var(--color-white)',
+                      color: 'var(--text)'
+                    }}
                     whileHover={{ scale: 1.05, rotate: 90 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label='Close mobile menu'
                   >
-                    <FiX size={20} className="text-gray-600 dark:text-gray-300" />
+                    <FiX size={20} />
                   </motion.button>
                 </motion.div>
                 
@@ -181,12 +205,16 @@ const Header = () => {
                     
                     {/* Footer de la sidebar */}
                     <motion.div 
-                      className='mt-8 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200/30 dark:border-blue-700/30'
+                      className='mt-8 p-4 rounded-xl border'
+                      style={{
+                        background: 'linear-gradient(135deg, var(--primary)/5 0%, var(--color-warning)/5 100%)',
+                        borderColor: 'var(--primary)/20'
+                      }}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <p className='text-sm text-gray-600 dark:text-gray-400 text-center'>
+                      <p className='text-sm text-center' style={{ color: 'var(--text)' }}>
                         Besoin d'aide ? Contactez-nous !
                       </p>
                     </motion.div>
