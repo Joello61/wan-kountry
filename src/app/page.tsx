@@ -4,7 +4,6 @@ import FaqClient from '@/components/home/faq/FaqClient';
 import HeroSectionClient from '@/components/home/hero/HeroClient';
 import RealisationSectionClient from '@/components/home/realisations/RealisationClient';
 import ServicesSectionClient from '@/components/home/services/ServicesClient';
-import SolutionsClient from '@/components/home/solution/SolutionClient';
 import SubscriptionClient from '@/components/home/subscription/SubscriptionClient';
 import TestimonySectionClient from '@/components/home/testimony/TestimonyClient';
 import type { Metadata } from 'next';
@@ -107,8 +106,6 @@ export default function Home() {
       {/* FAQ */}
       <FaqClient />
       
-      {/* Call to Action Final */}
-      <SolutionsClient />
     </main>
   );
 }

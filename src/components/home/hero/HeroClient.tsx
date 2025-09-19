@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   FiStar,
   FiArrowRight,
@@ -11,7 +11,6 @@ import {
   FiZap,
   FiGlobe,
   FiCheck,
-  FiTrendingUp,
   FiClock,
   FiHeart,
 } from 'react-icons/fi';
@@ -54,7 +53,7 @@ function HeroSectionClient() {
   // Animation des statistiques
   useEffect(() => {
     const animateStats = () => {
-      const targets = { projects: 180, clients: 94, days: 15 };
+      const targets = { projects: 10, clients: 94, days: 20 };
       const duration = 2000;
       const steps = 50;
       
@@ -79,7 +78,7 @@ function HeroSectionClient() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center py-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center py-10 overflow-hidden">
       {/* Arrière-plan subtil avec motifs africains */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-bg via-surface to-surface-elevated"></div>
@@ -101,10 +100,10 @@ function HeroSectionClient() {
         <div className="max-w-7xl mx-auto">
           
           {/* En-tête avec badge */}
-          <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`text-center mt-18 mb-3 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="badge-primary inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full">
               <FiStar size={16} />
-              <span>Agence digitale camerounaise de référence</span>
+              <span className='text-sm'>Agence digitale camerounaise de référence</span>
             </div>
           </div>
 
@@ -128,7 +127,7 @@ function HeroSectionClient() {
                 
                 <p className="body-large max-w-2xl">
                   Solutions digitales sur mesure pour entreprises ambitieuses au Cameroun et en Afrique.
-                  <span className="block mt-4 font-semibold text-primary">
+                  <span className="block mt-2 font-semibold text-primary">
                     Premiers résultats visibles en moins de 20 jours, garanti.
                   </span>
                 </p>
@@ -141,7 +140,7 @@ function HeroSectionClient() {
                     <FiZap className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-strong">Performance optimale</h3>
+                    <h4 className="font-bold text-text-strong">Performance optimale</h4>
                     <p className="text-sm text-text-light">Sites ultra-rapides adaptés au réseau local</p>
                   </div>
                 </div>
@@ -151,7 +150,7 @@ function HeroSectionClient() {
                     <FiGlobe className="text-secondary" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-strong">Mobile Money intégré</h3>
+                    <h4 className="font-bold text-text-strong">Mobile Money intégré</h4>
                     <p className="text-sm text-text-light">Solutions de paiement locales</p>
                   </div>
                 </div>
@@ -161,7 +160,7 @@ function HeroSectionClient() {
                     <FiShield className="text-accent-dark" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-strong">Sécurité maximale</h3>
+                    <h4 className="font-bold text-text-strong">Sécurité maximale</h4>
                     <p className="text-sm text-text-light">Protection SSL et hébergement sécurisé</p>
                   </div>
                 </div>
@@ -171,14 +170,14 @@ function HeroSectionClient() {
                     <FiHeart className="text-success" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-text-strong">Support personnalisé</h3>
+                    <h4 className="font-bold text-text-strong">Support personnalisé</h4>
                     <p className="text-sm text-text-light">Accompagnement 7j/7 en français</p>
                   </div>
                 </div>
               </div>
 
               {/* CTA avec statistiques intégrées */}
-              <div className="space-y-8">
+              <div className="w-full space-y-8">
                 <div className="flex flex-col sm:flex-row gap-6">
                   <Link href="#contact" className="btn-primary btn-xl group">
                     Lancer mon projet
@@ -192,7 +191,7 @@ function HeroSectionClient() {
                 </div>
 
                 {/* Statistiques en ligne */}
-                <div className="flex flex-wrap gap-8 items-center pt-6 border-t border-border">
+                <div className="flex flex-wrap gap-8 items-center justify-around pt-6 border-t border-border">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary">
                       {stats.projects}+
@@ -240,11 +239,6 @@ function HeroSectionClient() {
                       priority
                     />
                     
-                    {/* Badge performance superposé */}
-                    <div className="absolute top-4 left-4 badge-success px-3 py-2">
-                      <FiTrendingUp size={14} className="mr-1" />
-                      Performance: 98/100
-                    </div>
                   </div>
                   
                   {/* Informations du projet */}
@@ -255,7 +249,7 @@ function HeroSectionClient() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
-                          <FiCheck className="text-white" size={14} />
+                          <FiCheck className="text-primary" size={16} />
                         </div>
                         <span className="text-sm font-medium">Livré en 18 jours</span>
                       </div>
@@ -268,38 +262,7 @@ function HeroSectionClient() {
                     </div>
                   </div>
                 </div>
-                
-                {/* Éléments flottants minimalistes */}
-                <div className="absolute -top-2 -right-2 w-12 h-12 bg-gradient-accent rounded-2xl flex items-center justify-center shadow-glow-accent animate-bounce-subtle">
-                  <FiZap className="text-white" size={16} />
-                </div>
-                
-                <div className="absolute -bottom-3 -left-3 w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center animate-pulse">
-                  <FiStar className="text-white" size={14} />
-                </div>
               </div>
-            </div>
-          </div>
-
-          {/* Technologies utilisées */}
-          <div className={`mt-20 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <p className="caption mb-8">Technologies que nous maîtrisons</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { name: 'Next.js', color: 'primary' },
-                { name: 'React', color: 'secondary' },
-                { name: 'Node.js', color: 'accent' },
-                { name: 'MongoDB', color: 'primary' },
-                { name: 'Tailwind', color: 'secondary' },
-                { name: 'TypeScript', color: 'accent' }
-              ].map((tech, index) => (
-                <div 
-                  key={index} 
-                  className={`chip bg-${tech.color}/5 text-${tech.color} border border-${tech.color}/20 hover:border-${tech.color}/40 hover:bg-${tech.color}/10 transition-colors`}
-                >
-                  {tech.name}
-                </div>
-              ))}
             </div>
           </div>
         </div>

@@ -1,38 +1,40 @@
-import Image from 'next/image';
+'use client';
+
+import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
-interface HeaderProps {}
-
-const Logo: React.FC<HeaderProps> = () => {
-  return (
-    <Link href="/" className="inline-block">
+const LogoModernized: React.FC = () => (
+  <Link href="/" className="inline-block group">
+    <motion.div 
+      className="flex items-center gap-3"
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.2 }}
+    >
       {/* Logo clair */}
-      <div className="relative w-[150px] sm:w-[200px] md:w-[150px] h-11 dark:hidden">
-        <Image
-          src="/images/logo/logo.svg"
-          alt="logo"
-          fill
-          style={{ objectFit: 'contain' }}
-          sizes="(max-width: 640px) 150px, (max-width: 1024px) 200px, 250px"
-          quality={100}
-          priority
-        />
+      <div className="relative w-[40px] h-[40px] dark:hidden">
+        <div className="w-full h-full rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow-primary">
+          <span className="text-primary font-bold text-lg">WK</span>
+        </div>
       </div>
 
       {/* Logo sombre */}
-      <div className="relative w-[160px] sm:w-[210px] md:w-[260px] h-14 hidden dark:block">
-        <Image
-          src="/images/logo/DarkModeLogo.svg"
-          alt="logo"
-          fill
-          style={{ objectFit: 'contain' }}
-          sizes="(max-width: 640px) 160px, (max-width: 1024px) 210px, 260px"
-          quality={100}
-          priority
-        />
+      <div className="relative w-[40px] h-[40px] hidden dark:block">
+        <div className="w-full h-full rounded-xl bg-gradient-primary flex items-center justify-center shadow-glow-primary">
+          <span className="text-white font-bold text-lg">WK</span>
+        </div>
       </div>
-    </Link>
-  );
-};
 
-export default Logo;
+      <div className="hidden sm:block">
+        <div className="font-bold text-lg text-primary group-hover:text-primary-dark transition-colors">
+          Wan-Kountry
+        </div>
+        <div className="text-xs text-text-light -mt-1">
+          Web Solutions
+        </div>
+      </div>
+    </motion.div>
+  </Link>
+);
+
+export default LogoModernized;

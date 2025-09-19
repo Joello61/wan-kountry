@@ -1,95 +1,143 @@
-'use client'
-import { useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
-import HeaderLink from './Navigation/HeaderLink'
-import { headerData } from './Navigation/Menudata'
-import Logo from './Logo'
-import MobileHeader from './Navigation/MobileHeader'
-import ThemeToggler from './ThemeToggle'
-import { FiMenu, FiX } from "react-icons/fi";
+'use client';
 
-const Header = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [, setUser] = useState<{ user: any } | null>(null)
-  const [sticky, setSticky] = useState(false)
-  const pathname = usePathname()
+import React, { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import {
+  FiMenu,
+  FiX,
+  FiArrowRight,
+  FiHome,
+  FiUsers,
+  FiStar,
+  FiMessageCircle,
+  FiAward,
+  FiMail,
+  FiDollarSign,
+  FiZap
+} from 'react-icons/fi';
+import { HeaderItem } from '@/types/menu';
+
+import Logo from './Logo';
+import HeaderLink from './Navigation/HeaderLink';
+import MobileHeader from './Navigation/MobileHeader';
+
+// Menu data avec icônes ajoutées à votre structure existante
+const headerDataWithIcons: (HeaderItem & { icon?: React.ComponentType<{ size?: number }> })[] = [
+  { label: 'Acceuil', href: '/', icon: FiHome },
+  { label: 'A Propos', href: '/about-us', icon: FiUsers },
+  { label: 'Services', href: '/services', icon: FiStar },
+  { label: 'Atouts', href: '/atouts', icon: FiZap },
+  { label: 'Réalisations', href: '/realisations', icon: FiAward },
+  { label: 'Témoignages', href: '/testimony', icon: FiMessageCircle },
+  { label: 'Prix', href: '/subscription', icon: FiDollarSign },
+  { label: 'Contact', href: '/contact', icon: FiMail },
+];
+
+
+
+function HeaderMainModernized() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sticky, setSticky] = useState(false);
+  const pathname = usePathname();
 
   const handleScroll = () => {
-    setSticky(window.scrollY >= 80)
-  }
+    setSticky(window.scrollY >= 80);
+  };
 
-  // Fonction pour fermer la sidebar
   const closeSidebar = () => {
-    setSidebarOpen(false)
-  }
+    setSidebarOpen(false);
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    const storedUser = localStorage.getItem('user')
-    if (storedUser) {
-      setUser(JSON.parse(storedUser))
-    }
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [pathname])
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   // Fermer la sidebar quand on change de page
   useEffect(() => {
-    setSidebarOpen(false)
-  }, [pathname])
+    setSidebarOpen(false);
+  }, [pathname]);
 
   // Empêcher le scroll du body quand la sidebar est ouverte
   useEffect(() => {
     if (sidebarOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = 'unset';
     }
     
     return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [sidebarOpen])
+      document.body.style.overflow = 'unset';
+    };
+  }, [sidebarOpen]);
 
   return (
     <>
-      <header className={`fixed top-0 z-50 w-full`}>
-        <div className='container p-3'>
-          <nav
-            className={`flex items-center py-3 px-4 justify-between transition-all duration-300 ${
-              sticky
-                ? 'rounded-full shadow-lg glass-effect border'
+      <motion.header 
+        className="fixed top-0 z-50 w-full"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="container p-3">
+          <motion.nav
+            className={`
+              flex items-center py-4 px-6 justify-between transition-all duration-500
+              ${sticky
+                ? 'rounded-2xl shadow-lg backdrop-blur-12 border'
                 : 'bg-transparent'
-            }`}
-            style={sticky ? { borderColor: 'var(--border)' } : undefined}
+              }
+            `}
+            style={sticky ? {
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              borderColor: 'var(--border)',
+              backdropFilter: 'blur(12px)',
+            } : {}}
+            animate={{
+              backgroundColor: sticky 
+                ? 'rgba(255, 255, 255, 0.9)' 
+                : 'rgba(255, 255, 255, 0)',
+            }}
+            transition={{ duration: 0.3 }}
           >
-            <div className='flex items-center'>
-              <Logo />
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/">
+                <Logo />
+                {/* Remplacez par: <Logo /> */}
+              </Link>
             </div>
-            <div className='hidden lg:flex rounded-3xl py-3 px-1'
-                 style={{ backgroundColor: 'var(--surface)/50' }}>
-              <ul className='flex gap-0 2xl:gap-1.5'>
-                {headerData.map((item, index) => (
+
+            {/* Navigation Desktop */}
+            <motion.div 
+              className="hidden lg:flex rounded-3xl py-2 px-2 card-glass"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <ul className="flex gap-1">
+                {headerDataWithIcons.map((item, index) => (
                   <HeaderLink key={index} item={item} />
+                  /* Remplacez par: <HeaderLink key={index} item={item} /> */
                 ))}
               </ul>
-            </div>
-            <div className='flex items-center gap-1 xl:gap-4'>
-              <ThemeToggler />
+            </motion.div>
 
-              <div className='hidden max-lg:flex'>
+            {/* Actions à droite */}
+            <div className="flex items-center gap-3">
+
+              {/* Menu Mobile */}
+              <div className="lg:hidden">
                 <motion.button 
                   onClick={() => setSidebarOpen(!sidebarOpen)}
-                  className="relative p-2 rounded-lg transition-colors duration-200"
-                  style={{
-                    backgroundColor: 'var(--surface)',
-                    color: 'var(--text)'
-                  }}
+                  className="relative p-3 rounded-xl transition-colors duration-200 card hover-lift focus-ring"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  aria-label="Menu de navigation mobile"
                 >
                   <AnimatePresence mode="wait">
                     {sidebarOpen ? (
@@ -100,7 +148,7 @@ const Header = () => {
                         exit={{ rotate: 90, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <FiX size={24} />
+                        <FiX size={24} className="text-error" />
                       </motion.div>
                     ) : (
                       <motion.div
@@ -110,24 +158,27 @@ const Header = () => {
                         exit={{ rotate: -90, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <FiMenu size={24} />
+                        <FiMenu size={24} className="text-primary" />
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </motion.button>
               </div>
             </div>
-          </nav>
+          </motion.nav>
         </div>
 
-        {/* Mobile sidebar */}
+        {/* Mobile Sidebar */}
         <AnimatePresence>
           {sidebarOpen && (
             <>
               {/* Overlay */}
               <motion.div
-                className='fixed top-0 left-0 w-full h-full z-40'
-                style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', backdropFilter: 'blur(4px)' }}
+                className="fixed top-0 left-0 w-full h-full z-40"
+                style={{ 
+                  backgroundColor: 'rgba(0, 0, 0, 0.6)', 
+                  backdropFilter: 'blur(8px)' 
+                }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -137,11 +188,7 @@ const Header = () => {
               
               {/* Sidebar */}
               <motion.div
-                className="lg:hidden fixed top-0 right-0 h-full w-full max-w-sm z-50 border-l"
-                style={{ 
-                  backgroundColor: 'var(--color-white)',
-                  borderColor: 'var(--border)'
-                }}
+                className="lg:hidden fixed top-0 right-0 h-full w-full max-w-sm z-50 border-l card-glass"
                 initial={{ x: '100%' }}
                 animate={{ x: 0 }}
                 exit={{ x: '100%' }}
@@ -153,80 +200,52 @@ const Header = () => {
               >
                 {/* Header de la sidebar */}
                 <motion.div 
-                  className='flex items-center justify-between p-6 border-b'
-                  style={{ 
-                    backgroundColor: 'var(--surface)',
-                    borderColor: 'var(--border)'
-                  }}
+                  className="flex items-center justify-between p-6 border-b border-border"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <div>
-                    <h2 className='text-xl font-bold' style={{ color: 'var(--text-strong)' }}>
-                      Navigation
-                    </h2>
-                    <p className='text-sm mt-1' style={{ color: 'var(--text-light)' }}>
-                      Explorez le site
-                    </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
+                      <FiMenu className="text-white" size={20} />
+                    </div>
+                    <div>
+                      <h2 className="text-xl font-bold text-text-strong">Navigation</h2>
+                      <p className="text-sm text-text-light">Explorez le site</p>
+                    </div>
                   </div>
+                  
                   <motion.button
                     onClick={closeSidebar}
-                    className="p-2 rounded-lg transition-colors duration-200 shadow-sm"
-                    style={{ 
-                      backgroundColor: 'var(--color-white)',
-                      color: 'var(--text)'
-                    }}
+                    className="p-2 rounded-xl card hover-lift focus-ring"
                     whileHover={{ scale: 1.05, rotate: 90 }}
                     whileTap={{ scale: 0.95 }}
-                    aria-label='Close mobile menu'
+                    aria-label="Fermer le menu mobile"
                   >
-                    <FiX size={20} />
+                    <FiX size={20} className="text-error" />
                   </motion.button>
                 </motion.div>
                 
                 {/* Navigation */}
-                <div className='p-4 overflow-y-auto h-full pb-20'>
+                <div className="p-4 overflow-y-auto h-full pb-20">
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3 }}
+                    className="space-y-2 mb-10"
                   >
-                    <ul className='space-y-2'>
-                      {headerData.map((item, index) => (
-                        <MobileHeader 
-                          key={index} 
-                          item={item} 
-                          onClose={closeSidebar}
-                          index={index}
-                        />
-                      ))}
-                    </ul>
-                    
-                    {/* Footer de la sidebar */}
-                    <motion.div 
-                      className='mt-8 p-4 rounded-xl border'
-                      style={{
-                        background: 'linear-gradient(135deg, var(--primary)/5 0%, var(--color-warning)/5 100%)',
-                        borderColor: 'var(--primary)/20'
-                      }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5 }}
-                    >
-                      <p className='text-sm text-center' style={{ color: 'var(--text)' }}>
-                        Besoin d'aide ? Contactez-nous !
-                      </p>
-                    </motion.div>
+                    {headerDataWithIcons.map((item, index) => (
+                      <MobileHeader key={index} item={item} onClose={closeSidebar} index={index} />
+                    ))}
                   </motion.div>
                 </div>
               </motion.div>
             </>
           )}
         </AnimatePresence>
-      </header>
+      </motion.header>
     </>
-  )
+  );
 }
 
-export default Header
+export default HeaderMainModernized;

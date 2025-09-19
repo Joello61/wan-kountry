@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
   FiMapPin,
@@ -10,10 +9,8 @@ import {
   FiHeart,
   FiPlay,
   FiMessageCircle,
-  FiAward,
   FiTrendingUp,
   FiShield,
-  FiClock,
   FiStar,
   FiArrowRight,
   FiGitBranch,
@@ -28,7 +25,7 @@ const MotionLink = motion.create(Link);
 function AboutSectionClient() {
   const [activeTab, setActiveTab] = useState(0);
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
-  const [hasMounted, setHasMounted] = useState(false);
+  const [, setHasMounted] = useState(false);
 
   const pathname = usePathname();
   const isHomePage = pathname === '/';
@@ -36,30 +33,31 @@ function AboutSectionClient() {
   // Données de l'équipe
   const team = [
     {
-      name: "Alex M.",
-      role: "Lead Developer",
-      location: "Douala, CM",
-      avatar: "/images/team/alex.jpg",
-      skills: ["Next.js", "Node.js", "Architecture"],
+      name: "Joel T.",
+      role: "Full-Stack Dev",
+      location: "Toulouse, FR",
+      avatar: "/images/team/joel.jpg",
+      skills: ["Next.js", "Node.js", "TypeScript", "REST APIs", "SQL & NoSQL", "Architecture"],
       color: "primary"
     },
     {
-      name: "Jordan K.",
-      role: "Full-Stack Dev",
-      location: "Lyon, FR", 
-      avatar: "/images/team/jordan.jpg",
-      skills: ["React", "MongoDB", "DevOps"],
+      name: "Yannick S.",
+      role: "Data and Cloud Engineer",
+      location: "Paris, FR", 
+      avatar: "/images/team/Yannick.jpg",
+      skills: ["Python", "Data Pipelines", "AWS / Azure", "Docker & Kubernetes", "MongoDB / PostgreSQL", "Machine Learning"],
       color: "secondary"
     },
     {
-      name: "Sam L.",
-      role: "UI/UX Developer",
-      location: "Paris, FR",
-      avatar: "/images/team/sam.jpg", 
-      skills: ["Design", "Frontend", "Mobile"],
+      name: "Ryan T.",
+      role: "Cybersecurity Engineer",
+      location: "Lyon, FR",
+      avatar: "/images/team/Ryan.jpg", 
+      skills: ["Network Security", "Penetration Testing", "SIEM & IDS/IPS", "Cloud Security", "DevSecOps", "Cryptography"],
       color: "accent"
     }
   ];
+
 
   const tabs = [
     {
@@ -98,7 +96,7 @@ function AboutSectionClient() {
         headline: "Processus agile et transparent",
         description: "Méthodologie éprouvée, communication constante, livraisons fréquentes. Vous êtes impliqué à chaque étape pour garantir que le résultat correspond exactement à vos attentes.",
         metrics: [
-          { label: "Délai moyen", value: "18j" },
+          { label: "Délai moyen", value: "20j" },
           { label: "Satisfaction", value: "98%" },
           { label: "Révisions", value: "3x" }
         ]
@@ -112,7 +110,7 @@ function AboutSectionClient() {
     // Auto-rotation des tabs
     const interval = setInterval(() => {
       setActiveTab((prev) => (prev + 1) % tabs.length);
-    }, 5000);
+    }, 16000);
 
     return () => clearInterval(interval);
   }, []);
@@ -134,7 +132,7 @@ function AboutSectionClient() {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       
       {/* Background artistique */}
       <div className="absolute inset-0">
@@ -163,9 +161,9 @@ function AboutSectionClient() {
               {team.map((member, index) => (
                 <div 
                   key={index}
-                  className="w-8 h-8 rounded-full bg-gradient-primary border-2 border-white flex items-center justify-center"
+                  className="w-8 h-8 rounded-full bg-gradient-primary border-2 border-primary flex items-center justify-center"
                 >
-                  <span className="text-xs font-bold text-white">
+                  <span className="text-xs font-bold text-primary">
                     {member.name.charAt(0)}
                   </span>
                 </div>
@@ -188,7 +186,7 @@ function AboutSectionClient() {
           </p>
         </motion.div>
 
-        <div className="grid xl:grid-cols-3 gap-16 mb-32">
+        <div className="grid xl:grid-cols-3 gap-16 mb-16">
           
           {/* Profils de l'équipe - Design en cartes */}
           <motion.div
@@ -335,6 +333,8 @@ function AboutSectionClient() {
             </div>
           </motion.div>
         </div>
+
+        <div className='border-t border-border mb-8'></div>
 
         {/* Section valeurs avec layout horizontal */}
         <motion.div

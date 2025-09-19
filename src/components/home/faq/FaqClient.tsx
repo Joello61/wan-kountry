@@ -17,8 +17,6 @@ import {
   FiSearch,
   FiZap,
   FiShield,
-  FiTarget,
-  FiUsers,
   FiStar,
 } from 'react-icons/fi';
 import Link from 'next/link';
@@ -190,7 +188,7 @@ function FaqSectionModernized() {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       
       {/* Arrière-plan moderne */}
       <div className="absolute inset-0">
@@ -215,7 +213,7 @@ function FaqSectionModernized() {
         >
           <div className="badge-primary mb-8 inline-flex items-center gap-2">
             <FiHelpCircle size={16} />
-            <span>Questions fréquentes</span>
+            <span className='text-sm'>Questions fréquentes</span>
           </div>
           
           <h2 className="heading-1 mb-6">

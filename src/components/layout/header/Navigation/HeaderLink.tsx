@@ -1,92 +1,79 @@
-'use client'
-import React, { useEffect, useState, Suspense } from 'react'
-import { HeaderItem } from '@/types/menu'
-import { usePathname, useSearchParams } from 'next/navigation'
-import Link from 'next/link'
+'use client';
 
-const OFFSET = 80 // Adjust this value based on your fixed header height
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-// Hook to manage the active link and apply offset
-const useActiveLink = (setActiveLink: (link: string) => void) => {
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
+interface HeaderItem {
+  label: string;
+  href: string;
+  icon?: React.ComponentType<{ size?: number }>;
+}
+
+interface HeaderLinkProps {
+  item: HeaderItem;
+}
+
+const HeaderLinkModernized: React.FC<HeaderLinkProps> = ({ item }) => {
+  const pathname = usePathname();
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const updateActiveLink = () => {
       const fullPath = window.location.hash
         ? `${pathname}${window.location.hash}`
-        : pathname
-      setActiveLink(fullPath)
-    }
+        : pathname;
+      setActiveLink(fullPath);
+    };
 
-    const handleScrollOffset = () => {
-      if (window.location.hash) {
-        const id = window.location.hash.substring(1)
-        const element = document.getElementById(id)
-        if (element) {
-          setTimeout(() => {
-            const elementPosition =
-              element.getBoundingClientRect().top + window.scrollY
-            window.scrollTo({
-              top: elementPosition - OFFSET,
-              behavior: 'smooth',
-            })
-          }, 0)
-        }
-      }
-    }
-
-    updateActiveLink()
-    handleScrollOffset()
-
-    window.addEventListener('hashchange', updateActiveLink)
-    window.addEventListener('hashchange', handleScrollOffset)
+    updateActiveLink();
+    window.addEventListener('hashchange', updateActiveLink);
 
     return () => {
-      window.removeEventListener('hashchange', updateActiveLink)
-      window.removeEventListener('hashchange', handleScrollOffset)
-    }
-  }, [pathname, searchParams, setActiveLink])
-}
+      window.removeEventListener('hashchange', updateActiveLink);
+    };
+  }, [pathname]);
 
-// HeaderLink component
-const HeaderLinkContent: React.FC<{ item: HeaderItem }> = ({ item }) => {
-  const [activeLink, setActiveLink] = useState('')
-
-  useActiveLink(setActiveLink)
+  const isActive = activeLink === item.href;
 
   return (
-    <li>
+    <motion.li whileHover={{ y: -2 }}>
       <Link
         href={item.href}
-        className={`px-4 py-2 font-medium transition-all duration-300 rounded-3xl hover-lift ${
-          activeLink === item.href
-            ? 'shadow-lg'
-            : ''
-        }`}
+        className={`
+          flex items-center gap-2 px-4 py-3 font-medium transition-all duration-300 rounded-2xl 
+          hover-lift focus-ring group relative overflow-hidden
+          ${isActive ? 'text-white' : 'text-text-light hover:text-primary'}
+        `}
         style={{
-          color: activeLink === item.href 
-            ? 'var(--text-strong)' 
-            : 'var(--text-light)',
-          backgroundColor: activeLink === item.href 
-            ? 'var(--color-white)' 
-            : 'transparent',
-          boxShadow: activeLink === item.href 
-            ? 'var(--shadow-soft)' 
-            : 'none'
+          backgroundColor: isActive ? 'var(--primary)' : 'transparent',
+          boxShadow: isActive ? 'var(--shadow-glow-primary)' : 'none'
         }}
       >
-        {item.label}
+        {/* Effet de survol animé */}
+        <motion.div
+          className="absolute inset-0 bg-surface/50 rounded-2xl opacity-0 group-hover:opacity-100"
+          initial={false}
+          animate={{ opacity: isActive ? 0 : 0 }}
+          whileHover={{ opacity: isActive ? 0 : 1 }}
+          transition={{ duration: 0.2 }}
+        />
+        
+        {item.icon && <item.icon size={16} />}
+        <span className="relative z-10 text-sm">{item.label}</span>
+        
+        {/* Indicateur actif */}
+        {isActive && (
+          <motion.div
+            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-white/50 rounded-full"
+            layoutId="activeIndicator"
+            transition={{ duration: 0.3 }}
+          />
+        )}
       </Link>
-    </li>
-  )
-}
+    </motion.li>
+  );
+};
 
-// Wrap in Suspense
-const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => (
-  <Suspense fallback={null}>
-    <HeaderLinkContent item={item} />
-  </Suspense>
-)
-
-export default HeaderLink
+export default HeaderLinkModernized;

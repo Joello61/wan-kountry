@@ -30,7 +30,7 @@ const MotionLink = motion.create(Link);
 function PricingSectionClient() {
   const [activeTab, setActiveTab] = useState('pricing');
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [, setIsVisible] = useState(false);
   const [showDetails, setShowDetails] = useState<number | null>(null);
 
   const pathname = usePathname();
@@ -189,7 +189,7 @@ function PricingSectionClient() {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       
       {/* Arrière-plan moderne */}
       <div className="absolute inset-0">
@@ -214,7 +214,7 @@ function PricingSectionClient() {
         >
           <div className="badge-primary mb-8 inline-flex items-center gap-2">
             <FiSun size={16} />
-            <span>Tarifs transparents et justes</span>
+            <span className='text-sm'>Tarifs transparents et justes</span>
           </div>
           
           <h2 className="heading-1 mb-6">
@@ -291,7 +291,7 @@ function PricingSectionClient() {
                         
                         {/* Badge populaire */}
                         {isPopular && (
-                          <div className="absolute -top-3 -right-3 badge-accent px-4 py-2 shadow-glow-accent">
+                          <div className="absolute -top-1 -right-1 mt-2 me-2 badge-accent px-4 py-2 shadow-glow-accent">
                             <FiStar size={12} className="mr-1" />
                             <span className="text-white font-bold">Populaire</span>
                           </div>

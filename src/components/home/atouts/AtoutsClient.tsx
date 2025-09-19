@@ -9,7 +9,6 @@ import {
   FiTool,
   FiGlobe,
   FiTarget,
-  FiTrendingUp,
   FiCheck,
   FiSend,
   FiAward,
@@ -17,7 +16,6 @@ import {
   FiUsers,
   FiClock,
   FiShield,
-  FiArrowRight,
   FiStar,
   FiChevronRight,
   FiPlay,
@@ -29,7 +27,7 @@ const MotionLink = motion.create(Link);
 
 function AtoutsSectionClient() {
   const [activeAdvantage, setActiveAdvantage] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const [, setIsVisible] = useState(false);
   const [hoveredStat, setHoveredStat] = useState<number | null>(null);
 
   const pathname = usePathname();
@@ -41,7 +39,7 @@ function AtoutsSectionClient() {
     // Auto-rotation des avantages
     const interval = setInterval(() => {
       setActiveAdvantage((prev) => (prev + 1) % advantagesData.length);
-    }, 4000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
@@ -160,7 +158,7 @@ function AtoutsSectionClient() {
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       
       {/* Arrière-plan avec motifs africains modernes */}
       <div className="absolute inset-0">
@@ -185,7 +183,7 @@ function AtoutsSectionClient() {
         >
           <div className="badge-accent mb-8 inline-flex items-center gap-2">
             <FiTarget size={16} />
-            <span>Nos avantages concurrentiels</span>
+            <span className='text-sm'>Nos avantages concurrentiels</span>
           </div>
           
           <h2 className="heading-1 mb-6">
@@ -201,183 +199,191 @@ function AtoutsSectionClient() {
         </motion.div>
 
         {/* Section principale avec avantage rotatif */}
-        <div className="grid xl:grid-cols-12 gap-16 mb-24">
-          
-          {/* Avantage principal rotatif */}
-          <motion.div
-            {...getScrollAnimationProps({ x: -40, opacity: 0 }, { x: 0, opacity: 1 })}
-            className="xl:col-span-7"
-          >
-            <div className="space-y-8">
-              
-              {/* Navigation des avantages */}
-              <div className="flex flex-wrap gap-3 mb-8">
-                {advantagesData.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveAdvantage(index)}
-                    className={`w-12 h-2 rounded-full transition-all duration-300 focus-ring ${
-                      activeAdvantage === index 
-                        ? `bg-${advantagesData[index]!.color}` 
-                        : 'bg-border hover:bg-border-light'
-                    }`}
-                  >
-                    <motion.div
-                      className={`h-full bg-${advantagesData[index]!.color}-dark rounded-full`}
-                      initial={{ width: '0%' }}
-                      animate={{ 
-                        width: activeAdvantage === index ? '100%' : '0%'
-                      }}
-                      transition={{ duration: 4, ease: 'linear' }}
-                    />
-                  </button>
-                ))}
-              </div>
-
-              {/* Contenu de l'avantage actif */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeAdvantage}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className="card-warm p-10"
-                >
-                  <div className="flex items-start gap-8">
-                    
-                    {/* Icône principale */}
-                    <div className={`w-20 h-20 rounded-3xl bg-${advantagesData[activeAdvantage]!.color}/10 flex items-center justify-center flex-shrink-0`}>
-                      {React.createElement(advantagesData[activeAdvantage]!.icon, {
-                        size: 32,
-                        className: `text-${advantagesData[activeAdvantage]!.color}`
-                      })}
-                    </div>
-                    
-                    {/* Contenu */}
-                    <div className="flex-1 space-y-6">
-                      <div>
-                        <div className={`text-sm font-semibold text-${advantagesData[activeAdvantage]!.color} mb-2`}>
-                          {advantagesData[activeAdvantage]!.subtitle}
-                        </div>
-                        <h3 className="heading-3 mb-4">
-                          {advantagesData[activeAdvantage]!.title}
-                        </h3>
-                        <p className="body-text leading-relaxed">
-                          {advantagesData[activeAdvantage]!.description}
-                        </p>
-                      </div>
-
-                      {/* Liste des bénéfices */}
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {advantagesData[activeAdvantage]!.benefits.map((benefit, index) => (
-                          <motion.div
-                            key={index}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="flex items-center gap-3"
-                          >
-                            <FiCheck className="text-success flex-shrink-0" size={16} />
-                            <span className="text-sm font-medium">{benefit}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      {/* Stat badge */}
-                      <div className={`inline-flex items-center gap-2 px-4 py-2 bg-${advantagesData[activeAdvantage]!.color}/10 rounded-full`}>
-                        <FiStar size={16} className={`text-${advantagesData[activeAdvantage]!.color}`} />
-                        <span className={`text-sm font-bold text-${advantagesData[activeAdvantage]!.color}`}>
-                          {advantagesData[activeAdvantage]!.stats}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </motion.div>
-
-          {/* Expertise et statistiques */}
-          <motion.div
-            {...getScrollAnimationProps({ x: 40, opacity: 0 }, { x: 0, opacity: 1 })}
-            className="xl:col-span-5 space-y-8"
-          >
-            
-            {/* Domaines d'expertise */}
-            <div className="card-elevated p-8">
-              <h4 className="heading-4 mb-8 flex items-center gap-3">
-                <FiTool className="text-primary" />
-                Expertise technique
-              </h4>
-              
-              <div className="space-y-6">
-                {expertiseAreas.map((area, index) => (
-                  <div key={index} className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <area.icon size={18} className="text-primary" />
-                        <span className="font-semibold">{area.name}</span>
-                      </div>
-                      <span className="text-sm font-bold text-primary">{area.level}%</span>
-                    </div>
-                    
-                    <div className="h-2 bg-surface rounded-full overflow-hidden">
-                      <motion.div
-                        className="h-full bg-gradient-primary rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${area.level}%` }}
-                        transition={{ duration: 1.5, delay: index * 0.2 }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Statistiques interactives */}
-            <div className="space-y-4">
-              {statsData.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ scale: 1.02 }}
-                  onMouseEnter={() => setHoveredStat(index)}
-                  onMouseLeave={() => setHoveredStat(null)}
-                  className="card p-6 cursor-pointer hover-lift"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl bg-${stat.color}/10 flex items-center justify-center`}>
-                      <stat.icon className={`text-${stat.color}`} size={20} />
-                    </div>
-                    
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="font-semibold">{stat.label}</span>
-                        <span className={`text-2xl font-bold text-${stat.color}`}>
-                          {stat.value}
-                        </span>
-                      </div>
-                      
-                      <AnimatePresence>
-                        {hoveredStat === index && (
-                          <motion.p
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="text-sm text-text-light"
-                          >
-                            {stat.description}
-                          </motion.p>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+        <div className="space-y-16 mb-24">
+  
+  {/* Première ligne : Avantages + Expertise en 2 colonnes égales */}
+  <div className="grid lg:grid-cols-2 gap-12">
+    
+    {/* Colonne 1 : Avantage principal rotatif */}
+    <motion.div
+      {...getScrollAnimationProps({ x: -40, opacity: 0 }, { x: 0, opacity: 1 })}
+    >
+      <div className="space-y-8">
+        
+        {/* Navigation des avantages */}
+        <div className="flex flex-wrap gap-3 mb-8">
+          {advantagesData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveAdvantage(index)}
+              className={`w-12 h-2 rounded-full transition-all duration-300 focus-ring ${
+                activeAdvantage === index 
+                  ? `bg-${advantagesData[index]!.color}` 
+                  : 'bg-border hover:bg-border-light'
+              }`}
+            >
+              <motion.div
+                className={`h-full bg-${advantagesData[index]!.color}-dark rounded-full`}
+                initial={{ width: '0%' }}
+                animate={{ 
+                  width: activeAdvantage === index ? '100%' : '0%'
+                }}
+                transition={{ duration: 4, ease: 'linear' }}
+              />
+            </button>
+          ))}
         </div>
+
+        {/* Contenu de l'avantage actif */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeAdvantage}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+            className="card-warm p-8"
+          >
+            <div className="space-y-6">
+              
+              {/* Icône et titre */}
+              <div className="flex items-start gap-6">
+                <div className={`w-16 h-16 rounded-2xl bg-${advantagesData[activeAdvantage]!.color}/10 flex items-center justify-center flex-shrink-0`}>
+                  {React.createElement(advantagesData[activeAdvantage]!.icon, {
+                    size: 24,
+                    className: `text-${advantagesData[activeAdvantage]!.color}`
+                  })}
+                </div>
+                
+                <div className="flex-1">
+                  <div className={`text-sm font-semibold text-${advantagesData[activeAdvantage]!.color} mb-1`}>
+                    {advantagesData[activeAdvantage]!.subtitle}
+                  </div>
+                  <h3 className="heading-4 mb-3">
+                    {advantagesData[activeAdvantage]!.title}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="body-text leading-relaxed">
+                {advantagesData[activeAdvantage]!.description}
+              </p>
+
+              {/* Liste des bénéfices */}
+              <div className="space-y-2">
+                {advantagesData[activeAdvantage]!.benefits.map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <FiCheck className="text-success flex-shrink-0" size={14} />
+                    <span className="text-sm font-medium">{benefit}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Stat badge */}
+              <div className={`inline-flex items-center gap-2 px-4 py-2 bg-${advantagesData[activeAdvantage]!.color}/10 rounded-full`}>
+                <FiStar size={14} className={`text-${advantagesData[activeAdvantage]!.color}`} />
+                <span className={`text-sm font-bold text-${advantagesData[activeAdvantage]!.color}`}>
+                  {advantagesData[activeAdvantage]!.stats}
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </motion.div>
+
+    {/* Colonne 2 : Expertise technique */}
+    <motion.div
+      {...getScrollAnimationProps({ x: 40, opacity: 0 }, { x: 0, opacity: 1 })}
+    >
+      <div className="card-elevated p-8 h-full">
+        <h4 className="heading-4 mb-8 flex items-center gap-3">
+          <FiTool className="text-primary" />
+          Expertise technique
+        </h4>
+        
+        <div className="space-y-6">
+          {expertiseAreas.map((area, index) => (
+            <div key={index} className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <area.icon size={18} className="text-primary" />
+                  <span className="font-semibold">{area.name}</span>
+                </div>
+                <span className="text-sm font-bold text-primary">{area.level}%</span>
+              </div>
+              
+              <div className="h-2 bg-surface rounded-full overflow-hidden">
+                <motion.div
+                  className="h-full bg-primary rounded-full"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${area.level}%` }}
+                  transition={{ duration: 1.5, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  </div>
+
+  {/* Deuxième ligne : Statistiques interactives sur toute la largeur */}
+  <motion.div
+    {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+  >
+    <div className="p-8">
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+        {statsData.map((stat, index) => (
+          <div
+            key={index}
+            onMouseEnter={() => setHoveredStat(index)}
+            onMouseLeave={() => setHoveredStat(null)}
+            className="card p-6 cursor-pointer text-center transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:-translate-y-1"
+          >
+            <div className="space-y-4">
+              <div className={`w-16 h-16 rounded-xl bg-${stat.color}/10 flex items-center justify-center mx-auto transition-all duration-200 hover:scale-110 hover:bg-${stat.color}/20`}>
+                <stat.icon className={`text-${stat.color}`} size={24} />
+              </div>
+              
+              <div>
+                <div className={`text-3xl font-bold text-${stat.color} mb-1 transition-transform duration-200 hover:scale-105`}>
+                  {stat.value}
+                </div>
+                <span className="font-semibold text-sm">{stat.label}</span>
+              </div>
+              
+              <div className="min-h-[20px]">
+                <AnimatePresence>
+                  {hoveredStat === index && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0, y: -10 }}
+                      animate={{ opacity: 1, height: 'auto', y: 0 }}
+                      exit={{ opacity: 0, height: 0, y: -10 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="text-sm text-text-light leading-relaxed"
+                    >
+                      {stat.description}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+</div>
 
         {/* Section témoignage et différenciation */}
         <motion.div

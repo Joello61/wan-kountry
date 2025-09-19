@@ -6,9 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   FiGlobe,
   FiShoppingCart,
-  FiHome,
   FiSettings,
-  FiTool,
   FiArrowRight,
   FiClock,
   FiDollarSign,
@@ -16,13 +14,9 @@ import {
   FiCheck,
   FiPlay,
   FiUsers,
-  FiTrendingUp,
   FiZap,
   FiHeart,
   FiTarget,
-  FiGift,
-  FiMapPin,
-  FiRefreshCw,
   FiChevronRight,
   FiAward,
 } from 'react-icons/fi';
@@ -33,8 +27,8 @@ const MotionLink = motion.create(Link);
 
 function ServicesSectionClient() {
   const [activeTab, setActiveTab] = useState(0);
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [, setHoveredService] = useState<number | null>(null);
+  const [, setIsVisible] = useState(false);
 
   const pathname = usePathname();
   const isHomePage = pathname === '/';
@@ -218,7 +212,7 @@ function ServicesSectionClient() {
   const currentServices = servicesData[serviceCategories[activeTab]!.id as keyof typeof servicesData];
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       
       {/* Arrière-plan moderne */}
       <div className="absolute inset-0">
@@ -243,7 +237,7 @@ function ServicesSectionClient() {
         >
           <div className="badge-primary mb-8 inline-flex items-center gap-2">
             <FiZap size={16} />
-            <span>Solutions digitales performantes</span>
+            <span className='text-sm'>Solutions digitales performantes</span>
           </div>
           
           <h2 className="heading-1 mb-6">
@@ -274,10 +268,10 @@ function ServicesSectionClient() {
                     : 'hover:bg-surface text-text-light'
                 }`}
               >
-                <category.icon size={20} />
+                <category.icon size={20} className='hidden sm:block'/>
                 <div className="text-left">
-                  <div className="text-sm font-bold">{category.title}</div>
-                  <div className="text-xs opacity-80">{category.description}</div>
+                  <div className="text-xs sm:text-sm font-bold">{category.title}</div>
+                  <div className="text-xs opacity-80 hidden sm:block">{category.description}</div>
                 </div>
               </button>
             ))}
@@ -312,7 +306,7 @@ function ServicesSectionClient() {
                     
                     {/* Badge populaire */}
                     {service.popular && (
-                      <div className="absolute -top-3 -right-3 badge-accent px-4 py-2 shadow-glow-accent">
+                      <div className="absolute mt-3 me-3 -top-1 -right-1 badge-accent px-4 py-2 shadow-glow-accent z-2">
                         <FiStar size={12} className="mr-1" />
                         <span className="text-white font-bold">Populaire</span>
                       </div>
@@ -431,7 +425,7 @@ function ServicesSectionClient() {
                     </div>
 
                     {/* Numéro d'étape */}
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20">
+                    <div className="absolute -top-2 -right-1 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20">
                       {index + 1}
                     </div>
                   </div>

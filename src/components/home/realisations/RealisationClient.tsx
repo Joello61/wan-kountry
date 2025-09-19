@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import {
-  FiCheckCircle,
   FiMessageCircle,
   FiExternalLink,
   FiEye,
@@ -16,10 +15,8 @@ import {
   FiZap,
   FiGithub,
   FiCode,
-  FiChevronDown,
   FiFilter,
   FiGrid,
-  FiList,
   FiAward,
 } from 'react-icons/fi';
 import Link from 'next/link';
@@ -30,8 +27,8 @@ const MotionLink = motion.create(Link);
 function RealisationSectionClient() {
   const [activeCategory, setActiveCategory] = useState('tous');
   const [viewMode, setViewMode] = useState<'grid' | 'featured'>('featured');
-  const [isVisible, setIsVisible] = useState(false);
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [, setIsVisible] = useState(false);
+  const [, setHoveredProject] = useState<number | null>(null);
 
   const pathname = usePathname();
   const isHomePage = pathname === '/';
@@ -163,7 +160,7 @@ function RealisationSectionClient() {
   const featuredProjects = realisationsList.filter(project => project.featured).slice(0, 3);
 
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section className="relative py-16 overflow-hidden">
       
       {/* Arrière-plan avec motifs modernes */}
       <div className="absolute inset-0">
@@ -188,7 +185,7 @@ function RealisationSectionClient() {
         >
           <div className="badge-success mb-8 inline-flex items-center gap-2">
             <FiAward size={16} />
-            <span>Portfolio de réussites</span>
+            <span className='text-sm'>Portfolio de réussites</span>
           </div>
           
           <h2 className="heading-1 mb-6">
@@ -288,7 +285,7 @@ function RealisationSectionClient() {
                       onMouseLeave={() => setHoveredProject(null)}
                       className="group relative overflow-hidden card-elevated"
                     >
-                      <div className="aspect-video overflow-hidden rounded-2xl">
+                      <div className="aspect-video overflow-hidden ">
                         <Image
                           src={project.image}
                           alt={project.title}
@@ -326,7 +323,7 @@ function RealisationSectionClient() {
                       </div>
 
                       {/* Badge featured */}
-                      <div className="absolute -top-3 -right-3 badge-accent px-4 py-2 shadow-glow-accent">
+                      <div className="absolute -top-1 -right-1 mt-2 me-2 badge-accent px-4 py-2 shadow-glow-accent">
                         <FiZap size={12} className="mr-1" />
                         <span className="text-white font-bold">Projet phare</span>
                       </div>

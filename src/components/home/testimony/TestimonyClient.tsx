@@ -182,7 +182,7 @@ function TestimonySectionModernized() {
   };
 
   return (
-    <section id="testimony" className="relative py-32 overflow-hidden">
+    <section id="testimony" className="relative py-16 overflow-hidden">
       
       {/* Arrière-plan sophistiqué */}
       <div className="absolute inset-0">
@@ -212,7 +212,7 @@ function TestimonySectionModernized() {
         >
           <div className="badge-accent mb-8 inline-flex items-center gap-2">
             <FiStar size={16} />
-            <span>Témoignages clients authentiques</span>
+            <span className='text-sm'>Témoignages clients authentiques</span>
           </div>
           
           <h2 className="heading-1 mb-6">
