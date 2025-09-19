@@ -40,11 +40,11 @@ COPY --from=build --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Variables d'environnement pour la production
 ENV NODE_ENV=production
-ENV PORT=3003
+ENV PORT=3004
 ENV HOSTNAME="0.0.0.0"
 
 USER nextjs
 
-EXPOSE 3003
+EXPOSE 3004
 
 CMD ["node", "server.js"]
