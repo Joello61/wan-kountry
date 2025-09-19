@@ -1,36 +1,41 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useRef, useEffect, useState } from 'react';
 import {
-  FiSmartphone,
-  FiCreditCard,
-  FiZap,
+  FiStar,
   FiArrowRight,
   FiPlay,
-  FiStar,
+  FiShield,
+  FiZap,
+  FiGlobe,
+  FiCheck,
+  FiTrendingUp,
+  FiClock,
+  FiHeart,
 } from 'react-icons/fi';
 
 function HeroSectionClient() {
-  const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
+  const [stats, setStats] = useState({ projects: 0, clients: 0, days: 0 });
 
-  const rotatingWords = ['moderne', 'performant', 'sécurisé', 'sur-mesure'];
+  const rotatingWords = ['innovant', 'performant', 'africain', 'accessible'];
 
+  // Effet typewriter
   useEffect(() => {
     setIsVisible(true);
 
     const typewriterEffect = () => {
       const word = rotatingWords[currentWord];
-
       if (isTyping) {
         if (displayText.length < word!.length) {
           setDisplayText(word!.slice(0, displayText.length + 1));
         } else {
-          setTimeout(() => setIsTyping(false), 1500);
+          setTimeout(() => setIsTyping(false), 2000);
         }
       } else {
         if (displayText.length > 0) {
@@ -42,314 +47,259 @@ function HeroSectionClient() {
       }
     };
 
-    const timer = setTimeout(typewriterEffect, isTyping ? 150 : 100);
+    const timer = setTimeout(typewriterEffect, isTyping ? 120 : 80);
     return () => clearTimeout(timer);
   }, [displayText, isTyping, currentWord, rotatingWords]);
 
+  // Animation des statistiques
+  useEffect(() => {
+    const animateStats = () => {
+      const targets = { projects: 180, clients: 94, days: 15 };
+      const duration = 2000;
+      const steps = 50;
+      
+      let step = 0;
+      const timer = setInterval(() => {
+        step++;
+        const progress = Math.min(step / steps, 1);
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        
+        setStats({
+          projects: Math.round(targets.projects * easeOut),
+          clients: Math.round(targets.clients * easeOut),
+          days: Math.round(targets.days * easeOut)
+        });
+        
+        if (step >= steps) clearInterval(timer);
+      }, duration / steps);
+    };
+    
+    const statsTimer = setTimeout(animateStats, 1200);
+    return () => clearTimeout(statsTimer);
+  }, []);
+
   return (
-    <section id="acceuil" className="relative overflow-hidden">
-      {/* Background avec gradient utilisant les variables CSS */}
-      <div 
-        className="absolute inset-0" 
-        style={{
-          background: `linear-gradient(135deg, var(--bg) 0%, var(--surface) 50%, var(--primary) 100%)`,
-          opacity: 0.1
-        }}
-      >
+    <section className="relative min-h-screen flex items-center py-20 overflow-hidden">
+      {/* Arrière-plan subtil avec motifs africains */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-bg via-surface to-surface-elevated"></div>
+        
+        {/* Motifs géométriques inspirés de l'art africain */}
         <div 
-          className="absolute top-0 left-1/4 w-96 h-96 rounded-full filter blur-3xl animate-pulse"
+          className="absolute top-0 right-0 w-1/2 h-1/2 opacity-[0.03]"
           style={{
-            background: `radial-gradient(circle, var(--primary) 0%, transparent 70%)`,
-            opacity: 0.3
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20L0 0h20v20zM40 40L20 20h20v20z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px'
           }}
         ></div>
-        <div 
-          className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full filter blur-3xl animate-pulse"
-          style={{
-            background: `radial-gradient(circle, var(--primary-dark) 0%, transparent 70%)`,
-            opacity: 0.3,
-            animationDelay: '1s'
-          }}
-        ></div>
+        
+        {/* Orbe décoratif */}
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-gradient-radial from-primary/10 to-transparent animate-pulse"></div>
       </div>
 
-      <div className="container pt-20 pb-25 mt-12">
-        <div
-          ref={ref}
-          className="flex flex-col lg:flex-row items-center gap-16"
-        >
-          {/* Contenu principal */}
-          <div
-            className={`flex-1 text-center lg:text-left transition-all duration-1000 ${
-              isVisible
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-10'
-            }`}
-          >
-            {/* Titre principal avec les variables de typography */}
-            <h1 className="mb-8 leading-tight">
-              Votre site web
-              <br />
-              <span className="relative inline-block min-h-[1.2em]">
-                <span className="text-gradient">
-                  {displayText}
-                </span>
-                <span 
-                  className="animate-pulse"
-                  style={{ color: 'var(--primary)' }}
-                >|</span>
-                <span
-                  className="absolute -bottom-2 left-0 h-1 rounded-full transition-all duration-300"
-                  style={{
-                    background: `linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%)`,
-                    width: `${
-                      (displayText.length /
-                        Math.max(...rotatingWords.map((w) => w.length))) *
-                      100
-                    }%`,
-                  }}
-                ></span>
-              </span>
-            </h1>
+      <div className="container relative z-10">
+        <div className="max-w-7xl mx-auto">
+          
+          {/* En-tête avec badge */}
+          <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="badge-primary inline-flex items-center gap-2 mb-6 px-6 py-2 rounded-full">
+              <FiStar size={16} />
+              <span>Agence digitale camerounaise de référence</span>
+            </div>
+          </div>
 
-            {/* Sous-titre */}
-            <p 
-              className="text-xl lg:text-2xl mb-8 max-w-2xl mx-auto lg:mx-0"
-              style={{ color: 'var(--text-light)' }}
-            >
-              Nous sommes spécialisés dans les solutions web pour le
-              marché local et international,
-              <span 
-                className="font-semibold"
-                style={{ color: 'var(--text-strong)' }}
-              >
-                {' '}
-                garantissant un premier résultat après 20 jours.
-              </span>
-            </p>
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
+            
+            {/* Contenu principal - Plus large */}
+            <div className={`lg:col-span-7 space-y-10 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+              
+              {/* Titre avec typewriter */}
+              <div className="space-y-6">
+                <h1 className="heading-1">
+                  Créons ensemble votre
+                  <br />
+                  <span className="relative inline-block min-h-[1.4em]">
+                    <span className="text-gradient-primary font-extrabold">
+                      site web {displayText}
+                    </span>
+                    <span className="text-primary-dark animate-pulse ml-1">|</span>
+                  </span>
+                </h1>
+                
+                <p className="body-large max-w-2xl">
+                  Solutions digitales sur mesure pour entreprises ambitieuses au Cameroun et en Afrique.
+                  <span className="block mt-4 font-semibold text-primary">
+                    Premiers résultats visibles en moins de 20 jours, garanti.
+                  </span>
+                </p>
+              </div>
 
-            {/* Statistiques rapides */}
-            <div className="flex justify-center lg:justify-start gap-8 mb-12">
-              <div className="text-center">
-                <div 
-                  className="text-4xl font-bold"
-                  style={{ color: 'var(--primary)' }}
-                >
-                  25j
+              {/* Points d'excellence en colonnes */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-center gap-4 p-4 card rounded-2xl hover-lift">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <FiZap className="text-primary" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-strong">Performance optimale</h3>
+                    <p className="text-sm text-text-light">Sites ultra-rapides adaptés au réseau local</p>
+                  </div>
                 </div>
-                <div style={{ color: 'var(--text-light)' }}>
-                  Livraison
+
+                <div className="flex items-center gap-4 p-4 card rounded-2xl hover-lift">
+                  <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                    <FiGlobe className="text-secondary" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-strong">Mobile Money intégré</h3>
+                    <p className="text-sm text-text-light">Solutions de paiement locales</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-4 card rounded-2xl hover-lift">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                    <FiShield className="text-accent-dark" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-strong">Sécurité maximale</h3>
+                    <p className="text-sm text-text-light">Protection SSL et hébergement sécurisé</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-4 card rounded-2xl hover-lift">
+                  <div className="w-12 h-12 rounded-xl bg-success/10 flex items-center justify-center">
+                    <FiHeart className="text-success" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-text-strong">Support personnalisé</h3>
+                    <p className="text-sm text-text-light">Accompagnement 7j/7 en français</p>
+                  </div>
                 </div>
               </div>
-              <div className="text-center">
-                <div 
-                  className="text-4xl font-bold"
-                  style={{ color: 'var(--primary-dark)' }}
-                >
-                  24/7
+
+              {/* CTA avec statistiques intégrées */}
+              <div className="space-y-8">
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <Link href="#contact" className="btn-primary btn-xl group">
+                    Lancer mon projet
+                    <FiArrowRight className="ml-3 transition-transform group-hover:translate-x-2" />
+                  </Link>
+                  
+                  <Link href="#portfolio" className="btn-secondary btn-xl group">
+                    <FiPlay className="mr-3 transition-transform group-hover:scale-125" />
+                    Découvrir nos créations
+                  </Link>
                 </div>
-                <div style={{ color: 'var(--text-light)' }}>
-                  Support
-                </div>
-              </div>
-              <div className="text-center">
-                <div 
-                  className="text-4xl font-bold"
-                  style={{ color: 'var(--color-success)' }}
-                >
-                  +95%
-                </div>
-                <div style={{ color: 'var(--text-light)' }}>
-                  Satisfait
+
+                {/* Statistiques en ligne */}
+                <div className="flex flex-wrap gap-8 items-center pt-6 border-t border-border">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-primary">
+                      {stats.projects}+
+                    </div>
+                    <div className="caption">Sites livrés</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-secondary">
+                      {stats.clients}%
+                    </div>
+                    <div className="caption">Clients satisfaits</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-accent-dark flex items-center gap-1">
+                      <FiClock size={24} />
+                      {stats.days}j
+                    </div>
+                    <div className="caption">Délai moyen</div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* CTA Buttons utilisant les classes du globals.css */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-12">
-              {/* CTA Principal */}
-              <Link
-                href="#services"
-                className="btn-primary group hover-lift focus-ring"
-              >
-                <span className="flex items-center gap-3">
-                  Démarrer mon projet
-                  <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-                </span>
-              </Link>
-
-              {/* CTA Secondaire */}
-              <Link
-                href="#realisations"
-                className="btn-ghost group"
-              >
-                <FiPlay className="mr-3 group-hover:scale-110 transition-transform" />
-                Voir nos réalisations
-              </Link>
-            </div>
-
-            {/* Éléments de réassurance avec glass-effect */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6">
-              <div className="flex items-center gap-4 glass-effect rounded-full px-6 py-3">
-                <div 
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{
-                    backgroundColor: 'var(--primary-dark)',
-                    opacity: 0.8
-                  }}
-                >
-                  <FiSmartphone
-                    size={20}
-                    className='text-white'
-                  />
+            {/* Section visuelle plus compacte */}
+            <div className={`lg:col-span-5 relative transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+              
+              {/* Stack de cartes avec effet de profondeur */}
+              <div className="relative max-w-md mx-auto">
+                
+                {/* Card arrière */}
+                <div className="absolute top-4 left-4 right-4 h-80 card-elevated rounded-3xl opacity-40 blur-sm"></div>
+                
+                {/* Card milieu */}
+                <div className="absolute top-2 left-2 right-2 h-80 card rounded-3xl opacity-70"></div>
+                
+                {/* Card principale */}
+                <div className="relative card-warm p-8 rounded-3xl hover-lift shadow-warm">
+                  <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-6 relative">
+                    <Image
+                      src="/images/home/hero/hero-mockup.jpg"
+                      alt="Site web moderne camerounais"
+                      width={400}
+                      height={500}
+                      className="w-full h-full object-cover"
+                      priority
+                    />
+                    
+                    {/* Badge performance superposé */}
+                    <div className="absolute top-4 left-4 badge-success px-3 py-2">
+                      <FiTrendingUp size={14} className="mr-1" />
+                      Performance: 98/100
+                    </div>
+                  </div>
+                  
+                  {/* Informations du projet */}
+                  <div className="space-y-3">
+                    <h3 className="heading-6">E-commerce Premium</h3>
+                    <p className="text-sm text-text-light">Solution complète avec Mobile Money</p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 rounded-full bg-gradient-primary flex items-center justify-center">
+                          <FiCheck className="text-white" size={14} />
+                        </div>
+                        <span className="text-sm font-medium">Livré en 18 jours</span>
+                      </div>
+                      
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <FiStar key={i} size={12} className="text-accent fill-current" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <span 
-                  className="font-medium text-lg"
-                  style={{ color: 'var(--text-strong)' }}
-                >
-                  Mobile-first
-                </span>
-              </div>
-
-              <div className="flex items-center gap-4 glass-effect rounded-full px-6 py-3">
-                <div 
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{
-                    backgroundColor: 'var(--primary-dark)',
-                    opacity: 0.8
-                  }}
-                >
-                  <FiCreditCard
-                    size={20}
-                    className='text-white'
-                  />
+                
+                {/* Éléments flottants minimalistes */}
+                <div className="absolute -top-2 -right-2 w-12 h-12 bg-gradient-accent rounded-2xl flex items-center justify-center shadow-glow-accent animate-bounce-subtle">
+                  <FiZap className="text-white" size={16} />
                 </div>
-                <span 
-                  className="font-medium text-lg"
-                  style={{ color: 'var(--text-strong)' }}
-                >
-                  Mobile Money
-                </span>
-              </div>
-
-              <div className="flex items-center gap-4 glass-effect rounded-full px-6 py-3">
-                <div 
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{
-                    backgroundColor: 'var(--primary-dark)',
-                    opacity: 0.8
-                  }}
-                >
-                  <FiZap 
-                    size={20} 
-                    className='text-white'
-                  />
+                
+                <div className="absolute -bottom-3 -left-3 w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center animate-pulse">
+                  <FiStar className="text-white" size={14} />
                 </div>
-                <span 
-                  className="font-medium text-lg"
-                  style={{ color: 'var(--text-strong)' }}
-                >
-                  Ultra-rapide
-                </span>
               </div>
             </div>
           </div>
 
-          {/* Partie visuelle */}
-          <div
-            className={`flex-1 relative transition-all duration-1000 delay-500 ${
-              isVisible
-                ? 'opacity-100 translate-x-0'
-                : 'opacity-0 translate-x-10'
-            }`}
-          >
-            <div className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-2xl px-8 sm:px-12 lg:px-8">
-              {/* Mockup de téléphone avec card effect */}
-              <div className="card relative p-6 transform rotate-1 lg:rotate-3 hover:rotate-0 hover-lift">
+          {/* Technologies utilisées */}
+          <div className={`mt-20 text-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <p className="caption mb-8">Technologies que nous maîtrisons</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { name: 'Next.js', color: 'primary' },
+                { name: 'React', color: 'secondary' },
+                { name: 'Node.js', color: 'accent' },
+                { name: 'MongoDB', color: 'primary' },
+                { name: 'Tailwind', color: 'secondary' },
+                { name: 'TypeScript', color: 'accent' }
+              ].map((tech, index) => (
                 <div 
-                  className="overflow-hidden"
-                  style={{ borderRadius: 'var(--radius-xl)' }}
+                  key={index} 
+                  className={`chip bg-${tech.color}/5 text-${tech.color} border border-${tech.color}/20 hover:border-${tech.color}/40 hover:bg-${tech.color}/10 transition-colors`}
                 >
-                  <Image
-                    src="/images/home/hero/hero-mockup.jpg"
-                    alt="Aperçu de site web moderne"
-                    width={800}
-                    height={1000}
-                    className="w-full h-auto object-cover"
-                    priority
-                  />
+                  {tech.name}
                 </div>
-              </div>
-
-              {/* Éléments flottants avec variables de couleur */}
-              <div 
-                className="absolute -top-6 -right-6 w-24 h-24 rounded-full flex items-center justify-center text-white font-bold shadow-medium animate-bounce"
-                style={{ backgroundColor: 'var(--primary)' }}
-              >
-                <FiZap size={24} />
-              </div>
-
-              <div 
-                className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full flex items-center justify-center text-white shadow-medium animate-pulse"
-                style={{ backgroundColor: 'var(--primary-dark)' }}
-              >
-                <FiStar size={20} />
-              </div>
-
-              {/* Indicateurs de performance avec card styling */}
-              <div 
-                className="hidden sm:block absolute top-1/4 -left-16 xl:-left-20 card p-6"
-              >
-                <div 
-                  className="text-3xl font-bold"
-                  style={{ color: 'var(--color-success)' }}
-                >
-                  +97%
-                </div>
-                <div style={{ color: 'var(--text-light)' }}>
-                  Performance
-                </div>
-              </div>
-
-              <div 
-                className="hidden sm:block absolute bottom-1/4 -right-16 xl:-right-20 card p-6"
-              >
-                <div 
-                  className="text-3xl font-bold"
-                  style={{ color: 'var(--primary)' }}
-                >
-                  &lt;2.5s
-                </div>
-                <div style={{ color: 'var(--text-light)' }}>
-                  Chargement
-                </div>
-              </div>
-            </div>
-
-            {/* Indicateurs mobiles */}
-            <div className="sm:hidden flex justify-center gap-8 mt-12">
-              <div className="card p-4 text-center">
-                <div 
-                  className="text-2xl font-bold"
-                  style={{ color: 'var(--color-success)' }}
-                >
-                  +97%
-                </div>
-                <div style={{ color: 'var(--text-light)' }}>
-                  Performance
-                </div>
-              </div>
-              <div className="card p-4 text-center">
-                <div 
-                  className="text-2xl font-bold"
-                  style={{ color: 'var(--primary)' }}
-                >
-                  &lt;2,5s
-                </div>
-                <div style={{ color: 'var(--text-light)' }}>
-                  Chargement
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

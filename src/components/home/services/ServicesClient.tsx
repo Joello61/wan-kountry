@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -23,6 +23,8 @@ import {
   FiGift,
   FiMapPin,
   FiRefreshCw,
+  FiChevronRight,
+  FiAward,
 } from 'react-icons/fi';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -30,572 +32,472 @@ import { usePathname } from 'next/navigation';
 const MotionLink = motion.create(Link);
 
 function ServicesSectionClient() {
-  const [activeService, setActiveService] = useState(0);
-  const [, setHoveredService] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState(0);
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
     if (isHomePage) {
       return {
         initial: initialProps,
         whileInView: animateProps,
-        transition: { duration: 0.8 },
-        viewport: { once: true }
-      };
+        transition: { duration: 0.6, ease: "easeOut" as const },
+        viewport: { once: true, margin: "-50px" }
+      } as const;
     } else {
       return {
         initial: animateProps,
         animate: animateProps
-      };
+      } as const;
     }
   };
 
-  const servicesData = [
+  const serviceCategories = [
     {
-      id: 0,
-      badgeIcon: FiStar,
-      badgeText: 'Le plus populaire',
-      title: 'Site Vitrine Pro',
-      subtitle: 'Votre vitrine digitale qui convertit',
-      description:
-        'Un site qui raconte votre histoire et convainc vos visiteurs en moins de 10 secondes',
+      id: 'web',
+      title: 'Sites Web',
       icon: FiGlobe,
-      price: 'À partir de 100 000 FCFA',
-      duration: '5-7 jours',
-      features: [
-        'Design sur-mesure',
-        'Mobile-first garanti',
-        'SEO optimisé',
-        '1 an de maintenance',
-      ],
-      results: 'Clients gagnent +150% de contacts',
-      testimonial: {
-        text: "Mon chiffre d'affaires a doublé en 3 mois !",
-        author: 'Sarah, Coach',
-        rating: 5,
-      },
-      preview: '/images/services/site-vitrine.jpg',
+      description: 'Présence digitale performante',
+      color: 'primary'
     },
     {
-      id: 1,
-      badgeIcon: FiTarget,
-      badgeText: 'Bestseller',
-      title: 'E-commerce Complet',
-      subtitle: 'Votre boutique qui vend 24h/24',
-      description:
-        'Une boutique optimisée pour le mobile avec Mobile Money intégré',
+      id: 'ecommerce',
+      title: 'E-commerce', 
       icon: FiShoppingCart,
-      price: 'À partir de 350 000 FCFA',
-      duration: '10-14 jours',
-      features: [
-        'Paiement Mobile Money',
-        'Gestion stock automatique',
-        'Analytics avancées',
-        'Support prioritaire',
-      ],
-      results: 'Moyenne +300% de ventes',
-      testimonial: {
-        text: 'Enfin une boutique qui marche en Afrique !',
-        author: 'Mamadou, Entrepreneur',
-        rating: 5,
-      },
-      preview: '/images/services/e-commerce.jpg',
+      description: 'Boutiques qui convertissent',
+      color: 'secondary'
     },
     {
-      id: 2,
-      badgeIcon: FiGift,
-      badgeText: 'Premium',
-      title: 'App Sur-Mesure',
-      subtitle: 'Votre idée devient réalité',
-      description:
-        'Application web personnalisée pour automatiser votre business',
+      id: 'custom',
+      title: 'Sur-mesure',
       icon: FiSettings,
-      price: 'Devis personnalisé (750 000 – 2 500 000 FCFA)',
-      duration: '3-8 semaines',
-      features: [
-        'Développement sur-mesure',
-        'Architecture scalable',
-        'Formation incluse',
-        'Code source fourni',
-      ],
-      results: 'Clients économisent 40h/mois',
-      testimonial: {
-        text: 'Exactly what we needed, perfectly executed',
-        author: 'John, Startup CEO',
-        rating: 5,
-      },
-      preview: '/images/services/app.jpg',
-    },
-    {
-      id: 3,
-      badgeIcon: FiMapPin,
-      badgeText: 'Institutionnel',
-      title: 'Site Associatif',
-      subtitle: 'Amplifiez votre impact',
-      description: 'Plateforme engageante pour mobiliser votre communauté',
-      icon: FiHome,
-      price: 'À partir de 70 000 FCFA',
-      duration: '4-6 jours',
-      features: [
-        'Espace membres',
-        'Système de dons',
-        'Agenda événements',
-        'Newsletter intégrée',
-      ],
-      results: "+250% d'adhésions",
-      testimonial: {
-        text: "Notre association a enfin la visibilité qu'elle mérite",
-        author: 'Marie, Présidente ONG',
-        rating: 5,
-      },
-      preview: '/images/services/site-associatif.jpg',
-    },
-    {
-      id: 4,
-      badgeIcon: FiRefreshCw,
-      badgeText: 'Maintenance',
-      title: 'Refonte Express',
-      subtitle: 'Votre site version 2024',
-      description: 'Modernisation complète : design + performance + sécurité',
-      icon: FiTool,
-      price: 'À partir de 150 000 FCFA',
-      duration: '2-4 jours',
-      features: [
-        'Audit complet gratuit',
-        'Design moderne',
-        'Optimisation vitesse',
-        'Migration sécurisée',
-      ],
-      results: '+180% de vitesse',
-      testimonial: {
-        text: 'Comme avoir un site neuf pour un tiers du prix',
-        author: 'David, PME',
-        rating: 5,
-      },
-      preview: '/images/services/refonte.jpg',
-    },
+      description: 'Solutions personnalisées',
+      color: 'accent'
+    }
   ];
+
+  const servicesData = {
+    web: [
+      {
+        title: 'Site Vitrine Premium',
+        subtitle: 'Votre carte de visite digitale',
+        description: 'Site professionnel optimisé pour convertir vos visiteurs en clients.',
+        price: '100 000 FCFA',
+        duration: '5-7 jours',
+        popular: true,
+        features: [
+          'Design responsive premium',
+          'SEO optimisé Google',
+          'Formulaires de contact',
+          '1 an maintenance incluse'
+        ],
+        results: '+150% de contacts qualifiés',
+        preview: '/images/services/site-vitrine.jpg'
+      },
+      {
+        title: 'Site Associatif',
+        subtitle: 'Mobilisez votre communauté',
+        description: 'Plateforme engageante pour votre association ou ONG.',
+        price: '70 000 FCFA',
+        duration: '4-6 jours',
+        popular: false,
+        features: [
+          'Espace membres',
+          'Système de dons',
+          'Agenda événements',
+          'Newsletter automatique'
+        ],
+        results: '+250% d\'adhésions',
+        preview: '/images/services/site-associatif.jpg'
+      }
+    ],
+    ecommerce: [
+      {
+        title: 'E-commerce Complet',
+        subtitle: 'Boutique qui vend 24h/24',
+        description: 'Solution e-commerce avec Mobile Money intégré pour l\'Afrique.',
+        price: '350 000 FCFA',
+        duration: '10-14 jours',
+        popular: true,
+        features: [
+          'Mobile Money intégré',
+          'Gestion stock automatique',
+          'Analytics avancées',
+          'Support prioritaire'
+        ],
+        results: '+300% de ventes online',
+        preview: '/images/services/e-commerce.jpg'
+      },
+      {
+        title: 'Marketplace',
+        subtitle: 'Plateforme multi-vendeurs',
+        description: 'Créez votre propre marketplace avec commissions automatiques.',
+        price: '750 000 FCFA',
+        duration: '3-4 semaines',
+        popular: false,
+        features: [
+          'Multi-vendeurs',
+          'Commission automatique',
+          'Tableau de bord vendeur',
+          'Système d\'avis'
+        ],
+        results: 'Revenus passifs garantis',
+        preview: '/images/services/marketplace.jpg'
+      }
+    ],
+    custom: [
+      {
+        title: 'Application Sur-mesure',
+        subtitle: 'Votre idée, notre expertise',
+        description: 'Développement d\'applications web personnalisées pour votre business.',
+        price: 'Devis personnalisé',
+        duration: '3-8 semaines',
+        popular: true,
+        features: [
+          'Architecture sur-mesure',
+          'Code source fourni',
+          'Formation équipe',
+          'Maintenance 6 mois'
+        ],
+        results: '40h/mois économisées',
+        preview: '/images/services/app.jpg'
+      },
+      {
+        title: 'Refonte Moderne',
+        subtitle: 'Votre site version 2024',
+        description: 'Modernisation complète : design, performance et sécurité.',
+        price: '150 000 FCFA',
+        duration: '2-4 jours',
+        popular: false,
+        features: [
+          'Audit gratuit inclus',
+          'Design moderne',
+          'Optimisation vitesse',
+          'Migration sécurisée'
+        ],
+        results: '+180% plus rapide',
+        preview: '/images/services/refonte.jpg'
+      }
+    ]
+  };
 
   const processSteps = [
     {
       icon: FiUsers,
-      title: 'Discussion',
-      desc: 'On se parle pour comprendre vos besoins',
+      title: 'Consultation',
+      description: 'Analyse de vos besoins et définition de la stratégie optimale',
+      duration: '30 min'
     },
     {
-      icon: FiSettings,
-      title: 'Design',
-      desc: 'Nous créons les maquettes et on ajuste ensemble',
+      icon: FiTarget,
+      title: 'Conception',
+      description: 'Maquettes interactives et validation de l\'expérience utilisateur',
+      duration: '1-2 jours'
     },
     {
       icon: FiZap,
       title: 'Développement',
-      desc: 'Nous codons pendant que vous vous occupez de votre business',
+      description: 'Codage avec suivi en temps réel et tests continus',
+      duration: 'Variable'
     },
     {
-      icon: FiTrendingUp,
-      title: 'Lancement',
-      desc: 'Mise en ligne + formation + suivi',
-    },
+      icon: FiAward,
+      title: 'Livraison',
+      description: 'Mise en ligne, formation et accompagnement personnalisé',
+      duration: '1 jour'
+    }
   ];
 
-  const handleServiceClick = (index: React.SetStateAction<number>) => {
-    setActiveService(index);
-  };
-
-  const handleHoverStart = (index: React.SetStateAction<number | null>) => {
-    setHoveredService(index);
-  };
-
-  const handleHoverEnd = () => {
-    setHoveredService(null);
-  };
+  const currentServices = servicesData[serviceCategories[activeTab]!.id as keyof typeof servicesData];
 
   return (
-    <section id="services" className="relative overflow-hidden">
-      {/* Background avec les variables CSS */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(135deg, var(--bg) 0%, var(--surface) 50%, var(--primary) 100%)`,
-          opacity: 0.05
-        }}
-      />
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: `radial-gradient(circle at 30% 20%, var(--primary) 0%, transparent 50%)`,
-          opacity: 0.08
-        }}
-      />
+    <section className="relative py-32 overflow-hidden">
+      
+      {/* Arrière-plan moderne */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-soft"></div>
+        
+        {/* Motifs géométriques subtils */}
+        <div 
+          className="absolute top-1/4 right-0 w-1/3 h-1/2 opacity-[0.02]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
+            backgroundSize: '40px 40px'
+          }}
+        ></div>
+      </div>
 
-      <div className="relative container py-25">
-        {/* Header avec le système de design */}
+      <div className="container relative z-10">
+
+        {/* En-tête modernisé */}
         <motion.div
-          {...getScrollAnimationProps({ y: 50, opacity: 0 }, { y: 0, opacity: 1 })}
-          className="text-center mb-25"
+          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          className="text-center mb-20"
         >
-          <div 
-            className="inline-flex items-center gap-3 glass-effect px-6 py-3 rounded-full mb-8"
-            style={{ border: `1px solid var(--border)` }}
-          >
-            <FiHeart style={{ color: 'var(--primary)' }} />
-            <span 
-              className="font-medium"
-              style={{ color: 'var(--text-light)' }}
-            >
-              Ce que nous faisons de mieux
-            </span>
+          <div className="badge-primary mb-8 inline-flex items-center gap-2">
+            <FiZap size={16} />
+            <span>Solutions digitales performantes</span>
           </div>
           
-          <h2 className="mb-8">
-            <span style={{ color: 'var(--text-strong)' }}>
-              Services qui{' '}
-            </span>
-            <span className="text-gradient">
-              font la différence
-            </span>
+          <h2 className="heading-1 mb-6">
+            Services qui <span className="text-gradient-warm">transforment</span>
+            <br />
+            votre business
           </h2>
           
-          <p 
-            className="text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed"
-            style={{ color: 'var(--text-light)' }}
-          >
-            Pas de blabla technique. Des{' '}
-            <strong style={{ color: 'var(--text-strong)' }}>
-              solutions concrètes
-            </strong>{' '}
-            qui font grandir votre business.
-            <br />
-            Avec des{' '}
-            <strong style={{ color: 'var(--text-strong)' }}>
-              résultats mesurables
-            </strong>{' '}
-            dès le premier mois.
+          <p className="body-large max-w-3xl mx-auto">
+            Des solutions concrètes, des résultats mesurables. 
+            Nous créons les outils digitaux dont votre entreprise a vraiment besoin.
           </p>
         </motion.div>
 
-        {/* Services interactifs */}
-        <div className="grid lg:grid-cols-12 gap-12 mb-25">
-          {/* Liste des services */}
-          <motion.div
-            {...getScrollAnimationProps({ x: -100, opacity: 0 }, { x: 0, opacity: 1 })}
-            className="lg:col-span-5 space-y-6"
-          >
-            {servicesData.map((service, index) => {
-              const IconComponent = service.icon;
-              const BadgeIcon = service.badgeIcon;
-
-              return (
-                <motion.div
-                  key={service.id}
-                  whileHover={{ scale: 1.02 }}
-                  onClick={() => handleServiceClick(index)}
-                  onHoverStart={() => handleHoverStart(index)}
-                  onHoverEnd={handleHoverEnd}
-                  className={`card p-8 cursor-pointer transition-all duration-300 hover-lift focus-ring ${
-                    activeService === index
-                      ? 'ring-4'
-                      : ''
-                  }`}
-                  style={{
-                    backgroundColor: activeService === index ? 'var(--surface)' : 'var(--color-white)',
-                    '--tw-ring-color': activeService === index ? 'var(--primary)' : 'transparent',
-                    '--tw-ring-opacity': activeService === index ? '0.2' : '0',
-                  }}
-                >
-                  <div className="flex items-start gap-6">
-                    <div 
-                      className={`p-4 flex items-center justify-center shadow-medium ${
-                        activeService === index ? 'scale-110' : ''
-                      } transition-transform duration-300`}
-                      style={{
-                        background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
-                        borderRadius: 'var(--radius-lg)'
-                      }}
-                    >
-                      <IconComponent className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 
-                          className="font-bold text-xl"
-                          style={{ color: 'var(--text-strong)' }}
-                        >
-                          {service.title}
-                        </h3>
-                        <span 
-                          className="text-xs px-3 py-1 font-medium flex items-center gap-1 text-white"
-                          style={{
-                            background: `linear-gradient(135deg, var(--color-warning) 0%, var(--color-warning) 100%)`,
-                            borderRadius: 'var(--radius-full)'
-                          }}
-                        >
-                          <BadgeIcon className="w-3 h-3" />
-                          {service.badgeText}
-                        </span>
-                      </div>
-                      <p 
-                        className="text-base mb-4"
-                        style={{ color: 'var(--text-light)' }}
-                      >
-                        {service.subtitle}
-                      </p>
-                      <div className="flex items-center gap-6 text-sm">
-                        <span 
-                          className="flex items-center gap-2 font-semibold"
-                          style={{ color: 'var(--color-success)' }}
-                        >
-                          <FiDollarSign className="w-4 h-4" />
-                          {service.price}
-                        </span>
-                        <span 
-                          className="flex items-center gap-2"
-                          style={{ color: 'var(--primary)' }}
-                        >
-                          <FiClock className="w-4 h-4" />
-                          {service.duration}
-                        </span>
-                      </div>
-                    </div>
-                    <div 
-                      className={`w-4 h-4 transition-opacity duration-300`}
-                      style={{
-                        backgroundColor: 'var(--primary)',
-                        borderRadius: 'var(--radius-full)',
-                        opacity: activeService === index ? '1' : '0.3',
-                      }}
-                    />
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-
-          {/* Détails du service actif */}
-          <motion.div
-            {...getScrollAnimationProps({ x: 100, opacity: 0 }, { x: 0, opacity: 1 })}
-            className="lg:col-span-7"
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeService}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-                className="card glass-effect p-10"
-              >
-                {/* Preview image */}
-                <div 
-                  className="relative mb-10 group overflow-hidden"
-                  style={{ borderRadius: 'var(--radius-xl)' }}
-                >
-                  <Image
-                    src={servicesData[activeService]!.preview}
-                    alt={servicesData[activeService]!.title}
-                    width={400}
-                    height={300}
-                    className="w-full h-77 object-cover transition-transform duration-500 group-hover:scale-105"
-                    priority={activeService === 0}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-
-                {/* Contenu détaillé */}
-                <div className="space-y-8">
-                  <div>
-                    <h3 
-                      className="text-4xl font-bold mb-4"
-                      style={{ color: 'var(--text-strong)' }}
-                    >
-                      {servicesData[activeService]!.title}
-                    </h3>
-                    <p 
-                      className="text-xl leading-relaxed"
-                      style={{ color: 'var(--text)' }}
-                    >
-                      {servicesData[activeService]!.description}
-                    </p>
-                  </div>
-
-                  {/* Caractéristiques */}
-                  <div className="grid grid-cols-2 gap-6">
-                    {servicesData[activeService]!.features.map((feature, i) => (
-                      <motion.div
-                        key={`${activeService}-feature-${i}`}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: i * 0.1 }}
-                        className="flex items-center gap-3"
-                      >
-                        <FiCheck 
-                          className="w-5 h-5 flex-shrink-0"
-                          style={{ color: 'var(--color-success)' }}
-                        />
-                        <span 
-                          className="font-medium"
-                          style={{ color: 'var(--text)' }}
-                        >
-                          {feature}
-                        </span>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  {/* Résultat + Témoignage */}
-                  <div 
-                    className="p-8"
-                    style={{
-                      background: `var(--surface)`,
-                      opacity: 0.8,
-                      borderRadius: 'var(--radius-xl)',
-                      border: `1px solid var(--border)`
-                    }}
-                  >
-                    <div className="flex items-start gap-6">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-3">
-                          <FiTrendingUp 
-                            className="w-6 h-6"
-                            style={{ color: 'var(--text)' }}
-                          />
-                          <span 
-                            className="font-bold text-lg"
-                            style={{ color: 'var(--text)' }}
-                          >
-                            {servicesData[activeService]!.results}
-                          </span>
-                        </div>
-                        <blockquote 
-                          className="italic mb-3 text-lg"
-                          style={{ color: 'var(--text)' }}
-                        >
-                          &quot;{servicesData[activeService]!.testimonial.text}&quot;
-                        </blockquote>
-                        <div className="flex items-center gap-3">
-                          <div className="flex">
-                            {[...Array(servicesData[activeService]!.testimonial.rating)].map((_, i) => (
-                              <FiStar
-                                key={`star-${i}`}
-                                className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                              />
-                            ))}
-                          </div>
-                          <span 
-                            className="font-medium"
-                            style={{ color: 'var(--text-light)' }}
-                          >
-                            - {servicesData[activeService]!.testimonial.author}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
-        </div>
-
-        {/* Processus de travail */}
+        {/* Navigation par catégories */}
         <motion.div
-          {...getScrollAnimationProps({ y: 100, opacity: 0 }, { y: 0, opacity: 1 })}
-          className="mb-25"
+          {...getScrollAnimationProps({ y: 20, opacity: 0 }, { y: 0, opacity: 1 })}
+          className="flex justify-center mb-16"
         >
-          <h3 
-            className="text-center mb-16"
-            style={{ color: 'var(--text-strong)' }}
-          >
-            Comment on travaille ensemble
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            {processSteps.map((step, index) => {
-              const StepIcon = step.icon;
-
-              return (
-                <motion.div
-                  key={`step-${index}`}
-                  whileHover={{ y: -10 }}
-                  className="text-center group"
-                >
-                  <div className="relative mb-8">
-                    <div 
-                      className="w-24 h-24 flex items-center justify-center mx-auto shadow-medium group-hover:shadow-strong transition-all duration-300 hover-lift"
-                      style={{
-                        background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
-                        borderRadius: 'var(--radius-xl)'
-                      }}
-                    >
-                      <StepIcon className="w-10 h-10 text-white" />
-                    </div>
-                    <div 
-                      className="absolute -top-2 -right-2 w-10 h-10 flex items-center justify-center text-sm font-bold border-2"
-                      style={{
-                        backgroundColor: 'var(--color-white)',
-                        borderColor: 'var(--primary)',
-                        color: 'var(--primary)',
-                        borderRadius: 'var(--radius-full)'
-                      }}
-                    >
-                      {index + 1}
-                    </div>
-                  </div>
-                  <h4 
-                    className="font-bold mb-3"
-                    style={{ color: 'var(--text-strong)' }}
-                  >
-                    {step.title}
-                  </h4>
-                  <p style={{ color: 'var(--text-light)' }}>
-                    {step.desc}
-                  </p>
-                </motion.div>
-              );
-            })}
+          <div className="card-glass p-2 inline-flex gap-2 rounded-2xl">
+            {serviceCategories.map((category, index) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveTab(index)}
+                className={`flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 focus-ring ${
+                  activeTab === index 
+                    ? `bg-${category.color} text-white shadow-glow-${category.color}` 
+                    : 'hover:bg-surface text-text-light'
+                }`}
+              >
+                <category.icon size={20} />
+                <div className="text-left">
+                  <div className="text-sm font-bold">{category.title}</div>
+                  <div className="text-xs opacity-80">{category.description}</div>
+                </div>
+              </button>
+            ))}
           </div>
         </motion.div>
 
-        {/* CTA final avec le système de design */}
+        {/* Services en grille */}
         <motion.div
-          {...getScrollAnimationProps({ y: 100, opacity: 0 }, { y: 0, opacity: 1 })}
-          className="text-center text-white relative overflow-hidden p-16"
-          style={{
-            background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
-            borderRadius: 'var(--radius-xl)'
-          }}
+          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          className="mb-20"
         >
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="relative z-10">
-            <h3 className="text-4xl font-bold mb-6">
-              Prêt à révolutionner votre présence en ligne ?
-            </h3>
-            <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
-              Parlons de votre projet ! Consultation gratuite de 30 min pour
-              définir la stratégie parfaite.
-            </p>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <MotionLink
-                href="/contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary bg-white text-gray-900 hover:bg-gray-100 shadow-strong"
-              >
-                <FiZap className="mr-3" />
-                Consultation gratuite
-              </MotionLink>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="grid lg:grid-cols-2 gap-8"
+            >
+              {currentServices.map((service, index) => (
+                <motion.div
+                  key={`${activeTab}-${index}`}
+                  onMouseEnter={() => setHoveredService(index)}
+                  onMouseLeave={() => setHoveredService(null)}
+                  whileHover={{ y: -8 }}
+                  className="group relative"
+                >
+                  <div className={`card-warm p-8 h-full relative overflow-hidden ${
+                    service.popular ? 'card-bordered-primary' : ''
+                  }`}>
+                    
+                    {/* Badge populaire */}
+                    {service.popular && (
+                      <div className="absolute -top-3 -right-3 badge-accent px-4 py-2 shadow-glow-accent">
+                        <FiStar size={12} className="mr-1" />
+                        <span className="text-white font-bold">Populaire</span>
+                      </div>
+                    )}
 
-              <MotionLink
-                href="#testimony"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-ghost border-white text-white hover:bg-white/10"
-              >
-                <FiUsers className="mr-3" />
-                Voir les témoignages
-              </MotionLink>
+                    {/* Preview image */}
+                    <div className="aspect-video mb-6 overflow-hidden rounded-xl relative">
+                      <Image
+                        src={service.preview}
+                        alt={service.title}
+                        width={400}
+                        height={225}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      
+                      {/* Overlay avec résultats */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-4 left-4 text-white">
+                          <div className="text-sm font-bold mb-1">Résultat moyen :</div>
+                          <div className="text-lg font-bold">{service.results}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Contenu */}
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="heading-4 mb-2">{service.title}</h3>
+                        <p className="body-text text-primary font-semibold mb-3">
+                          {service.subtitle}
+                        </p>
+                        <p className="body-small leading-relaxed">
+                          {service.description}
+                        </p>
+                      </div>
+
+                      {/* Pricing et durée */}
+                      <div className="flex items-center justify-between p-4 bg-surface/50 rounded-xl">
+                        <div className="flex items-center gap-2 text-secondary font-bold">
+                          <FiDollarSign size={18} />
+                          <span>{service.price}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-accent font-medium">
+                          <FiClock size={16} />
+                          <span>{service.duration}</span>
+                        </div>
+                      </div>
+
+                      {/* Features */}
+                      <div className="space-y-3">
+                        {service.features.map((feature, featureIndex) => (
+                          <motion.div
+                            key={featureIndex}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: featureIndex * 0.1 }}
+                            className="flex items-center gap-3"
+                          >
+                            <FiCheck className="text-success flex-shrink-0" size={16} />
+                            <span className="text-sm font-medium">{feature}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      {/* CTA */}
+                      <div className="pt-4">
+                        <motion.button
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="w-full btn-primary group"
+                        >
+                          Choisir cette solution
+                          <FiArrowRight className="ml-3 group-hover:translate-x-1 transition-transform" />
+                        </motion.button>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Processus de travail modernisé */}
+        <motion.div
+          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          className="mb-20"
+        >
+          <div className="text-center mb-16">
+            <h3 className="heading-2 mb-6">Notre processus éprouvé</h3>
+            <p className="body-large max-w-2xl mx-auto">
+              Une méthode structurée qui garantit la réussite de votre projet digital.
+            </p>
+          </div>
+
+          <div className="relative">
+            
+            <div className="grid lg:grid-cols-4 gap-8 relative">
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -5 }}
+                  className="text-center group"
+                >
+                  <div className="relative mb-8">
+                    
+                    {/* Icône principale */}
+                    <div className="relative z-10 w-20 h-20 mx-auto card-elevated rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <div className={`w-16 h-16 bg-${
+                        ['primary', 'secondary', 'accent', 'success'][index]
+                      }/10 rounded-2xl flex items-center justify-center`}>
+                        <step.icon size={24} className={`text-${
+                          ['primary', 'secondary', 'accent', 'success'][index]
+                        }`} />
+                      </div>
+                    </div>
+
+                    {/* Numéro d'étape */}
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20">
+                      {index + 1}
+                    </div>
+                  </div>
+                  
+                  <h4 className="heading-5 mb-3">{step.title}</h4>
+                  <p className="body-small mb-3 leading-relaxed">
+                    {step.description}
+                  </p>
+                  <div className="chip bg-surface text-text-light">
+                    {step.duration}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA final modernisé */}
+        <motion.div
+          {...getScrollAnimationProps({ scale: 0.95, opacity: 0 }, { scale: 1, opacity: 1 })}
+          className="text-center"
+        >
+          <div className="card-glass p-12 max-w-4xl mx-auto relative overflow-hidden">
+            
+            {/* Éléments décoratifs */}
+            <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-primary rounded-full opacity-10 -translate-x-16 -translate-y-16"></div>
+            <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-accent rounded-full opacity-10 translate-x-12 translate-y-12"></div>
+            
+            <div className="relative z-10">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <FiStar className="text-accent" />
+                <FiStar className="text-accent" />
+                <FiStar className="text-accent" />
+              </div>
+              
+              <h3 className="heading-2 mb-6 text-gradient-sunset">
+                Prêt à propulser votre business ?
+              </h3>
+              
+              <p className="body-large mb-8 max-w-2xl mx-auto">
+                Consultation gratuite de 30 minutes pour analyser vos besoins 
+                et vous proposer la solution parfaite.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <MotionLink
+                  href="#contact"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-primary btn-lg group"
+                >
+                  <FiPlay className="mr-3 group-hover:scale-125 transition-transform" />
+                  Consultation gratuite
+                  <FiChevronRight className="ml-3 group-hover:translate-x-1 transition-transform" />
+                </MotionLink>
+                
+                <MotionLink
+                  href="#portfolio"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-ghost btn-lg group"
+                >
+                  <FiHeart className="mr-3 group-hover:scale-110 transition-transform" />
+                  Voir nos réalisations
+                </MotionLink>
+              </div>
             </div>
           </div>
         </motion.div>

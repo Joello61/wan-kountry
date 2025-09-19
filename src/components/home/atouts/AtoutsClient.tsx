@@ -1,6 +1,7 @@
 'use client';
-import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   FiSmartphone,
   FiCreditCard,
@@ -17,6 +18,9 @@ import {
   FiClock,
   FiShield,
   FiArrowRight,
+  FiStar,
+  FiChevronRight,
+  FiPlay,
 } from 'react-icons/fi';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -24,391 +28,480 @@ import { usePathname } from 'next/navigation';
 const MotionLink = motion.create(Link);
 
 function AtoutsSectionClient() {
-  const ref = useRef(null);
-  const [, setHoveredCard] = useState<number | null>(null);
+  const [activeAdvantage, setActiveAdvantage] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredStat, setHoveredStat] = useState<number | null>(null);
+
   const pathname = usePathname();
   const isHomePage = pathname === '/';
 
-  // Données des atouts simplifiées avec le système de couleurs unifié
-  const atoutsData = [
-    {
-      icon: FiSmartphone,
-      title: 'Mobile-First Expert',
-      subtitle: 'Priorité absolue aux mobiles',
-      description:
-        'Sites ultra-optimisés pour smartphones avec UX parfaite sur tous les écrans',
-      stats: '+95% mobile ready',
-    },
-    {
-      icon: FiCreditCard,
-      title: 'Paiements Intégrés',
-      subtitle: 'Solutions de paiement complètes',
-      description:
-        "Mobile Money, PayPal, Stripe - tout l'écosystème de paiement local et international",
-      stats: '100% sécurisé',
-    },
-    {
-      icon: FiZap,
-      title: 'Performance Extrême',
-      subtitle: 'Rapidité et sécurité garanties',
-      description:
-        'Sites ultra-rapides, sécurité renforcée et référencement SEO optimisé',
-      stats: '<2s de chargement',
-    },
-    {
-      icon: FiTool,
-      title: 'Technologies Modernes',
-      subtitle: 'Stack technique avancé',
-      description:
-        'React, Next.js, Node.js, Docker - les technologies les plus récentes pour votre succès',
-      stats: 'Dernière génération',
-    },
-    {
-      icon: FiGlobe,
-      title: 'Vision Internationale',
-      subtitle: 'Expertise multiculturelle',
-      description:
-        'Expérience Cameroun + formation France = solutions adaptées aux deux marchés',
-      stats: '2 continents',
-    },
-    {
-      icon: FiTarget,
-      title: 'Accompagnement Complet',
-      subtitle: 'Support personnalisé',
-      description:
-        'Du besoin initial à la mise en ligne + formation et support continu après livraison',
-      stats: 'Suivi permanent',
-    },
-  ];
+  useEffect(() => {
+    setIsVisible(true);
 
-  const statsData = [
-    {
-      icon: FiClock,
-      value: '3+',
-      label: "Années d'expérience",
-    },
-    {
-      icon: FiUsers,
-      value: '07+',
-      label: 'Clients satisfaits',
-    },
-    {
-      icon: FiAward,
-      value: '100%',
-      label: 'Projets réussis',
-    },
-    {
-      icon: FiShield,
-      value: '24/7',
-      label: 'Support disponible',
-    },
-  ];
+    // Auto-rotation des avantages
+    const interval = setInterval(() => {
+      setActiveAdvantage((prev) => (prev + 1) % advantagesData.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
     if (isHomePage) {
       return {
         initial: initialProps,
         whileInView: animateProps,
-        transition: { duration: 0.8 },
-        viewport: { once: true },
-      };
+        transition: { duration: 0.6, ease: "easeOut" as const },
+        viewport: { once: true, margin: "-50px" }
+      } as const;
     } else {
       return {
         initial: animateProps,
-        animate: animateProps,
-      };
+        animate: animateProps
+      } as const;
     }
   };
 
+  const advantagesData = [
+    {
+      icon: FiSmartphone,
+      title: 'Mobile-First Expert',
+      subtitle: 'Priorité absolue aux mobiles',
+      description: 'Sites ultra-optimisés pour smartphones avec UX parfaite sur tous les écrans africains',
+      stats: '+95% mobile ready',
+      color: 'primary',
+      benefits: [
+        'Design responsive premium',
+        'Optimisation réseau faible',
+        'Interface tactile intuitive',
+        'Tests sur vrais devices'
+      ]
+    },
+    {
+      icon: FiCreditCard,
+      title: 'Paiements Intégrés',
+      subtitle: 'Solutions complètes',
+      description: 'Mobile Money, PayPal, Stripe - écosystème de paiement local et international complet',
+      stats: '100% sécurisé',
+      color: 'secondary',
+      benefits: [
+        'Mobile Money natif',
+        'Multi-devises supportées',
+        'Sécurité bancaire',
+        'Commissions optimisées'
+      ]
+    },
+    {
+      icon: FiZap,
+      title: 'Performance Extrême',
+      subtitle: 'Rapidité garantie',
+      description: 'Sites ultra-rapides, sécurité renforcée et référencement SEO optimisé pour l\'Afrique',
+      stats: '<2s de chargement',
+      color: 'accent',
+      benefits: [
+        'CDN africain optimisé',
+        'Code ultra-léger',
+        'Images compressées',
+        'Cache intelligent'
+      ]
+    },
+    {
+      icon: FiTool,
+      title: 'Tech de Pointe',
+      subtitle: 'Stack moderne',
+      description: 'React, Next.js, Node.js - technologies de dernière génération pour votre succès',
+      stats: 'Dernière génération',
+      color: 'success',
+      benefits: [
+        'Framework modernes',
+        'Architecture scalable',
+        'Code maintenable',
+        'Updates automatiques'
+      ]
+    }
+  ];
+
+  const statsData = [
+    {
+      icon: FiClock,
+      value: '3+',
+      label: 'Années d\'expertise',
+      color: 'primary',
+      description: 'Formation solide et expérience terrain'
+    },
+    {
+      icon: FiUsers,
+      value: '50+',
+      label: 'Projets livrés',
+      color: 'secondary',
+      description: 'Sites et apps déployés avec succès'
+    },
+    {
+      icon: FiAward,
+      value: '98%',
+      label: 'Satisfaction client',
+      color: 'accent',
+      description: 'Clients qui nous recommandent'
+    },
+    {
+      icon: FiShield,
+      value: '24/7',
+      label: 'Support disponible',
+      color: 'success',
+      description: 'Assistance technique continue'
+    }
+  ];
+
+  const expertiseAreas = [
+    { name: 'Développement Web', level: 95, icon: FiGlobe },
+    { name: 'Mobile-First Design', level: 92, icon: FiSmartphone },
+    { name: 'E-commerce Local', level: 88, icon: FiCreditCard },
+    { name: 'Performance & SEO', level: 90, icon: FiZap }
+  ];
+
   return (
-    <section id="atouts" className="relative overflow-hidden">
-      {/* Background avec les variables CSS */}
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: `linear-gradient(135deg, var(--bg) 0%, var(--surface) 50%, var(--primary) 100%)`,
-          opacity: 0.05
-        }}
-      />
-      <div 
-        className="absolute inset-0"
-        style={{
-          background: `radial-gradient(circle at 30% 20%, var(--primary) 0%, transparent 50%)`,
-          opacity: 0.08
-        }}
-      />
+    <section className="relative py-32 overflow-hidden">
+      
+      {/* Arrière-plan avec motifs africains modernes */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-soft"></div>
+        
+        {/* Motifs géométriques inspirés de l'art camerounais */}
+        <div 
+          className="absolute bottom-0 left-0 w-1/2 h-1/2 opacity-[0.02]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z M15 15L45 15L45 45L15 45z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}
+        ></div>
+      </div>
 
-      <div ref={ref} className="relative container py-25">
-        {/* Header avec le système de design */}
+      <div className="container relative z-10">
+
+        {/* En-tête modernisé */}
         <motion.div
-          {...getScrollAnimationProps(
-            { y: 50, opacity: 0 },
-            { y: 0, opacity: 1 }
-          )}
-          className="text-center mb-25"
+          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          className="text-center mb-20"
         >
-          <div 
-            className="inline-flex items-center gap-3 glass-effect px-6 py-3 rounded-full mb-8"
-            style={{ border: `1px solid var(--border)` }}
-          >
-            <FiHeart style={{ color: 'var(--primary)' }} />
-            <span 
-              className="font-medium"
-              style={{ color: 'var(--text-light)' }}
-            >
-              Pourquoi nous choisir
-            </span>
+          <div className="badge-accent mb-8 inline-flex items-center gap-2">
+            <FiTarget size={16} />
+            <span>Nos avantages concurrentiels</span>
           </div>
-
-          <h2 className="mb-8">
-            <span style={{ color: 'var(--text-strong)' }}>Nos </span>
-            <span className="text-gradient">
-              atouts clés
-            </span>
-          </h2>
-
-          <p 
-            className="text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed"
-            style={{ color: 'var(--text-light)' }}
-          >
-            Des{' '}
-            <strong style={{ color: 'var(--text-strong)' }}>
-              compétences techniques
-            </strong>{' '}
-            et une approche humaine qui font toute la différence.
+          
+          <h2 className="heading-1 mb-6">
+            Pourquoi choisir <span className="text-gradient-primary">notre expertise</span>
             <br />
-            Votre succès, c'est notre priorité{' '}
-            <strong style={{ color: 'var(--text-strong)' }}>
-              absolue
-            </strong>.
+            <span className="text-gradient-sunset">camerounaise</span> ?
+          </h2>
+          
+          <p className="body-large max-w-3xl mx-auto">
+            Une approche unique qui combine excellence technique internationale 
+            et compréhension profonde du marché africain.
           </p>
         </motion.div>
 
-        {/* Grille des atouts avec le design system */}
-        <motion.div
-          {...getScrollAnimationProps(
-            { opacity: 0 },
-            { opacity: 1 }
-          )}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-25"
-        >
-          {atoutsData.map((atout, index) => {
-            const IconComponent = atout.icon;
-
-            return (
-              <motion.div
-                key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                onHoverStart={() => setHoveredCard(index)}
-                onHoverEnd={() => setHoveredCard(null)}
-                className="card group p-10 hover-lift focus-ring relative overflow-hidden"
-              >
-                {/* Effet de brillance au hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div 
-                    className="absolute inset-0 transform -skew-x-12 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"
-                    style={{
-                      background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)'
-                    }}
-                  />
-                </div>
-
-                {/* Contenu */}
-                <div className="relative z-10 space-y-8">
-                  {/* Header avec icône */}
-                  <div className="flex items-center justify-between">
-                    <div 
-                      className="p-5 shadow-medium group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
-                      style={{
-                        background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
-                        borderRadius: 'var(--radius-xl)'
-                      }}
-                    >
-                      <IconComponent className="w-10 h-10 text-white" />
-                    </div>
-                    <div 
-                      className="text-xs px-4 py-2 font-medium"
-                      style={{
-                        background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
-                        color: 'white',
-                        borderRadius: 'var(--radius-full)',
-                        opacity: 0.9
-                      }}
-                    >
-                      {atout.stats}
-                    </div>
-                  </div>
-
-                  {/* Titre et description */}
-                  <div className="space-y-4">
-                    <div>
-                      <p 
-                        className="font-semibold mb-2"
-                        style={{ color: 'var(--primary)' }}
-                      >
-                        {atout.subtitle}
-                      </p>
-                      <h3 
-                        className="text-3xl font-bold leading-tight"
-                        style={{ color: 'var(--text-strong)' }}
-                      >
-                        {atout.title}
-                      </h3>
-                    </div>
-                    <p 
-                      className="leading-relaxed text-lg"
-                      style={{ color: 'var(--text)' }}
-                    >
-                      {atout.description}
-                    </p>
-                  </div>
-
-                  {/* Footer */}
-                  <div 
-                    className="pt-6 border-t"
-                    style={{ borderColor: 'var(--border)' }}
-                  >
-                    <div className="flex items-center gap-3">
-                      <FiCheck 
-                        className="w-5 h-5"
-                        style={{ color: 'var(--color-success)' }}
-                      />
-                      <span 
-                        className="font-semibold"
-                        style={{ color: 'var(--color-success)' }}
-                      >
-                        Maîtrise confirmée
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-
-        {/* Section stats avec le design system */}
-        <motion.div
-          {...getScrollAnimationProps(
-            { y: 100, opacity: 0 },
-            { y: 0, opacity: 1 }
-          )}
-          className="mb-25"
-        >
-          <div 
-            className="card p-16"
-            style={{
-              background: `linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%)`,
-              border: `1px solid var(--border)`
-            }}
+        {/* Section principale avec avantage rotatif */}
+        <div className="grid xl:grid-cols-12 gap-16 mb-24">
+          
+          {/* Avantage principal rotatif */}
+          <motion.div
+            {...getScrollAnimationProps({ x: -40, opacity: 0 }, { x: 0, opacity: 1 })}
+            className="xl:col-span-7"
           >
-            <div className="text-center mb-16">
-              <h3 
-                className="text-4xl lg:text-5xl font-bold mb-6 flex items-center justify-center gap-4"
-                style={{ color: 'var(--text-strong)' }}
-              >
-                <FiTrendingUp 
-                  className="text-4xl"
-                  style={{ color: 'var(--primary)' }}
-                />
-                Quelques chiffres
-              </h3>
-              <p 
-                className="text-xl"
-                style={{ color: 'var(--text-light)' }}
-              >
-                Des résultats concrets qui témoignent de notre engagement
-              </p>
+            <div className="space-y-8">
+              
+              {/* Navigation des avantages */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                {advantagesData.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveAdvantage(index)}
+                    className={`w-12 h-2 rounded-full transition-all duration-300 focus-ring ${
+                      activeAdvantage === index 
+                        ? `bg-${advantagesData[index]!.color}` 
+                        : 'bg-border hover:bg-border-light'
+                    }`}
+                  >
+                    <motion.div
+                      className={`h-full bg-${advantagesData[index]!.color}-dark rounded-full`}
+                      initial={{ width: '0%' }}
+                      animate={{ 
+                        width: activeAdvantage === index ? '100%' : '0%'
+                      }}
+                      transition={{ duration: 4, ease: 'linear' }}
+                    />
+                  </button>
+                ))}
+              </div>
+
+              {/* Contenu de l'avantage actif */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeAdvantage}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="card-warm p-10"
+                >
+                  <div className="flex items-start gap-8">
+                    
+                    {/* Icône principale */}
+                    <div className={`w-20 h-20 rounded-3xl bg-${advantagesData[activeAdvantage]!.color}/10 flex items-center justify-center flex-shrink-0`}>
+                      {React.createElement(advantagesData[activeAdvantage]!.icon, {
+                        size: 32,
+                        className: `text-${advantagesData[activeAdvantage]!.color}`
+                      })}
+                    </div>
+                    
+                    {/* Contenu */}
+                    <div className="flex-1 space-y-6">
+                      <div>
+                        <div className={`text-sm font-semibold text-${advantagesData[activeAdvantage]!.color} mb-2`}>
+                          {advantagesData[activeAdvantage]!.subtitle}
+                        </div>
+                        <h3 className="heading-3 mb-4">
+                          {advantagesData[activeAdvantage]!.title}
+                        </h3>
+                        <p className="body-text leading-relaxed">
+                          {advantagesData[activeAdvantage]!.description}
+                        </p>
+                      </div>
+
+                      {/* Liste des bénéfices */}
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {advantagesData[activeAdvantage]!.benefits.map((benefit, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                            className="flex items-center gap-3"
+                          >
+                            <FiCheck className="text-success flex-shrink-0" size={16} />
+                            <span className="text-sm font-medium">{benefit}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      {/* Stat badge */}
+                      <div className={`inline-flex items-center gap-2 px-4 py-2 bg-${advantagesData[activeAdvantage]!.color}/10 rounded-full`}>
+                        <FiStar size={16} className={`text-${advantagesData[activeAdvantage]!.color}`} />
+                        <span className={`text-sm font-bold text-${advantagesData[activeAdvantage]!.color}`}>
+                          {advantagesData[activeAdvantage]!.stats}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </motion.div>
+
+          {/* Expertise et statistiques */}
+          <motion.div
+            {...getScrollAnimationProps({ x: 40, opacity: 0 }, { x: 0, opacity: 1 })}
+            className="xl:col-span-5 space-y-8"
+          >
+            
+            {/* Domaines d'expertise */}
+            <div className="card-elevated p-8">
+              <h4 className="heading-4 mb-8 flex items-center gap-3">
+                <FiTool className="text-primary" />
+                Expertise technique
+              </h4>
+              
+              <div className="space-y-6">
+                {expertiseAreas.map((area, index) => (
+                  <div key={index} className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <area.icon size={18} className="text-primary" />
+                        <span className="font-semibold">{area.name}</span>
+                      </div>
+                      <span className="text-sm font-bold text-primary">{area.level}%</span>
+                    </div>
+                    
+                    <div className="h-2 bg-surface rounded-full overflow-hidden">
+                      <motion.div
+                        className="h-full bg-gradient-primary rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${area.level}%` }}
+                        transition={{ duration: 1.5, delay: index * 0.2 }}
+                        viewport={{ once: true }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-              {statsData.map((stat, index) => {
-                const StatIcon = stat.icon;
-                return (
+            {/* Statistiques interactives */}
+            <div className="space-y-4">
+              {statsData.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.02 }}
+                  onMouseEnter={() => setHoveredStat(index)}
+                  onMouseLeave={() => setHoveredStat(null)}
+                  className="card p-6 cursor-pointer hover-lift"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 rounded-xl bg-${stat.color}/10 flex items-center justify-center`}>
+                      <stat.icon className={`text-${stat.color}`} size={20} />
+                    </div>
+                    
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-semibold">{stat.label}</span>
+                        <span className={`text-2xl font-bold text-${stat.color}`}>
+                          {stat.value}
+                        </span>
+                      </div>
+                      
+                      <AnimatePresence>
+                        {hoveredStat === index && (
+                          <motion.p
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="text-sm text-text-light"
+                          >
+                            {stat.description}
+                          </motion.p>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Section témoignage et différenciation */}
+        <motion.div
+          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          className="mb-20"
+        >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Différenciation */}
+            <div className="space-y-8">
+              <h3 className="heading-3">Ce qui nous rend uniques</h3>
+              
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: FiGlobe,
+                    title: 'Vision bicontinentale',
+                    description: 'Formation européenne + compréhension des enjeux africains'
+                  },
+                  {
+                    icon: FiHeart,
+                    title: 'Approche humaine',
+                    description: 'Accompagnement personnalisé et suivi post-livraison'
+                  },
+                  {
+                    icon: FiTarget,
+                    title: 'Résultats concrets',
+                    description: 'Focus sur l\'impact business, pas juste la technique'
+                  }
+                ].map((item, index) => (
                   <motion.div
                     key={index}
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -5 }}
-                    className="text-center group cursor-pointer"
+                    whileHover={{ x: 8 }}
+                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-surface/50 transition-colors"
                   >
-                    <div 
-                      className="inline-flex items-center justify-center w-20 h-20 mb-6 group-hover:scale-110 transition-all duration-300 shadow-medium"
-                      style={{
-                        background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
-                        borderRadius: 'var(--radius-xl)'
-                      }}
-                    >
-                      <StatIcon className="w-10 h-10 text-white" />
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <item.icon className="text-primary" size={20} />
                     </div>
-
-                    <div 
-                      className="text-5xl font-bold mb-3 group-hover:scale-110 transition-transform duration-300"
-                      style={{ color: 'var(--text-strong)' }}
-                    >
-                      {stat.value}
+                    <div>
+                      <h4 className="font-semibold mb-2">{item.title}</h4>
+                      <p className="body-small">{item.description}</p>
                     </div>
-                    <p 
-                      className="font-semibold text-lg"
-                      style={{ color: 'var(--text-light)' }}
-                    >
-                      {stat.label}
-                    </p>
                   </motion.div>
-                );
-              })}
+                ))}
+              </div>
+            </div>
+
+            {/* Témoignage */}
+            <div className="card-glass p-8">
+              <div className="space-y-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <FiStar key={i} className="text-accent fill-current" size={16} />
+                  ))}
+                </div>
+                
+                <blockquote className="text-lg italic leading-relaxed">
+                  "Enfin une équipe qui comprend vraiment nos besoins en Afrique ! 
+                  Site parfait, Mobile Money intégré, et un support exceptionnel."
+                </blockquote>
+                
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold">MK</span>
+                  </div>
+                  <div>
+                    <div className="font-semibold">Marie Kouam</div>
+                    <div className="text-sm text-text-subtle">CEO, Douala Business Hub</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
 
-        {/* CTA final avec le système de design */}
+        {/* CTA final modernisé */}
         <motion.div
-          {...getScrollAnimationProps(
-            { y: 100, opacity: 0 },
-            { y: 0, opacity: 1 }
-          )}
-          className="text-center text-white relative overflow-hidden p-16"
-          style={{
-            background: `linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%)`,
-            borderRadius: 'var(--radius-xl)'
-          }}
+          {...getScrollAnimationProps({ scale: 0.95, opacity: 0 }, { scale: 1, opacity: 1 })}
+          className="text-center"
         >
-          <div className="absolute inset-0 bg-black/20" />
-
-          <div className="relative z-10">
-            <h3 className="text-4xl font-bold mb-6">
-              Convaincu par nos atouts ?
-            </h3>
-            <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
-              Discutons de votre projet ! Consultation gratuite de 30 min pour
-              définir la stratégie parfaite.
-            </p>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <MotionLink
-                href="/contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary bg-white text-gray-900 hover:bg-gray-100 shadow-strong"
-              >
-                <FiSend className="mr-3" />
-                Démarrons ensemble
-              </MotionLink>
-
-              <MotionLink
-                href="#realisations"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-ghost border-white text-white hover:bg-white/10"
-              >
-                <FiUsers className="mr-3" />
-                Voir nos réalisations
-              </MotionLink>
+          <div className="card-glass p-12 max-w-4xl mx-auto relative overflow-hidden">
+            
+            {/* Éléments décoratifs */}
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-accent rounded-full opacity-10"></div>
+            <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-gradient-primary rounded-full opacity-10"></div>
+            
+            <div className="relative z-10">
+              <div className="flex items-center justify-center gap-2 mb-6">
+                <FiHeart className="text-primary" />
+                <FiStar className="text-accent" />
+                <FiHeart className="text-secondary" />
+              </div>
+              
+              <h3 className="heading-2 mb-6">
+                Prêt à découvrir la <span className="text-gradient-warm">différence</span> ?
+              </h3>
+              
+              <p className="body-large mb-8 max-w-2xl mx-auto">
+                Consultation gratuite de 30 minutes pour analyser vos besoins 
+                et vous montrer concrètement ce que nous pouvons faire pour vous.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <MotionLink
+                  href="#contact"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-primary btn-lg group"
+                >
+                  <FiPlay className="mr-3 group-hover:scale-125 transition-transform" />
+                  Consultation gratuite
+                  <FiChevronRight className="ml-3 group-hover:translate-x-1 transition-transform" />
+                </MotionLink>
+                
+                <MotionLink
+                  href="#portfolio"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn-accent btn-lg group"
+                >
+                  <FiSend className="mr-3 group-hover:rotate-12 transition-transform" />
+                  Voir nos réalisations
+                </MotionLink>
+              </div>
             </div>
           </div>
         </motion.div>
