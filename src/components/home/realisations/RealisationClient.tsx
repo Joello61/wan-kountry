@@ -18,6 +18,8 @@ import {
   FiFilter,
   FiGrid,
   FiAward,
+  FiChevronDown,
+  FiChevronUp,
 } from 'react-icons/fi';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -29,6 +31,7 @@ function RealisationSectionClient() {
   const [viewMode, setViewMode] = useState<'grid' | 'featured'>('featured');
   const [, setIsVisible] = useState(false);
   const [, setHoveredProject] = useState<number | null>(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
 
   const pathname = usePathname();
   const isHomePage = pathname === '/';
@@ -36,6 +39,11 @@ function RealisationSectionClient() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Reset pagination when category changes
+  useEffect(() => {
+    setShowAllProjects(false);
+  }, [activeCategory]);
 
   const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
     if (isHomePage) {
@@ -52,13 +60,6 @@ function RealisationSectionClient() {
       } as const;
     }
   };
-
-  const categories = [
-    { id: 'tous', name: 'Tous les projets', count: 9, color: 'primary' },
-    { id: 'vitrine', name: 'Sites Vitrine', count: 2, color: 'secondary' },
-    { id: 'ecommerce', name: 'E-commerce', count: 1, color: 'accent' },
-    { id: 'app', name: 'Applications', count: 6, color: 'success' },
-  ];
 
   const realisationsList = [
     {
@@ -179,6 +180,21 @@ function RealisationSectionClient() {
     },
   ];
 
+  // Calcul dynamique des comptes par catégorie
+  const getCategoryCount = (categoryId: string) => {
+    if (categoryId === 'tous') {
+      return realisationsList.length;
+    }
+    return realisationsList.filter(project => project.category === categoryId).length;
+  };
+
+  const categories = [
+    { id: 'tous', name: 'Tous les projets', count: getCategoryCount('tous'), color: 'primary' },
+    { id: 'vitrine', name: 'Sites Vitrine', count: getCategoryCount('vitrine'), color: 'secondary' },
+    { id: 'ecommerce', name: 'E-commerce', count: getCategoryCount('ecommerce'), color: 'accent' },
+    { id: 'app', name: 'Applications', count: getCategoryCount('app'), color: 'success' },
+  ];
+
   const filteredProjects =
     activeCategory === 'tous'
       ? realisationsList
@@ -186,9 +202,12 @@ function RealisationSectionClient() {
           (project) => project.category === activeCategory
         );
 
-  const featuredProjects = realisationsList
-    .filter((project) => project.featured)
-    .slice(0, 3);
+  // Pour le mode featured : limiter à 3 si showAllProjects est false
+  const displayedProjects = showAllProjects 
+    ? filteredProjects 
+    : filteredProjects.slice(0, 3);
+
+  const hasMoreProjects = filteredProjects.length > 3;
 
   return (
     <section className="relative overflow-hidden pb-16 pt-32">
@@ -246,7 +265,7 @@ function RealisationSectionClient() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 focus-ring ${
+                className={`cursor-pointer flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 focus-ring ${
                   activeCategory === category.id
                     ? `bg-${category.color} text-white shadow-glow-${category.color}`
                     : 'bg-surface hover:bg-surface-elevated text-text-light'
@@ -269,7 +288,7 @@ function RealisationSectionClient() {
           <div className="card-glass p-2 flex gap-2 rounded-2xl">
             <button
               onClick={() => setViewMode('featured')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
+              className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
                 viewMode === 'featured'
                   ? 'bg-primary text-white'
                   : 'hover:bg-surface text-text-light'
@@ -280,7 +299,7 @@ function RealisationSectionClient() {
             </button>
             <button
               onClick={() => setViewMode('grid')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
+              className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
                 viewMode === 'grid'
                   ? 'bg-primary text-white'
                   : 'hover:bg-surface text-text-light'
@@ -295,7 +314,7 @@ function RealisationSectionClient() {
         {/* Affichage des projets */}
         <AnimatePresence mode="wait">
           {viewMode === 'featured' ? (
-            /* Mode sélection - Projets phares */
+            /* Mode sélection - Projets avec pagination */
             <motion.div
               key="featured"
               initial={{ opacity: 0, y: 20 }}
@@ -303,7 +322,7 @@ function RealisationSectionClient() {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-16 mb-20"
             >
-              {featuredProjects.map((project, index) => (
+              {displayedProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
                   {...getScrollAnimationProps(
@@ -364,12 +383,14 @@ function RealisationSectionClient() {
                       </div>
 
                       {/* Badge featured */}
-                      <div className="absolute -top-1 -right-1 mt-2 me-2 badge-accent px-4 py-2 shadow-glow-accent">
-                        <FiZap size={12} className="mr-1" />
-                        <span className="text-white font-bold">
-                          Projet phare
-                        </span>
-                      </div>
+                      {project.featured && (
+                        <div className="absolute -top-1 -right-1 mt-2 me-2 badge-accent px-4 py-2 shadow-glow-accent">
+                          <FiZap size={12} className="mr-1" />
+                          <span className="text-white font-bold">
+                            Projet phare
+                          </span>
+                        </div>
+                      )}
                     </motion.div>
                   </div>
 
@@ -430,7 +451,7 @@ function RealisationSectionClient() {
                           </span>
                         ))}
                         {project.tags.length > 4 && (
-                          <span className="text-sm font-medium text-primary">
+                          <span className="text-sm font-medium text-primary mt-2">
                             +{project.tags.length - 4} autres
                           </span>
                         )}
@@ -463,6 +484,34 @@ function RealisationSectionClient() {
                   </div>
                 </motion.div>
               ))}
+
+              {/* Bouton Voir plus/moins */}
+              {hasMoreProjects && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center"
+                >
+                  <motion.button
+                    onClick={() => setShowAllProjects(!showAllProjects)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="btn-secondary btn-lg group cursor-pointer"
+                  >
+                    {showAllProjects ? (
+                      <>
+                        <FiChevronUp className="mr-3 group-hover:-translate-y-1 transition-transform" />
+                        Voir moins de projets
+                      </>
+                    ) : (
+                      <>
+                        <FiChevronDown className="mr-3 group-hover:translate-y-1 transition-transform" />
+                        Voir tous les projets ({filteredProjects.length - 3} de plus)
+                      </>
+                    )}
+                  </motion.button>
+                </motion.div>
+              )}
             </motion.div>
           ) : (
             /* Mode grille - Tous les projets */

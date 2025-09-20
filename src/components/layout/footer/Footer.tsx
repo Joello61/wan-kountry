@@ -43,7 +43,7 @@ function FooterModernized() {
           description: 'Code source',
         },
         {
-          link: 'mailto:tchindajoel61@gmail.com',
+          link: 'mailto:wankountry@gmail.com',
           icon: 'email',
           name: 'Email',
           description: 'Nous écrire',
@@ -87,7 +87,7 @@ function FooterModernized() {
     contact: {
       name: 'Contact',
       address: 'Toulouse, France • Yaoundé, Cameroun',
-      email: 'tchindajoel61@gmail.com',
+      email: 'wankountry@gmail.com',
       phone: '+33 07 52 89 20 73',
       availability: 'Remote disponible partout en Afrique',
     },

@@ -275,7 +275,7 @@ function ServicesSectionClient() {
               <button
                 key={category.id}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 focus-ring ${
+                className={`cursor-pointer flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 focus-ring ${
                   activeTab === index
                     ? `bg-${category.color} text-white shadow-glow-${category.color}`
                     : 'hover:bg-surface text-text-light'
@@ -406,7 +406,7 @@ function ServicesSectionClient() {
                         <motion.button
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
-                          className="w-full btn-primary group"
+                          className="w-full btn-primary group cursor-pointer"
                         >
                           Choisir cette solution
                           <FiArrowRight className="ml-3 group-hover:translate-x-1 transition-transform" />

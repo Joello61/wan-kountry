@@ -299,7 +299,7 @@ function AboutSectionClient() {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(index)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-medium transition-all duration-300 focus-ring ${
+                  className={`cursor-pointer flex items-center gap-2 px-6 py-3 rounded-2xl font-medium transition-all duration-300 focus-ring ${
                     activeTab === index
                       ? 'bg-primary text-white shadow-glow-primary'
                       : 'bg-surface hover:bg-surface-elevated text-text-light'

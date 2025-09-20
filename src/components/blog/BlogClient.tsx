@@ -28,7 +28,7 @@ function BlogSectionClient() {
       title: 'Le futur du développement web en Afrique : tendances 2025',
       excerpt:
         "Découvrez les technologies émergentes qui révolutionnent le paysage numérique africain et comment les développeurs locaux s'adaptent aux nouveaux défis.",
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       authorAvatar: '/images/team/joel.jpg',
       publishDate: '2025-01-15',
       readTime: '8 min',
@@ -44,7 +44,7 @@ function BlogSectionClient() {
       title: 'Optimiser les performances web pour les connexions lentes',
       excerpt:
         'Techniques avancées pour créer des sites rapides même avec une bande passante limitée.',
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       publishDate: '2025-01-10',
       readTime: '6 min',
       views: 1892,
@@ -59,7 +59,7 @@ function BlogSectionClient() {
       title: 'Intégrer Mobile Money dans vos applications web',
       excerpt:
         'Guide complet pour implémenter MTN Money et Orange Money dans vos projets.',
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       publishDate: '2025-01-05',
       readTime: '10 min',
       views: 3241,
@@ -74,7 +74,7 @@ function BlogSectionClient() {
       title: 'React Server Components : révolution ou évolution ?',
       excerpt:
         'Analyse technique des nouvelles fonctionnalités de React et leur impact sur nos projets.',
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       publishDate: '2024-12-28',
       readTime: '12 min',
       views: 1567,
@@ -89,7 +89,7 @@ function BlogSectionClient() {
       title: "Créer une startup tech au Cameroun : retour d'expérience",
       excerpt:
         'Les défis, opportunités et leçons apprises en tant que développeur entrepreneur camerounais.',
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       publishDate: '2024-12-20',
       readTime: '15 min',
       views: 4123,
@@ -104,7 +104,7 @@ function BlogSectionClient() {
       title: "PWA : la solution pour l'Afrique mobile-first",
       excerpt:
         'Pourquoi les Progressive Web Apps sont parfaites pour le marché africain.',
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       publishDate: '2024-12-15',
       readTime: '7 min',
       views: 2156,

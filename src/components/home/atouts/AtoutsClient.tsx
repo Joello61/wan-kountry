@@ -222,7 +222,7 @@ function AtoutsSectionClient() {
                     <button
                       key={index}
                       onClick={() => setActiveAdvantage(index)}
-                      className={`w-12 h-2 rounded-full transition-all duration-300 focus-ring ${
+                      className={`cursor-pointer w-12 h-2 rounded-full transition-all duration-300 focus-ring ${
                         activeAdvantage === index
                           ? `bg-${advantagesData[index]!.color}`
                           : 'bg-border hover:bg-border-light'

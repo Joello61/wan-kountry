@@ -383,7 +383,7 @@ function HeaderOptimized() {
                   </motion.div>
 
                   {/* Section "Encore plus" */}
-                  <motion.div className="space-y-2">
+                  <motion.div className="space-y-2 mb-10">
                     <h3 className="text-sm font-semibold text-text-light uppercase tracking-wide px-4 mb-3">
                       Encore plus
                     </h3>

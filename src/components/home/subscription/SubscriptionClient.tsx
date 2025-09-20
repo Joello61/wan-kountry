@@ -260,7 +260,7 @@ function PricingSectionClient() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus-ring ${
+                className={`cursor-pointer flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus-ring ${
                   activeTab === tab.id
                     ? 'bg-primary text-white shadow-glow-primary'
                     : 'hover:bg-surface text-text-light'

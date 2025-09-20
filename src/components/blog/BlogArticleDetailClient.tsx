@@ -76,7 +76,7 @@ Le développement web en Afrique va au-delà de la technique. Il s'agit de :
 
 2025 marque un tournant pour le développement web africain. L'avenir est prometteur pour ceux qui sauront allier excellence technique et compréhension du contexte local.
       `,
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       authorBio:
         "Développeur Full-Stack passionné par l'innovation technologique en Afrique. Fondateur de Wan-Kountry, spécialisé dans les solutions web adaptées au marché africain.",
       authorAvatar: '/images/team/joel.jpg',
@@ -124,7 +124,7 @@ Utiliser les bons outils pour mesurer l'impact de vos optimisations.
 
 L'optimisation pour les connexions lentes n'est pas qu'une question technique, c'est une question d'accessibilité.
       `,
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       authorBio:
         "Développeur Full-Stack passionné par l'innovation technologique en Afrique.",
       authorAvatar: '/images/team/joel.jpg',
@@ -182,7 +182,7 @@ Recevoir les confirmations de paiement de manière sécurisée.
 
 Mobile Money transforme l'économie digitale africaine. Son intégration correcte ouvre de nombreuses opportunités.
       `,
-      author: 'Joel Tchinda',
+      author: 'Wan-Kountry',
       authorBio:
         'Développeur Full-Stack spécialisé dans les solutions de paiement africaines.',
       authorAvatar: '/images/team/joel.jpg',

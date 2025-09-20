@@ -98,7 +98,7 @@ ${formData.message}
           dateStyle: 'short',
           timeStyle: 'short',
         }),
-        to_email: 'tchindajoel61@gmail.com',
+        to_email: 'wankountry@gmail.com',
       };
 
       const response = await emailjs.send(
@@ -137,7 +137,7 @@ ${formData.message}
       description: 'Réponse immédiate, discussion en temps réel',
       value: '+33 07 52 89 20 73',
       icon: 'mdi:whatsapp',
-      color: 'success',
+      color: 'primary',
       action: openWhatsApp,
       recommended: true,
     },
@@ -145,18 +145,18 @@ ${formData.message}
       id: 'email',
       name: 'Email',
       description: 'Pour les demandes détaillées et documents',
-      value: 'tchindajoel61@gmail.com',
+      value: 'wankountry@gmail.com',
       icon: 'mdi:gmail',
-      color: 'primary',
-      action: () => window.open('mailto:tchindajoel61@gmail.com'),
+      color: 'secondary',
+      action: () => window.open('mailto:wankountry@gmail.com'),
     },
     {
       id: 'linkedin',
       name: 'LinkedIn',
       description: 'Réseau professionnel et portfolio',
-      value: 'joel-tchinda',
+      value: 'wan-kountry',
       icon: 'mdi:linkedin',
-      color: 'secondary',
+      color: 'accent',
       action: () =>
         window.open('https://linkedin.com/in/joel-tchinda', '_blank'),
     },
@@ -247,7 +247,7 @@ ${formData.message}
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus-ring ${
+                className={`cursor-pointer flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus-ring ${
                   activeTab === tab.id
                     ? 'bg-primary text-white shadow-glow-primary'
                     : 'hover:bg-surface text-text-light'
@@ -269,7 +269,7 @@ ${formData.message}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="max-w-4xl mx-auto"
+              className="max-w-5xl mx-auto"
             >
               <div className="grid lg:grid-cols-3 gap-8">
                 {/* Formulaire principal */}
@@ -368,7 +368,7 @@ ${formData.message}
                                 subject: type.value,
                               }))
                             }
-                            className={`p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center gap-2 hover-lift ${
+                            className={`cursor-pointer p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center gap-2 hover-lift ${
                               formData.subject === type.value
                                 ? `border-${type.color} bg-${type.color}/10 text-${type.color}`
                                 : 'border-border hover:border-border-light bg-surface'
@@ -409,7 +409,7 @@ ${formData.message}
                         <button
                           type="button"
                           onClick={handleSubmit}
-                          className="btn-primary btn-lg w-full group"
+                          className="btn-primary btn-lg w-full group cursor-pointer"
                         >
                           <FiSend className="mr-3" />
                           Envoyer le message
@@ -479,7 +479,7 @@ ${formData.message}
                       </p>
                       <button
                         onClick={openWhatsApp}
-                        className="btn-accent w-full group"
+                        className="btn-accent w-full group cursor-pointer"
                       >
                         <Icon
                           icon="mdi:whatsapp"
@@ -533,7 +533,7 @@ ${formData.message}
                       {method.recommended && (
                         <div className="absolute -top-3 -right-3 badge-success px-3 py-2">
                           <FiStar size={12} className="mr-1" />
-                          <span className="text-white font-bold">
+                          <span className="text-primary font-bold">
                             Recommandé
                           </span>
                         </div>
@@ -563,7 +563,7 @@ ${formData.message}
                       {/* Action */}
                       <button
                         onClick={method.action}
-                        className={`w-full btn-${method.color} group`}
+                        className={`w-full btn-${method.color} group cursor-pointer`}
                       >
                         Contacter
                         <FiArrowRight className="ml-3 group-hover:translate-x-1 transition-transform" />
@@ -728,7 +728,7 @@ ${formData.message}
               pouvons créer.
             </p>
 
-            <button onClick={openWhatsApp} className="btn-accent btn-xl group">
+            <button onClick={openWhatsApp} className="btn-accent btn-xl group cursor-pointer">
               <Icon
                 icon="mdi:whatsapp"
                 width="24"

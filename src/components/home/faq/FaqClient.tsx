@@ -269,7 +269,7 @@ function FaqSectionModernized() {
                 <button
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 focus-ring ${
+                  className={`cursor-pointer flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 focus-ring ${
                     selectedCategory === category.id
                       ? 'bg-primary text-white'
                       : 'bg-surface hover:bg-surface-elevated text-text-light'
@@ -315,7 +315,7 @@ function FaqSectionModernized() {
                   {/* Question (trigger) */}
                   <button
                     onClick={() => toggleItem(faq.id)}
-                    className="w-full p-6 text-left focus-ring rounded-xl"
+                    className="w-full p-6 text-left focus-ring rounded-xl cursor-pointer"
                   >
                     <div className="flex items-center gap-4">
                       {/* Icône */}

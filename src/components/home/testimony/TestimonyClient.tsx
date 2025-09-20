@@ -253,7 +253,7 @@ function TestimonySectionModernized() {
                         setActiveTestimonial(index);
                         setIsAutoPlaying(false);
                       }}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 focus-ring ${
+                      className={`cursor-pointer w-3 h-3 rounded-full transition-all duration-300 focus-ring ${
                         activeTestimonial === index
                           ? 'bg-primary scale-125'
                           : 'bg-border hover:bg-border-light'
@@ -266,19 +266,19 @@ function TestimonySectionModernized() {
               <div className="flex items-center gap-2">
                 <button
                   onClick={prevTestimonial}
-                  className="w-10 h-10 rounded-full border border-border hover:border-primary flex items-center justify-center transition-colors focus-ring"
+                  className="cursor-pointer w-10 h-10 rounded-full border border-border hover:border-primary flex items-center justify-center transition-colors focus-ring"
                 >
                   <FiChevronLeft className="text-primary" />
                 </button>
                 <button
                   onClick={nextTestimonial}
-                  className="w-10 h-10 rounded-full border border-border hover:border-primary flex items-center justify-center transition-colors focus-ring"
+                  className="cursor-pointer w-10 h-10 rounded-full border border-border hover:border-primary flex items-center justify-center transition-colors focus-ring"
                 >
                   <FiChevronRight className="text-primary" />
                 </button>
                 <button
                   onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                  className={`w-10 h-10 rounded-full border transition-colors focus-ring flex items-center justify-center ${
+                  className={`cursor-pointer w-10 h-10 rounded-full border transition-colors focus-ring flex items-center justify-center ${
                     isAutoPlaying
                       ? 'border-primary bg-primary/10 text-primary'
                       : 'border-border hover:border-primary text-text-light'
@@ -418,7 +418,7 @@ function TestimonySectionModernized() {
                             testimonials[activeTestimonial]!.color
                           } inline-flex`}
                         >
-                          Client vérifié ✓
+                          Client vérifié
                         </div>
                       </div>
                     </div>
