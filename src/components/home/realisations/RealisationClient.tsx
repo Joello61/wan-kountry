@@ -40,7 +40,7 @@ function RealisationSectionClient() {
     setIsVisible(true);
   }, []);
 
-  // Reset pagination when category changes
+  // Reset pagination
   useEffect(() => {
     setShowAllProjects(false);
   }, [activeCategory]);
@@ -202,7 +202,6 @@ function RealisationSectionClient() {
           (project) => project.category === activeCategory
         );
 
-  // Pour le mode featured : limiter à 3 si showAllProjects est false
   const displayedProjects = showAllProjects 
     ? filteredProjects 
     : filteredProjects.slice(0, 3);
@@ -211,7 +210,7 @@ function RealisationSectionClient() {
 
   return (
     <section className="relative overflow-hidden pb-16 pt-32">
-      {/* Arrière-plan avec motifs modernes */}
+      {/* Arrière-plan */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
 
@@ -226,7 +225,7 @@ function RealisationSectionClient() {
       </div>
 
       <div className="container relative z-10">
-        {/* En-tête modernisé */}
+        {/* En-tête */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 40, opacity: 0 },
@@ -514,7 +513,7 @@ function RealisationSectionClient() {
               )}
             </motion.div>
           ) : (
-            /* Mode grille - Tous les projets */
+            /* Mode grille */
             <motion.div
               key="grid"
               initial={{ opacity: 0, y: 20 }}
@@ -609,7 +608,7 @@ function RealisationSectionClient() {
           )}
         </AnimatePresence>
 
-        {/* CTA final modernisé */}
+        {/* CTA final */}
         <motion.div
           {...getScrollAnimationProps(
             { scale: 0.95, opacity: 0 },

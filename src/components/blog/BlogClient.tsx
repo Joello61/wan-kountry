@@ -331,7 +331,7 @@ function BlogSectionClient() {
         </div>
       </section>
 
-      {/* Search & Filters - Compacte */}
+      {/* Search & Filters */}
       <section className="pb-16">
         <div className="container">
           <motion.div
@@ -366,7 +366,7 @@ function BlogSectionClient() {
                   )}
                 </div>
 
-                {/* Filtres par catégorie - Simplifiés */}
+                {/* Filtres par catégorie */}
                 <div>
                   <div className="flex flex-wrap gap-2">
                     {categories.map((category) => (
@@ -489,7 +489,7 @@ function BlogSectionClient() {
                     )}
                   </div>
 
-                  {/* Content - flex-1 pour prendre l'espace disponible */}
+                  {/* Content */}
                   <div className="p-6 flex flex-col flex-1">
                     {/* Contenu principal */}
                     <div className="flex-1">

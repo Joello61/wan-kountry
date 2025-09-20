@@ -163,11 +163,11 @@ function AtoutsSectionClient() {
 
   return (
     <section className="relative overflow-hidden pb-16 pt-32">
-      {/* Arrière-plan avec motifs africains modernes */}
+      {/* Arrière-plan */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
 
-        {/* Motifs géométriques inspirés de l'art camerounais */}
+        {/* Motifs géométriques */}
         <div
           className="absolute bottom-0 left-0 w-1/2 h-1/2 opacity-[0.02]"
           style={{
@@ -178,7 +178,7 @@ function AtoutsSectionClient() {
       </div>
 
       <div className="container relative z-10">
-        {/* En-tête modernisé */}
+        {/* En-tête */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 40, opacity: 0 },
@@ -204,11 +204,11 @@ function AtoutsSectionClient() {
           </p>
         </motion.div>
 
-        {/* Section principale avec avantage rotatif */}
+        {/* Section principale  */}
         <div className="space-y-16 mb-24">
-          {/* Première ligne : Avantages + Expertise en 2 colonnes égales */}
+          {/* Avantages + Expertise */}
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Colonne 1 : Avantage principal rotatif */}
+            {/* Avantage principal */}
             <motion.div
               {...getScrollAnimationProps(
                 { x: -40, opacity: 0 },
@@ -339,7 +339,7 @@ function AtoutsSectionClient() {
               </div>
             </motion.div>
 
-            {/* Colonne 2 : Expertise technique */}
+            {/* Expertise technique */}
             <motion.div
               {...getScrollAnimationProps(
                 { x: 40, opacity: 0 },
@@ -381,7 +381,7 @@ function AtoutsSectionClient() {
             </motion.div>
           </div>
 
-          {/* Deuxième ligne : Statistiques interactives sur toute la largeur */}
+          {/* Statistiques interactives */}
           <motion.div
             {...getScrollAnimationProps(
               { y: 40, opacity: 0 },
@@ -524,7 +524,7 @@ function AtoutsSectionClient() {
           </div>
         </motion.div>
 
-        {/* CTA final modernisé */}
+        {/* CTA final */}
         <motion.div
           {...getScrollAnimationProps(
             { scale: 0.95, opacity: 0 },

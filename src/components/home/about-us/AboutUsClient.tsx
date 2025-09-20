@@ -172,7 +172,7 @@ function AboutSectionClient() {
       </div>
 
       <div className="container relative z-10">
-        {/* En-tête avec approche différente */}
+        {/* En-tête */}
         <motion.div
           {...getScrollAnimationProps(
             { scale: 0.9, opacity: 0 },
@@ -212,7 +212,7 @@ function AboutSectionClient() {
         </motion.div>
 
         <div className="grid xl:grid-cols-3 gap-16 mb-16">
-          {/* Profils de l'équipe - Design en cartes */}
+          {/* Profils de l'équipe */}
           <motion.div
             {...getScrollAnimationProps(
               { x: -60, opacity: 0 },
@@ -231,7 +231,7 @@ function AboutSectionClient() {
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="flex items-center gap-4">
-                  {/* Avatar avec indicateur de statut */}
+                  {/* Avatar */}
                   <div className="relative">
                     <div
                       className={`w-16 h-16 rounded-2xl bg-${member.color}/10 flex items-center justify-center`}
@@ -261,7 +261,7 @@ function AboutSectionClient() {
                   </div>
                 </div>
 
-                {/* Skills révélés au hover */}
+                {/* Skills */}
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{
@@ -375,7 +375,7 @@ function AboutSectionClient() {
 
         <div className="border-t border-border mb-8"></div>
 
-        {/* Section valeurs avec layout horizontal */}
+        {/* Section valeurs */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 60, opacity: 0 },
@@ -424,7 +424,7 @@ function AboutSectionClient() {
             ].map((value, index) => (
               <motion.div key={index} whileHover={{ y: -8 }} className="group">
                 <div className="card p-8 text-center hover-lift-lg h-full">
-                  {/* Icône avec animation */}
+                  {/* Icône */}
                   <motion.div
                     className={`w-20 h-20 mx-auto mb-6 rounded-3xl bg-${value.color}/10 flex items-center justify-center group-hover:scale-110 transition-transform`}
                     whileHover={{ rotate: 5 }}
@@ -442,7 +442,7 @@ function AboutSectionClient() {
           </div>
         </motion.div>
 
-        {/* CTA final engageant */}
+        {/* CTA final */}
         <motion.div
           {...getScrollAnimationProps(
             { scale: 0.95, opacity: 0 },

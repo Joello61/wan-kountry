@@ -33,7 +33,7 @@ function BlogArticleDetail() {
   const [showShareMenu, setShowShareMenu] = useState(false);
   const [commentText, setCommentText] = useState('');
 
-  // Base de données d'articles (normalement récupérées via API)
+  // Base de données d'articles
   const articlesDatabase = {
     '1': {
       id: 1,
@@ -284,7 +284,6 @@ Mobile Money transforme l'économie digitale africaine. Son intégration correct
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(window.location.href);
-    // Ici vous pourriez ajouter une notification toast
   };
 
   const getScrollAnimationProps = (initialProps: any, animateProps: any) => {
@@ -296,7 +295,7 @@ Mobile Money transforme l'économie digitale africaine. Son intégration correct
     } as const;
   };
 
-  // Rendu du contenu Markdown simplifié
+  // Rendu du contenu
   const renderContent = (content: string) => {
     return content.split('\n').map((line, index) => {
       if (line.startsWith('# ')) {

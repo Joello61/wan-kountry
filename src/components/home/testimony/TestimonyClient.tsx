@@ -32,7 +32,7 @@ import { usePathname } from 'next/navigation';
 
 const MotionLink = motion.create(Link);
 
-function TestimonySectionModernized() {
+function TestimonySectionClient() {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [hoveredStat, setHoveredStat] = useState<number | null>(null);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -56,7 +56,7 @@ function TestimonySectionModernized() {
     }
   };
 
-  // Témoignages enrichis avec plus de détails
+  // Témoignages
   const testimonials = [
     {
       id: 1,
@@ -116,7 +116,7 @@ function TestimonySectionModernized() {
     },
   ];
 
-  // Statistiques enrichies
+  // Statistiques
   const stats = [
     {
       icon: FiTrendingUp,
@@ -185,11 +185,11 @@ function TestimonySectionModernized() {
 
   return (
     <section id="testimony" className="relative overflow-hidden pb-16 pt-32">
-      {/* Arrière-plan sophistiqué */}
+      {/* Arrière-plan */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
 
-        {/* Motifs décoratifs africains */}
+        {/* Motifs décoratifs */}
         <div className="absolute top-20 left-0 w-1/3 h-2/3 opacity-[0.02]">
           <svg viewBox="0 0 200 300" className="w-full h-full">
             <path
@@ -205,7 +205,7 @@ function TestimonySectionModernized() {
       </div>
 
       <div className="container relative z-10">
-        {/* En-tête modernisé */}
+        {/* En-tête */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 40, opacity: 0 },
@@ -232,7 +232,7 @@ function TestimonySectionModernized() {
           </p>
         </motion.div>
 
-        {/* Témoignage principal avec carousel - VERSION CORRIGÉE */}
+        {/* Témoignage principal avec carousel */}
         <motion.div
           {...getScrollAnimationProps(
             { scale: 0.95, opacity: 0 },
@@ -289,7 +289,7 @@ function TestimonySectionModernized() {
               </div>
             </div>
 
-            {/* Témoignage actif - VERSION CORRIGÉE */}
+            {/* Témoignage actif */}
             <div className="relative">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -508,7 +508,7 @@ function TestimonySectionModernized() {
           </div>
         </motion.div>
 
-        {/* Statistiques interactives */}
+        {/* Statistiques */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 40, opacity: 0 },
@@ -613,7 +613,7 @@ function TestimonySectionModernized() {
           </div>
         </motion.div>
 
-        {/* CTA final modernisé */}
+        {/* CTA final */}
         <motion.div
           {...getScrollAnimationProps(
             { scale: 0.95, opacity: 0 },
@@ -674,4 +674,4 @@ function TestimonySectionModernized() {
   );
 }
 
-export default TestimonySectionModernized;
+export default TestimonySectionClient;

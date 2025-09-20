@@ -15,7 +15,7 @@ interface HeaderLinkProps {
   item: HeaderItem;
 }
 
-const HeaderLinkModernized: React.FC<HeaderLinkProps> = ({ item }) => {
+const HeaderLink: React.FC<HeaderLinkProps> = ({ item }) => {
   const pathname = usePathname();
   const [activeLink, setActiveLink] = useState('');
 
@@ -51,7 +51,7 @@ const HeaderLinkModernized: React.FC<HeaderLinkProps> = ({ item }) => {
           boxShadow: isActive ? 'var(--shadow-glow-primary)' : 'none',
         }}
       >
-        {/* Effet de survol animé */}
+        {/* Effet de survol */}
         <motion.div
           className="absolute inset-0 bg-surface/50 rounded-2xl opacity-0 group-hover:opacity-100"
           initial={false}
@@ -76,4 +76,4 @@ const HeaderLinkModernized: React.FC<HeaderLinkProps> = ({ item }) => {
   );
 };
 
-export default HeaderLinkModernized;
+export default HeaderLink;

@@ -21,7 +21,7 @@ import {
 
 const MotionLink = motion.create(Link);
 
-function NotFoundModernized() {
+function NotFound() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentTip, setCurrentTip] = useState(0);
 
@@ -86,18 +86,18 @@ function NotFoundModernized() {
 
   return (
     <section className="min-h-screen flex items-center mt-15 py-16 relative overflow-hidden">
-      {/* Arrière-plan artistique */}
+      {/* Arrière-plan */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
 
-        {/* Orbes flottants animés */}
+        {/* Orbes flottants */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-primary rounded-full mix-blend-multiply opacity-10 animate-pulse"></div>
         <div
           className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-sunset rounded-full mix-blend-multiply opacity-8 animate-pulse"
           style={{ animationDelay: '2s' }}
         ></div>
 
-        {/* Motif géométrique subtil */}
+        {/* Motif géométrique */}
         <div
           className="absolute top-0 right-0 w-1/2 h-full opacity-[0.015]"
           style={{
@@ -109,7 +109,7 @@ function NotFoundModernized() {
 
       <div className="container relative z-10">
         <div className="flex flex-col items-center gap-12 text-center max-w-5xl mx-auto">
-          {/* Animation d'entrée pour l'image */}
+          {/* Image principale */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -327,4 +327,4 @@ function NotFoundModernized() {
   );
 }
 
-export default NotFoundModernized;
+export default NotFound;

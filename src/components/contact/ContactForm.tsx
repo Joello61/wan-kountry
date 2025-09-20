@@ -22,7 +22,7 @@ import emailjs from '@emailjs/browser';
 
 const MotionDiv = motion.div;
 
-function ContactSectionModernized() {
+function ContactSectionClient() {
   const [activeTab, setActiveTab] = useState('form');
   const [formData, setFormData] = useState({
     name: '',
@@ -352,7 +352,7 @@ ${formData.message}
                       </div>
                     </div>
 
-                    {/* Type de projet avec design modernisé */}
+                    {/* Type de projet */}
                     <div className="space-y-3">
                       <label className="block font-semibold text-text-strong">
                         Type de projet *
@@ -825,4 +825,4 @@ ${formData.message}
   );
 }
 
-export default ContactSectionModernized;
+export default ContactSectionClient;

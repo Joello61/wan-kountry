@@ -221,7 +221,7 @@ function ServicesSectionClient() {
 
   return (
     <section className="relative overflow-hidden pb-16 pt-32">
-      {/* Arrière-plan moderne */}
+      {/* Arrière-plan */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
 
@@ -236,7 +236,7 @@ function ServicesSectionClient() {
       </div>
 
       <div className="container relative z-10">
-        {/* En-tête modernisé */}
+        {/* En-tête */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 40, opacity: 0 },
@@ -420,7 +420,7 @@ function ServicesSectionClient() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Processus de travail modernisé */}
+        {/* Processus de travail */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 40, opacity: 0 },
@@ -460,7 +460,7 @@ function ServicesSectionClient() {
                         />
                       </div>
 
-                      {/* Badge notification style */}
+                      {/* Badge notification */}
                       <div className="absolute -top-1 -right-1 min-w-[1.75rem] h-7 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold px-1 shadow-lg border-2 border-white">
                         {index + 1}
                       </div>
@@ -480,7 +480,7 @@ function ServicesSectionClient() {
           </div>
         </motion.div>
 
-        {/* CTA final modernisé */}
+        {/* CTA final */}
         <motion.div
           {...getScrollAnimationProps(
             { scale: 0.95, opacity: 0 },

@@ -24,7 +24,7 @@ import { usePathname } from 'next/navigation';
 
 const MotionLink = motion.create(Link);
 
-function FaqSectionModernized() {
+function FaqSection() {
   const [activeItem, setActiveItem] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -48,7 +48,7 @@ function FaqSectionModernized() {
     }
   };
 
-  // FAQ enrichies avec catégories et détails
+  // FAQ
   const faqData = [
     {
       id: 1,
@@ -214,7 +214,7 @@ function FaqSectionModernized() {
       </div>
 
       <div className="container relative z-10">
-        {/* En-tête modernisé */}
+        {/* En-tête */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 40, opacity: 0 },
@@ -312,7 +312,7 @@ function FaqSectionModernized() {
                     </div>
                   )}
 
-                  {/* Question (trigger) */}
+                  {/* Question */}
                   <button
                     onClick={() => toggleItem(faq.id)}
                     className="w-full p-6 text-left focus-ring rounded-xl cursor-pointer"
@@ -346,7 +346,7 @@ function FaqSectionModernized() {
                     </div>
                   </button>
 
-                  {/* Réponse (content) */}
+                  {/* Réponse*/}
                   <AnimatePresence>
                     {activeItem === faq.id && (
                       <motion.div
@@ -439,7 +439,7 @@ function FaqSectionModernized() {
           </div>
         </motion.div>
 
-        {/* CTA final modernisé */}
+        {/* CTA final */}
         <motion.div
           {...getScrollAnimationProps(
             { scale: 0.95, opacity: 0 },
@@ -504,4 +504,4 @@ function FaqSectionModernized() {
   );
 }
 
-export default FaqSectionModernized;
+export default FaqSection;

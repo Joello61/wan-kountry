@@ -159,7 +159,7 @@ function CareersSectionClient() {
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="container relative z-10">
-          {/* Première ligne - Contenu principal */}
+          {/* Contenu principal */}
           <motion.div
             {...getScrollAnimationProps(
               { y: 40, opacity: 0 },
@@ -199,7 +199,7 @@ function CareersSectionClient() {
             </div>
           </motion.div>
 
-          {/* Deuxième ligne - Section candidature spontanée */}
+          {/* Section candidature spontanée */}
           <motion.div
             {...getScrollAnimationProps(
               { y: 30, opacity: 0 },
@@ -415,7 +415,7 @@ function CareersSectionClient() {
                     </div>
                   </div>
 
-                  {/* Détails en deux colonnes */}
+                  {/* Détails */}
                   <div className="p-6 border-b border-border">
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>

@@ -27,7 +27,7 @@ import Logo from './Logo';
 import HeaderLink from './Navigation/HeaderLink';
 import MobileHeader from './Navigation/MobileHeader';
 
-// Structure de navigation simplifiée : 6 principaux + dropdown
+// Structure de navigation
 const navigationStructure = {
   primary: [
     { label: 'Accueil', href: '/', icon: FiHome },
@@ -48,7 +48,7 @@ const navigationStructure = {
   },
 };
 
-function HeaderOptimized() {
+function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [moreMenuOpen, setMoreMenuOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
@@ -233,7 +233,7 @@ function HeaderOptimized() {
               <Logo />
             </div>
 
-            {/* Navigation Desktop - Version simplifiée */}
+            {/* Navigation Desktop */}
             <motion.div
               className="hidden lg:flex rounded-3xl py-2 px-2 card-glass"
               initial={{ opacity: 0, y: -20 }}
@@ -241,7 +241,7 @@ function HeaderOptimized() {
               transition={{ delay: 0.2 }}
             >
               <ul className="flex gap-4 items-center">
-                {/* Navigation principale - 6 éléments */}
+                {/* Navigation principale */}
                 {navigationStructure.primary.map((item, index) => (
                   <li key={index}>
                     <Link
@@ -306,7 +306,7 @@ function HeaderOptimized() {
           </motion.nav>
         </div>
 
-        {/* Mobile Sidebar - Version groupée */}
+        {/* Mobile Sidebar */}
         <AnimatePresence>
           {sidebarOpen && (
             <>
@@ -365,7 +365,7 @@ function HeaderOptimized() {
                   </motion.button>
                 </motion.div>
 
-                {/* Navigation mobile simplifiée */}
+                {/* Navigation mobile */}
                 <div className="p-4 overflow-y-auto h-full pb-20">
                   {/* Navigation principale */}
                   <motion.div className="space-y-2 mb-8">
@@ -406,4 +406,4 @@ function HeaderOptimized() {
   );
 }
 
-export default HeaderOptimized;
+export default Header;

@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   verification: {
-    google: 'your-google-verification-code', // À ajouter si vous avez Search Console
+    google: 'your-google-verification-code',
   },
 };
 

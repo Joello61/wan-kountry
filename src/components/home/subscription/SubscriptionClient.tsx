@@ -199,11 +199,11 @@ function PricingSectionClient() {
 
   return (
     <section className="relative overflow-hidden pb-16 pt-32">
-      {/* Arrière-plan moderne */}
+      {/* Arrière-plan */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
 
-        {/* Motifs géométriques camerounais */}
+        {/* Motifs géométriques */}
         <div
           className="absolute top-1/4 left-0 w-1/3 h-1/2 opacity-[0.02]"
           style={{
@@ -214,7 +214,7 @@ function PricingSectionClient() {
       </div>
 
       <div className="container relative z-10">
-        {/* En-tête modernisé */}
+        {/* En-tête */}
         <motion.div
           {...getScrollAnimationProps(
             { y: 40, opacity: 0 },

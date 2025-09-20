@@ -18,7 +18,7 @@ interface MobileHeaderProps {
   index: number;
 }
 
-const MobileHeaderModernized: React.FC<MobileHeaderProps> = ({
+const MobileHeader: React.FC<MobileHeaderProps> = ({
   item,
   onClose,
   index,
@@ -95,4 +95,4 @@ const MobileHeaderModernized: React.FC<MobileHeaderProps> = ({
   );
 };
 
-export default MobileHeaderModernized;
+export default MobileHeader;

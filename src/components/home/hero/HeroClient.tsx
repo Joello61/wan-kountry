@@ -79,11 +79,11 @@ function HeroSectionClient() {
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden py-24">
-      {/* Arrière-plan subtil avec motifs africains */}
+      {/* Arrière-plan */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-bg via-surface to-surface-elevated"></div>
 
-        {/* Motifs géométriques inspirés de l'art africain */}
+        {/* Motifs géométriques */}
         <div
           className="absolute top-0 right-0 w-1/2 h-1/2 opacity-[0.03]"
           style={{
@@ -115,7 +115,7 @@ function HeroSectionClient() {
           </div>
 
           <div className="grid lg:grid-cols-12 gap-16 items-center">
-            {/* Contenu principal - Plus large */}
+            {/* Contenu principal */}
             <div
               className={`lg:col-span-7 space-y-10 transition-all duration-1000 delay-200 ${
                 isVisible
@@ -147,7 +147,7 @@ function HeroSectionClient() {
                 </p>
               </div>
 
-              {/* Points d'excellence en colonnes */}
+              {/* Points d'excellence */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex items-center gap-4 p-4 card rounded-2xl hover-lift">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -223,7 +223,7 @@ function HeroSectionClient() {
                   </Link>
                 </div>
 
-                {/* Statistiques en ligne */}
+                {/* Statistiques */}
                 <div className="flex flex-wrap gap-8 items-center justify-around pt-6 border-t border-border">
                   <div className="text-center">
                     <div className="text-3xl font-bold text-primary">
@@ -248,13 +248,13 @@ function HeroSectionClient() {
               </div>
             </div>
 
-            {/* Section visuelle plus compacte */}
+            {/* Section visuelle */}
             <div
               className={`lg:col-span-5 relative transition-all duration-1000 delay-500 ${
                 isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
               }`}
             >
-              {/* Stack de cartes avec effet de profondeur */}
+              {/* Stack de cartes */}
               <div className="relative max-w-md mx-auto">
                 {/* Card arrière */}
                 <div className="absolute top-4 left-4 right-4 h-80 card-elevated rounded-3xl opacity-40 blur-sm"></div>

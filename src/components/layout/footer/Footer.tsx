@@ -22,7 +22,7 @@ import {
 } from 'react-icons/fi';
 import Logo from '../header/Logo';
 
-function FooterModernized() {
+function Footer() {
   const [hoveredSocial, setHoveredSocial] = useState<number | null>(null);
 
   const footerData = {
@@ -128,9 +128,9 @@ function FooterModernized() {
 
   return (
     <footer className="relative overflow-hidden bg-gradient-soft">
-      {/* Arrière-plan artistique */}
+      {/* Arrière-plan  */}
       <div className="absolute inset-0">
-        {/* Motif géométrique subtil */}
+        {/* Motif géométrique */}
         <div
           className="absolute bottom-0 left-0 w-full h-1/3 opacity-[0.015]"
           style={{
@@ -144,7 +144,7 @@ function FooterModernized() {
         {/* Section principale */}
         <div className="py-16">
           <div className="grid lg:grid-cols-12 gap-12">
-            {/* Colonne principale - Logo et description */}
+            {/* Logo et description */}
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -163,7 +163,7 @@ function FooterModernized() {
               </p>
             </motion.div>
 
-            {/* Colonnes de navigation - Version mobile optimisée */}
+            {/* Colonnes de navigation - Version mobile */}
             <div className="lg:col-span-8 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
               {/* Navigation principale */}
               <motion.div
@@ -270,7 +270,7 @@ function FooterModernized() {
           </div>
         </div>
 
-        {/* Section Contact séparée */}
+        {/* Section Contact */}
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -345,7 +345,7 @@ function FooterModernized() {
           </div>
         </motion.div>
 
-        {/* Réseaux sociaux modernisés */}
+        {/* Réseaux sociaux */}
         <motion.div
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -440,4 +440,4 @@ function FooterModernized() {
   );
 }
 
-export default FooterModernized;
+export default Footer;
