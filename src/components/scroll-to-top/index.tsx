@@ -1,7 +1,7 @@
-'use client'
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FiArrowUp } from "react-icons/fi";
+'use client';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiArrowUp } from 'react-icons/fi';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,7 +9,7 @@ export default function ScrollToTop() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -22,8 +22,8 @@ export default function ScrollToTop() {
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
   return (
@@ -34,22 +34,22 @@ export default function ScrollToTop() {
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
-            whileHover={{ 
+            whileHover={{
               scale: 1.1,
-              y: -2
+              y: -2,
             }}
             whileTap={{ scale: 0.95 }}
-            transition={{ 
-              type: "spring",
+            transition={{
+              type: 'spring',
               stiffness: 300,
-              damping: 25
+              damping: 25,
             }}
             onClick={scrollToTop}
             aria-label="Retour en haut de la page"
             className="group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-all duration-300 focus-ring shadow-lg hover:shadow-xl"
             style={{
               backgroundColor: 'var(--primary-dark)',
-              color: 'var(--color-white)'
+              color: 'var(--color-white)',
             }}
           >
             <motion.div
@@ -57,13 +57,13 @@ export default function ScrollToTop() {
               transition={{
                 duration: 2,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: 'easeInOut',
               }}
               className="flex items-center justify-center"
             >
               <FiArrowUp size={20} />
             </motion.div>
-            
+
             {/* Effet de survol avec animation */}
             <motion.div
               className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"

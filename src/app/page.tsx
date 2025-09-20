@@ -30,7 +30,8 @@ export const metadata: Metadata = {
   category: 'Technology',
   metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
   openGraph: {
-    title: 'Wan-Kountry - Votre site web moderne avec première livraison en 15 jours',
+    title:
+      'Wan-Kountry - Votre site web moderne avec première livraison en 15 jours',
     description:
       'Sites vitrines, e-commerce et applications web performants. Mobile-first, Mobile Money, support 24/7. Résultats garantis.',
     url: 'https://wan-kountry.joeltech.dev/',
@@ -48,7 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Wan-Kountry - Sites web modernes avec première livraison en 15 jours',
+    title:
+      'Wan-Kountry - Sites web modernes avec première livraison en 15 jours',
     description:
       'Mobile-first, Mobile Money, ultra-rapide. Développeur web expert pour votre business.',
     creator: '@WanKountry',
@@ -84,28 +86,27 @@ export default function Home() {
     <main role="main">
       {/* Hero Section */}
       <HeroSectionClient />
-      
+
       {/* À Propos */}
       <AboutSectionClient />
-      
+
       {/* Services */}
       <ServicesSectionClient />
-      
+
       {/* Atouts */}
       <AtoutsSectionClient />
-      
+
       {/* Réalisations */}
       <RealisationSectionClient />
-      
+
       {/* Témoignages */}
       <TestimonySectionClient />
-      
+
       {/* Tarifs */}
       <SubscriptionClient />
-      
+
       {/* FAQ */}
       <FaqClient />
-      
     </main>
   );
 }

@@ -2,7 +2,8 @@ import SubscriptionClient from '@/components/home/subscription/SubscriptionClien
 import { Metadata } from 'next';
 
 export const pricingMetadata: Metadata = {
-  title: 'Tarifs Transparents – Sites Web & Apps dès 120 000 FCFA | Wan-Kountry',
+  title:
+    'Tarifs Transparents – Sites Web & Apps dès 120 000 FCFA | Wan-Kountry',
   description:
     'Découvrez nos tarifs : Site vitrine 120k FCFA, E-commerce 300k FCFA, Apps sur-mesure. Formules claires, paiement échelonné possible.',
   keywords: [

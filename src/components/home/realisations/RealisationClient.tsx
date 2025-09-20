@@ -42,13 +42,13 @@ function RealisationSectionClient() {
       return {
         initial: initialProps,
         whileInView: animateProps,
-        transition: { duration: 0.6, ease: "easeOut" as const },
-        viewport: { once: true, margin: "-50px" }
+        transition: { duration: 0.6, ease: 'easeOut' as const },
+        viewport: { once: true, margin: '-50px' },
       } as const;
     } else {
       return {
         initial: animateProps,
-        animate: animateProps
+        animate: animateProps,
       } as const;
     }
   };
@@ -57,155 +57,189 @@ function RealisationSectionClient() {
     { id: 'tous', name: 'Tous les projets', count: 9, color: 'primary' },
     { id: 'vitrine', name: 'Sites Vitrine', count: 2, color: 'secondary' },
     { id: 'ecommerce', name: 'E-commerce', count: 1, color: 'accent' },
-    { id: 'app', name: 'Applications', count: 6, color: 'success' }
+    { id: 'app', name: 'Applications', count: 6, color: 'success' },
   ];
 
   const realisationsList = [
     {
       id: 1,
-      image: "/images/realisations/exploratory.png",
-      title: "Portfolio interactif",
-      description: "Site ludique et moderne pour présenter un parcours pro, des compétences et des projets — idéal pour crédibiliser votre image.",
-      category: "vitrine",
-      tags: ["Angular", "UI Design", "Frontend", "Personal Branding"],
-      demoLink: "https://exploratory-website.vercel.app/",
-      codeLink: "https://github.com/Joello61/exploratory-website.git",
+      image: '/images/realisations/exploratory.png',
+      title: 'Portfolio interactif',
+      description:
+        'Site ludique et moderne pour présenter un parcours pro, des compétences et des projets — idéal pour crédibiliser votre image.',
+      category: 'vitrine',
+      tags: ['Angular', 'UI Design', 'Frontend', 'Personal Branding'],
+      demoLink: 'https://exploratory-website.vercel.app/',
+      codeLink: 'https://github.com/Joello61/exploratory-website.git',
       featured: true,
-      results: "+80% de visibilité professionnelle",
-      year: "2024",
-      client: "Freelance",
-      duration: "2 semaines"
+      results: '+80% de visibilité professionnelle',
+      year: '2024',
+      client: 'Freelance',
+      duration: '2 semaines',
     },
     {
       id: 2,
-      image: "/images/realisations/brulage.png",
-      title: "Dashboard environnemental – Brûlage",
-      description: "Application métier pour suivre les brûlages contrôlés, avec statistiques claires et cartographie pour faciliter la décision.",
-      category: "app",
-      tags: ["React", "Symfony", "PostgreSQL", "Python", "DataViz", "Cartographie"],
-      demoLink: "https://github.com/Joello61/brulage-dashboard.git",
-      codeLink: "https://github.com/Joello61/brulage-dashboard.git",
+      image: '/images/realisations/brulage.png',
+      title: 'Dashboard environnemental – Brûlage',
+      description:
+        'Application métier pour suivre les brûlages contrôlés, avec statistiques claires et cartographie pour faciliter la décision.',
+      category: 'app',
+      tags: [
+        'React',
+        'Symfony',
+        'PostgreSQL',
+        'Python',
+        'DataViz',
+        'Cartographie',
+      ],
+      demoLink: 'https://github.com/Joello61/brulage-dashboard.git',
+      codeLink: 'https://github.com/Joello61/brulage-dashboard.git',
       featured: true,
-      results: "Décisions opérationnelles +30% plus rapides",
-      year: "2024",
-      client: "Secteur Public",
-      duration: "3 mois"
+      results: 'Décisions opérationnelles +30% plus rapides',
+      year: '2024',
+      client: 'Secteur Public',
+      duration: '3 mois',
     },
     {
       id: 3,
-      image: "/images/realisations/jobtracker.png",
-      title: "Candi Tracker – Gestion des candidatures",
-      description: "Outil complet pour suivre candidatures, entretiens, documents et notes — pensé pour candidats et cabinets RH.",
-      category: "app",
-      tags: ["React", "Express.js", "PostgreSQL", "Tailwind CSS", "RH", "Workflow"],
-      demoLink: "https://candi-tracker.joeltech.dev/",
-      codeLink: "https://github.com/Joello61/candi-tracker.git",
+      image: '/images/realisations/jobtracker.png',
+      title: 'Candi Tracker – Gestion des candidatures',
+      description:
+        'Outil complet pour suivre candidatures, entretiens, documents et notes — pensé pour candidats et cabinets RH.',
+      category: 'app',
+      tags: [
+        'React',
+        'Express.js',
+        'PostgreSQL',
+        'Tailwind CSS',
+        'RH',
+        'Workflow',
+      ],
+      demoLink: 'https://candi-tracker.joeltech.dev/',
+      codeLink: 'https://github.com/Joello61/candi-tracker.git',
       featured: true,
-      results: "-50% de temps passé à suivre les candidatures",
-      year: "2024",
-      client: "SaaS B2B",
-      duration: "6 semaines"
+      results: '-50% de temps passé à suivre les candidatures',
+      year: '2024',
+      client: 'SaaS B2B',
+      duration: '6 semaines',
     },
     {
       id: 4,
-      image: "/images/realisations/eventhive.png",
+      image: '/images/realisations/eventhive.png',
       title: "EventHive – Gestion d'événements",
-      description: "Créez, gérez et promouvez vos événements : billetterie, agenda, communications — pour associations, écoles et entreprises.",
-      category: "app",
-      tags: ["Angular", "Spring Boot", "PostgreSQL", "Billetterie", "Marketing"],
-      demoLink: "https://github.com/Joello61/eventHiveFront",
-      codeLink: "https://github.com/Joello61/eventHiveFront",
+      description:
+        'Créez, gérez et promouvez vos événements : billetterie, agenda, communications — pour associations, écoles et entreprises.',
+      category: 'app',
+      tags: [
+        'Angular',
+        'Spring Boot',
+        'PostgreSQL',
+        'Billetterie',
+        'Marketing',
+      ],
+      demoLink: 'https://github.com/Joello61/eventHiveFront',
+      codeLink: 'https://github.com/Joello61/eventHiveFront',
       featured: true,
-      results: "+150% de participants sur les événements",
-      year: "2023",
-      client: "Associations",
-      duration: "4 mois"
+      results: '+150% de participants sur les événements',
+      year: '2023',
+      client: 'Associations',
+      duration: '4 mois',
     },
     {
       id: 5,
-      image: "/images/realisations/wefund.png",
-      title: "WeFund – Plateforme de crowdfunding",
-      description: "Reliez porteurs de projets et investisseurs, avec parcours de contribution simple (Mobile Money / cartes) et tableau de bord.",
-      category: "ecommerce",
-      tags: ["Angular", "Node.js", "PostgreSQL", "Paiement", "Marketplace"],
-      demoLink: "https://github.com/Joello61/wefundWeb",
-      codeLink: "https://github.com/Joello61/wefundWeb",
+      image: '/images/realisations/wefund.png',
+      title: 'WeFund – Plateforme de crowdfunding',
+      description:
+        'Reliez porteurs de projets et investisseurs, avec parcours de contribution simple (Mobile Money / cartes) et tableau de bord.',
+      category: 'ecommerce',
+      tags: ['Angular', 'Node.js', 'PostgreSQL', 'Paiement', 'Marketplace'],
+      demoLink: 'https://github.com/Joello61/wefundWeb',
+      codeLink: 'https://github.com/Joello61/wefundWeb',
       featured: true,
-      results: "+300% de levées de fonds réussies",
-      year: "2023",
-      client: "Fintech",
-      duration: "5 mois"
+      results: '+300% de levées de fonds réussies',
+      year: '2023',
+      client: 'Fintech',
+      duration: '5 mois',
     },
     {
       id: 6,
-      image: "/images/realisations/bocobi.png",
-      title: "Bocobi – Accès aux soins de santé",
-      description: "Plateforme web + backend pour faciliter la prise de rendez-vous et l'accès aux soins — pensée pour les réalités locales.",
-      category: "app",
-      tags: ["Angular", "Spring Boot", "PostgreSQL", "Prise de RDV", "e-Santé"],
-      demoLink: "https://github.com/Joello61/bocobiWeb",
-      codeLink: "https://github.com/Joello61/bocobiWeb",
+      image: '/images/realisations/bocobi.png',
+      title: 'Bocobi – Accès aux soins de santé',
+      description:
+        "Plateforme web + backend pour faciliter la prise de rendez-vous et l'accès aux soins — pensée pour les réalités locales.",
+      category: 'app',
+      tags: ['Angular', 'Spring Boot', 'PostgreSQL', 'Prise de RDV', 'e-Santé'],
+      demoLink: 'https://github.com/Joello61/bocobiWeb',
+      codeLink: 'https://github.com/Joello61/bocobiWeb',
       featured: true,
       results: "+200% d'accès facilité aux soins",
-      year: "2023",
-      client: "Santé Publique",
-      duration: "4 mois"
-    }
+      year: '2023',
+      client: 'Santé Publique',
+      duration: '4 mois',
+    },
   ];
 
-  const filteredProjects = activeCategory === 'tous' 
-    ? realisationsList 
-    : realisationsList.filter(project => project.category === activeCategory);
+  const filteredProjects =
+    activeCategory === 'tous'
+      ? realisationsList
+      : realisationsList.filter(
+          (project) => project.category === activeCategory
+        );
 
-  const featuredProjects = realisationsList.filter(project => project.featured).slice(0, 3);
+  const featuredProjects = realisationsList
+    .filter((project) => project.featured)
+    .slice(0, 3);
 
   return (
-    <section className="relative py-16 overflow-hidden">
-      
+    <section className="relative overflow-hidden pb-16 pt-32">
       {/* Arrière-plan avec motifs modernes */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
-        
+
         {/* Motifs géométriques subtils */}
-        <div 
+        <div
           className="absolute top-1/3 right-0 w-1/2 h-1/3 opacity-[0.02]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 0L50 25L25 50L0 25z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
-            backgroundSize: '50px 50px'
+            backgroundSize: '50px 50px',
           }}
         ></div>
       </div>
 
       <div className="container relative z-10">
-
         {/* En-tête modernisé */}
         <motion.div
-          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
           className="text-center mb-16"
         >
           <div className="badge-success mb-8 inline-flex items-center gap-2">
             <FiAward size={16} />
-            <span className='text-sm'>Portfolio de réussites</span>
+            <span className="text-sm">Portfolio de réussites</span>
           </div>
-          
+
           <h2 className="heading-1 mb-6">
             Nos <span className="text-gradient-primary">réalisations</span>
             <br />
             qui <span className="text-gradient-sunset">transforment</span>
           </h2>
-          
+
           <p className="body-large max-w-3xl mx-auto">
-            Des projets concrets qui ont révolutionné le business de nos clients. 
-            Chaque création raconte une histoire de succès mesurable.
+            Des projets concrets qui ont révolutionné le business de nos
+            clients. Chaque création raconte une histoire de succès mesurable.
           </p>
         </motion.div>
 
         {/* Contrôles de navigation */}
         <motion.div
-          {...getScrollAnimationProps({ y: 20, opacity: 0 }, { y: 0, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
           className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-12"
         >
-          
           {/* Filtres par catégorie */}
           <div className="flex flex-wrap gap-3">
             {categories.map((category) => (
@@ -214,15 +248,17 @@ function RealisationSectionClient() {
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 focus-ring ${
                   activeCategory === category.id
-                    ? `bg-${category.color} text-white shadow-glow-${category.color}` 
+                    ? `bg-${category.color} text-white shadow-glow-${category.color}`
                     : 'bg-surface hover:bg-surface-elevated text-text-light'
                 }`}
               >
                 <FiFilter size={16} />
                 <span>{category.name}</span>
-                <span className={`px-2 py-1 rounded-full text-xs font-bold ${
-                  activeCategory === category.id ? 'bg-white/20' : 'bg-border'
-                }`}>
+                <span
+                  className={`px-2 py-1 rounded-full text-xs font-bold ${
+                    activeCategory === category.id ? 'bg-white/20' : 'bg-border'
+                  }`}
+                >
                   {category.count}
                 </span>
               </button>
@@ -234,8 +270,8 @@ function RealisationSectionClient() {
             <button
               onClick={() => setViewMode('featured')}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
-                viewMode === 'featured' 
-                  ? 'bg-primary text-white' 
+                viewMode === 'featured'
+                  ? 'bg-primary text-white'
                   : 'hover:bg-surface text-text-light'
               }`}
             >
@@ -245,8 +281,8 @@ function RealisationSectionClient() {
             <button
               onClick={() => setViewMode('grid')}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all ${
-                viewMode === 'grid' 
-                  ? 'bg-primary text-white' 
+                viewMode === 'grid'
+                  ? 'bg-primary text-white'
                   : 'hover:bg-surface text-text-light'
               }`}
             >
@@ -259,7 +295,6 @@ function RealisationSectionClient() {
         {/* Affichage des projets */}
         <AnimatePresence mode="wait">
           {viewMode === 'featured' ? (
-            
             /* Mode sélection - Projets phares */
             <motion.div
               key="featured"
@@ -271,14 +306,20 @@ function RealisationSectionClient() {
               {featuredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  {...getScrollAnimationProps({ opacity: 0, x: index % 2 === 0 ? -40 : 40 }, { opacity: 1, x: 0 })}
+                  {...getScrollAnimationProps(
+                    { opacity: 0, x: index % 2 === 0 ? -40 : 40 },
+                    { opacity: 1, x: 0 }
+                  )}
                   className={`grid lg:grid-cols-2 gap-12 items-center ${
                     index % 2 === 1 ? 'lg:grid-flow-dense' : ''
                   }`}
                 >
-                  
                   {/* Image du projet */}
-                  <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div
+                    className={`relative ${
+                      index % 2 === 1 ? 'lg:col-start-2' : ''
+                    }`}
+                  >
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       onMouseEnter={() => setHoveredProject(project.id)}
@@ -294,7 +335,7 @@ function RealisationSectionClient() {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                           unoptimized
                         />
-                        
+
                         {/* Overlay avec actions */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <div className="absolute bottom-6 left-6 right-6 flex gap-4">
@@ -325,14 +366,19 @@ function RealisationSectionClient() {
                       {/* Badge featured */}
                       <div className="absolute -top-1 -right-1 mt-2 me-2 badge-accent px-4 py-2 shadow-glow-accent">
                         <FiZap size={12} className="mr-1" />
-                        <span className="text-white font-bold">Projet phare</span>
+                        <span className="text-white font-bold">
+                          Projet phare
+                        </span>
                       </div>
                     </motion.div>
                   </div>
 
                   {/* Contenu du projet */}
-                  <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                    
+                  <div
+                    className={`space-y-8 ${
+                      index % 2 === 1 ? 'lg:col-start-1' : ''
+                    }`}
+                  >
                     {/* Métadonnées */}
                     <div className="flex flex-wrap gap-4">
                       <div className="chip bg-primary/10 text-primary">
@@ -359,7 +405,9 @@ function RealisationSectionClient() {
                       <div className="flex items-center gap-4">
                         <FiTrendingUp className="text-success" size={24} />
                         <div>
-                          <div className="text-sm font-medium text-text-subtle">Impact mesuré</div>
+                          <div className="text-sm font-medium text-text-subtle">
+                            Impact mesuré
+                          </div>
                           <div className="text-lg font-bold text-success">
                             {project.results}
                           </div>
@@ -369,10 +417,15 @@ function RealisationSectionClient() {
 
                     {/* Technologies */}
                     <div className="space-y-3">
-                      <h4 className="font-semibold text-text-strong">Technologies utilisées</h4>
+                      <h4 className="font-semibold text-text-strong">
+                        Technologies utilisées
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.slice(0, 4).map((tag, tagIndex) => (
-                          <span key={tagIndex} className="chip bg-surface text-text">
+                          <span
+                            key={tagIndex}
+                            className="chip bg-surface text-text"
+                          >
                             {tag}
                           </span>
                         ))}
@@ -411,9 +464,7 @@ function RealisationSectionClient() {
                 </motion.div>
               ))}
             </motion.div>
-
           ) : (
-            
             /* Mode grille - Tous les projets */
             <motion.div
               key="grid"
@@ -432,7 +483,6 @@ function RealisationSectionClient() {
                   className="group"
                 >
                   <div className="card h-full hover-lift-lg">
-                    
                     {/* Image */}
                     <div className="relative overflow-hidden">
                       <div className="aspect-video">
@@ -494,7 +544,10 @@ function RealisationSectionClient() {
                       {/* Technologies */}
                       <div className="flex flex-wrap gap-2">
                         {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                          <span key={tagIndex} className="text-xs px-3 py-1 bg-border rounded-full text-text-light">
+                          <span
+                            key={tagIndex}
+                            className="text-xs px-3 py-1 bg-border rounded-full text-text-light"
+                          >
                             {tag}
                           </span>
                         ))}
@@ -509,33 +562,37 @@ function RealisationSectionClient() {
 
         {/* CTA final modernisé */}
         <motion.div
-          {...getScrollAnimationProps({ scale: 0.95, opacity: 0 }, { scale: 1, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { scale: 0.95, opacity: 0 },
+            { scale: 1, opacity: 1 }
+          )}
           className="text-center"
         >
           <div className="card-glass p-12 max-w-4xl mx-auto relative overflow-hidden">
-            
             {/* Éléments décoratifs */}
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-primary rounded-full opacity-10"></div>
             <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-gradient-accent rounded-full opacity-10"></div>
-            
+
             <div className="relative z-10">
               <motion.div
                 animate={{ rotate: [0, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
                 className="inline-block mb-8"
               >
                 <FiHeart className="text-primary" size={40} />
               </motion.div>
-              
+
               <h3 className="heading-2 mb-6">
-                Votre projet sera le <span className="text-gradient-warm">prochain</span> ?
+                Votre projet sera le{' '}
+                <span className="text-gradient-warm">prochain</span> ?
               </h3>
-              
+
               <p className="body-large mb-8 max-w-2xl mx-auto">
-                Chaque grande réalisation commence par une conversation. 
-                Parlons de votre vision et créons ensemble quelque chose d'extraordinaire.
+                Chaque grande réalisation commence par une conversation. Parlons
+                de votre vision et créons ensemble quelque chose
+                d'extraordinaire.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <MotionLink
                   href="#contact"
@@ -547,7 +604,7 @@ function RealisationSectionClient() {
                   Démarrons votre projet
                   <FiArrowRight className="ml-3 group-hover:translate-x-1 transition-transform" />
                 </MotionLink>
-                
+
                 <MotionLink
                   href="#services"
                   whileHover={{ scale: 1.05 }}

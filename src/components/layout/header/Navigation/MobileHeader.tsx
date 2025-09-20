@@ -18,18 +18,24 @@ interface MobileHeaderProps {
   index: number;
 }
 
-const MobileHeaderModernized: React.FC<MobileHeaderProps> = ({ item, onClose, index }) => {
+const MobileHeaderModernized: React.FC<MobileHeaderProps> = ({
+  item,
+  onClose,
+  index,
+}) => {
   const pathname = usePathname();
-  const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+  const isActive =
+    pathname === item.href ||
+    (item.href !== '/' && pathname.startsWith(item.href));
 
   return (
     <motion.div
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ 
+      transition={{
         duration: 0.3,
         delay: index * 0.1,
-        ease: "easeOut"
+        ease: 'easeOut',
       }}
       className="overflow-hidden"
     >
@@ -44,22 +50,22 @@ const MobileHeaderModernized: React.FC<MobileHeaderProps> = ({ item, onClose, in
             backgroundColor: isActive ? 'var(--primary)' : 'var(--surface)',
             color: isActive ? 'white' : 'var(--text)',
             borderColor: isActive ? 'var(--primary)' : 'var(--border)',
-            boxShadow: isActive ? 'var(--shadow-glow-primary)' : 'var(--shadow-sm)'
+            boxShadow: isActive
+              ? 'var(--shadow-glow-primary)'
+              : 'var(--shadow-sm)',
           }}
           whileHover={{ x: 4 }}
           whileTap={{ scale: 0.98 }}
         >
           {/* Icône */}
-          <div className={`
+          <div
+            className={`
             w-10 h-10 rounded-xl flex items-center justify-center
             ${isActive ? 'bg-white/20' : 'bg-primary/10'}
-          `}>
+          `}
+          >
             <div style={{ color: isActive ? 'white' : 'var(--primary)' }}>
-              {item.icon ? (
-                <item.icon size={18} />
-              ) : (
-                <FiStar size={18} />
-              )}
+              {item.icon ? <item.icon size={18} /> : <FiStar size={18} />}
             </div>
           </div>
 
@@ -75,9 +81,9 @@ const MobileHeaderModernized: React.FC<MobileHeaderProps> = ({ item, onClose, in
           <motion.div
             className="transition-all duration-300"
             initial={{ x: -10, opacity: 0.5 }}
-            animate={{ 
+            animate={{
               x: isActive ? 0 : -10,
-              opacity: isActive ? 1 : 0.5 
+              opacity: isActive ? 1 : 0.5,
             }}
             whileHover={{ x: 0, opacity: 1 }}
           >

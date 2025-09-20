@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const LogoModernized: React.FC = () => (
   <Link href="/" className="inline-block group">
-    <motion.div 
+    <motion.div
       className="flex items-center gap-3"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.2 }}
@@ -29,9 +29,7 @@ const LogoModernized: React.FC = () => (
         <div className="font-bold text-lg text-primary group-hover:text-primary-dark transition-colors">
           Wan-Kountry
         </div>
-        <div className="text-xs text-text-light -mt-1">
-          Web Solutions
-        </div>
+        <div className="text-xs text-text-light -mt-1">Web Solutions</div>
       </div>
     </motion.div>
   </Link>

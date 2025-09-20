@@ -48,7 +48,7 @@ const HeaderLinkModernized: React.FC<HeaderLinkProps> = ({ item }) => {
         `}
         style={{
           backgroundColor: isActive ? 'var(--primary)' : 'transparent',
-          boxShadow: isActive ? 'var(--shadow-glow-primary)' : 'none'
+          boxShadow: isActive ? 'var(--shadow-glow-primary)' : 'none',
         }}
       >
         {/* Effet de survol animé */}
@@ -59,10 +59,10 @@ const HeaderLinkModernized: React.FC<HeaderLinkProps> = ({ item }) => {
           whileHover={{ opacity: isActive ? 0 : 1 }}
           transition={{ duration: 0.2 }}
         />
-        
+
         {item.icon && <item.icon size={16} />}
         <span className="relative z-10 text-sm">{item.label}</span>
-        
+
         {/* Indicateur actif */}
         {isActive && (
           <motion.div

@@ -45,13 +45,13 @@ function PricingSectionClient() {
       return {
         initial: initialProps,
         whileInView: animateProps,
-        transition: { duration: 0.6, ease: "easeOut" as const },
-        viewport: { once: true, margin: "-50px" }
+        transition: { duration: 0.6, ease: 'easeOut' as const },
+        viewport: { once: true, margin: '-50px' },
       } as const;
     } else {
       return {
         initial: animateProps,
-        animate: animateProps
+        animate: animateProps,
       } as const;
     }
   };
@@ -59,7 +59,7 @@ function PricingSectionClient() {
   const tabs = [
     { id: 'pricing', name: 'Tarifs', icon: FiStar },
     { id: 'process', name: 'Processus', icon: FiTarget },
-    { id: 'support', name: 'Support', icon: FiHeart }
+    { id: 'support', name: 'Support', icon: FiHeart },
   ];
 
   const pricingPlans = [
@@ -67,7 +67,8 @@ function PricingSectionClient() {
       id: 1,
       name: 'Site Vitrine Pro',
       tagline: 'Votre vitrine digitale qui convertit',
-      description: 'Parfait pour présenter votre activité et attirer de nouveaux clients qualifiés',
+      description:
+        'Parfait pour présenter votre activité et attirer de nouveaux clients qualifiés',
       price: '100 000',
       currency: 'FCFA',
       icon: FiGlobe,
@@ -84,13 +85,14 @@ function PricingSectionClient() {
       ],
       results: '+150% de contacts qualifiés',
       testimonial: 'Site parfait, clients conquis !',
-      author: 'Marie K., Coach'
+      author: 'Marie K., Coach',
     },
     {
       id: 2,
       name: 'E-commerce Complet',
       tagline: 'Votre boutique qui vend 24h/24',
-      description: 'Solution complète pour vendre en ligne avec Mobile Money intégré',
+      description:
+        'Solution complète pour vendre en ligne avec Mobile Money intégré',
       price: '350 000',
       currency: 'FCFA',
       icon: FiShoppingCart,
@@ -98,7 +100,7 @@ function PricingSectionClient() {
       color: 'secondary',
       deliveryTime: '10-14 jours',
       features: [
-        'Boutique complète (jusqu\'à 100 produits)',
+        "Boutique complète (jusqu'à 100 produits)",
         'Paiement Mobile Money, PayPal, Stripe',
         'Gestion avancée commandes & clients',
         'Tableau de bord administrateur complet',
@@ -107,13 +109,14 @@ function PricingSectionClient() {
       ],
       results: '+300% de ventes online',
       testimonial: 'Enfin une boutique qui marche en Afrique !',
-      author: 'Amadou S., Entrepreneur'
+      author: 'Amadou S., Entrepreneur',
     },
     {
       id: 3,
       name: 'Solution Sur-Mesure',
       tagline: 'Votre idée devient réalité',
-      description: 'Développement personnalisé pour des besoins spécifiques et avancés',
+      description:
+        'Développement personnalisé pour des besoins spécifiques et avancés',
       price: 'Devis',
       currency: 'personnalisé',
       icon: FiSettings,
@@ -130,7 +133,7 @@ function PricingSectionClient() {
       ],
       results: 'Solutions uniques, résultats exceptionnels',
       testimonial: 'Exactly what we needed, perfectly executed',
-      author: 'John D., Startup CEO'
+      author: 'John D., Startup CEO',
     },
   ];
 
@@ -138,50 +141,56 @@ function PricingSectionClient() {
     {
       icon: FiMessageCircle,
       title: 'Consultation gratuite',
-      description: '30 minutes pour comprendre vos besoins et définir la stratégie',
-      duration: '30 min'
+      description:
+        '30 minutes pour comprendre vos besoins et définir la stratégie',
+      duration: '30 min',
     },
     {
       icon: FiTarget,
       title: 'Devis détaillé',
-      description: 'Proposition transparente avec délais et fonctionnalités précises',
-      duration: '24h'
+      description:
+        'Proposition transparente avec délais et fonctionnalités précises',
+      duration: '24h',
     },
     {
       icon: FiZap,
       title: 'Développement',
       description: 'Création avec suivi temps réel et validations régulières',
-      duration: 'Variable'
+      duration: 'Variable',
     },
     {
       icon: FiAward,
       title: 'Livraison & Formation',
       description: 'Mise en ligne, formation et accompagnement personnalisé',
-      duration: '1 jour'
-    }
+      duration: '1 jour',
+    },
   ];
 
   const supportFeatures = [
     {
       icon: FiClock,
       title: 'Support réactif',
-      description: 'Réponse garantie en moins de 24h, résolution rapide des problèmes'
+      description:
+        'Réponse garantie en moins de 24h, résolution rapide des problèmes',
     },
     {
       icon: FiShield,
       title: 'Maintenance incluse',
-      description: 'Mises à jour sécurité, sauvegardes automatiques, monitoring permanent'
+      description:
+        'Mises à jour sécurité, sauvegardes automatiques, monitoring permanent',
     },
     {
       icon: FiHeadphones,
       title: 'Formation personnalisée',
-      description: 'Accompagnement pour maîtriser votre site et optimiser vos résultats'
+      description:
+        'Accompagnement pour maîtriser votre site et optimiser vos résultats',
     },
     {
       icon: FiTrendingUp,
       title: 'Évolution garantie',
-      description: 'Votre site grandit avec votre business, nouvelles fonctionnalités possibles'
-    }
+      description:
+        'Votre site grandit avec votre business, nouvelles fonctionnalités possibles',
+    },
   ];
 
   const getPlanIcon = (plan: any) => {
@@ -189,54 +198,61 @@ function PricingSectionClient() {
   };
 
   return (
-    <section className="relative py-16 overflow-hidden">
-      
+    <section className="relative overflow-hidden pb-16 pt-32">
       {/* Arrière-plan moderne */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
-        
+
         {/* Motifs géométriques camerounais */}
-        <div 
+        <div
           className="absolute top-1/4 left-0 w-1/3 h-1/2 opacity-[0.02]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20z M10 10L30 10L30 30L10 30z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
-            backgroundSize: '40px 40px'
+            backgroundSize: '40px 40px',
           }}
         ></div>
       </div>
 
       <div className="container relative z-10">
-
         {/* En-tête modernisé */}
         <motion.div
-          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
           className="text-center mb-16"
         >
           <div className="badge-primary mb-8 inline-flex items-center gap-2">
             <FiSun size={16} />
-            <span className='text-sm'>Tarifs transparents et justes</span>
+            <span className="text-sm">Tarifs transparents et justes</span>
           </div>
-          
+
           <h2 className="heading-1 mb-6">
-            Des solutions pour <span className="text-gradient-warm">tous les budgets</span>
+            Des solutions pour{' '}
+            <span className="text-gradient-warm">tous les budgets</span>
             <br />
             <span className="text-gradient-primary">résultats garantis</span>
           </h2>
-          
+
           <p className="body-large max-w-3xl mx-auto mb-8">
-            Formules simples, transparentes et adaptées à vos besoins. 
-            Chaque projet est unique, nos prix évoluent selon vos demandes spécifiques.
+            Formules simples, transparentes et adaptées à vos besoins. Chaque
+            projet est unique, nos prix évoluent selon vos demandes spécifiques.
           </p>
 
           <div className="card-glass px-6 py-3 inline-flex items-center gap-2 rounded-full">
             <FiHeart className="text-primary" size={16} />
-            <span className="text-sm font-medium">Paiement en plusieurs fois possible</span>
+            <span className="text-sm font-medium">
+              Paiement en plusieurs fois possible
+            </span>
           </div>
         </motion.div>
 
         {/* Navigation par onglets */}
         <motion.div
-          {...getScrollAnimationProps({ y: 20, opacity: 0 }, { y: 0, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
           className="flex justify-center mb-16"
         >
           <div className="card-glass p-2 inline-flex gap-2 rounded-2xl">
@@ -245,8 +261,8 @@ function PricingSectionClient() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus-ring ${
-                  activeTab === tab.id 
-                    ? 'bg-primary text-white shadow-glow-primary' 
+                  activeTab === tab.id
+                    ? 'bg-primary text-white shadow-glow-primary'
                     : 'hover:bg-surface text-text-light'
                 }`}
               >
@@ -267,13 +283,12 @@ function PricingSectionClient() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
             >
-              
               {/* Grille des plans */}
               <div className="grid lg:grid-cols-3 gap-8 mb-20">
                 {pricingPlans.map((plan, index) => {
                   const IconComponent = getPlanIcon(plan);
                   const isPopular = plan.popular;
-                  
+
                   return (
                     <motion.div
                       key={plan.id}
@@ -283,25 +298,39 @@ function PricingSectionClient() {
                       whileHover={{ y: -8 }}
                       onMouseEnter={() => setHoveredPlan(plan.id)}
                       onMouseLeave={() => setHoveredPlan(null)}
-                      className={`group relative ${isPopular ? 'scale-105' : ''}`}
+                      className={`group relative ${
+                        isPopular ? 'scale-105' : ''
+                      }`}
                     >
-                      <div className={`h-full p-8 relative overflow-hidden ${
-                        isPopular ? 'card-bordered-primary' : 'card-warm'
-                      } ${hoveredPlan === plan.id ? 'hover-lift-lg' : 'hover-lift'}`}>
-                        
+                      <div
+                        className={`h-full p-8 relative overflow-hidden ${
+                          isPopular ? 'card-bordered-primary' : 'card-warm'
+                        } ${
+                          hoveredPlan === plan.id
+                            ? 'hover-lift-lg'
+                            : 'hover-lift'
+                        }`}
+                      >
                         {/* Badge populaire */}
                         {isPopular && (
                           <div className="absolute -top-1 -right-1 mt-2 me-2 badge-accent px-4 py-2 shadow-glow-accent">
                             <FiStar size={12} className="mr-1" />
-                            <span className="text-white font-bold">Populaire</span>
+                            <span className="text-white font-bold">
+                              Populaire
+                            </span>
                           </div>
                         )}
 
                         {/* En-tête du plan */}
                         <div className="space-y-6 mb-8">
                           <div className="flex items-center gap-4">
-                            <div className={`w-16 h-16 rounded-2xl bg-${plan.color}/10 flex items-center justify-center`}>
-                              <IconComponent size={24} className={`text-${plan.color}`} />
+                            <div
+                              className={`w-16 h-16 rounded-2xl bg-${plan.color}/10 flex items-center justify-center`}
+                            >
+                              <IconComponent
+                                size={24}
+                                className={`text-${plan.color}`}
+                              />
                             </div>
                             <div className="flex-1">
                               <h3 className="heading-5">{plan.name}</h3>
@@ -310,7 +339,7 @@ function PricingSectionClient() {
                               </p>
                             </div>
                           </div>
-                          
+
                           <p className="body-text leading-relaxed">
                             {plan.description}
                           </p>
@@ -326,7 +355,7 @@ function PricingSectionClient() {
                               {plan.currency}
                             </span>
                           </div>
-                          
+
                           <div className="flex items-center gap-4 text-sm">
                             <div className="flex items-center gap-2 text-accent font-semibold">
                               <FiClock size={16} />
@@ -337,30 +366,54 @@ function PricingSectionClient() {
 
                         {/* Fonctionnalités */}
                         <div className="space-y-4 mb-8">
-                          <h4 className="font-semibold text-text-strong">Inclus dans cette formule</h4>
+                          <h4 className="font-semibold text-text-strong">
+                            Inclus dans cette formule
+                          </h4>
                           <ul className="space-y-3">
-                            {plan.features.slice(0, showDetails === plan.id ? plan.features.length : 4).map((feature, featureIndex) => (
-                              <motion.li
-                                key={featureIndex}
-                                initial={{ opacity: 0, x: -10 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: featureIndex * 0.05 }}
-                                className="flex items-start gap-3"
-                              >
-                                <FiCheck className="text-success flex-shrink-0 mt-0.5" size={16} />
-                                <span className="text-sm leading-relaxed">{feature}</span>
-                              </motion.li>
-                            ))}
+                            {plan.features
+                              .slice(
+                                0,
+                                showDetails === plan.id
+                                  ? plan.features.length
+                                  : 4
+                              )
+                              .map((feature, featureIndex) => (
+                                <motion.li
+                                  key={featureIndex}
+                                  initial={{ opacity: 0, x: -10 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: featureIndex * 0.05 }}
+                                  className="flex items-start gap-3"
+                                >
+                                  <FiCheck
+                                    className="text-success flex-shrink-0 mt-0.5"
+                                    size={16}
+                                  />
+                                  <span className="text-sm leading-relaxed">
+                                    {feature}
+                                  </span>
+                                </motion.li>
+                              ))}
                           </ul>
-                          
+
                           {plan.features.length > 4 && (
                             <button
-                              onClick={() => setShowDetails(showDetails === plan.id ? null : plan.id)}
+                              onClick={() =>
+                                setShowDetails(
+                                  showDetails === plan.id ? null : plan.id
+                                )
+                              }
                               className="text-primary font-medium text-sm flex items-center gap-1 hover:underline"
                             >
-                              <span>{showDetails === plan.id ? 'Voir moins' : `Voir ${plan.features.length - 4} autres`}</span>
+                              <span>
+                                {showDetails === plan.id
+                                  ? 'Voir moins'
+                                  : `Voir ${plan.features.length - 4} autres`}
+                              </span>
                               <motion.div
-                                animate={{ rotate: showDetails === plan.id ? 180 : 0 }}
+                                animate={{
+                                  rotate: showDetails === plan.id ? 180 : 0,
+                                }}
                                 transition={{ duration: 0.2 }}
                               >
                                 <FiChevronDown size={14} />
@@ -380,7 +433,9 @@ function PricingSectionClient() {
                           <blockquote className="text-sm italic">
                             "{plan.testimonial}"
                           </blockquote>
-                          <cite className="text-xs text-text-subtle">- {plan.author}</cite>
+                          <cite className="text-xs text-text-subtle">
+                            - {plan.author}
+                          </cite>
                         </div>
 
                         {/* CTA */}
@@ -417,9 +472,12 @@ function PricingSectionClient() {
               className="max-w-4xl mx-auto"
             >
               <div className="text-center mb-12">
-                <h3 className="heading-2 mb-6">Comment nous travaillons ensemble</h3>
+                <h3 className="heading-2 mb-6">
+                  Comment nous travaillons ensemble
+                </h3>
                 <p className="body-large">
-                  Un processus rodé qui garantit la réussite de votre projet digital.
+                  Un processus rodé qui garantit la réussite de votre projet
+                  digital.
                 </p>
               </div>
 
@@ -430,18 +488,26 @@ function PricingSectionClient() {
                     initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.2 }}
-                    className={`flex items-center gap-8 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
+                    className={`flex items-center gap-8 ${
+                      index % 2 === 1 ? 'flex-row-reverse' : ''
+                    }`}
                   >
-                    
                     {/* Numéro et icône */}
                     <div className="flex-shrink-0">
                       <div className="relative">
-                        <div className={`w-20 h-20 rounded-3xl bg-${
-                          ['primary', 'secondary', 'accent', 'success'][index]
-                        }/10 flex items-center justify-center`}>
-                          <step.icon size={24} className={`text-${
+                        <div
+                          className={`w-20 h-20 rounded-3xl bg-${
                             ['primary', 'secondary', 'accent', 'success'][index]
-                          }`} />
+                          }/10 flex items-center justify-center`}
+                        >
+                          <step.icon
+                            size={24}
+                            className={`text-${
+                              ['primary', 'secondary', 'accent', 'success'][
+                                index
+                              ]
+                            }`}
+                          />
                         </div>
                         <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">
                           {index + 1}
@@ -477,7 +543,8 @@ function PricingSectionClient() {
               <div className="text-center mb-12">
                 <h3 className="heading-2 mb-6">Support et accompagnement</h3>
                 <p className="body-large">
-                  Nous restons à vos côtés bien après la livraison de votre projet.
+                  Nous restons à vos côtés bien après la livraison de votre
+                  projet.
                 </p>
               </div>
 
@@ -491,14 +558,19 @@ function PricingSectionClient() {
                     whileHover={{ y: -4 }}
                     className="card-elevated p-8 hover-lift"
                   >
-                    <div className={`w-16 h-16 rounded-2xl bg-${
-                      ['primary', 'secondary', 'accent', 'success'][index]
-                    }/10 flex items-center justify-center mb-6`}>
-                      <feature.icon size={24} className={`text-${
+                    <div
+                      className={`w-16 h-16 rounded-2xl bg-${
                         ['primary', 'secondary', 'accent', 'success'][index]
-                      }`} />
+                      }/10 flex items-center justify-center mb-6`}
+                    >
+                      <feature.icon
+                        size={24}
+                        className={`text-${
+                          ['primary', 'secondary', 'accent', 'success'][index]
+                        }`}
+                      />
                     </div>
-                    
+
                     <h4 className="heading-5 mb-4">{feature.title}</h4>
                     <p className="body-text">{feature.description}</p>
                   </motion.div>
@@ -510,7 +582,10 @@ function PricingSectionClient() {
 
         {/* CTA final */}
         <motion.div
-          {...getScrollAnimationProps({ scale: 0.95, opacity: 0 }, { scale: 1, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { scale: 0.95, opacity: 0 },
+            { scale: 1, opacity: 1 }
+          )}
           className="text-center mt-20"
         >
           <div className="card-glass p-12 max-w-4xl mx-auto">
@@ -519,16 +594,17 @@ function PricingSectionClient() {
               <FiStar className="text-accent" />
               <FiHeart className="text-secondary" />
             </div>
-            
+
             <h3 className="heading-2 mb-6">
-              Prêt à donner vie à <span className="text-gradient-sunset">votre projet</span> ?
+              Prêt à donner vie à{' '}
+              <span className="text-gradient-sunset">votre projet</span> ?
             </h3>
-            
+
             <p className="body-large mb-8 max-w-2xl mx-auto">
-              Consultation gratuite de 30 minutes pour analyser vos besoins 
-              et vous proposer la solution parfaite à votre budget.
+              Consultation gratuite de 30 minutes pour analyser vos besoins et
+              vous proposer la solution parfaite à votre budget.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <MotionLink
                 href="/contact"
@@ -540,7 +616,7 @@ function PricingSectionClient() {
                 Consultation gratuite
                 <FiArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
               </MotionLink>
-              
+
               <MotionLink
                 href="#portfolio"
                 whileHover={{ scale: 1.05 }}

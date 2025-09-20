@@ -42,13 +42,13 @@ function ServicesSectionClient() {
       return {
         initial: initialProps,
         whileInView: animateProps,
-        transition: { duration: 0.6, ease: "easeOut" as const },
-        viewport: { once: true, margin: "-50px" }
+        transition: { duration: 0.6, ease: 'easeOut' as const },
+        viewport: { once: true, margin: '-50px' },
       } as const;
     } else {
       return {
         initial: animateProps,
-        animate: animateProps
+        animate: animateProps,
       } as const;
     }
   };
@@ -59,22 +59,22 @@ function ServicesSectionClient() {
       title: 'Sites Web',
       icon: FiGlobe,
       description: 'Présence digitale performante',
-      color: 'primary'
+      color: 'primary',
     },
     {
       id: 'ecommerce',
-      title: 'E-commerce', 
+      title: 'E-commerce',
       icon: FiShoppingCart,
       description: 'Boutiques qui convertissent',
-      color: 'secondary'
+      color: 'secondary',
     },
     {
       id: 'custom',
       title: 'Sur-mesure',
       icon: FiSettings,
       description: 'Solutions personnalisées',
-      color: 'accent'
-    }
+      color: 'accent',
+    },
   ];
 
   const servicesData = {
@@ -82,7 +82,8 @@ function ServicesSectionClient() {
       {
         title: 'Site Vitrine Premium',
         subtitle: 'Votre carte de visite digitale',
-        description: 'Site professionnel optimisé pour convertir vos visiteurs en clients.',
+        description:
+          'Site professionnel optimisé pour convertir vos visiteurs en clients.',
         price: '100 000 FCFA',
         duration: '5-7 jours',
         popular: true,
@@ -90,10 +91,10 @@ function ServicesSectionClient() {
           'Design responsive premium',
           'SEO optimisé Google',
           'Formulaires de contact',
-          '1 an maintenance incluse'
+          '1 an maintenance incluse',
         ],
         results: '+150% de contacts qualifiés',
-        preview: '/images/services/site-vitrine.jpg'
+        preview: '/images/services/site-vitrine.jpg',
       },
       {
         title: 'Site Associatif',
@@ -106,17 +107,18 @@ function ServicesSectionClient() {
           'Espace membres',
           'Système de dons',
           'Agenda événements',
-          'Newsletter automatique'
+          'Newsletter automatique',
         ],
-        results: '+250% d\'adhésions',
-        preview: '/images/services/site-associatif.jpg'
-      }
+        results: "+250% d'adhésions",
+        preview: '/images/services/site-associatif.jpg',
+      },
     ],
     ecommerce: [
       {
         title: 'E-commerce Complet',
         subtitle: 'Boutique qui vend 24h/24',
-        description: 'Solution e-commerce avec Mobile Money intégré pour l\'Afrique.',
+        description:
+          "Solution e-commerce avec Mobile Money intégré pour l'Afrique.",
         price: '350 000 FCFA',
         duration: '10-14 jours',
         popular: true,
@@ -124,15 +126,16 @@ function ServicesSectionClient() {
           'Mobile Money intégré',
           'Gestion stock automatique',
           'Analytics avancées',
-          'Support prioritaire'
+          'Support prioritaire',
         ],
         results: '+300% de ventes online',
-        preview: '/images/services/e-commerce.jpg'
+        preview: '/images/services/e-commerce.jpg',
       },
       {
         title: 'Marketplace',
         subtitle: 'Plateforme multi-vendeurs',
-        description: 'Créez votre propre marketplace avec commissions automatiques.',
+        description:
+          'Créez votre propre marketplace avec commissions automatiques.',
         price: '750 000 FCFA',
         duration: '3-4 semaines',
         popular: false,
@@ -140,17 +143,18 @@ function ServicesSectionClient() {
           'Multi-vendeurs',
           'Commission automatique',
           'Tableau de bord vendeur',
-          'Système d\'avis'
+          "Système d'avis",
         ],
         results: 'Revenus passifs garantis',
-        preview: '/images/services/marketplace.jpg'
-      }
+        preview: '/images/services/marketplace.jpg',
+      },
     ],
     custom: [
       {
         title: 'Application Sur-mesure',
         subtitle: 'Votre idée, notre expertise',
-        description: 'Développement d\'applications web personnalisées pour votre business.',
+        description:
+          "Développement d'applications web personnalisées pour votre business.",
         price: 'Devis personnalisé',
         duration: '3-8 semaines',
         popular: true,
@@ -158,15 +162,16 @@ function ServicesSectionClient() {
           'Architecture sur-mesure',
           'Code source fourni',
           'Formation équipe',
-          'Maintenance 6 mois'
+          'Maintenance 6 mois',
         ],
         results: '40h/mois économisées',
-        preview: '/images/services/app.jpg'
+        preview: '/images/services/app.jpg',
       },
       {
         title: 'Refonte Moderne',
         subtitle: 'Votre site version 2024',
-        description: 'Modernisation complète : design, performance et sécurité.',
+        description:
+          'Modernisation complète : design, performance et sécurité.',
         price: '150 000 FCFA',
         duration: '2-4 jours',
         popular: false,
@@ -174,87 +179,95 @@ function ServicesSectionClient() {
           'Audit gratuit inclus',
           'Design moderne',
           'Optimisation vitesse',
-          'Migration sécurisée'
+          'Migration sécurisée',
         ],
         results: '+180% plus rapide',
-        preview: '/images/services/refonte.jpg'
-      }
-    ]
+        preview: '/images/services/refonte.jpg',
+      },
+    ],
   };
 
   const processSteps = [
     {
       icon: FiUsers,
       title: 'Consultation',
-      description: 'Analyse de vos besoins et définition de la stratégie optimale',
-      duration: '30 min'
+      description:
+        'Analyse de vos besoins et définition de la stratégie optimale',
+      duration: '30 min',
     },
     {
       icon: FiTarget,
       title: 'Conception',
-      description: 'Maquettes interactives et validation de l\'expérience utilisateur',
-      duration: '1-2 jours'
+      description:
+        "Maquettes interactives et validation de l'expérience utilisateur",
+      duration: '1-2 jours',
     },
     {
       icon: FiZap,
       title: 'Développement',
       description: 'Codage avec suivi en temps réel et tests continus',
-      duration: 'Variable'
+      duration: 'Variable',
     },
     {
       icon: FiAward,
       title: 'Livraison',
       description: 'Mise en ligne, formation et accompagnement personnalisé',
-      duration: '1 jour'
-    }
+      duration: '1 jour',
+    },
   ];
 
-  const currentServices = servicesData[serviceCategories[activeTab]!.id as keyof typeof servicesData];
+  const currentServices =
+    servicesData[serviceCategories[activeTab]!.id as keyof typeof servicesData];
 
   return (
-    <section className="relative py-16 overflow-hidden">
-      
+    <section className="relative overflow-hidden pb-16 pt-32">
       {/* Arrière-plan moderne */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
-        
+
         {/* Motifs géométriques subtils */}
-        <div 
+        <div
           className="absolute top-1/4 right-0 w-1/3 h-1/2 opacity-[0.02]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
-            backgroundSize: '40px 40px'
+            backgroundSize: '40px 40px',
           }}
         ></div>
       </div>
 
       <div className="container relative z-10">
-
         {/* En-tête modernisé */}
         <motion.div
-          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
           className="text-center mb-20"
         >
           <div className="badge-primary mb-8 inline-flex items-center gap-2">
             <FiZap size={16} />
-            <span className='text-sm'>Solutions digitales performantes</span>
+            <span className="text-sm">Solutions digitales performantes</span>
           </div>
-          
+
           <h2 className="heading-1 mb-6">
-            Services qui <span className="text-gradient-warm">transforment</span>
+            Services qui{' '}
+            <span className="text-gradient-warm">transforment</span>
             <br />
             votre business
           </h2>
-          
+
           <p className="body-large max-w-3xl mx-auto">
-            Des solutions concrètes, des résultats mesurables. 
-            Nous créons les outils digitaux dont votre entreprise a vraiment besoin.
+            Des solutions concrètes, des résultats mesurables. Nous créons les
+            outils digitaux dont votre entreprise a vraiment besoin.
           </p>
         </motion.div>
 
         {/* Navigation par catégories */}
         <motion.div
-          {...getScrollAnimationProps({ y: 20, opacity: 0 }, { y: 0, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
           className="flex justify-center mb-16"
         >
           <div className="card-glass p-2 inline-flex gap-2 rounded-2xl">
@@ -263,15 +276,19 @@ function ServicesSectionClient() {
                 key={category.id}
                 onClick={() => setActiveTab(index)}
                 className={`flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 focus-ring ${
-                  activeTab === index 
-                    ? `bg-${category.color} text-white shadow-glow-${category.color}` 
+                  activeTab === index
+                    ? `bg-${category.color} text-white shadow-glow-${category.color}`
                     : 'hover:bg-surface text-text-light'
                 }`}
               >
-                <category.icon size={20} className='hidden sm:block'/>
+                <category.icon size={20} className="hidden sm:block" />
                 <div className="text-left">
-                  <div className="text-xs sm:text-sm font-bold">{category.title}</div>
-                  <div className="text-xs opacity-80 hidden sm:block">{category.description}</div>
+                  <div className="text-xs sm:text-sm font-bold">
+                    {category.title}
+                  </div>
+                  <div className="text-xs opacity-80 hidden sm:block">
+                    {category.description}
+                  </div>
                 </div>
               </button>
             ))}
@@ -280,7 +297,10 @@ function ServicesSectionClient() {
 
         {/* Services en grille */}
         <motion.div
-          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
           className="mb-20"
         >
           <AnimatePresence mode="wait">
@@ -300,10 +320,11 @@ function ServicesSectionClient() {
                   whileHover={{ y: -8 }}
                   className="group relative"
                 >
-                  <div className={`card-warm p-8 h-full relative overflow-hidden ${
-                    service.popular ? 'card-bordered-primary' : ''
-                  }`}>
-                    
+                  <div
+                    className={`card-warm p-8 h-full relative overflow-hidden ${
+                      service.popular ? 'card-bordered-primary' : ''
+                    }`}
+                  >
                     {/* Badge populaire */}
                     {service.popular && (
                       <div className="absolute mt-3 me-3 -top-1 -right-1 badge-accent px-4 py-2 shadow-glow-accent z-2">
@@ -321,12 +342,16 @@ function ServicesSectionClient() {
                         height={225}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
-                      
+
                       {/* Overlay avec résultats */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="absolute bottom-4 left-4 text-white">
-                          <div className="text-sm font-bold mb-1">Résultat moyen :</div>
-                          <div className="text-lg font-bold">{service.results}</div>
+                          <div className="text-sm font-bold mb-1">
+                            Résultat moyen :
+                          </div>
+                          <div className="text-lg font-bold">
+                            {service.results}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -365,8 +390,13 @@ function ServicesSectionClient() {
                             transition={{ delay: featureIndex * 0.1 }}
                             className="flex items-center gap-3"
                           >
-                            <FiCheck className="text-success flex-shrink-0" size={16} />
-                            <span className="text-sm font-medium">{feature}</span>
+                            <FiCheck
+                              className="text-success flex-shrink-0"
+                              size={16}
+                            />
+                            <span className="text-sm font-medium">
+                              {feature}
+                            </span>
                           </motion.div>
                         ))}
                       </div>
@@ -392,18 +422,21 @@ function ServicesSectionClient() {
 
         {/* Processus de travail modernisé */}
         <motion.div
-          {...getScrollAnimationProps({ y: 40, opacity: 0 }, { y: 0, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1 }
+          )}
           className="mb-20"
         >
           <div className="text-center mb-16">
             <h3 className="heading-2 mb-6">Notre processus éprouvé</h3>
             <p className="body-large max-w-2xl mx-auto">
-              Une méthode structurée qui garantit la réussite de votre projet digital.
+              Une méthode structurée qui garantit la réussite de votre projet
+              digital.
             </p>
           </div>
 
           <div className="relative">
-            
             <div className="grid lg:grid-cols-4 gap-8 relative">
               {processSteps.map((step, index) => (
                 <motion.div
@@ -412,24 +445,28 @@ function ServicesSectionClient() {
                   className="text-center group"
                 >
                   <div className="relative mb-8">
-                    
                     {/* Icône principale */}
                     <div className="relative z-10 w-20 h-20 mx-auto card-elevated rounded-3xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <div className={`w-16 h-16 bg-${
-                        ['primary', 'secondary', 'accent', 'success'][index]
-                      }/10 rounded-2xl flex items-center justify-center`}>
-                        <step.icon size={24} className={`text-${
+                      <div
+                        className={`w-16 h-16 bg-${
                           ['primary', 'secondary', 'accent', 'success'][index]
-                        }`} />
+                        }/10 rounded-2xl flex items-center justify-center`}
+                      >
+                        <step.icon
+                          size={24}
+                          className={`text-${
+                            ['primary', 'secondary', 'accent', 'success'][index]
+                          }`}
+                        />
+                      </div>
+
+                      {/* Badge notification style */}
+                      <div className="absolute -top-1 -right-1 min-w-[1.75rem] h-7 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold px-1 shadow-lg border-2 border-white">
+                        {index + 1}
                       </div>
                     </div>
-
-                    {/* Numéro d'étape */}
-                    <div className="absolute -top-2 -right-1 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-20">
-                      {index + 1}
-                    </div>
                   </div>
-                  
+
                   <h4 className="heading-5 mb-3">{step.title}</h4>
                   <p className="body-small mb-3 leading-relaxed">
                     {step.description}
@@ -445,31 +482,33 @@ function ServicesSectionClient() {
 
         {/* CTA final modernisé */}
         <motion.div
-          {...getScrollAnimationProps({ scale: 0.95, opacity: 0 }, { scale: 1, opacity: 1 })}
+          {...getScrollAnimationProps(
+            { scale: 0.95, opacity: 0 },
+            { scale: 1, opacity: 1 }
+          )}
           className="text-center"
         >
           <div className="card-glass p-12 max-w-4xl mx-auto relative overflow-hidden">
-            
             {/* Éléments décoratifs */}
             <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-primary rounded-full opacity-10 -translate-x-16 -translate-y-16"></div>
             <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-accent rounded-full opacity-10 translate-x-12 translate-y-12"></div>
-            
+
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-6">
                 <FiStar className="text-accent" />
                 <FiStar className="text-accent" />
                 <FiStar className="text-accent" />
               </div>
-              
+
               <h3 className="heading-2 mb-6 text-gradient-sunset">
                 Prêt à propulser votre business ?
               </h3>
-              
+
               <p className="body-large mb-8 max-w-2xl mx-auto">
-                Consultation gratuite de 30 minutes pour analyser vos besoins 
-                et vous proposer la solution parfaite.
+                Consultation gratuite de 30 minutes pour analyser vos besoins et
+                vous proposer la solution parfaite.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <MotionLink
                   href="#contact"
@@ -481,7 +520,7 @@ function ServicesSectionClient() {
                   Consultation gratuite
                   <FiChevronRight className="ml-3 group-hover:translate-x-1 transition-transform" />
                 </MotionLink>
-                
+
                 <MotionLink
                   href="#portfolio"
                   whileHover={{ scale: 1.05 }}

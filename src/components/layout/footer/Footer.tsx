@@ -27,31 +27,32 @@ function FooterModernized() {
 
   const footerData = {
     brand: {
-      tagline: 'Solutions web modernes et performantes pour entreprises africaines. Votre succès digital commence ici.',
+      tagline:
+        'Solutions web modernes et performantes pour entreprises africaines. Votre succès digital commence ici.',
       socialLinks: [
         {
           link: 'https://linkedin.com/in/joel-tchinda',
           icon: 'linkedin',
           name: 'LinkedIn',
-          description: 'Réseau professionnel'
+          description: 'Réseau professionnel',
         },
         {
           link: 'https://github.com/joeltech',
           icon: 'github',
           name: 'GitHub',
-          description: 'Code source'
+          description: 'Code source',
         },
         {
           link: 'mailto:tchindajoel61@gmail.com',
           icon: 'email',
           name: 'Email',
-          description: 'Nous écrire'
+          description: 'Nous écrire',
         },
         {
           link: 'https://wa.me/330752892073',
           icon: 'whatsapp',
           name: 'WhatsApp',
-          description: 'Chat direct'
+          description: 'Chat direct',
         },
       ],
     },
@@ -88,46 +89,61 @@ function FooterModernized() {
       address: 'Toulouse, France • Yaoundé, Cameroun',
       email: 'tchindajoel61@gmail.com',
       phone: '+33 07 52 89 20 73',
-      availability: 'Remote disponible partout en Afrique'
-    }
+      availability: 'Remote disponible partout en Afrique',
+    },
   };
 
   const renderIcon = (iconType: string, size: number = 20) => {
     switch (iconType) {
       case 'linkedin':
-        return <Icon icon="mdi:linkedin" width={size} height={size} className="text-current" />;
+        return (
+          <Icon
+            icon="mdi:linkedin"
+            width={size}
+            height={size}
+            className="text-current"
+          />
+        );
       case 'whatsapp':
-        return <Icon icon="mdi:whatsapp" width={size} height={size} className="text-current" />;
+        return (
+          <Icon
+            icon="mdi:whatsapp"
+            width={size}
+            height={size}
+            className="text-current"
+          />
+        );
       case 'github':
         return <FiGithub size={size} />;
       case 'email':
         return <FiMail size={size} />;
       default:
-        return <span className="w-5 h-5 rounded-full bg-text-light flex items-center justify-center text-xs">?</span>;
+        return (
+          <span className="w-5 h-5 rounded-full bg-text-light flex items-center justify-center text-xs">
+            ?
+          </span>
+        );
     }
   };
 
   return (
     <footer className="relative overflow-hidden bg-gradient-soft">
-      
       {/* Arrière-plan artistique */}
       <div className="absolute inset-0">
         {/* Motif géométrique subtil */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 w-full h-1/3 opacity-[0.015]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10L30 20L20 30L10 20z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
-            backgroundSize: '40px 40px'
+            backgroundSize: '40px 40px',
           }}
         ></div>
       </div>
 
       <div className="container relative z-10">
-        
         {/* Section principale */}
         <div className="py-16">
           <div className="grid lg:grid-cols-12 gap-12">
-            
             {/* Colonne principale - Logo et description */}
             <motion.div
               initial={{ y: 40, opacity: 0 }}
@@ -136,7 +152,6 @@ function FooterModernized() {
               viewport={{ once: true }}
               className="lg:col-span-4 space-y-6"
             >
-              
               {/* Logo */}
               <div className="flex items-center">
                 <Logo />
@@ -148,19 +163,20 @@ function FooterModernized() {
               </p>
             </motion.div>
 
-            {/* Colonnes de navigation */}
-            <div className="lg:col-span-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              
+            {/* Colonnes de navigation - Version mobile optimisée */}
+            <div className="lg:col-span-8 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8">
               {/* Navigation principale */}
               <motion.div
                 initial={{ y: 40, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
-                className="space-y-6"
+                className="space-y-4 lg:space-y-6"
               >
-                <h4 className="heading-5 text-primary">{footerData.navigation.name}</h4>
-                <nav className="space-y-3">
+                <h4 className="heading-5 text-primary border-b border-border pb-2 lg:border-none lg:pb-0">
+                  {footerData.navigation.name}
+                </h4>
+                <nav className="grid grid-cols-2 gap-2 lg:grid-cols-1 lg:gap-3">
                   {footerData.navigation.links.map((link, index) => (
                     <motion.div
                       key={index}
@@ -169,13 +185,13 @@ function FooterModernized() {
                     >
                       <Link
                         href={link.url}
-                        className="flex items-center gap-3 text-text-light hover:text-primary transition-colors"
+                        className="flex items-center gap-2 lg:gap-3 text-sm lg:text-base text-text-light hover:text-primary transition-colors p-2 lg:p-0 rounded-lg lg:rounded-none hover:bg-surface/50 lg:hover:bg-transparent"
                       >
-                        <link.icon size={14} />
-                        <span>{link.name}</span>
-                        <FiArrowRight 
-                          size={12} 
-                          className="opacity-0 group-hover:opacity-100 transition-opacity" 
+                        <link.icon size={14} className="flex-shrink-0" />
+                        <span className="truncate">{link.name}</span>
+                        <FiArrowRight
+                          size={12}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity ml-auto lg:ml-0"
                         />
                       </Link>
                     </motion.div>
@@ -189,10 +205,12 @@ function FooterModernized() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="space-y-6"
+                className="space-y-4 lg:space-y-6"
               >
-                <h4 className="heading-5 text-primary">{footerData.services.name}</h4>
-                <nav className="space-y-3">
+                <h4 className="heading-5 text-primary border-b border-border pb-2 lg:border-none lg:pb-0">
+                  {footerData.services.name}
+                </h4>
+                <nav className="grid grid-cols-2 gap-2 lg:grid-cols-1 lg:gap-3">
                   {footerData.services.links.map((link, index) => (
                     <motion.div
                       key={index}
@@ -201,13 +219,13 @@ function FooterModernized() {
                     >
                       <Link
                         href={link.url}
-                        className="flex items-center gap-3 text-text-light hover:text-secondary transition-colors"
+                        className="flex items-center gap-2 lg:gap-3 text-sm lg:text-base text-text-light hover:text-secondary transition-colors p-2 lg:p-0 rounded-lg lg:rounded-none hover:bg-surface/50 lg:hover:bg-transparent"
                       >
-                        <link.icon size={14} />
-                        <span>{link.name}</span>
-                        <FiArrowRight 
-                          size={12} 
-                          className="opacity-0 group-hover:opacity-100 transition-opacity" 
+                        <link.icon size={14} className="flex-shrink-0" />
+                        <span className="truncate">{link.name}</span>
+                        <FiArrowRight
+                          size={12}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity ml-auto lg:ml-0"
                         />
                       </Link>
                     </motion.div>
@@ -221,10 +239,12 @@ function FooterModernized() {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="space-y-6"
+                className="space-y-4 lg:space-y-6"
               >
-                <h4 className="heading-5 text-primary">{footerData.resources.name}</h4>
-                <nav className="space-y-3">
+                <h4 className="heading-5 text-primary border-b border-border pb-2 lg:border-none lg:pb-0">
+                  {footerData.resources.name}
+                </h4>
+                <nav className="grid grid-cols-2 gap-2 lg:grid-cols-1 lg:gap-3">
                   {footerData.resources.links.map((link, index) => (
                     <motion.div
                       key={index}
@@ -233,72 +253,97 @@ function FooterModernized() {
                     >
                       <Link
                         href={link.url}
-                        className="flex items-center gap-3 text-text-light hover:text-accent transition-colors"
+                        className="flex items-center gap-2 lg:gap-3 text-sm lg:text-base text-text-light hover:text-accent transition-colors p-2 lg:p-0 rounded-lg lg:rounded-none hover:bg-surface/50 lg:hover:bg-transparent"
                       >
-                        <link.icon size={14} />
-                        <span>{link.name}</span>
-                        <FiArrowRight 
-                          size={12} 
-                          className="opacity-0 group-hover:opacity-100 transition-opacity" 
+                        <link.icon size={14} className="flex-shrink-0" />
+                        <span className="truncate">{link.name}</span>
+                        <FiArrowRight
+                          size={12}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity ml-auto lg:ml-0"
                         />
                       </Link>
                     </motion.div>
                   ))}
                 </nav>
               </motion.div>
+            </div>
+          </div>
+        </div>
 
-              {/* Contact */}
-              <motion.div
-                initial={{ y: 40, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                <h4 className="heading-5 text-primary">{footerData.contact.name}</h4>
-                <div className="space-y-4">
-                  
+        {/* Section Contact séparée */}
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="pb-8"
+        >
+          <div className="max-w-4xl mx-auto">
+            <div className="card-warm p-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Info Contact */}
+                <div className="space-y-6">
+                  <h4 className="heading-4 text-primary">
+                    {footerData.contact.name}
+                  </h4>
+
                   {/* Adresse */}
-                  <div className="card p-4">
-                    <div className="flex items-start gap-3">
-                      <FiMapPin className="text-primary flex-shrink-0 mt-1" size={16} />
-                      <div>
-                        <div className="text-sm font-medium mb-1">Localisation</div>
-                        <div className="text-xs text-text-light leading-relaxed">
-                          {footerData.contact.address}
-                        </div>
-                        <div className="text-xs text-accent font-medium mt-1">
-                          {footerData.contact.availability}
-                        </div>
+                  <div className="flex items-start gap-3">
+                    <FiMapPin
+                      className="text-primary flex-shrink-0 mt-1"
+                      size={20}
+                    />
+                    <div>
+                      <div className="font-medium mb-1">Localisation</div>
+                      <div className="text-text-light leading-relaxed">
+                        {footerData.contact.address}
+                      </div>
+                      <div className="text-accent font-medium mt-2">
+                        {footerData.contact.availability}
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  {/* Contacts directs */}
-                  <div className="space-y-2">
+                {/* Contacts directs */}
+                <div className="space-y-4">
+                  <h5 className="font-semibold text-primary">Contact direct</h5>
+                  <div className="space-y-3">
                     <Link
                       href={`mailto:${footerData.contact.email}`}
-                      className="card p-3 hover-lift flex items-center gap-3 group"
+                      className="card p-4 hover-lift flex items-center gap-3 group"
                     >
-                      <FiMail className="text-primary group-hover:scale-110 transition-transform" size={16} />
-                      <span className="text-sm">{footerData.contact.email}</span>
-                      <FiExternalLink size={12} className="text-text-subtle" />
+                      <FiMail
+                        className="text-primary group-hover:scale-110 transition-transform"
+                        size={18}
+                      />
+                      <span>{footerData.contact.email}</span>
+                      <FiExternalLink
+                        size={14}
+                        className="text-text-subtle ml-auto"
+                      />
                     </Link>
 
                     <Link
                       href={`tel:${footerData.contact.phone}`}
-                      className="card p-3 hover-lift flex items-center gap-3 group"
+                      className="card p-4 hover-lift flex items-center gap-3 group"
                     >
-                      <FiPhone className="text-primary group-hover:scale-110 transition-transform" size={16} />
-                      <span className="text-sm">{footerData.contact.phone}</span>
-                      <FiExternalLink size={12} className="text-text-subtle" />
+                      <FiPhone
+                        className="text-primary group-hover:scale-110 transition-transform"
+                        size={18}
+                      />
+                      <span>{footerData.contact.phone}</span>
+                      <FiExternalLink
+                        size={14}
+                        className="text-text-subtle ml-auto"
+                      />
                     </Link>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Réseaux sociaux modernisés */}
         <motion.div
@@ -311,7 +356,8 @@ function FooterModernized() {
           <div className="text-center mb-8">
             <h3 className="heading-4 mb-2">Suivez notre actualité</h3>
             <p className="body-text text-text-light">
-              Rejoignez notre communauté de développeurs et entrepreneurs africains
+              Rejoignez notre communauté de développeurs et entrepreneurs
+              africains
             </p>
           </div>
 
@@ -333,7 +379,7 @@ function FooterModernized() {
                   style={{ minWidth: '60px', minHeight: '60px' }}
                 >
                   {renderIcon(social.icon, 24)}
-                  
+
                   {/* Tooltip */}
                   {hoveredSocial === index && (
                     <motion.div
@@ -342,7 +388,9 @@ function FooterModernized() {
                       className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-neutral-800 text-white px-3 py-1 rounded-lg text-xs whitespace-nowrap z-20"
                     >
                       <div className="font-semibold">{social.name}</div>
-                      <div className="text-xs opacity-75">{social.description}</div>
+                      <div className="text-xs opacity-75">
+                        {social.description}
+                      </div>
                       {/* Flèche */}
                       <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-neutral-800 rotate-45"></div>
                     </motion.div>
@@ -362,7 +410,6 @@ function FooterModernized() {
           className="py-8 border-t border-border"
         >
           <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
-            
             {/* Copyright */}
             <div className="flex items-center gap-2">
               <FiHeart className="text-error" size={16} />

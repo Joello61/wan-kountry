@@ -11,11 +11,8 @@ import {
   FiSearch,
   FiGlobe,
   FiShoppingCart,
-  FiSettings,
   FiMail,
   FiPhone,
-  FiMapPin,
-  FiClock,
   FiHelpCircle,
   FiChevronRight,
   FiStar,
@@ -31,9 +28,9 @@ function NotFoundModernized() {
   // Conseils rotatifs
   const tips = [
     "Vérifiez l'URL dans la barre d'adresse",
-    "Utilisez le menu de navigation principal",
-    "Essayez notre fonction de recherche",
-    "Contactez-nous si le problème persiste"
+    'Utilisez le menu de navigation principal',
+    'Essayez notre fonction de recherche',
+    'Contactez-nous si le problème persiste',
   ];
 
   // Navigation rapide
@@ -43,29 +40,29 @@ function NotFoundModernized() {
       label: 'Accueil',
       icon: FiHome,
       description: 'Retour à la page principale',
-      color: 'primary'
+      color: 'primary',
     },
     {
       href: '#services',
       label: 'Nos Services',
       icon: FiGlobe,
       description: 'Découvrez nos solutions',
-      color: 'secondary'
+      color: 'secondary',
     },
     {
       href: '#portfolio',
       label: 'Portfolio',
       icon: FiShoppingCart,
       description: 'Nos réalisations clients',
-      color: 'accent'
+      color: 'accent',
     },
     {
       href: '#contact',
       label: 'Contact',
       icon: FiMail,
       description: 'Parlons de votre projet',
-      color: 'success'
-    }
+      color: 'success',
+    },
   ];
 
   // Rotation des conseils
@@ -81,39 +78,42 @@ function NotFoundModernized() {
     e.preventDefault();
     if (searchTerm.trim()) {
       // Rediriger vers la page d'accueil avec ancre ou terme de recherche
-      window.location.href = `/#${searchTerm.toLowerCase().replace(/\s+/g, '-')}`;
+      window.location.href = `/#${searchTerm
+        .toLowerCase()
+        .replace(/\s+/g, '-')}`;
     }
   };
 
   return (
     <section className="min-h-screen flex items-center mt-15 py-16 relative overflow-hidden">
-      
       {/* Arrière-plan artistique */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
-        
+
         {/* Orbes flottants animés */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-primary rounded-full mix-blend-multiply opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-sunset rounded-full mix-blend-multiply opacity-8 animate-pulse" style={{ animationDelay: '2s' }}></div>
-        
+        <div
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-sunset rounded-full mix-blend-multiply opacity-8 animate-pulse"
+          style={{ animationDelay: '2s' }}
+        ></div>
+
         {/* Motif géométrique subtil */}
-        <div 
+        <div
           className="absolute top-0 right-0 w-1/2 h-full opacity-[0.015]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 15L45 30L30 45L15 30z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
+            backgroundSize: '60px 60px',
           }}
         ></div>
       </div>
 
       <div className="container relative z-10">
         <div className="flex flex-col items-center gap-12 text-center max-w-5xl mx-auto">
-          
           {/* Animation d'entrée pour l'image */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="relative"
           >
             <div className="hover-lift-lg">
@@ -126,7 +126,7 @@ function NotFoundModernized() {
                 priority
               />
             </div>
-            
+
             {/* Badge 404 flottant */}
             <motion.div
               initial={{ y: -20, opacity: 0 }}
@@ -149,10 +149,11 @@ function NotFoundModernized() {
               Oops ! La page que vous recherchez{' '}
               <span className="text-gradient-warm">n'existe pas</span>
             </h1>
-            
+
             <p className="body-large">
-              La page demandée est introuvable. Elle a peut-être été déplacée, 
-              supprimée ou l'URL est incorrecte. Pas de panique, nous allons vous aider !
+              La page demandée est introuvable. Elle a peut-être été déplacée,
+              supprimée ou l'URL est incorrecte. Pas de panique, nous allons
+              vous aider !
             </p>
 
             {/* Conseil rotatif */}
@@ -178,7 +179,10 @@ function NotFoundModernized() {
             className="w-full max-w-md"
           >
             <div className="relative">
-              <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-text-light" size={20} />
+              <FiSearch
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 text-text-light"
+                size={20}
+              />
               <input
                 type="text"
                 placeholder="Rechercher une page..."
@@ -253,12 +257,16 @@ function NotFoundModernized() {
                     whileHover={{ y: -4, scale: 1.02 }}
                     className="card p-6 text-center hover-lift block group h-full"
                   >
-                    <div className={`w-12 h-12 mx-auto mb-4 rounded-xl bg-${link.color}/10 flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                    <div
+                      className={`w-12 h-12 mx-auto mb-4 rounded-xl bg-${link.color}/10 flex items-center justify-center group-hover:scale-110 transition-transform`}
+                    >
                       <link.icon size={24} className={`text-${link.color}`} />
                     </div>
-                    
+
                     <h4 className="font-semibold mb-2">{link.label}</h4>
-                    <p className="text-sm text-text-light">{link.description}</p>
+                    <p className="text-sm text-text-light">
+                      {link.description}
+                    </p>
                   </MotionLink>
                 </motion.div>
               ))}
@@ -271,8 +279,7 @@ function NotFoundModernized() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
             className="w-full max-w-2xl"
-          >
-          </motion.div>
+          ></motion.div>
 
           {/* Contact d'urgence */}
           <motion.div
@@ -287,12 +294,12 @@ function NotFoundModernized() {
                 <FiStar className="text-accent" />
                 <FiHeart className="text-secondary" />
               </div>
-              
+
               <h4 className="heading-5 mb-4">Besoin d'aide ?</h4>
               <p className="body-small mb-6 text-text-light">
                 Notre équipe est là pour vous accompagner
               </p>
-              
+
               <div className="space-y-3">
                 <MotionLink
                   href="mailto:contact@wan-kountry.com"
@@ -302,7 +309,7 @@ function NotFoundModernized() {
                   <FiMail size={16} />
                   <span className="text-sm">contact@wan-kountry.com</span>
                 </MotionLink>
-                
+
                 <MotionLink
                   href="tel:+237123456789"
                   whileHover={{ scale: 1.02 }}

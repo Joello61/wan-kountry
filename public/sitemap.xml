@@ -78,4 +78,20 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://wan-kountry.joeltech.dev/blog</loc>
+    <lastmod>2025-08-28T06:30:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Carrière -->
+  <url>
+    <loc>https://wan-kountry.joeltech.dev/carriere</loc>
+    <lastmod>2025-08-28T06:30:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

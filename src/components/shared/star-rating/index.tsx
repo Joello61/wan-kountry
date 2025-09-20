@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 interface StarRatingProps {
   count?: number;
@@ -8,17 +8,17 @@ interface StarRatingProps {
   className?: string;
 }
 
-const StarRating: React.FC<StarRatingProps> = ({ 
-  count = 0, 
-  totalStars = 5, 
+const StarRating: React.FC<StarRatingProps> = ({
+  count = 0,
+  totalStars = 5,
   size = 'md',
   showCount = false,
-  className = '' 
+  className = '',
 }) => {
   const sizeMap = {
     sm: 16,
     md: 20,
-    lg: 24
+    lg: 24,
   };
 
   const iconSize = sizeMap[size];
@@ -33,25 +33,30 @@ const StarRating: React.FC<StarRatingProps> = ({
               key={index}
               icon={
                 ratingValue <= count
-                  ? "fluent:star-32-filled"
+                  ? 'fluent:star-32-filled'
                   : ratingValue - 0.5 === count
-                  ? "fluent:star-half-12-regular"
-                  : "fluent:star-32-regular"
+                  ? 'fluent:star-half-12-regular'
+                  : 'fluent:star-32-regular'
               }
               width={iconSize}
               height={iconSize}
-              style={{ 
+              style={{
                 color: 'var(--color-warning)',
-                filter: ratingValue <= count ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))' : 'none'
+                filter:
+                  ratingValue <= count
+                    ? 'drop-shadow(0 1px 2px rgba(0,0,0,0.1))'
+                    : 'none',
               }}
             />
           );
         })}
       </div>
-      
+
       {showCount && (
-        <span className="text-sm font-medium ml-1" 
-              style={{ color: 'var(--text-light)' }}>
+        <span
+          className="text-sm font-medium ml-1"
+          style={{ color: 'var(--text-light)' }}
+        >
           ({count.toFixed(1)})
         </span>
       )}

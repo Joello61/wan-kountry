@@ -16,7 +16,7 @@ import {
   FiHeart,
   FiZap,
   FiUsers,
-  FiShield
+  FiShield,
 } from 'react-icons/fi';
 import emailjs from '@emailjs/browser';
 
@@ -139,7 +139,7 @@ ${formData.message}
       icon: 'mdi:whatsapp',
       color: 'success',
       action: openWhatsApp,
-      recommended: true
+      recommended: true,
     },
     {
       id: 'email',
@@ -148,7 +148,7 @@ ${formData.message}
       value: 'tchindajoel61@gmail.com',
       icon: 'mdi:gmail',
       color: 'primary',
-      action: () => window.open('mailto:tchindajoel61@gmail.com')
+      action: () => window.open('mailto:tchindajoel61@gmail.com'),
     },
     {
       id: 'linkedin',
@@ -157,8 +157,9 @@ ${formData.message}
       value: 'joel-tchinda',
       icon: 'mdi:linkedin',
       color: 'secondary',
-      action: () => window.open('https://linkedin.com/in/joel-tchinda', '_blank')
-    }
+      action: () =>
+        window.open('https://linkedin.com/in/joel-tchinda', '_blank'),
+    },
   ];
 
   const projectTypes = [
@@ -167,34 +168,32 @@ ${formData.message}
     { value: 'Application web', icon: 'mdi:application', color: 'accent' },
     { value: 'Refonte de site', icon: 'mdi:refresh', color: 'success' },
     { value: 'Maintenance', icon: 'mdi:tools', color: 'primary' },
-    { value: 'Autre', icon: 'mdi:help-circle', color: 'secondary' }
+    { value: 'Autre', icon: 'mdi:help-circle', color: 'secondary' },
   ];
 
   const tabs = [
     { id: 'form', name: 'Formulaire', icon: FiMessageCircle },
     { id: 'contact', name: 'Contact direct', icon: FiPhone },
-    { id: 'info', name: 'Informations', icon: FiMapPin }
+    { id: 'info', name: 'Informations', icon: FiMapPin },
   ];
 
   return (
-    <section className="relative py-32 overflow-hidden">
-      
+    <section className="relative overflow-hidden pb-16 pt-32">
       {/* Arrière-plan modernisé */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-soft"></div>
-        
+
         {/* Motifs géométriques */}
-        <div 
+        <div
           className="absolute bottom-1/4 right-0 w-1/2 h-1/3 opacity-[0.02]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
+            backgroundSize: '60px 60px',
           }}
         ></div>
       </div>
 
       <div className="container relative z-10">
-
         {/* En-tête modernisé */}
         <MotionDiv
           initial={{ opacity: 0, y: 40 }}
@@ -204,18 +203,20 @@ ${formData.message}
         >
           <div className="badge-success mb-8 inline-flex items-center gap-2">
             <FiHeart size={16} />
-            <span>Démarrons votre projet ensemble</span>
+            <span className="text-sm">Démarrons votre projet ensemble</span>
           </div>
-          
+
           <h2 className="heading-1 mb-6">
-            Parlons de votre <span className="text-gradient-primary">projet</span>
+            Parlons de votre{' '}
+            <span className="text-gradient-primary">projet</span>
             <br />
             <span className="text-gradient-warm">dès maintenant</span> !
           </h2>
-          
+
           <p className="body-large max-w-3xl mx-auto mb-8">
-            Une idée, un projet, une question ? Nous sommes là pour vous accompagner 
-            de la conception à la réalisation de votre vision digitale.
+            Une idée, un projet, une question ? Nous sommes là pour vous
+            accompagner de la conception à la réalisation de votre vision
+            digitale.
           </p>
 
           <div className="flex items-center justify-center gap-8">
@@ -247,8 +248,8 @@ ${formData.message}
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus-ring ${
-                  activeTab === tab.id 
-                    ? 'bg-primary text-white shadow-glow-primary' 
+                  activeTab === tab.id
+                    ? 'bg-primary text-white shadow-glow-primary'
                     : 'hover:bg-surface text-text-light'
                 }`}
               >
@@ -271,14 +272,16 @@ ${formData.message}
               className="max-w-4xl mx-auto"
             >
               <div className="grid lg:grid-cols-3 gap-8">
-                
                 {/* Formulaire principal */}
                 <div className="lg:col-span-2">
                   <div className="card-warm p-10 space-y-8">
                     <div className="text-center">
-                      <h3 className="heading-3 mb-4">Décrivez-nous votre projet</h3>
+                      <h3 className="heading-3 mb-4">
+                        Décrivez-nous votre projet
+                      </h3>
                       <p className="body-text">
-                        Plus vous serez précis, mieux nous pourrons vous conseiller
+                        Plus vous serez précis, mieux nous pourrons vous
+                        conseiller
                       </p>
                     </div>
 
@@ -292,7 +295,10 @@ ${formData.message}
 
                     {/* Nom */}
                     <div className="space-y-3">
-                      <label htmlFor="name" className="block font-semibold text-text-strong">
+                      <label
+                        htmlFor="name"
+                        className="block font-semibold text-text-strong"
+                      >
                         Votre nom *
                       </label>
                       <input
@@ -310,7 +316,10 @@ ${formData.message}
                     {/* Email et téléphone */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-3">
-                        <label htmlFor="email" className="block font-semibold text-text-strong">
+                        <label
+                          htmlFor="email"
+                          className="block font-semibold text-text-strong"
+                        >
                           Email *
                         </label>
                         <input
@@ -325,7 +334,10 @@ ${formData.message}
                         />
                       </div>
                       <div className="space-y-3">
-                        <label htmlFor="phone" className="block font-semibold text-text-strong">
+                        <label
+                          htmlFor="phone"
+                          className="block font-semibold text-text-strong"
+                        >
                           Téléphone (WhatsApp)
                         </label>
                         <input
@@ -350,7 +362,12 @@ ${formData.message}
                           <button
                             key={type.value}
                             type="button"
-                            onClick={() => setFormData(prev => ({...prev, subject: type.value}))}
+                            onClick={() =>
+                              setFormData((prev) => ({
+                                ...prev,
+                                subject: type.value,
+                              }))
+                            }
                             className={`p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center gap-2 hover-lift ${
                               formData.subject === type.value
                                 ? `border-${type.color} bg-${type.color}/10 text-${type.color}`
@@ -358,7 +375,9 @@ ${formData.message}
                             }`}
                           >
                             <Icon icon={type.icon} width="24" height="24" />
-                            <span className="text-sm font-medium">{type.value}</span>
+                            <span className="text-sm font-medium">
+                              {type.value}
+                            </span>
                           </button>
                         ))}
                       </div>
@@ -366,7 +385,10 @@ ${formData.message}
 
                     {/* Message */}
                     <div className="space-y-3">
-                      <label htmlFor="message" className="block font-semibold text-text-strong">
+                      <label
+                        htmlFor="message"
+                        className="block font-semibold text-text-strong"
+                      >
                         Décrivez votre projet *
                       </label>
                       <textarea
@@ -394,7 +416,10 @@ ${formData.message}
                           <FiArrowRight className="ml-3 group-hover:translate-x-1 transition-transform" />
                         </button>
                       ) : (
-                        <button disabled className="btn-primary btn-lg w-full disabled">
+                        <button
+                          disabled
+                          className="btn-primary btn-lg w-full disabled"
+                        >
                           <div className="spinner mr-3" />
                           Envoi en cours...
                         </button>
@@ -405,7 +430,6 @@ ${formData.message}
 
                 {/* Informations complémentaires */}
                 <div className="space-y-6">
-                  
                   {/* Temps de réponse */}
                   <div className="card-glass p-6">
                     <div className="flex items-center gap-3 mb-4">
@@ -413,8 +437,12 @@ ${formData.message}
                       <h4 className="heading-5">Délai de réponse</h4>
                     </div>
                     <p className="body-small">
-                      Nous répondons généralement sous <span className="font-bold text-primary">24h maximum</span>. 
-                      Pour les urgences, contactez-nous directement sur WhatsApp.
+                      Nous répondons généralement sous{' '}
+                      <span className="font-bold text-primary">
+                        24h maximum
+                      </span>
+                      . Pour les urgences, contactez-nous directement sur
+                      WhatsApp.
                     </p>
                   </div>
 
@@ -425,24 +453,40 @@ ${formData.message}
                       <h4 className="heading-5">Consultation gratuite</h4>
                     </div>
                     <p className="body-small">
-                      <span className="font-bold text-accent">30 minutes offertes</span> pour analyser 
-                      vos besoins et vous proposer la meilleure solution.
+                      <span className="font-bold text-accent">
+                        30 minutes offertes
+                      </span>{' '}
+                      pour analyser vos besoins et vous proposer la meilleure
+                      solution.
                     </p>
                   </div>
 
                   {/* Contact rapide WhatsApp */}
                   <div className="card-bordered p-6 border-success">
                     <div className="text-center space-y-4">
-                      <Icon icon="mdi:whatsapp" width="48" height="48" className="mx-auto text-success" />
-                      <h4 className="heading-5">Besoin d'une réponse immédiate ?</h4>
+                      <Icon
+                        icon="mdi:whatsapp"
+                        width="48"
+                        height="48"
+                        className="mx-auto text-success"
+                      />
+                      <h4 className="heading-5">
+                        Besoin d'une réponse immédiate ?
+                      </h4>
                       <p className="body-small">
-                        Contactez-nous directement sur WhatsApp pour une discussion en temps réel.
+                        Contactez-nous directement sur WhatsApp pour une
+                        discussion en temps réel.
                       </p>
                       <button
                         onClick={openWhatsApp}
                         className="btn-accent w-full group"
                       >
-                        <Icon icon="mdi:whatsapp" width="20" height="20" className="mr-3" />
+                        <Icon
+                          icon="mdi:whatsapp"
+                          width="20"
+                          height="20"
+                          className="mr-3"
+                        />
                         Ouvrir WhatsApp
                       </button>
                     </div>
@@ -462,7 +506,9 @@ ${formData.message}
               className="max-w-4xl mx-auto"
             >
               <div className="text-center mb-12">
-                <h3 className="heading-2 mb-6">Choisissez votre moyen de contact</h3>
+                <h3 className="heading-2 mb-6">
+                  Choisissez votre moyen de contact
+                </h3>
                 <p className="body-large">
                   Plusieurs options s'offrent à vous selon vos préférences
                 </p>
@@ -478,21 +524,31 @@ ${formData.message}
                     whileHover={{ y: -8 }}
                     className="group relative"
                   >
-                    <div className={`card h-full p-8 text-center space-y-6 hover-lift-lg ${
-                      method.recommended ? 'card-bordered-success' : ''
-                    }`}>
-                      
+                    <div
+                      className={`card h-full p-8 text-center space-y-6 hover-lift-lg ${
+                        method.recommended ? 'card-bordered-success' : ''
+                      }`}
+                    >
                       {/* Badge recommandé */}
                       {method.recommended && (
                         <div className="absolute -top-3 -right-3 badge-success px-3 py-2">
                           <FiStar size={12} className="mr-1" />
-                          <span className="text-white font-bold">Recommandé</span>
+                          <span className="text-white font-bold">
+                            Recommandé
+                          </span>
                         </div>
                       )}
 
                       {/* Icône */}
-                      <div className={`w-20 h-20 mx-auto rounded-3xl bg-${method.color}/10 flex items-center justify-center`}>
-                        <Icon icon={method.icon} width="32" height="32" className={`text-${method.color}`} />
+                      <div
+                        className={`w-20 h-20 mx-auto rounded-3xl bg-${method.color}/10 flex items-center justify-center`}
+                      >
+                        <Icon
+                          icon={method.icon}
+                          width="32"
+                          height="32"
+                          className={`text-${method.color}`}
+                        />
                       </div>
 
                       {/* Contenu */}
@@ -536,27 +592,31 @@ ${formData.message}
               </div>
 
               <div className="grid lg:grid-cols-2 gap-12">
-                
                 {/* FAQ rapide */}
                 <div className="space-y-6">
                   <h4 className="heading-4">Questions fréquentes</h4>
-                  
+
                   {[
                     {
-                      question: "Combien coûte un site web ?",
-                      answer: "De 100 000 FCFA pour un site vitrine à 350 000 FCFA pour un e-commerce. Devis personnalisé selon vos besoins."
+                      question: 'Combien coûte un site web ?',
+                      answer:
+                        'De 100 000 FCFA pour un site vitrine à 350 000 FCFA pour un e-commerce. Devis personnalisé selon vos besoins.',
                     },
                     {
-                      question: "Quels sont les délais ?",
-                      answer: "5-7 jours pour un site vitrine, 10-14 jours pour un e-commerce. Nous respectons toujours nos engagements."
+                      question: 'Quels sont les délais ?',
+                      answer:
+                        '5-7 jours pour un site vitrine, 10-14 jours pour un e-commerce. Nous respectons toujours nos engagements.',
                     },
                     {
-                      question: "Accompagnez-vous après livraison ?",
-                      answer: "Oui ! Support inclus (45 à 90 jours selon la formule) + formation pour utiliser votre site."
-                    }
+                      question: 'Accompagnez-vous après livraison ?',
+                      answer:
+                        'Oui ! Support inclus (45 à 90 jours selon la formule) + formation pour utiliser votre site.',
+                    },
                   ].map((faq, index) => (
                     <div key={index} className="card p-6 space-y-3">
-                      <h5 className="font-semibold text-primary">{faq.question}</h5>
+                      <h5 className="font-semibold text-primary">
+                        {faq.question}
+                      </h5>
                       <p className="body-small">{faq.answer}</p>
                     </div>
                   ))}
@@ -565,25 +625,53 @@ ${formData.message}
                 {/* Nos engagements */}
                 <div className="space-y-6">
                   <h4 className="heading-4">Nos engagements</h4>
-                  
+
                   <div className="space-y-4">
                     {[
-                      { icon: FiZap, title: "Réactivité", desc: "Réponse sous 24h garantie" },
-                      { icon: FiShield, title: "Qualité", desc: "Code professionnel et sécurisé" },
-                      { icon: FiHeart, title: "Accompagnement", desc: "Support personnalisé inclus" },
-                      { icon: FiStar, title: "Satisfaction", desc: "Révisions jusqu'à satisfaction" }
+                      {
+                        icon: FiZap,
+                        title: 'Réactivité',
+                        desc: 'Réponse sous 24h garantie',
+                      },
+                      {
+                        icon: FiShield,
+                        title: 'Qualité',
+                        desc: 'Code professionnel et sécurisé',
+                      },
+                      {
+                        icon: FiHeart,
+                        title: 'Accompagnement',
+                        desc: 'Support personnalisé inclus',
+                      },
+                      {
+                        icon: FiStar,
+                        title: 'Satisfaction',
+                        desc: "Révisions jusqu'à satisfaction",
+                      },
                     ].map((engagement, index) => (
-                      <div key={index} className="flex items-center gap-4 p-4 card-glass rounded-xl">
-                        <div className={`w-12 h-12 rounded-xl bg-${
-                          ['primary', 'secondary', 'accent', 'success'][index]
-                        }/10 flex items-center justify-center`}>
-                          <engagement.icon className={`text-${
+                      <div
+                        key={index}
+                        className="flex items-center gap-4 p-4 card-glass rounded-xl"
+                      >
+                        <div
+                          className={`w-12 h-12 rounded-xl bg-${
                             ['primary', 'secondary', 'accent', 'success'][index]
-                          }`} size={20} />
+                          }/10 flex items-center justify-center`}
+                        >
+                          <engagement.icon
+                            className={`text-${
+                              ['primary', 'secondary', 'accent', 'success'][
+                                index
+                              ]
+                            }`}
+                            size={20}
+                          />
                         </div>
                         <div>
                           <h5 className="font-semibold">{engagement.title}</h5>
-                          <p className="text-sm text-text-light">{engagement.desc}</p>
+                          <p className="text-sm text-text-light">
+                            {engagement.desc}
+                          </p>
                         </div>
                       </div>
                     ))}
@@ -596,11 +684,16 @@ ${formData.message}
                       <h5 className="heading-5">Où nous trouvons-nous ?</h5>
                     </div>
                     <p className="body-text">
-                      <span className="font-semibold">Cameroun</span> : Bandjoun, Région de l'Ouest
+                      <span className="font-semibold">Cameroun</span> :
+                      Bandjoun, Région de l'Ouest
                       <br />
-                      <span className="font-semibold">France</span> : Lyon, Auvergne-Rhône-Alpes
+                      <span className="font-semibold">France</span> : Lyon,
+                      Auvergne-Rhône-Alpes
                       <br />
-                      <span className="text-primary font-semibold">100% remote</span> - Nous travaillons avec des clients du monde entier
+                      <span className="text-primary font-semibold">
+                        100% remote
+                      </span>{' '}
+                      - Nous travaillons avec des clients du monde entier
                     </p>
                   </div>
                 </div>
@@ -619,26 +712,29 @@ ${formData.message}
           <div className="card-glass p-12 max-w-3xl mx-auto">
             <MotionDiv
               animate={{ rotate: [0, 360] }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
               className="inline-block mb-6"
             >
               <FiHeart className="text-primary" size={40} />
             </MotionDiv>
-            
+
             <h3 className="heading-2 mb-6 text-gradient-sunset">
               Transformons votre idée en succès digital
             </h3>
-            
+
             <p className="body-large mb-8">
-              Chaque grand projet commence par une simple conversation. 
-              Contactez-nous aujourd'hui et découvrons ensemble ce que nous pouvons créer.
+              Chaque grand projet commence par une simple conversation.
+              Contactez-nous aujourd'hui et découvrons ensemble ce que nous
+              pouvons créer.
             </p>
-            
-            <button
-              onClick={openWhatsApp}
-              className="btn-accent btn-xl group"
-            >
-              <Icon icon="mdi:whatsapp" width="24" height="24" className="mr-3" />
+
+            <button onClick={openWhatsApp} className="btn-accent btn-xl group">
+              <Icon
+                icon="mdi:whatsapp"
+                width="24"
+                height="24"
+                className="mr-3"
+              />
               Commençons maintenant
               <FiArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
             </button>
@@ -654,7 +750,10 @@ ${formData.message}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 flex items-center justify-center z-50 p-4"
-            style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(8px)' }}
+            style={{
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backdropFilter: 'blur(8px)',
+            }}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -679,8 +778,8 @@ ${formData.message}
 
               <div className="space-y-6">
                 <p className="body-text">
-                  Merci pour votre message ! Nous vous répondrons dans les plus brefs
-                  délais, généralement sous 24h.
+                  Merci pour votre message ! Nous vous répondrons dans les plus
+                  brefs délais, généralement sous 24h.
                 </p>
 
                 <div className="flex gap-3">
