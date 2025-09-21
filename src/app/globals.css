@@ -19,16 +19,19 @@ layer(base);
   --color-primary: #1a5f3a;
   --color-primary-dark: #0f4a2e;
   --color-primary-hover: #2d7249;
+  --color-primary-100: #e8f5ec;
 
   /* Couleurs principales secondaires */
   --color-secondary: #b5654a;
   --color-secondary-dark: #8b4a32;
   --color-secondary-hover: #c97355;
+  --color-secondary-100: #fae4d3;
 
   /* Couleurs principales accent */
   --color-accent: #d4941e;
   --color-accent-dark: #b8801a;
   --color-accent-light: #f7b731;
+   --color-accent-100: #fef0b6;
 
   /* Textes */
   --color-text-primary: #1a3529;
