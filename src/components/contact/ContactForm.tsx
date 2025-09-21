@@ -38,9 +38,9 @@ function ContactSectionClient() {
   const [isVisible, setIsVisible] = useState(false);
 
   // Configuration EmailJS
-  const EMAIL_SERVICE_ID = 'service_bbw7fxv';
-  const EMAIL_TEMPLATE_ID = 'template_xdgfntj';
-  const EMAIL_PUBLIC_KEY = 'PSWm1IPE_MhNbhDSv';
+  const EMAIL_SERVICE_ID = 'service_nduaqcf';
+  const EMAIL_TEMPLATE_ID = 'template_o4in2la';
+  const EMAIL_PUBLIC_KEY = 'SGjTSPINfxcxRtYby';
 
   useEffect(() => {
     setIsVisible(true);
