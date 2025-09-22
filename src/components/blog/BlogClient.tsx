@@ -30,7 +30,7 @@ function BlogSectionClient() {
         "Découvrez les technologies émergentes qui révolutionnent le paysage numérique africain et comment les développeurs locaux s'adaptent aux nouveaux défis.",
       author: 'Wan-Kountry',
       authorAvatar: '/images/team/joel.jpg',
-      publishDate: '2025-01-15',
+      publishDate: '2025-09-15',
       readTime: '8 min',
       views: 2847,
       comments: 23,
@@ -45,7 +45,7 @@ function BlogSectionClient() {
       excerpt:
         'Techniques avancées pour créer des sites rapides même avec une bande passante limitée.',
       author: 'Wan-Kountry',
-      publishDate: '2025-01-10',
+      publishDate: '2025-09-10',
       readTime: '6 min',
       views: 1892,
       comments: 15,
@@ -60,7 +60,7 @@ function BlogSectionClient() {
       excerpt:
         'Guide complet pour implémenter MTN Money et Orange Money dans vos projets.',
       author: 'Wan-Kountry',
-      publishDate: '2025-01-05',
+      publishDate: '2025-09-05',
       readTime: '10 min',
       views: 3241,
       comments: 31,
@@ -75,7 +75,7 @@ function BlogSectionClient() {
       excerpt:
         'Analyse technique des nouvelles fonctionnalités de React et leur impact sur nos projets.',
       author: 'Wan-Kountry',
-      publishDate: '2024-12-28',
+      publishDate: '2025-09-01',
       readTime: '12 min',
       views: 1567,
       comments: 19,
@@ -90,28 +90,13 @@ function BlogSectionClient() {
       excerpt:
         'Les défis, opportunités et leçons apprises en tant que développeur entrepreneur camerounais.',
       author: 'Wan-Kountry',
-      publishDate: '2024-12-20',
+      publishDate: '2025-08-20',
       readTime: '15 min',
       views: 4123,
       comments: 42,
       category: 'tech-africa',
       tags: ['Entrepreneuriat', 'Startup', 'Cameroun'],
       image: '/images/blog/startup-cameroun.jpg',
-      featured: false,
-    },
-    {
-      id: 6,
-      title: "PWA : la solution pour l'Afrique mobile-first",
-      excerpt:
-        'Pourquoi les Progressive Web Apps sont parfaites pour le marché africain.',
-      author: 'Wan-Kountry',
-      publishDate: '2024-12-15',
-      readTime: '7 min',
-      views: 2156,
-      comments: 28,
-      category: 'mobile',
-      tags: ['PWA', 'Mobile-First', 'Offline'],
-      image: '/images/blog/pwa-africa.jpg',
       featured: false,
     },
   ];
@@ -462,13 +447,13 @@ function BlogSectionClient() {
                     />
                     <div className="absolute top-4 left-4">
                       <span
-                        className={`chip bg-${
+                        className={`badge-${
                           post.category === 'web-dev'
                             ? 'primary'
                             : post.category === 'mobile'
                             ? 'secondary'
                             : 'accent'
-                        }/10 text-${
+                        } text-${
                           post.category === 'web-dev'
                             ? 'primary'
                             : post.category === 'mobile'
