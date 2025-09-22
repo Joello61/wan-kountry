@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import React from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   FiUsers,
   FiMapPin,
@@ -17,103 +17,42 @@ import {
   FiCheckCircle,
   FiStar,
   FiSend,
-} from 'react-icons/fi';
+} from "react-icons/fi";
 
 function CareersSectionClient() {
   const jobOffers = [
     {
       id: 1,
-      offerNumber: 'WK-2025-001',
-      title: 'Développeur Full-Stack Senior',
-      type: 'CDI',
-      location: 'Yaoundé / Remote',
-      salary: '800 000 - 1 200 000 FCFA',
-      experience: '3-5 ans',
-      postedDate: '2025-01-15',
+      offerNumber: "WK-2025-001",
+      title: "Stagiaire Communication & Marketing",
+      type: "Stage",
+      location: "Yaoundé",
+      salary: "À définir",
+      experience: "Étudiant",
+      postedDate: "2025-09-22",
       urgent: true,
       description:
-        'Rejoignez notre équipe pour développer des solutions web innovantes pour le marché africain. Vous travaillerez sur des projets variés avec des technologies modernes.',
+        "Rejoignez une startup dynamique spécialisée dans les services numériques innovants. Participez activement à des projets concrets et développez vos compétences en communication digitale et marketing.",
       requirements: [
-        'Maîtrise de React, Next.js et Node.js',
-        'Expérience avec MongoDB et PostgreSQL',
-        'Connaissance des API de paiement mobile',
-        'Expérience en développement mobile-first',
-        'Bonnes pratiques de sécurité web',
+        "Étudiant(e) en communication, marketing, multimédia, journalisme ou équivalent",
+        "Bonne maîtrise des outils digitaux et réseaux sociaux",
+        "Créativité, esprit d'initiative et curiosité",
+        "Bonne capacité rédactionnelle en français (anglais serait un atout)",
+        "Sens de l'organisation, autonomie et esprit d'équipe",
       ],
       benefits: [
-        'Télétravail flexible',
-        'Formation continue prise en charge',
-        'Équipement fourni (MacBook Pro)',
-        'Assurance santé',
-        'Congés payés généreux',
-      ],
-      skills: ['React', 'Node.js', 'MongoDB', 'Mobile Money', 'REST API'],
-    },
-    {
-      id: 2,
-      offerNumber: 'WK-2025-002',
-      title: 'Designer UI/UX',
-      type: 'CDI',
-      location: 'Douala / Remote',
-      salary: '600 000 - 900 000 FCFA',
-      experience: '2-4 ans',
-      postedDate: '2025-01-10',
-      urgent: false,
-      description:
-        'Créez des expériences utilisateur exceptionnelles pour nos clients africains avec une approche mobile-first et culturellement adaptée.',
-      requirements: [
-        'Portfolio solide en UI/UX design',
-        'Maîtrise de Figma, Adobe XD',
-        'Expérience en design mobile-first',
-        'Compréhension des enjeux UX africains',
-        "Connaissance des principes d'accessibilité",
-      ],
-      benefits: [
-        '100% télétravail possible',
-        'Budget formation 200 000 FCFA/an',
-        'Licence Adobe Creative Suite',
-        'Horaires flexibles',
-        'Projets internationaux variés',
+        "Stage de 3 à 6 mois avec possibilité d'embauche",
+        "Encadrement et accompagnement garantis",
+        "Cadre d'apprentissage stimulant et collaboratif",
+        "Participation à des projets concrets et valorisants",
+        "Missions hybrides possibles selon les projets",
       ],
       skills: [
-        'Figma',
-        'UI/UX',
-        'Mobile Design',
-        'Prototyping',
-        'User Research',
-      ],
-    },
-    {
-      id: 3,
-      offerNumber: 'WK-2025-003',
-      title: 'Développeur Mobile React Native',
-      type: 'Freelance',
-      location: 'Remote',
-      salary: '150 000 - 250 000 FCFA/mois',
-      experience: '2-3 ans',
-      postedDate: '2025-01-08',
-      urgent: false,
-      description:
-        'Développez des applications mobiles performantes intégrant les solutions de paiement mobile africaines.',
-      requirements: [
-        'Expertise React Native',
-        'Intégration API Mobile Money',
-        'Publication App/Play Store',
-        'Optimisation performances mobile',
-        'Tests automatisés',
-      ],
-      benefits: [
-        'Mission longue durée',
-        'Autonomie complète',
-        'Collaboration équipe internationale',
-        'Projets innovants',
-        'Évolution possible en CDI',
-      ],
-      skills: [
-        'React Native',
-        'Mobile Development',
-        'API Integration',
-        'Testing',
+        "Réseaux sociaux",
+        "Création de contenu",
+        "Marketing digital",
+        "Rédaction",
+        "Analyse de performance",
       ],
     },
   ];
@@ -121,27 +60,27 @@ function CareersSectionClient() {
   const companyValues = [
     {
       icon: FiHeart,
-      title: 'Passion Africaine',
-      description: 'Fiers de nos origines, nous développons avec authenticité',
-      color: 'secondary',
+      title: "Passion Africaine",
+      description: "Fiers de nos origines, nous développons avec authenticité",
+      color: "secondary",
     },
     {
       icon: FiZap,
-      title: 'Excellence Technique',
-      description: 'Code propre, architecture solide, zéro compromis qualité',
-      color: 'primary',
+      title: "Excellence Technique",
+      description: "Code propre, architecture solide, zéro compromis qualité",
+      color: "primary",
     },
     {
       icon: FiUsers,
       title: "Esprit d'Équipe",
-      description: 'Collaboration, partage et croissance collective',
-      color: 'accent',
+      description: "Collaboration, partage et croissance collective",
+      color: "accent",
     },
     {
       icon: FiTrendingUp,
-      title: 'Innovation Continue',
+      title: "Innovation Continue",
       description: "Toujours à l'avant-garde des technologies",
-      color: 'success',
+      color: "success",
     },
   ];
 
@@ -149,8 +88,8 @@ function CareersSectionClient() {
     return {
       initial: initialProps,
       whileInView: animateProps,
-      transition: { duration: 0.6, ease: 'easeOut' as const },
-      viewport: { once: true, margin: '-50px' },
+      transition: { duration: 0.6, ease: "easeOut" as const },
+      viewport: { once: true, margin: "-50px" },
     } as const;
   };
 
@@ -173,7 +112,7 @@ function CareersSectionClient() {
             </div>
 
             <h1 className="heading-1 mb-6">
-              Construisons le{' '}
+              Construisons le{" "}
               <span className="text-gradient-warm">futur digital</span> de
               l'Afrique
             </h1>
@@ -190,7 +129,7 @@ function CareersSectionClient() {
                 Voir les postes disponibles
               </Link>
               <Link
-                href="mailto:wan-kountry@gmail.com?subject=Candidature spontanée"
+                href="mailto:wankountry@gmail.com?subject=Candidature spontanée"
                 className="btn-secondary btn-lg"
               >
                 <FiMail className="mr-2" />
@@ -267,10 +206,10 @@ function CareersSectionClient() {
                         Envoyez à notre équipe
                       </h5>
                       <a
-                        href="mailto:wan-kountry@gmail.com?subject=Candidature spontanée"
+                        href="mailto:wankountry@gmail.com?subject=Candidature spontanée"
                         className="link-primary font-semibold text-lg block mb-2"
                       >
-                        wan-kountry@gmail.com
+                        wankountry@gmail.com
                       </a>
                       <p className="body-small text-text-light">
                         Notre équipe RH vous répondra
@@ -374,7 +313,7 @@ function CareersSectionClient() {
                           Publié le
                         </span>
                         <div className="text-sm font-medium">
-                          {new Date(job.postedDate).toLocaleDateString('fr-FR')}
+                          {new Date(job.postedDate).toLocaleDateString("fr-FR")}
                         </div>
                       </div>
                     </div>
@@ -472,10 +411,10 @@ function CareersSectionClient() {
                             Envoyez votre CV et lettre de motivation à :
                           </p>
                           <a
-                            href={`mailto:wan-kountry@gmail.com?subject=Candidature à l'offre ${job.offerNumber} - ${job.title}`}
+                            href={`mailto:wankountry@gmail.com?subject=Candidature à l'offre ${job.offerNumber} - ${job.title}`}
                             className="link-primary font-semibold text-lg block mb-2"
                           >
-                            wan-kountry@gmail.com
+                            wankountry@gmail.com
                           </a>
                           <div className="bg-white p-3 rounded-lg border">
                             <p className="caption text-text-subtle mb-1">
@@ -484,7 +423,7 @@ function CareersSectionClient() {
                               </span>
                             </p>
                             <p className="text-sm font-mono bg-surface px-2 py-1 rounded">
-                              Candidature à l'offre {job.offerNumber} -{' '}
+                              Candidature à l'offre {job.offerNumber} -{" "}
                               {job.title}
                             </p>
                           </div>

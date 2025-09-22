@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FiGlobe,
   FiShoppingCart,
@@ -22,19 +22,19 @@ import {
   FiTrendingUp,
   FiAward,
   FiChevronDown,
-} from 'react-icons/fi';
-import { usePathname } from 'next/navigation';
+} from "react-icons/fi";
+import { usePathname } from "next/navigation";
 
 const MotionLink = motion.create(Link);
 
 function PricingSectionClient() {
-  const [activeTab, setActiveTab] = useState('pricing');
+  const [activeTab, setActiveTab] = useState("pricing");
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null);
   const [, setIsVisible] = useState(false);
   const [showDetails, setShowDetails] = useState<number | null>(null);
 
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     setIsVisible(true);
@@ -45,8 +45,8 @@ function PricingSectionClient() {
       return {
         initial: initialProps,
         whileInView: animateProps,
-        transition: { duration: 0.6, ease: 'easeOut' as const },
-        viewport: { once: true, margin: '-50px' },
+        transition: { duration: 0.6, ease: "easeOut" as const },
+        viewport: { once: true, margin: "-50px" },
       } as const;
     } else {
       return {
@@ -57,139 +57,139 @@ function PricingSectionClient() {
   };
 
   const tabs = [
-    { id: 'pricing', name: 'Tarifs', icon: FiStar },
-    { id: 'process', name: 'Processus', icon: FiTarget },
-    { id: 'support', name: 'Support', icon: FiHeart },
+    { id: "pricing", name: "Tarifs", icon: FiStar },
+    { id: "process", name: "Processus", icon: FiTarget },
+    { id: "support", name: "Support", icon: FiHeart },
   ];
 
   const pricingPlans = [
     {
       id: 1,
-      name: 'Site Vitrine Pro',
-      tagline: 'Votre vitrine digitale qui convertit',
+      name: "Site Vitrine Pro",
+      tagline: "Votre vitrine digitale qui convertit",
       description:
-        'Parfait pour présenter votre activité et attirer de nouveaux clients qualifiés',
-      price: '100 000',
-      currency: 'FCFA',
+        "Parfait pour présenter votre activité et attirer de nouveaux clients qualifiés",
+      price: "100 000",
+      currency: "FCFA",
       icon: FiGlobe,
       popular: false,
-      color: 'primary',
-      deliveryTime: '5-7 jours',
+      color: "primary",
+      deliveryTime: "18-24 jours",
       features: [
-        '1 à 5 pages optimisées (Accueil, À propos, Services, Contact)',
-        'Design responsive premium (mobile & desktop)',
-        'Intégration réseaux sociaux complète',
-        'Formulaire de contact avec notifications',
-        'Optimisation SEO avancée',
-        'Support technique 45 jours',
+        "1 à 5 pages optimisées (Accueil, À propos, Services, Contact)",
+        "Design responsive premium (mobile & desktop)",
+        "Intégration réseaux sociaux complète",
+        "Formulaire de contact avec notifications",
+        "Optimisation SEO avancée",
+        "Support technique 45 jours",
       ],
-      results: '+150% de contacts qualifiés',
-      testimonial: 'Site parfait, clients conquis !',
-      author: 'Marie K., Coach',
+      results: "+150% de contacts qualifiés",
+      testimonial: "Site parfait, clients conquis !",
+      author: "Marie K., Coach",
     },
     {
       id: 2,
-      name: 'E-commerce Complet',
-      tagline: 'Votre boutique qui vend 24h/24',
+      name: "E-commerce Complet",
+      tagline: "Votre boutique qui vend 24h/24",
       description:
-        'Solution complète pour vendre en ligne avec Mobile Money intégré',
-      price: '350 000',
-      currency: 'FCFA',
+        "Solution complète pour vendre en ligne avec Mobile Money intégré",
+      price: "350 000",
+      currency: "FCFA",
       icon: FiShoppingCart,
       popular: true,
-      color: 'secondary',
-      deliveryTime: '10-14 jours',
+      color: "secondary",
+      deliveryTime: "6-12 semaines",
       features: [
         "Boutique complète (jusqu'à 100 produits)",
-        'Paiement Mobile Money, PayPal, Stripe',
-        'Gestion avancée commandes & clients',
-        'Tableau de bord administrateur complet',
-        'Intégration livraison locale & internationale',
-        'Support premium 90 jours',
+        "Paiement Mobile Money, PayPal, Stripe",
+        "Gestion avancée commandes & clients",
+        "Tableau de bord administrateur complet",
+        "Intégration livraison locale & internationale",
+        "Support premium 90 jours",
       ],
-      results: '+300% de ventes online',
-      testimonial: 'Enfin une boutique qui marche en Afrique !',
-      author: 'Amadou S., Entrepreneur',
+      results: "+300% de ventes online",
+      testimonial: "Enfin une boutique qui marche en Afrique !",
+      author: "Amadou S., Entrepreneur",
     },
     {
       id: 3,
-      name: 'Solution Sur-Mesure',
-      tagline: 'Votre idée devient réalité',
+      name: "Solution Sur-Mesure",
+      tagline: "Votre idée devient réalité",
       description:
-        'Développement personnalisé pour des besoins spécifiques et avancés',
-      price: 'Devis',
-      currency: 'personnalisé',
+        "Développement personnalisé pour des besoins spécifiques et avancés",
+      price: "Devis",
+      currency: "personnalisé",
       icon: FiSettings,
       popular: false,
-      color: 'accent',
-      deliveryTime: '3-8 semaines',
+      color: "accent",
+      deliveryTime: "8-16 semaines",
       features: [
-        'Développement 100% personnalisé',
-        'Fonctionnalités avancées (API, BDD, dashboard)',
-        'Accompagnement dédié expert',
-        'Formation utilisateur complète incluse',
-        'Maintenance & évolutivité garanties',
-        'Support prioritaire illimité',
+        "Développement 100% personnalisé",
+        "Fonctionnalités avancées (API, BDD, dashboard)",
+        "Accompagnement dédié expert",
+        "Formation utilisateur complète incluse",
+        "Maintenance & évolutivité garanties",
+        "Support prioritaire illimité",
       ],
-      results: 'Solutions uniques, résultats exceptionnels',
-      testimonial: 'Exactly what we needed, perfectly executed',
-      author: 'John D., Startup CEO',
+      results: "Solutions uniques, résultats exceptionnels",
+      testimonial: "Exactly what we needed, perfectly executed",
+      author: "John D., Startup CEO",
     },
   ];
 
   const processSteps = [
     {
       icon: FiMessageCircle,
-      title: 'Consultation gratuite',
+      title: "Consultation gratuite",
       description:
-        '30 minutes pour comprendre vos besoins et définir la stratégie',
-      duration: '30 min',
+        "30 minutes pour comprendre vos besoins et définir la stratégie",
+      duration: "30 min",
     },
     {
       icon: FiTarget,
-      title: 'Devis détaillé',
+      title: "Devis détaillé",
       description:
-        'Proposition transparente avec délais et fonctionnalités précises',
-      duration: '24h',
+        "Proposition transparente avec délais et fonctionnalités précises",
+      duration: "24h",
     },
     {
       icon: FiZap,
-      title: 'Développement',
-      description: 'Création avec suivi temps réel et validations régulières',
-      duration: 'Variable',
+      title: "Développement",
+      description: "Création avec suivi temps réel et validations régulières",
+      duration: "Variable",
     },
     {
       icon: FiAward,
-      title: 'Livraison & Formation',
-      description: 'Mise en ligne, formation et accompagnement personnalisé',
-      duration: '1 jour',
+      title: "Livraison & Formation",
+      description: "Mise en ligne, formation et accompagnement personnalisé",
+      duration: "1 jour",
     },
   ];
 
   const supportFeatures = [
     {
       icon: FiClock,
-      title: 'Support réactif',
+      title: "Support réactif",
       description:
-        'Réponse garantie en moins de 24h, résolution rapide des problèmes',
+        "Réponse garantie en moins de 24h, résolution rapide des problèmes",
     },
     {
       icon: FiShield,
-      title: 'Maintenance incluse',
+      title: "Maintenance incluse",
       description:
-        'Mises à jour sécurité, sauvegardes automatiques, monitoring permanent',
+        "Mises à jour sécurité, sauvegardes automatiques, monitoring permanent",
     },
     {
       icon: FiHeadphones,
-      title: 'Formation personnalisée',
+      title: "Formation personnalisée",
       description:
-        'Accompagnement pour maîtriser votre site et optimiser vos résultats',
+        "Accompagnement pour maîtriser votre site et optimiser vos résultats",
     },
     {
       icon: FiTrendingUp,
-      title: 'Évolution garantie',
+      title: "Évolution garantie",
       description:
-        'Votre site grandit avec votre business, nouvelles fonctionnalités possibles',
+        "Votre site grandit avec votre business, nouvelles fonctionnalités possibles",
     },
   ];
 
@@ -208,7 +208,7 @@ function PricingSectionClient() {
           className="absolute top-1/4 left-0 w-1/3 h-1/2 opacity-[0.02]"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0L40 20L20 40L0 20z M10 10L30 10L30 30L10 30z' fill='%231a5f3a'/%3E%3C/svg%3E")`,
-            backgroundSize: '40px 40px',
+            backgroundSize: "40px 40px",
           }}
         ></div>
       </div>
@@ -228,7 +228,7 @@ function PricingSectionClient() {
           </div>
 
           <h2 className="heading-1 mb-6">
-            Des solutions pour{' '}
+            Des solutions pour{" "}
             <span className="text-gradient-warm">tous les budgets</span>
             <br />
             <span className="text-gradient-primary">résultats garantis</span>
@@ -262,8 +262,8 @@ function PricingSectionClient() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`cursor-pointer flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus-ring ${
                   activeTab === tab.id
-                    ? 'bg-primary text-white shadow-glow-primary'
-                    : 'hover:bg-surface text-text-light'
+                    ? "bg-primary text-white shadow-glow-primary"
+                    : "hover:bg-surface text-text-light"
                 }`}
               >
                 <tab.icon size={18} />
@@ -275,7 +275,7 @@ function PricingSectionClient() {
 
         {/* Contenu des onglets */}
         <AnimatePresence mode="wait">
-          {activeTab === 'pricing' && (
+          {activeTab === "pricing" && (
             <motion.div
               key="pricing"
               initial={{ opacity: 0, y: 20 }}
@@ -299,16 +299,16 @@ function PricingSectionClient() {
                       onMouseEnter={() => setHoveredPlan(plan.id)}
                       onMouseLeave={() => setHoveredPlan(null)}
                       className={`group relative ${
-                        isPopular ? 'scale-105' : ''
+                        isPopular ? "scale-105" : ""
                       }`}
                     >
                       <div
                         className={`h-full p-8 relative overflow-hidden ${
-                          isPopular ? 'card-bordered-primary' : 'card-warm'
+                          isPopular ? "card-bordered-primary" : "card-warm"
                         } ${
                           hoveredPlan === plan.id
-                            ? 'hover-lift-lg'
-                            : 'hover-lift'
+                            ? "hover-lift-lg"
+                            : "hover-lift"
                         }`}
                       >
                         {/* Badge populaire */}
@@ -347,6 +347,15 @@ function PricingSectionClient() {
 
                         {/* Prix */}
                         <div className="space-y-4 mb-8">
+                          {plan.price !== "Devis" ? (
+                            <span className="text-sm text-text-subtle">
+                              A partir de{" "}
+                            </span>
+                          ) : (
+                            <span className="text-sm invisible">
+                              nothing
+                            </span>
+                          )}
                           <div className="flex items-baseline gap-2">
                             <span className="text-4xl font-bold text-text-strong">
                               {plan.price}
@@ -407,7 +416,7 @@ function PricingSectionClient() {
                             >
                               <span>
                                 {showDetails === plan.id
-                                  ? 'Voir moins'
+                                  ? "Voir moins"
                                   : `Voir ${plan.features.length - 4} autres`}
                               </span>
                               <motion.div
@@ -444,13 +453,13 @@ function PricingSectionClient() {
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           className={`w-full group ${
-                            isPopular ? 'btn-primary' : `btn-${plan.color}`
+                            isPopular ? "btn-primary" : `btn-${plan.color}`
                           }`}
                         >
                           <span>
-                            {plan.name === 'Solution Sur-Mesure'
-                              ? 'Demander un devis'
-                              : `Choisir ${plan.name.split(' ')[0]}`}
+                            {plan.name === "Solution Sur-Mesure"
+                              ? "Demander un devis"
+                              : `Choisir ${plan.name.split(" ")[0]}`}
                           </span>
                           <FiArrowRight className="ml-3 group-hover:translate-x-1 transition-transform" />
                         </MotionLink>
@@ -462,7 +471,7 @@ function PricingSectionClient() {
             </motion.div>
           )}
 
-          {activeTab === 'process' && (
+          {activeTab === "process" && (
             <motion.div
               key="process"
               initial={{ opacity: 0, y: 20 }}
@@ -489,7 +498,7 @@ function PricingSectionClient() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.2 }}
                     className={`flex items-center gap-8 ${
-                      index % 2 === 1 ? 'flex-row-reverse' : ''
+                      index % 2 === 1 ? "flex-row-reverse" : ""
                     }`}
                   >
                     {/* Numéro et icône */}
@@ -497,13 +506,13 @@ function PricingSectionClient() {
                       <div className="relative">
                         <div
                           className={`w-20 h-20 rounded-3xl bg-${
-                            ['primary', 'secondary', 'accent', 'success'][index]
+                            ["primary", "secondary", "accent", "success"][index]
                           }/10 flex items-center justify-center`}
                         >
                           <step.icon
                             size={24}
                             className={`text-${
-                              ['primary', 'secondary', 'accent', 'success'][
+                              ["primary", "secondary", "accent", "success"][
                                 index
                               ]
                             }`}
@@ -531,7 +540,7 @@ function PricingSectionClient() {
             </motion.div>
           )}
 
-          {activeTab === 'support' && (
+          {activeTab === "support" && (
             <motion.div
               key="support"
               initial={{ opacity: 0, y: 20 }}
@@ -560,13 +569,13 @@ function PricingSectionClient() {
                   >
                     <div
                       className={`w-16 h-16 rounded-2xl bg-${
-                        ['primary', 'secondary', 'accent', 'success'][index]
+                        ["primary", "secondary", "accent", "success"][index]
                       }/10 flex items-center justify-center mb-6`}
                     >
                       <feature.icon
                         size={24}
                         className={`text-${
-                          ['primary', 'secondary', 'accent', 'success'][index]
+                          ["primary", "secondary", "accent", "success"][index]
                         }`}
                       />
                     </div>
@@ -596,7 +605,7 @@ function PricingSectionClient() {
             </div>
 
             <h3 className="heading-2 mb-6">
-              Prêt à donner vie à{' '}
+              Prêt à donner vie à{" "}
               <span className="text-gradient-sunset">votre projet</span> ?
             </h3>
 
