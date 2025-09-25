@@ -85,7 +85,7 @@ function ServicesSectionClient() {
         description:
           'Site professionnel optimisé pour convertir vos visiteurs en clients.',
         price: '100 000 FCFA',
-        duration: '5-7 jours',
+        duration: '18-22 jours',
         popular: true,
         features: [
           'Design responsive premium',
@@ -101,7 +101,7 @@ function ServicesSectionClient() {
         subtitle: 'Mobilisez votre communauté',
         description: 'Plateforme engageante pour votre association ou ONG.',
         price: '70 000 FCFA',
-        duration: '4-6 jours',
+        duration: '18-20 jours',
         popular: false,
         features: [
           'Espace membres',
@@ -120,7 +120,7 @@ function ServicesSectionClient() {
         description:
           "Solution e-commerce avec Mobile Money intégré pour l'Afrique.",
         price: '350 000 FCFA',
-        duration: '10-14 jours',
+        duration: '4-8 semaines',
         popular: true,
         features: [
           'Mobile Money intégré',
@@ -137,7 +137,7 @@ function ServicesSectionClient() {
         description:
           'Créez votre propre marketplace avec commissions automatiques.',
         price: '750 000 FCFA',
-        duration: '3-4 semaines',
+        duration: '5-9 semaines',
         popular: false,
         features: [
           'Multi-vendeurs',
@@ -156,7 +156,7 @@ function ServicesSectionClient() {
         description:
           "Développement d'applications web personnalisées pour votre business.",
         price: 'Devis personnalisé',
-        duration: '3-8 semaines',
+        duration: '8-20 semaines',
         popular: true,
         features: [
           'Architecture sur-mesure',
@@ -173,7 +173,7 @@ function ServicesSectionClient() {
         description:
           'Modernisation complète : design, performance et sécurité.',
         price: '150 000 FCFA',
-        duration: '2-4 jours',
+        duration: '2-4 semaines',
         popular: false,
         features: [
           'Audit gratuit inclus',
