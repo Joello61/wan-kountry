@@ -3,16 +3,16 @@ import FaqClient from '@/components/home/faq/FaqClient';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact - Wan-Kountry | Parlons de votre projet web',
+  title: 'Contact - Wan-Kountry | Parlons de votre projet digital',
   description:
-    'Contactez Wan-Kountry pour votre projet web. Formulaire de contact, WhatsApp, email. Consultation gratuite 30min. Réponse sous 24h garantie.',
+    'Contactez Wan-Kountry, initiative digitale portée par trois jeunes diplômés : Fullstack & DevOps, Cloud & Data Analysis, Cybersécurité. Formulaire, WhatsApp ou email pour échanger sur votre projet.',
   keywords: [
     'contact Wan-Kountry',
     'devis site web gratuit',
-    'consultation développeur web',
-    'projet web Cameroun',
-    'développeur freelance contact',
-    'WhatsApp développeur',
+    'consultation projet digital',
+    'projet web Cameroun France',
+    'collectif digital contact',
+    'WhatsApp contact Wan-Kountry',
     'formulaire contact web',
     'Wan-Kountry contact',
   ],
@@ -22,10 +22,10 @@ export const metadata: Metadata = {
   category: 'Technology',
   metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
-    title: 'Contactez Wan-Kountry - Développeur Web Expert',
+    title: 'Contactez Wan-Kountry – Initiative Digitale',
     description:
-      'Parlons de votre projet ! Site vitrine, e-commerce, application web - consultation gratuite et réponse rapide garantie.',
-    url: 'https://wankountry.com//contact',
+      'Parlons de votre projet digital ! Sites web, applications et solutions performantes. Collectif de trois jeunes diplômés, réponse rapide garantie.',
+    url: 'https://wankountry.com/contact',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
@@ -34,20 +34,20 @@ export const metadata: Metadata = {
         url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Contactez Wan-Kountry pour votre projet web',
+        alt: 'Contactez Wan-Kountry – Initiative Digitale',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Contact Wan-Kountry - Votre projet web m'intéresse !",
+    title: 'Contactez Wan-Kountry – Initiative Digitale',
     description:
-      'Formulaire contact, WhatsApp, email - Parlons de votre site web ou application. Réponse sous 24h.',
-    creator: '@Wan-Kountry',
+      'Formulaire, WhatsApp ou email pour échanger sur votre projet digital. Collectif de trois jeunes diplômés passionnés.',
+    creator: '@WanKountry',
     images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://wankountry.com//contact',
+    canonical: 'https://wankountry.com/contact',
   },
   robots: {
     index: true,

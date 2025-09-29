@@ -2,20 +2,19 @@ import CareersSectionClient from '@/components/carriere/CarriereClient';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Carrière - Wan-Kountry | Mon Parcours et Évolution Professionnelle',
+  title: 'Carrière - Wan-Kountry | Rejoignez notre Initiative Digitale',
   description:
-    "Découvrez mon évolution professionnelle : de débutant passionné à développeur expert. Formation, expériences, défis relevés et perspectives d'avenir.",
+    'Rejoignez Wan-Kountry, une initiative digitale portée par trois jeunes diplômés : Fullstack & DevOps, Cloud & Data Analysis, Cybersécurité. Participez à nos projets web et solutions innovantes.',
   keywords: [
-    'carrière Wan-Kountry',
-    'parcours développeur web',
-    'évolution professionnelle tech',
-    'expérience développeur Cameroun France',
-    'formation développeur web',
-    'croissance professionnelle IT',
-    'compétences acquises développement',
-    'étapes carrière développeur',
-    'expertise technique évolution',
-    'développeur freelance parcours',
+    'rejoindre Wan-Kountry',
+    'carrière initiative digitale',
+    'collaborer projet web',
+    'fullstack DevOps',
+    'cloud data analyst',
+    'cybersécurité',
+    'collectif jeunes diplômés',
+    'projets digitaux innovants',
+    'opportunités tech',
   ],
   authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
@@ -23,28 +22,28 @@ export const metadata: Metadata = {
   category: 'Technology',
   metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
-    title: 'Mon Parcours Carrière - Wan-Kountry Développeur',
+    title: 'Rejoignez Wan-Kountry – Initiative Digitale Innovante',
     description:
-      'De mes premiers pas en programmation à mes projets actuels. Découvrez mon évolution, mes apprentissages et ma vision du développement web.',
+      'Participez à notre projet collectif : développement web, cloud & data, cybersécurité. Rejoignez notre équipe de jeunes diplômés passionnés et créatifs.',
     url: 'https://wankountry.com/carriere',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
-    type: 'profile',
+    type: 'website',
     images: [
       {
         url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Carrière Wan-Kountry - Parcours Développeur Web',
+        alt: 'Rejoindre Wan-Kountry – Initiative Digitale',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mon Parcours Carrière - Wan-Kountry',
+    title: 'Rejoignez Wan-Kountry – Initiative Digitale',
     description:
-      "Formation, expériences, défis relevés. Découvrez l'évolution d'un développeur passionné du Cameroun vers la France.",
-    creator: '@Wan-Kountry',
+      'Participez à nos projets web et solutions innovantes. Collectif de trois jeunes diplômés : Fullstack & DevOps, Cloud & Data Analysis, Cybersécurité.',
+    creator: '@WanKountry',
     images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
   alternates: {

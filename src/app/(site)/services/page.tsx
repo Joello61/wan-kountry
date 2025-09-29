@@ -5,17 +5,17 @@ export const metadata: Metadata = {
   title:
     'Services Web – Sites Vitrines, E-commerce & Apps Sur-Mesure | Wan-Kountry',
   description:
-    'Découvrez nos services : sites vitrines pro, boutiques e-commerce avec Mobile Money, applications sur-mesure et refonte express. Solutions adaptées au marché africain.',
+    'Découvrez les services du collectif Wan-Kountry : sites vitrines pro, boutiques e-commerce avec Mobile Money, applications sur-mesure et refonte express. Solutions digitales innovantes adaptées au marché africain.',
   keywords: [
     'services développement web',
-    'site vitrine professionnel',
+    'site vitrine collectif',
     'e-commerce Mobile Money',
     'application web sur-mesure',
     'refonte site web',
     'site associatif',
-    'développeur fullstack Cameroun',
+    'collectif digital Cameroun',
     'Wan-Kountry services',
-    'création site web Afrique',
+    'solutions web Afrique',
   ],
   authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
     title:
-      'Services Web Professionnels – Sites, E-commerce & Apps | Wan-Kountry',
+      'Services Web – Sites, E-commerce & Apps | Wan-Kountry',
     description:
-      'Sites vitrines qui convertissent, e-commerce avec Mobile Money intégré, applications sur-mesure. Solutions web modernes pour booster votre business en Afrique.',
-    url: 'https://wankountry.com//services',
+      'Sites vitrines, e-commerce avec Mobile Money, applications sur-mesure. Services proposés par notre collectif de jeunes diplômés passionnés et complémentaires.',
+    url: 'https://wankountry.com/services',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
@@ -36,20 +36,20 @@ export const metadata: Metadata = {
         url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Services web Wan-Kountry - Sites, E-commerce et Apps',
+        alt: 'Services web Wan-Kountry – Sites, E-commerce et Apps',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Services Web Pro – Sites, E-commerce & Apps | Wan-Kountry',
+    title: 'Services Web – Sites, E-commerce & Apps | Wan-Kountry',
     description:
-      'Sites vitrines, e-commerce Mobile Money, apps sur-mesure. Solutions web adaptées au marché africain.',
-    creator: '@Wan-Kountry',
+      'Sites vitrines, e-commerce Mobile Money, apps sur-mesure. Services proposés par notre collectif de jeunes diplômés passionnés.',
+    creator: '@WanKountry',
     images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://wankountry.com//services',
+    canonical: 'https://wankountry.com/services',
   },
   robots: {
     index: true,

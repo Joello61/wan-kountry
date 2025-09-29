@@ -3,18 +3,18 @@ import { Metadata } from 'next';
 
 export const pricingMetadata: Metadata = {
   title:
-    'Tarifs Transparents – Sites Web & Apps dès 120 000 FCFA | Wan-Kountry',
+    'Tarifs Indicatifs – Sites Web & Apps | Wan-Kountry',
   description:
-    'Découvrez nos tarifs : Site vitrine 120k FCFA, E-commerce 300k FCFA, Apps sur-mesure. Formules claires, paiement échelonné possible.',
+    'Guide des tarifs du collectif Wan-Kountry : Site vitrine dès 120 000 FCFA, E-commerce à partir de 300 000 FCFA, Applications sur-mesure. Estimations flexibles, paiement échelonné possible.',
   keywords: [
     'tarifs développement web',
-    'prix site vitrine FCFA',
+    'prix indicatif site vitrine FCFA',
     'coût e-commerce Cameroun',
     'devis application web',
-    'tarif développeur Afrique',
+    'collectif digital Afrique',
     'prix transparent web',
     'Wan-Kountry tarifs',
-    'budget site internet',
+    'budget projet digital',
   ],
   authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
@@ -22,10 +22,10 @@ export const pricingMetadata: Metadata = {
   category: 'Technology',
   metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
-    title: 'Tarifs Web Transparents – Sites dès 120k FCFA | Wan-Kountry',
+    title: 'Tarifs Indicatifs Web – Sites et Apps | Wan-Kountry',
     description:
-      'Formules simples pour tous budgets : sites vitrines, e-commerce, apps sur-mesure. Paiement échelonné, devis gratuit sous 24h.',
-    url: 'https://wankountry.com//subscription',
+      'Estimations pour vos projets web : sites vitrines, e-commerce, applications sur-mesure. Guide fourni par notre collectif de jeunes diplômés passionnés.',
+    url: 'https://wankountry.com/subscription',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
@@ -34,20 +34,20 @@ export const pricingMetadata: Metadata = {
         url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Tarifs développement web Wan-Kountry',
+        alt: 'Tarifs indicatifs développement web Wan-Kountry',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Tarifs Transparents Web – Sites dès 120k FCFA | Wan-Kountry',
+    title: 'Tarifs Indicatifs – Sites et Apps | Wan-Kountry',
     description:
-      'Prix clairs : Site vitrine 120k, E-commerce 300k, Apps sur-mesure. Paiement échelonné disponible.',
-    creator: '@Wan-Kountry',
+      'Estimation pour vos projets digitaux : sites vitrines dès 120k FCFA, e-commerce à partir de 300k, apps sur-mesure. Guide flexible fourni par notre collectif.',
+    creator: '@WanKountry',
     images: ['/images/pricing/pricing-preview.png'],
   },
   alternates: {
-    canonical: 'https://wankountry.com//subscription',
+    canonical: 'https://wankountry.com/subscription',
   },
   robots: {
     index: true,

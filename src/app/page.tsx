@@ -9,20 +9,17 @@ import TestimonySectionClient from '@/components/home/testimony/TestimonyClient'
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title:
-    'Wan-Kountry - Développeur Web Freelance | Sites Modernes Cameroun-France',
+  title: 'Wan-Kountry – Une Initiative pour accompagner vos projets digitaux',
   description:
-    'Développeur web expert créant sites vitrines, e-commerce et apps modernes. Mobile-first, Mobile Money, première livraison en 15 jours. Basé France, expertise Cameroun.',
+    'Wan-Kountry est un projet collectif porté par trois jeunes diplômés : Fullstack & DevOps, Cloud & Data Analysis, Cybersécurité. Création de sites web, applications et solutions digitales modernes, Mobile-first.',
   keywords: [
-    'développeur web freelance',
-    'site web moderne Cameroun',
-    'mobile first développeur',
-    'Mobile Money intégration',
-    'site web rapide',
-    'développeur React Symfony',
-    'Wan-Kountry développeur',
-    'site web 15 jours',
-    'développeur fullstack France',
+    'Wan-Kountry initiative digitale',
+    'collectif digital Cameroun France',
+    'fullstack DevOps',
+    'cloud data analyst',
+    'cybersécurité',
+    'solutions digitales modernes',
+    'sites web et applications',
   ],
   authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
@@ -30,10 +27,9 @@ export const metadata: Metadata = {
   category: 'Technology',
   metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
-    title:
-      'Wan-Kountry - Votre site web moderne avec première livraison en 15 jours',
+    title: 'Wan-Kountry – Une Initiative pour accompagner vos projets digitaux',
     description:
-      'Sites vitrines, e-commerce et applications web performants. Mobile-first, Mobile Money, support 24/7. Résultats garantis.',
+      'Projet collectif porté par trois jeunes diplômés : Fullstack & DevOps, Cloud & Data Analysis, Cybersécurité. Création de sites, applications et solutions digitales modernes.',
     url: 'https://wankountry.com/',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
@@ -43,16 +39,15 @@ export const metadata: Metadata = {
         url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
-        alt: 'Wan-Kountry - Développeur Web Moderne',
+        alt: 'Wan-Kountry – Initiative digitale par trois jeunes diplômés',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title:
-      'Wan-Kountry - Sites web modernes avec première livraison en 15 jours',
+    title: 'Wan-Kountry – Une Initiative pour accompagner vos projets digitaux',
     description:
-      'Mobile-first, Mobile Money, ultra-rapide. Développeur web expert pour votre business.',
+      'Collectif de trois jeunes diplômés passionnés par le numérique : Fullstack & DevOps, Cloud & Data Analysis, Cybersécurité. Solutions digitales modernes et performantes.',
     creator: '@WanKountry',
     images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
