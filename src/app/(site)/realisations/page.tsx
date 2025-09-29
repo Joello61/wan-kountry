@@ -18,22 +18,22 @@ export const metadata: Metadata = {
     'ERP web application',
     'projets React Angular',
   ],
-  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
   publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
+  metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
     title: 'Portfolio Wan-Kountry - Mes Réalisations Web',
     description:
       '9 projets concrets : gestion de tâches, événementiel, crowdfunding, e-santé, ERP. Chaque création raconte une histoire de succès.',
-    url: 'https://wan-kountry.joeltech.dev//realisations',
+    url: 'https://wankountry.com//realisations',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Portfolio Wan-Kountry - Réalisations Web',
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     description:
       'TaskFlow, EventHive, WeFund, Bocobi... Découvrez nos réalisations web avec résultats mesurables.',
     creator: '@Wan-Kountry',
-    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
+    images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://wan-kountry.joeltech.dev//realisations',
+    canonical: 'https://wankountry.com//realisations',
   },
   robots: {
     index: true,

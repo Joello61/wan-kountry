@@ -24,23 +24,23 @@ export const metadata: Metadata = {
     'site web 15 jours',
     'développeur fullstack France',
   ],
-  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
   publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
+  metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
     title:
       'Wan-Kountry - Votre site web moderne avec première livraison en 15 jours',
     description:
       'Sites vitrines, e-commerce et applications web performants. Mobile-first, Mobile Money, support 24/7. Résultats garantis.',
-    url: 'https://wan-kountry.joeltech.dev/',
+    url: 'https://wankountry.com/',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Wan-Kountry - Développeur Web Moderne',
@@ -54,10 +54,10 @@ export const metadata: Metadata = {
     description:
       'Mobile-first, Mobile Money, ultra-rapide. Développeur web expert pour votre business.',
     creator: '@WanKountry',
-    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
+    images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://wan-kountry.joeltech.dev/',
+    canonical: 'https://wankountry.com/',
   },
   robots: {
     index: true,

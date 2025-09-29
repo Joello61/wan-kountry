@@ -17,22 +17,22 @@ export const metadata: Metadata = {
     'expertise technique évolution',
     'développeur freelance parcours',
   ],
-  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
   publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
+  metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
     title: 'Mon Parcours Carrière - Wan-Kountry Développeur',
     description:
       'De mes premiers pas en programmation à mes projets actuels. Découvrez mon évolution, mes apprentissages et ma vision du développement web.',
-    url: 'https://wan-kountry.joeltech.dev/carriere',
+    url: 'https://wankountry.com/carriere',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'profile',
     images: [
       {
-        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Carrière Wan-Kountry - Parcours Développeur Web',
@@ -45,10 +45,10 @@ export const metadata: Metadata = {
     description:
       "Formation, expériences, défis relevés. Découvrez l'évolution d'un développeur passionné du Cameroun vers la France.",
     creator: '@Wan-Kountry',
-    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
+    images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://wan-kountry.joeltech.dev/carriere',
+    canonical: 'https://wankountry.com/carriere',
   },
   robots: {
     index: true,

@@ -81,7 +81,7 @@ User-agent: DotBot
 Disallow: /
 
 # Configuration des sitemaps
-Sitemap: https://wan-kountry.joeltech.dev/sitemap.xml
+Sitemap: https://wankountry.com/sitemap.xml
 
 # Informations additionnelles
 # Temps de crawl recommandé: 10-20 pages par minute

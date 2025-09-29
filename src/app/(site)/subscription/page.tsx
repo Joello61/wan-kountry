@@ -16,22 +16,22 @@ export const pricingMetadata: Metadata = {
     'Wan-Kountry tarifs',
     'budget site internet',
   ],
-  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
   publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
+  metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
     title: 'Tarifs Web Transparents – Sites dès 120k FCFA | Wan-Kountry',
     description:
       'Formules simples pour tous budgets : sites vitrines, e-commerce, apps sur-mesure. Paiement échelonné, devis gratuit sous 24h.',
-    url: 'https://wan-kountry.joeltech.dev//subscription',
+    url: 'https://wankountry.com//subscription',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Tarifs développement web Wan-Kountry',
@@ -47,7 +47,7 @@ export const pricingMetadata: Metadata = {
     images: ['/images/pricing/pricing-preview.png'],
   },
   alternates: {
-    canonical: 'https://wan-kountry.joeltech.dev//subscription',
+    canonical: 'https://wankountry.com//subscription',
   },
   robots: {
     index: true,

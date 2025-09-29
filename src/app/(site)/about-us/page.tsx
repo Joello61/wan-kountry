@@ -16,22 +16,22 @@ export const metadata: Metadata = {
     'IUT Bandjoun informatique',
     'Wan-Kountry histoire',
   ],
-  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
   publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
+  metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
     title: 'À propos de Wan-Kountry - Wan-Kountry',
     description:
       'Développeur web passionné avec expertise Cameroun-France. Spécialisé en React, Next.js, Symfony. Code propre et solutions modernes.',
-    url: 'https://wan-kountry.joeltech.dev//about-us',
+    url: 'https://wankountry.com//about-us',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'profile',
     images: [
       {
-        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Wan-Kountry - Développeur Web Wan-Kountry',
@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     description:
       "Parcours, compétences et valeurs d'un développeur web passionné (Cameroun + France).",
     creator: '@Wan-Kountry',
-    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
+    images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://wan-kountry.joeltech.dev//about-us',
+    canonical: 'https://wankountry.com//about-us',
   },
   robots: {
     index: true,

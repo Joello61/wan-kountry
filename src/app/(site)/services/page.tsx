@@ -17,23 +17,23 @@ export const metadata: Metadata = {
     'Wan-Kountry services',
     'création site web Afrique',
   ],
-  authors: [{ name: 'Wan-Kountry', url: 'https://wan-kountry.joeltech.dev/' }],
+  authors: [{ name: 'Wan-Kountry', url: 'https://wankountry.com/' }],
   creator: 'Wan-Kountry',
   publisher: 'Wan-Kountry',
   category: 'Technology',
-  metadataBase: new URL('https://wan-kountry.joeltech.dev/'),
+  metadataBase: new URL('https://wankountry.com/'),
   openGraph: {
     title:
       'Services Web Professionnels – Sites, E-commerce & Apps | Wan-Kountry',
     description:
       'Sites vitrines qui convertissent, e-commerce avec Mobile Money intégré, applications sur-mesure. Solutions web modernes pour booster votre business en Afrique.',
-    url: 'https://wan-kountry.joeltech.dev//services',
+    url: 'https://wankountry.com//services',
     siteName: 'Wan-Kountry',
     locale: 'fr_FR',
     type: 'website',
     images: [
       {
-        url: 'https://wan-kountry.joeltech.dev/screenshots/desktop-home.png',
+        url: 'https://wankountry.com/screenshots/desktop-home.png',
         width: 1200,
         height: 630,
         alt: 'Services web Wan-Kountry - Sites, E-commerce et Apps',
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     description:
       'Sites vitrines, e-commerce Mobile Money, apps sur-mesure. Solutions web adaptées au marché africain.',
     creator: '@Wan-Kountry',
-    images: ['https://wan-kountry.joeltech.dev/screenshots/desktop-home.png'],
+    images: ['https://wankountry.com/screenshots/desktop-home.png'],
   },
   alternates: {
-    canonical: 'https://wan-kountry.joeltech.dev//services',
+    canonical: 'https://wankountry.com//services',
   },
   robots: {
     index: true,
