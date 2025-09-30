@@ -64,45 +64,21 @@ function RealisationSectionClient() {
   const realisationsList = [
     {
       id: 1,
-      image: '/images/realisations/exploratory.png',
-      title: 'Portfolio interactif',
-      description:
-        'Site ludique et moderne pour présenter un parcours pro, des compétences et des projets — idéal pour crédibiliser votre image.',
+      image: '/images/realisations/j3t-agency.png',
+      title: 'J3T Agency – Agence de Digitalisation',
+      description:"Site vitrine moderne pour présenter l'agence J3T, ses services, ses valeurs et ses réalisations. Conçu pour inspirer confiance et attirer des clients au Cameroun comme en Europe.",
       category: 'vitrine',
-      tags: ['Angular', 'UI Design', 'Frontend', 'Personal Branding'],
-      demoLink: 'https://exploratory-website.vercel.app/',
-      codeLink: 'https://github.com/Joello61/exploratory-website.git',
+      tags: ['React', 'Next.js', 'Tailwind CSS', 'SEO', 'UI/UX Design'],
+      demoLink: 'https://j3t-agency.joeltech.dev/',
+      codeLink: 'https://github.com/Joello61/j3t-agency',
       featured: true,
-      results: '+80% de visibilité professionnelle',
-      year: '2024',
-      client: 'Freelance',
-      duration: '2 semaines',
+      results: '+120% de contacts générés en ligne',
+      year: '2025',
+      client: 'Projet interne – Agence J3T',
+      duration: '3 semaines',
     },
     {
       id: 2,
-      image: '/images/realisations/brulage.png',
-      title: 'Dashboard environnemental – Brûlage',
-      description:
-        'Application métier pour suivre les brûlages contrôlés, avec statistiques claires et cartographie pour faciliter la décision.',
-      category: 'app',
-      tags: [
-        'React',
-        'Symfony',
-        'PostgreSQL',
-        'Python',
-        'DataViz',
-        'Cartographie',
-      ],
-      demoLink: 'https://github.com/Joello61/brulage-dashboard.git',
-      codeLink: 'https://github.com/Joello61/brulage-dashboard.git',
-      featured: true,
-      results: 'Décisions opérationnelles +30% plus rapides',
-      year: '2024',
-      client: 'Secteur Public',
-      duration: '3 mois',
-    },
-    {
-      id: 3,
       image: '/images/realisations/jobtracker.png',
       title: 'Candi Tracker – Gestion des candidatures',
       description:
@@ -125,7 +101,47 @@ function RealisationSectionClient() {
       duration: '6 semaines',
     },
     {
+      id: 3,
+      image: '/images/realisations/exploratory.png',
+      title: 'Portfolio interactif',
+      description:
+        'Site ludique et moderne pour présenter un parcours pro, des compétences et des projets — idéal pour crédibiliser votre image.',
+      category: 'vitrine',
+      tags: ['Angular', 'UI Design', 'Frontend', 'Personal Branding'],
+      demoLink: 'https://exploratory-website.vercel.app/',
+      codeLink: 'https://github.com/Joello61/exploratory-website.git',
+      featured: true,
+      results: '+80% de visibilité professionnelle',
+      year: '2024',
+      client: 'Freelance',
+      duration: '2 semaines',
+    },
+    {
       id: 4,
+      image: '/images/realisations/brulage.png',
+      title: 'Dashboard environnemental – Brûlage',
+      description:
+        'Application métier pour suivre les brûlages contrôlés, avec statistiques claires et cartographie pour faciliter la décision.',
+      category: 'app',
+      tags: [
+        'React',
+        'Symfony',
+        'PostgreSQL',
+        'Python',
+        'DataViz',
+        'Cartographie',
+      ],
+      demoLink: 'https://github.com/Joello61/brulage-dashboard.git',
+      codeLink: 'https://github.com/Joello61/brulage-dashboard.git',
+      featured: true,
+      results: 'Décisions opérationnelles +30% plus rapides',
+      year: '2024',
+      client: 'Secteur Public',
+      duration: '3 mois',
+    },
+    
+    {
+      id: 5,
       image: '/images/realisations/eventhive.png',
       title: "EventHive – Gestion d'événements",
       description:
@@ -144,38 +160,6 @@ function RealisationSectionClient() {
       results: '+150% de participants sur les événements',
       year: '2023',
       client: 'Associations',
-      duration: '4 mois',
-    },
-    {
-      id: 5,
-      image: '/images/realisations/wefund.png',
-      title: 'WeFund – Plateforme de crowdfunding',
-      description:
-        'Reliez porteurs de projets et investisseurs, avec parcours de contribution simple (Mobile Money / cartes) et tableau de bord.',
-      category: 'ecommerce',
-      tags: ['Angular', 'Node.js', 'PostgreSQL', 'Paiement', 'Marketplace'],
-      demoLink: 'https://github.com/Joello61/wefundWeb',
-      codeLink: 'https://github.com/Joello61/wefundWeb',
-      featured: true,
-      results: '+300% de levées de fonds réussies',
-      year: '2023',
-      client: 'Fintech',
-      duration: '5 mois',
-    },
-    {
-      id: 6,
-      image: '/images/realisations/bocobi.png',
-      title: 'Bocobi – Accès aux soins de santé',
-      description:
-        "Plateforme web + backend pour faciliter la prise de rendez-vous et l'accès aux soins — pensée pour les réalités locales.",
-      category: 'app',
-      tags: ['Angular', 'Spring Boot', 'PostgreSQL', 'Prise de RDV', 'e-Santé'],
-      demoLink: 'https://github.com/Joello61/bocobiWeb',
-      codeLink: 'https://github.com/Joello61/bocobiWeb',
-      featured: true,
-      results: "+200% d'accès facilité aux soins",
-      year: '2023',
-      client: 'Santé Publique',
       duration: '4 mois',
     },
   ];
@@ -367,16 +351,6 @@ function RealisationSectionClient() {
                               <FiEye className="mr-2" />
                               Démo
                             </motion.a>
-                            <motion.a
-                              href={project.codeLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.05 }}
-                              className="btn-ghost border-white text-white hover:bg-white/10"
-                            >
-                              <FiGithub className="mr-2" />
-                              Code
-                            </motion.a>
                           </div>
                         </div>
                       </div>
@@ -468,16 +442,6 @@ function RealisationSectionClient() {
                       >
                         <FiExternalLink className="mr-3 group-hover:rotate-45 transition-transform" />
                         Voir le projet
-                      </motion.a>
-                      <motion.a
-                        href={project.codeLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.02 }}
-                        className="btn-secondary group"
-                      >
-                        <FiCode className="mr-3 group-hover:scale-110 transition-transform" />
-                        Code source
                       </motion.a>
                     </div>
                   </div>
