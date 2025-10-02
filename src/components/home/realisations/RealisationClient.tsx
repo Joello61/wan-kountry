@@ -70,7 +70,6 @@ function RealisationSectionClient() {
       category: 'vitrine',
       tags: ['React', 'Next.js', 'Tailwind CSS', 'SEO', 'UI/UX Design'],
       demoLink: 'https://j3t-agency.joeltech.dev/',
-      codeLink: 'https://github.com/Joello61/j3t-agency',
       featured: true,
       results: '+120% de contacts générés en ligne',
       year: '2025',
@@ -79,6 +78,35 @@ function RealisationSectionClient() {
     },
     {
       id: 2,
+      image: '/images/realisations/ecommerce.png',
+      title: 'C\' est Kdo Store – Boutique E-commerce',
+      description:"Plateforme e-commerce complète pour une boutique de cadeaux. Intégration de paiements sécurisés, gestion des stocks et optimisation SEO pour maximiser les ventes.",
+      category: 'ecommerce',
+      tags: ['Next.js', 'Tailwind CSS', 'SEO', 'UI/UX Design', 'Stripe', 'Symfony'],
+      demoLink: 'https://cest-kdo.joeltech.dev/',
+      featured: true,
+      results: '+200% de ventes en 6 mois',
+      year: '2025',
+      client: 'Boutique locale C\' est Kdo',
+      duration: '2 mois',
+    },
+    {
+      id: 3,
+      image: '/images/realisations/resto.png',
+      title: 'Resto du Mboa – Site Vitrine & Réservations',
+      description:"Site vitrine élégant pour un restaurant local, avec menu interactif, galerie photo et système de réservation en ligne. Optimisé pour le SEO local afin d'attirer plus de clients.",
+      category: 'vitrine',
+      tags: ['Next.js', 'Tailwind CSS', 'SEO', 'UI/UX Design', 'Réservations'],
+      demoLink: 'https://resto-du-mboa.joeltech.dev/',
+      codeLink: '',
+      featured: true,
+      results: '+150% de réservations en ligne',
+      year: '2024',
+      client: 'Resto du Mboa',
+      duration: '3 semaines',
+    },
+    {
+      id: 4,
       image: '/images/realisations/jobtracker.png',
       title: 'Candi Tracker – Gestion des candidatures',
       description:
@@ -93,7 +121,6 @@ function RealisationSectionClient() {
         'Workflow',
       ],
       demoLink: 'https://candi-tracker.joeltech.dev/',
-      codeLink: 'https://github.com/Joello61/candi-tracker.git',
       featured: true,
       results: '-50% de temps passé à suivre les candidatures',
       year: '2024',
@@ -101,7 +128,7 @@ function RealisationSectionClient() {
       duration: '6 semaines',
     },
     {
-      id: 3,
+      id: 5,
       image: '/images/realisations/exploratory.png',
       title: 'Portfolio interactif',
       description:
@@ -109,7 +136,6 @@ function RealisationSectionClient() {
       category: 'vitrine',
       tags: ['Angular', 'UI Design', 'Frontend', 'Personal Branding'],
       demoLink: 'https://exploratory-website.vercel.app/',
-      codeLink: 'https://github.com/Joello61/exploratory-website.git',
       featured: true,
       results: '+80% de visibilité professionnelle',
       year: '2024',
@@ -117,7 +143,7 @@ function RealisationSectionClient() {
       duration: '2 semaines',
     },
     {
-      id: 4,
+      id: 6,
       image: '/images/realisations/brulage.png',
       title: 'Dashboard environnemental – Brûlage',
       description:
@@ -132,7 +158,6 @@ function RealisationSectionClient() {
         'Cartographie',
       ],
       demoLink: 'https://github.com/Joello61/brulage-dashboard.git',
-      codeLink: 'https://github.com/Joello61/brulage-dashboard.git',
       featured: true,
       results: 'Décisions opérationnelles +30% plus rapides',
       year: '2024',
@@ -141,7 +166,7 @@ function RealisationSectionClient() {
     },
     
     {
-      id: 5,
+      id: 7,
       image: '/images/realisations/eventhive.png',
       title: "EventHive – Gestion d'événements",
       description:
@@ -155,7 +180,6 @@ function RealisationSectionClient() {
         'Marketing',
       ],
       demoLink: 'https://github.com/Joello61/eventHiveFront',
-      codeLink: 'https://github.com/Joello61/eventHiveFront',
       featured: true,
       results: '+150% de participants sur les événements',
       year: '2023',
