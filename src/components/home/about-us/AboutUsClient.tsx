@@ -50,7 +50,7 @@ function AboutSectionClient() {
     {
       name: 'Yannick S.',
       role: 'Data and Cloud Engineer',
-      location: 'Paris, FR',
+      location: 'A,ngers FR',
       avatar: '/images/team/Yannick.jpg',
       skills: [
         'Python',
